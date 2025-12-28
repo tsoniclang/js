@@ -19,6 +19,7 @@ PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 TSBINDGEN_DIR="$PROJECT_DIR/../tsbindgen"
 JS_RUNTIME_DIR="$PROJECT_DIR/../js-runtime"
 DOTNET_LIB="$PROJECT_DIR/../dotnet"
+CORE_LIB="$PROJECT_DIR/../core"
 
 # .NET runtime path (needed for BCL type resolution)
 DOTNET_VERSION="${DOTNET_VERSION:-10.0.0}"
@@ -66,6 +67,12 @@ if [ ! -d "$DOTNET_LIB" ]; then
     exit 1
 fi
 
+if [ ! -d "$CORE_LIB" ]; then
+    echo "ERROR: @tsonic/core not found at $CORE_LIB"
+    echo "Clone it: git clone https://github.com/tsoniclang/core ../core"
+    exit 1
+fi
+
 # Clean output directory (keep config files)
 echo "[1/3] Cleaning output directory..."
 cd "$PROJECT_DIR"
@@ -98,6 +105,7 @@ echo "[3/3] Generating TypeScript declarations..."
 dotnet run --project src/tsbindgen/tsbindgen.csproj --no-build -c Release -- \
     generate -a "$JSRUNTIME_DLL" -d "$DOTNET_RUNTIME_PATH" -o "$PROJECT_DIR" \
     --lib "$DOTNET_LIB" \
+    --lib "$CORE_LIB" \
     --naming js \
     --namespace-map "Tsonic.JSRuntime=index" \
     --flatten-class "Tsonic.JSRuntime.Globals"
