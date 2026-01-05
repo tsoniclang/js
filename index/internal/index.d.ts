@@ -226,6 +226,92 @@ export const Int8Array: {
 
 export type Int8Array = Int8Array$instance;
 
+export interface JSArray_1$instance<T> {
+    item: T;
+    readonly length: int;
+    at(index: int): T;
+    concat(...items: unknown[]): JSArray_1<T>;
+    copyWithin(target: int, start?: int, end?: Nullable<System_Internal.Int32>): JSArray_1<T>;
+    entries(): IEnumerable__System_Collections_Generic<ValueTuple<System_Internal.Int32, T>>;
+    every(callback: Func<T, System_Internal.Boolean>): boolean;
+    every(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): boolean;
+    fill(value: T, start?: int, end?: Nullable<System_Internal.Int32>): JSArray_1<T>;
+    filter(callback: Func<T, System_Internal.Boolean>): JSArray_1<T>;
+    filter(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): JSArray_1<T>;
+    filter(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): JSArray_1<T>;
+    find(callback: Func<T, System_Internal.Boolean>): T;
+    find(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): T;
+    find(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): T;
+    findIndex(callback: Func<T, System_Internal.Boolean>): int;
+    findIndex(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): int;
+    findIndex(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): int;
+    findLast(callback: Func<T, System_Internal.Boolean>): T;
+    findLast(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): T;
+    findLast(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): T;
+    findLastIndex(callback: Func<T, System_Internal.Boolean>): int;
+    findLastIndex(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): int;
+    findLastIndex(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): int;
+    flat(depth?: int): JSArray_1<unknown>;
+    flatMap<TResult>(callback: Func<T, System_Internal.Int32, JSArray_1<T>, unknown>): JSArray_1<TResult>;
+    forEach(callback: Action<T>): void;
+    forEach(callback: Action<T, System_Internal.Int32>): void;
+    forEach(callback: Action<T, System_Internal.Int32, JSArray_1<T>>): void;
+    getEnumerator(): IEnumerator<T>;
+    includes(searchElement: T): boolean;
+    indexOf(searchElement: T, fromIndex?: int): int;
+    join(separator?: string): string;
+    keys(): IEnumerable__System_Collections_Generic<System_Internal.Int32>;
+    lastIndexOf(searchElement: T, fromIndex?: Nullable<System_Internal.Int32>): int;
+    map<TResult>(callback: Func<T, TResult>): JSArray_1<TResult>;
+    map<TResult>(callback: Func<T, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    map<TResult>(callback: Func<T, System_Internal.Int32, JSArray_1<T>, TResult>): JSArray_1<TResult>;
+    pop(): T;
+    push(item: T): int;
+    push(...items: T[]): int;
+    reduce<TResult>(callback: Func<TResult, T, TResult>, initialValue: TResult): TResult;
+    reduce<TResult>(callback: Func<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
+    reduce<TResult>(callback: Func<TResult, T, System_Internal.Int32, JSArray_1<T>, TResult>, initialValue: TResult): TResult;
+    reduce(callback: Func<T, T, T>): T;
+    reduceRight<TResult>(callback: Func<TResult, T, TResult>, initialValue: TResult): TResult;
+    reduceRight<TResult>(callback: Func<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
+    reduceRight<TResult>(callback: Func<TResult, T, System_Internal.Int32, JSArray_1<T>, TResult>, initialValue: TResult): TResult;
+    reverse(): JSArray_1<T>;
+    setLength(newLength: int): void;
+    shift(): T;
+    slice(start?: int, end?: Nullable<System_Internal.Int32>): JSArray_1<T>;
+    some(callback: Func<T, System_Internal.Boolean>): boolean;
+    some(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): boolean;
+    sort(compareFunc?: Func<T, T, System_Internal.Double>): JSArray_1<T>;
+    splice(start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
+    toArray(): T[];
+    toList(): List<T>;
+    toLocaleString(): string;
+    toReversed(): JSArray_1<T>;
+    toSorted(compareFunc?: Func<T, T, System_Internal.Double>): JSArray_1<T>;
+    toSpliced(start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
+    toString(): string;
+    unshift(item: T): int;
+    unshift(...items: T[]): int;
+    values(): IEnumerable__System_Collections_Generic<T>;
+    with_(index: int, value: T): JSArray_1<T>;
+}
+
+
+export const JSArray_1: {
+    new<T>(): JSArray_1<T>;
+    new<T>(capacity: int): JSArray_1<T>;
+    new<T>(source: T[]): JSArray_1<T>;
+    new<T>(source: List<T>): JSArray_1<T>;
+    new<T>(source: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
+    from_<T, TSource, TResult>(iterable: IEnumerable__System_Collections_Generic<TSource>, mapFunc: Func<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    from_<T>(iterable: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
+    isArray<T>(value: unknown): boolean;
+    of_<T>(...items: T[]): JSArray_1<T>;
+};
+
+
+export type JSArray_1<T> = JSArray_1$instance<T>;
+
 export interface Map_2$instance<K, V> {
     readonly size: int;
     clear(): void;
@@ -279,7 +365,7 @@ export interface RegExpMatchResult$instance {
     readonly groups: (string | undefined)[];
     readonly index: int;
     readonly input: string;
-    readonly item: string | undefined;
+    readonly item: string;
     readonly length: int;
     readonly value: string;
 }
@@ -464,82 +550,6 @@ export const WeakSet_1: {
 
 
 export type WeakSet_1<T> = WeakSet_1$instance<T>;
-
-export abstract class Array$instance {
-    static at<T>(arr: List<T>, index: int): T;
-    static concat<T>(arr: List<T>, ...items: unknown[]): List<T>;
-    static copyWithin<T>(arr: List<T>, target: int, start?: int, end?: Nullable<System_Internal.Int32>): List<T>;
-    static entries<T>(arr: List<T>): IEnumerable__System_Collections_Generic<ValueTuple<System_Internal.Int32, T>>;
-    static every<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): boolean;
-    static fill<T>(arr: List<T>, value: T, start?: int, end?: Nullable<System_Internal.Int32>): List<T>;
-    static filter<T>(arr: List<T>, callback: Func<T, System_Internal.Boolean>): List<T>;
-    static filter<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): List<T>;
-    static filter<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): List<T>;
-    static find<T>(arr: List<T>, callback: Func<T, System_Internal.Boolean>): T;
-    static find<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): T;
-    static find<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): T;
-    static findIndex<T>(arr: List<T>, callback: Func<T, System_Internal.Boolean>): int;
-    static findIndex<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): int;
-    static findIndex<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): int;
-    static findLast<T>(arr: List<T>, callback: Func<T, System_Internal.Boolean>): T;
-    static findLast<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): T;
-    static findLast<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): T;
-    static findLastIndex<T>(arr: List<T>, callback: Func<T, System_Internal.Boolean>): int;
-    static findLastIndex<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): int;
-    static findLastIndex<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): int;
-    static flat<T>(arr: List<T>, depth?: int): List<unknown>;
-    static flatMap<T, TResult>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, unknown>): List<TResult>;
-    static forEach<T>(arr: List<T>, callback: Action<T>): void;
-    static forEach<T>(arr: List<T>, callback: Action<T, System_Internal.Int32>): void;
-    static forEach<T>(arr: List<T>, callback: Action<T, System_Internal.Int32, List<T>>): void;
-    static from_<TSource, TResult>(iterable: IEnumerable__System_Collections_Generic<TSource>, mapFunc: Func<TSource, System_Internal.Int32, TResult>): List<TResult>;
-    static from_<T>(iterable: IEnumerable__System_Collections_Generic<T>): List<T>;
-    static get_<T>(arr: List<T>, index: int): T;
-    static includes<T>(arr: List<T>, searchElement: T): boolean;
-    static indexOf<T>(arr: List<T>, searchElement: T, fromIndex?: int): int;
-    static isArray(value: unknown): boolean;
-    static join<T>(arr: List<T>, separator?: string): string;
-    static keys<T>(arr: List<T>): IEnumerable__System_Collections_Generic<System_Internal.Int32>;
-    static lastIndexOf<T>(arr: List<T>, searchElement: T, fromIndex?: Nullable<System_Internal.Int32>): int;
-    static length<T>(arr: List<T>): int;
-    static map<T, TResult>(arr: List<T>, callback: Func<T, TResult>): List<TResult>;
-    static map<T, TResult>(arr: List<T>, callback: Func<T, System_Internal.Int32, TResult>): List<TResult>;
-    static map<T, TResult>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, TResult>): List<TResult>;
-    static of_<T>(...items: T[]): List<T>;
-    static pop<T>(arr: List<T>): T;
-    static push<T>(arr: List<T>, item: T): int;
-    static reduce<T, TResult>(arr: List<T>, callback: Func<TResult, T, TResult>, initialValue: TResult): TResult;
-    static reduce<T>(arr: List<T>, callback: Func<T, T, T>): T;
-    static reduce<T, TResult>(arr: List<T>, callback: Func<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
-    static reduce<T>(arr: List<T>, callback: Func<T, T, System_Internal.Int32, T>): T;
-    static reduce<T, TResult>(arr: List<T>, callback: Func<TResult, T, System_Internal.Int32, List<T>, TResult>, initialValue: TResult): TResult;
-    static reduce<T>(arr: List<T>, callback: Func<T, T, System_Internal.Int32, List<T>, T>): T;
-    static reduceRight<T, TResult>(arr: List<T>, callback: Func<TResult, T, TResult>, initialValue: TResult): TResult;
-    static reduceRight<T>(arr: List<T>, callback: Func<T, T, T>): T;
-    static reduceRight<T, TResult>(arr: List<T>, callback: Func<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
-    static reduceRight<T>(arr: List<T>, callback: Func<T, T, System_Internal.Int32, T>): T;
-    static reduceRight<T, TResult>(arr: List<T>, callback: Func<TResult, T, System_Internal.Int32, List<T>, TResult>, initialValue: TResult): TResult;
-    static reduceRight<T>(arr: List<T>, callback: Func<T, T, System_Internal.Int32, List<T>, T>): T;
-    static reverse<T>(arr: List<T>): List<T>;
-    static set_<T>(arr: List<T>, index: int, value: T): void;
-    static setLength<T>(arr: List<T>, newLength: int): void;
-    static shift<T>(arr: List<T>): T;
-    static slice<T>(arr: List<T>, start?: int, end?: Nullable<System_Internal.Int32>): List<T>;
-    static some<T>(arr: List<T>, callback: Func<T, System_Internal.Int32, List<T>, System_Internal.Boolean>): boolean;
-    static sort<T>(arr: List<T>, compareFunc?: Func<T, T, System_Internal.Double>): List<T>;
-    static splice<T>(arr: List<T>, start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): List<T>;
-    static toLocaleString<T>(arr: List<T>): string;
-    static toReversed<T>(arr: List<T>): List<T>;
-    static toSorted<T>(arr: List<T>, compareFunc?: Func<T, T, System_Internal.Double>): List<T>;
-    static toSpliced<T>(arr: List<T>, start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): List<T>;
-    static toString<T>(arr: List<T>): string;
-    static unshift<T>(arr: List<T>, item: T): int;
-    static values<T>(arr: List<T>): IEnumerable__System_Collections_Generic<T>;
-    static with_<T>(arr: List<T>, index: int, value: T): List<T>;
-}
-
-
-export type Array = Array$instance;
 
 export abstract class console$instance {
     static assert(condition: boolean, message?: string): void;

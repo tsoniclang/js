@@ -5,13 +5,18 @@
 // Import internal declarations
 import * as Internal from './index/internal/index.js';
 
+// Primitive type aliases for flattened exports
+import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+// Namespace imports for flattened exports
+import * as System_Internal from "@tsonic/dotnet/System.js";
+
 // Cross-namespace type imports for constraints
 import type { IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, KeyValuePair, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { IEnumerable } from '@tsonic/dotnet/System.Collections.js';
 import type { Action, Boolean as ClrBoolean, Byte, Comparison, Double, Func, Int16, Int32, Int64, Nullable, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple, Void } from '@tsonic/dotnet/System.js';
 
 // Public API exports (curated - no internal $instance/$views leakage)
-export { Array$instance as Array } from './index/internal/index.js';
 export { ArrayBuffer as ArrayBuffer } from './index/internal/index.js';
 export { console$instance as console } from './index/internal/index.js';
 export { Date as Date } from './index/internal/index.js';
@@ -21,6 +26,7 @@ export { Globals$instance as Globals } from './index/internal/index.js';
 export { Int16Array as Int16Array } from './index/internal/index.js';
 export { Int32Array as Int32Array } from './index/internal/index.js';
 export { Int8Array as Int8Array } from './index/internal/index.js';
+export { JSArray_1 as JSArray } from './index/internal/index.js';
 export { JSON$instance as JSON } from './index/internal/index.js';
 export { Map_2 as Map } from './index/internal/index.js';
 export { Math$instance as Math } from './index/internal/index.js';
