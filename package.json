@@ -1,6 +1,6 @@
 {
   "name": "@tsonic/js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TypeScript type definitions for JavaScript Runtime (JSRuntime) library",
   "type": "module",
   "keywords": [
@@ -19,7 +19,7 @@
     "url": "https://github.com/tsoniclang/js.git"
   },
   "peerDependencies": {
-    "@tsonic/dotnet": "*",
-    "@tsonic/core": "*"
+    "@tsonic/dotnet": "^0.8.4",
+    "@tsonic/core": "^0.6.0"
   }
 }

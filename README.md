@@ -7,13 +7,13 @@ TypeScript type definitions for the JavaScript Runtime (JSRuntime) library.
 - **JavaScript-like APIs for .NET** - Array, Map, Set, Date, Math, JSON, and more
 - **Global functions** - `parseInt`, `parseFloat`, `encodeURI`, etc. as top-level exports
 - **camelCase members** - TypeScript-friendly naming conventions
-- **Branded primitive types** - Typed numbers via `@tsonic/types`
+- **Primitive aliases** - `int`, `long`, etc. via `@tsonic/core`
 - **Full type safety** - Complete TypeScript declarations
 
 ## Installation
 
 ```bash
-npm install @tsonic/js @tsonic/types
+npm install @tsonic/js @tsonic/dotnet @tsonic/core
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ npm install @tsonic/js @tsonic/types
 ### Global Functions
 
 ```typescript
-import { parseInt, parseFloat, isNaN, encodeURIComponent } from "@tsonic/js/index.js";
+import { parseInt, parseFloat, isNaN, encodeURIComponent } from "@tsonic/js";
 
 const num = parseInt("42", 10);
 const float = parseFloat("3.14");
@@ -31,9 +31,9 @@ const encoded = encodeURIComponent("hello world");
 ### Array Operations
 
 ```typescript
-import type { Array } from "@tsonic/js/index.js";
+import { JSArray } from "@tsonic/js";
 
-const arr = new Array<number>();
+const arr = new JSArray<number>();
 arr.push(1, 2, 3);
 const mapped = arr.map(x => x * 2);
 ```
@@ -41,10 +41,10 @@ const mapped = arr.map(x => x * 2);
 ### Map and Set
 
 ```typescript
-import type { Map, Set } from "@tsonic/js/index.js";
+import { Map, Set } from "@tsonic/js";
 
 const map = new Map<string, number>();
-map.set("key", 42);
+map.set_("key", 42);
 
 const set = new Set<string>();
 set.add("value");
@@ -53,7 +53,7 @@ set.add("value");
 ### Date and Math
 
 ```typescript
-import type { Date, Math } from "@tsonic/js/index.js";
+import { Date, Math } from "@tsonic/js";
 
 const now = new Date();
 const random = Math.random();
@@ -63,7 +63,7 @@ const max = Math.max(1, 2, 3);
 ### JSON
 
 ```typescript
-import type { JSON } from "@tsonic/js/index.js";
+import { JSON } from "@tsonic/js";
 
 const obj = JSON.parse('{"key": "value"}');
 const str = JSON.stringify(obj);
@@ -74,6 +74,9 @@ const str = JSON.stringify(obj);
 - **Types**: PascalCase (matches .NET)
 - **Members**: camelCase (TypeScript convention)
 - **Global functions**: camelCase (JavaScript convention)
+
+Some members use a `_` suffix when they would otherwise conflict with a TypeScript keyword
+(for example: `Map.get_()` / `Map.set_()` / `Map.delete_()`).
 
 ## Development
 
