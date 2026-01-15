@@ -879,7 +879,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Float32Array::set(System.Collections.Generic.IEnumerable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -1149,7 +1149,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Float64Array::set(System.Collections.Generic.IEnumerable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -1419,7 +1419,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Int16Array::set(System.Collections.Generic.IEnumerable_1[[System.Int16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Int16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -1689,7 +1689,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Int32Array::set(System.Collections.Generic.IEnumerable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -1959,7 +1959,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Int8Array::set(System.Collections.Generic.IEnumerable_1[[System.SByte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.SByte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3157,7 +3157,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::with(System.Int32,T):JSArray_1",
           "clrName": "with",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "with|(System.Int32,T):JSArray_1|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3237,7 +3237,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::from(IEnumerable_1):JSArray_1",
           "clrName": "from",
-          "tsEmitName": "from_",
+          "tsEmitName": "from",
           "normalizedSignature": "from|(IEnumerable_1):JSArray_1|static=true",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3253,7 +3253,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::from(IEnumerable_1,Func_3):JSArray_1",
           "clrName": "from",
-          "tsEmitName": "from_",
+          "tsEmitName": "from",
           "normalizedSignature": "from|(IEnumerable_1,Func_3):JSArray_1|static=true",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3269,7 +3269,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::of(T[]):JSArray_1",
           "clrName": "of",
-          "tsEmitName": "of_",
+          "tsEmitName": "of",
           "normalizedSignature": "of|(T[]):JSArray_1|static=true",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3375,7 +3375,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::get(K):V",
           "clrName": "get",
-          "tsEmitName": "get_",
+          "tsEmitName": "get",
           "normalizedSignature": "get|(K):V|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3391,7 +3391,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::set(K,V):Map_2",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(K,V):Map_2|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3423,7 +3423,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::delete(K):System.Boolean",
           "clrName": "delete",
-          "tsEmitName": "delete_",
+          "tsEmitName": "delete",
           "normalizedSignature": "delete|(K):System.Boolean|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -3968,7 +3968,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::delete(T):System.Boolean",
           "clrName": "delete",
-          "tsEmitName": "delete_",
+          "tsEmitName": "delete",
           "normalizedSignature": "delete|(T):System.Boolean|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4300,7 +4300,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::set(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4570,7 +4570,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::set(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4840,7 +4840,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::set(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5126,7 +5126,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::set(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5364,7 +5364,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::get(K):V",
           "clrName": "get",
-          "tsEmitName": "get_",
+          "tsEmitName": "get",
           "normalizedSignature": "get|(K):V|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5380,7 +5380,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::set(K,V):WeakMap_2",
           "clrName": "set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "set|(K,V):WeakMap_2|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5412,7 +5412,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::delete(K):System.Boolean",
           "clrName": "delete",
-          "tsEmitName": "delete_",
+          "tsEmitName": "delete",
           "normalizedSignature": "delete|(K):System.Boolean|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5483,7 +5483,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakSet\u00601::delete(T):System.Boolean",
           "clrName": "delete",
-          "tsEmitName": "delete_",
+          "tsEmitName": "delete",
           "normalizedSignature": "delete|(T):System.Boolean|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5971,7 +5971,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Globals::Number(System.Object):System.Double",
           "clrName": "Number",
-          "tsEmitName": "number_",
+          "tsEmitName": "number",
           "normalizedSignature": "Number|(System.Object):System.Double|static=true",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5987,7 +5987,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Globals::String(System.Object):System.String",
           "clrName": "String",
-          "tsEmitName": "string_",
+          "tsEmitName": "string",
           "normalizedSignature": "String|(System.Object):System.String|static=true",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -6003,7 +6003,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Globals::Boolean(System.Object):System.Boolean",
           "clrName": "Boolean",
-          "tsEmitName": "boolean_",
+          "tsEmitName": "boolean",
           "normalizedSignature": "Boolean|(System.Object):System.Boolean|static=true",
           "provenance": "Original",
           "emitScope": "ClassSurface",

@@ -97,7 +97,7 @@ export interface Float32Array$instance {
     indexOf(value: float, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Float32Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.Single>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.Single>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
     sort(compareFn?: Comparison<System_Internal.Single>): Float32Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
@@ -125,7 +125,7 @@ export interface Float64Array$instance {
     indexOf(value: double, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Float64Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.Double>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.Double>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
     sort(compareFn?: Comparison<System_Internal.Double>): Float64Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
@@ -153,7 +153,7 @@ export interface Int16Array$instance {
     indexOf(value: short, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Int16Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.Int16>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.Int16>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
     sort(compareFn?: Comparison<System_Internal.Int16>): Int16Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
@@ -181,7 +181,7 @@ export interface Int32Array$instance {
     indexOf(value: int, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Int32Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.Int32>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.Int32>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
     sort(compareFn?: Comparison<System_Internal.Int32>): Int32Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
@@ -209,7 +209,7 @@ export interface Int8Array$instance {
     indexOf(value: sbyte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Int8Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.SByte>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.SByte>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
     sort(compareFn?: Comparison<System_Internal.SByte>): Int8Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
@@ -293,7 +293,7 @@ export interface JSArray_1$instance<T> {
     unshift(item: T): int;
     unshift(...items: T[]): int;
     values(): IEnumerable__System_Collections_Generic<T>;
-    with_(index: int, value: T): JSArray_1<T>;
+    with(index: int, value: T): JSArray_1<T>;
 }
 
 
@@ -303,10 +303,10 @@ export const JSArray_1: {
     new<T>(source: T[]): JSArray_1<T>;
     new<T>(source: List<T>): JSArray_1<T>;
     new<T>(source: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
-    from_<T, TSource, TResult>(iterable: IEnumerable__System_Collections_Generic<TSource>, mapFunc: Func<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
-    from_<T>(iterable: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
+    from<T, TSource, TResult>(iterable: IEnumerable__System_Collections_Generic<TSource>, mapFunc: Func<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    from<T>(iterable: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
     isArray<T>(value: unknown): boolean;
-    of_<T>(...items: T[]): JSArray_1<T>;
+    of<T>(...items: T[]): JSArray_1<T>;
 };
 
 
@@ -315,16 +315,16 @@ export type JSArray_1<T> = JSArray_1$instance<T>;
 export interface Map_2$instance<K, V> {
     readonly size: int;
     clear(): void;
-    delete_(key: K): boolean;
+    delete(key: K): boolean;
     entries(): IEnumerable__System_Collections_Generic<ValueTuple<K, V>>;
     forEach(callback: Action<V, K, Map_2<K, V>>): void;
     forEach(callback: Action<V, K>): void;
     forEach(callback: Action<V>): void;
-    get_(key: K): V | undefined;
+    get(key: K): V | undefined;
     getEnumerator(): IEnumerator<KeyValuePair<K, V>>;
     has(key: K): boolean;
     keys(): IEnumerable__System_Collections_Generic<K>;
-    set_(key: K, value: V): Map_2<K, V>;
+    set(key: K, value: V): Map_2<K, V>;
     values(): IEnumerable__System_Collections_Generic<V>;
 }
 
@@ -382,7 +382,7 @@ export interface Set_1$instance<T> {
     readonly size: int;
     add(value: T): Set_1<T>;
     clear(): void;
-    delete_(value: T): boolean;
+    delete(value: T): boolean;
     difference(other: Set_1<T>): Set_1<T>;
     entries(): IEnumerable__System_Collections_Generic<ValueTuple<T, T>>;
     forEach(callback: Action<T, T, Set_1<T>>): void;
@@ -420,7 +420,7 @@ export interface Uint16Array$instance {
     indexOf(value: ushort, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint16Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.UInt16>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.UInt16>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
     sort(compareFn?: Comparison<System_Internal.UInt16>): Uint16Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
@@ -448,7 +448,7 @@ export interface Uint32Array$instance {
     indexOf(value: uint, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint32Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.UInt32>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.UInt32>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
     sort(compareFn?: Comparison<System_Internal.UInt32>): Uint32Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
@@ -476,7 +476,7 @@ export interface Uint8Array$instance {
     indexOf(value: byte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint8Array;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
     sort(compareFn?: Comparison<System_Internal.Byte>): Uint8Array;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
@@ -504,7 +504,7 @@ export interface Uint8ClampedArray$instance {
     indexOf(value: byte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint8ClampedArray;
-    set_(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
+    set(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
     setClamped(index: int, value: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
     sort(compareFn?: Comparison<System_Internal.Byte>): Uint8ClampedArray;
@@ -523,10 +523,10 @@ export const Uint8ClampedArray: {
 export type Uint8ClampedArray = Uint8ClampedArray$instance;
 
 export interface WeakMap_2$instance<K, V> {
-    delete_(key: K): boolean;
-    get_(key: K): V | undefined;
+    delete(key: K): boolean;
+    get(key: K): V | undefined;
     has(key: K): boolean;
-    set_(key: K, value: V): WeakMap_2<K, V>;
+    set(key: K, value: V): WeakMap_2<K, V>;
 }
 
 
@@ -539,7 +539,7 @@ export type WeakMap_2<K, V> = WeakMap_2$instance<K, V>;
 
 export interface WeakSet_1$instance<T> {
     add(value: T): WeakSet_1<T>;
-    delete_(value: T): boolean;
+    delete(value: T): boolean;
     has(value: T): boolean;
 }
 
@@ -580,17 +580,17 @@ export abstract class Globals$instance {
     static readonly undefined: unknown | undefined;
     static readonly infinity: double;
     static readonly naN: double;
-    static boolean_(value: unknown): boolean;
+    static boolean(value: unknown): boolean;
     static decodeURI(uri: string): string;
     static decodeURIComponent(component: string): string;
     static encodeURI(uri: string): string;
     static encodeURIComponent(component: string): string;
     static isFinite(value: double): boolean;
     static isNaN(value: double): boolean;
-    static number_(value: unknown): double;
+    static number(value: unknown): double;
     static parseFloat(str: string): double;
     static parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
-    static string_(value: unknown): string;
+    static string(value: unknown): string;
 }
 
 

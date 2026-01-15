@@ -44,7 +44,7 @@ const mapped = arr.map(x => x * 2);
 import { Map, Set } from "@tsonic/js";
 
 const map = new Map<string, number>();
-map.set_("key", 42);
+map.set("key", 42);
 
 const set = new Set<string>();
 set.add("value");
@@ -74,9 +74,6 @@ const str = JSON.stringify(obj);
 - **Types**: PascalCase (matches .NET)
 - **Members**: camelCase (TypeScript convention)
 - **Global functions**: camelCase (JavaScript convention)
-
-Some members use a `_` suffix when they would otherwise conflict with a TypeScript keyword
-(for example: `Map.get_()` / `Map.set_()` / `Map.delete_()`).
 
 ## Development
 
