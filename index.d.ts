@@ -45,14 +45,14 @@ export { WeakSet_1 as WeakSet } from './index/internal/index.js';
 
 // Flattened exports from static classes
 // From Tsonic.JSRuntime.Globals
-export declare function boolean_(value: unknown): boolean;
+export declare function boolean(value: unknown): boolean;
 export declare function decodeURI(uri: string): string;
 export declare function decodeURIComponent(component: string): string;
 export declare function encodeURI(uri: string): string;
 export declare function encodeURIComponent(component: string): string;
 export declare function isFinite(value: double): boolean;
 export declare function isNaN(value: double): boolean;
-export declare function number_(value: unknown): double;
+export declare function number(value: unknown): double;
 export declare function parseFloat(str: string): double;
 export declare function parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
-export declare function string_(value: unknown): string;
+export declare function string(value: unknown): string;
