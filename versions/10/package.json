@@ -1,0 +1,27 @@
+{
+  "name": "@tsonic/js",
+  "version": "10.0.0",
+  "description": "TypeScript type definitions for JavaScript Runtime (JSRuntime) library",
+  "type": "module",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "types",
+    "tsonic",
+    "dotnet",
+    "clr",
+    "jsruntime",
+    "net10"
+  ],
+  "author": "Tsonic Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsoniclang/js.git"
+  },
+  "peerDependencies": {
+    "@tsonic/dotnet": "^10.0.0",
+    "@tsonic/core": "^10.0.0"
+  }
+}
+

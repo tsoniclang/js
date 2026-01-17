@@ -2,14 +2,6 @@
 
 TypeScript type definitions for the JavaScript Runtime (JSRuntime) library.
 
-## Versioning
-
-This repo is versioned by **.NET major**:
-
-- **.NET 10** → `versions/10/` → npm: `@tsonic/js@10.x`
-
-When publishing, run: `npm publish versions/10 --access public`
-
 ## Features
 
 - **JavaScript-like APIs for .NET** - Array, Map, Set, Date, Math, JSON, and more

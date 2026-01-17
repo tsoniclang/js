@@ -10,7 +10,7 @@
 #   - js-runtime repository cloned at ../js-runtime (sibling directory)
 #
 # Usage:
-#   ./__build/scripts/generate.sh
+#   ./__build/scripts/generate.sh [dotnetMajor]
 
 set -e
 
@@ -18,8 +18,13 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 TSBINDGEN_DIR="$PROJECT_DIR/../tsbindgen"
 JS_RUNTIME_DIR="$PROJECT_DIR/../js-runtime"
-DOTNET_LIB="$PROJECT_DIR/../dotnet"
-CORE_LIB="$PROJECT_DIR/../core"
+
+# .NET major to generate (publishes to versions/<major>/)
+DOTNET_MAJOR="${1:-10}"
+OUT_DIR="$PROJECT_DIR/versions/$DOTNET_MAJOR"
+
+DOTNET_LIB="$PROJECT_DIR/../dotnet/versions/$DOTNET_MAJOR"
+CORE_LIB="$PROJECT_DIR/../core/versions/$DOTNET_MAJOR"
 
 # .NET runtime path (needed for BCL type resolution)
 DOTNET_VERSION="${DOTNET_VERSION:-10.0.0}"
@@ -27,7 +32,7 @@ DOTNET_HOME="${DOTNET_HOME:-$HOME/.dotnet}"
 DOTNET_RUNTIME_PATH="$DOTNET_HOME/shared/Microsoft.NETCore.App/$DOTNET_VERSION"
 
 # Tsonic.JSRuntime.dll path
-JSRUNTIME_DLL="$JS_RUNTIME_DIR/artifacts/bin/Tsonic.JSRuntime/Release/net10.0/Tsonic.JSRuntime.dll"
+JSRUNTIME_DLL="$JS_RUNTIME_DIR/artifacts/bin/Tsonic.JSRuntime/Release/net${DOTNET_MAJOR}.0/Tsonic.JSRuntime.dll"
 
 echo "================================================================"
 echo "Generating @tsonic/js TypeScript Declarations"
@@ -38,7 +43,7 @@ echo "  JSRuntime.dll: $JSRUNTIME_DLL"
 echo "  .NET Runtime:  $DOTNET_RUNTIME_PATH"
 echo "  BCL Library:   $DOTNET_LIB (external reference)"
 echo "  tsbindgen:     $TSBINDGEN_DIR"
-echo "  Output:        $PROJECT_DIR"
+echo "  Output:        $OUT_DIR"
 echo "  Naming:        JS (camelCase)"
 echo ""
 
@@ -73,18 +78,15 @@ if [ ! -d "$CORE_LIB" ]; then
     exit 1
 fi
 
+# Ensure output directory exists
+mkdir -p "$OUT_DIR"
+
 # Clean output directory (keep config files)
 echo "[1/3] Cleaning output directory..."
-cd "$PROJECT_DIR"
+cd "$OUT_DIR"
 
-# Remove all namespace directories (but keep config files, __build, node_modules, .git)
-find . -maxdepth 1 -type d \
-    ! -name '.' \
-    ! -name '.git' \
-    ! -name '.tests' \
-    ! -name 'node_modules' \
-    ! -name '__build' \
-    -exec rm -rf {} \; 2>/dev/null || true
+# Remove all generated namespace directories
+find . -maxdepth 1 -type d ! -name '.' -exec rm -rf {} \; 2>/dev/null || true
 
 # Remove generated files at root
 rm -f *.d.ts *.js 2>/dev/null || true
@@ -103,12 +105,15 @@ echo "  Done"
 # Uses --flatten-class to export Globals methods as top-level functions
 echo "[3/3] Generating TypeScript declarations..."
 dotnet run --project src/tsbindgen/tsbindgen.csproj --no-build -c Release -- \
-    generate -a "$JSRUNTIME_DLL" -d "$DOTNET_RUNTIME_PATH" -o "$PROJECT_DIR" \
+    generate -a "$JSRUNTIME_DLL" -d "$DOTNET_RUNTIME_PATH" -o "$OUT_DIR" \
     --lib "$DOTNET_LIB" \
     --lib "$CORE_LIB" \
     --naming js \
     --namespace-map "Tsonic.JSRuntime=index" \
     --flatten-class "Tsonic.JSRuntime.Globals"
+
+cp -f "$PROJECT_DIR/README.md" "$OUT_DIR/README.md"
+cp -f "$PROJECT_DIR/LICENSE" "$OUT_DIR/LICENSE"
 
 echo ""
 echo "================================================================"
