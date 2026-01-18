@@ -66,7 +66,7 @@ export interface Date$instance {
     toLocaleDateString(): string;
     toLocaleString(): string;
     toLocaleTimeString(): string;
-    toString(): string;
+    ToString(): string;
     toTimeString(): string;
     toUTCString(): string;
     valueOf(): long;
@@ -88,11 +88,11 @@ export type Date = Date$instance;
 
 export interface Float32Array$instance {
     readonly byteLength: int;
-    item: float;
+    Item: float;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Single>;
     fill(value: float, start?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
-    getEnumerator(): IEnumerator<System_Internal.Single>;
+    GetEnumerator(): IEnumerator<System_Internal.Single>;
     includes(value: float, fromIndex?: int): boolean;
     indexOf(value: float, fromIndex?: int): int;
     join(separator?: string): string;
@@ -116,11 +116,11 @@ export type Float32Array = Float32Array$instance;
 
 export interface Float64Array$instance {
     readonly byteLength: int;
-    item: double;
+    Item: double;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Double>;
     fill(value: double, start?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
-    getEnumerator(): IEnumerator<System_Internal.Double>;
+    GetEnumerator(): IEnumerator<System_Internal.Double>;
     includes(value: double, fromIndex?: int): boolean;
     indexOf(value: double, fromIndex?: int): int;
     join(separator?: string): string;
@@ -144,11 +144,11 @@ export type Float64Array = Float64Array$instance;
 
 export interface Int16Array$instance {
     readonly byteLength: int;
-    item: short;
+    Item: short;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Int16>;
     fill(value: short, start?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
-    getEnumerator(): IEnumerator<System_Internal.Int16>;
+    GetEnumerator(): IEnumerator<System_Internal.Int16>;
     includes(value: short, fromIndex?: int): boolean;
     indexOf(value: short, fromIndex?: int): int;
     join(separator?: string): string;
@@ -172,11 +172,11 @@ export type Int16Array = Int16Array$instance;
 
 export interface Int32Array$instance {
     readonly byteLength: int;
-    item: int;
+    Item: int;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Int32>;
     fill(value: int, start?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
-    getEnumerator(): IEnumerator<System_Internal.Int32>;
+    GetEnumerator(): IEnumerator<System_Internal.Int32>;
     includes(value: int, fromIndex?: int): boolean;
     indexOf(value: int, fromIndex?: int): int;
     join(separator?: string): string;
@@ -200,11 +200,11 @@ export type Int32Array = Int32Array$instance;
 
 export interface Int8Array$instance {
     readonly byteLength: int;
-    item: sbyte;
+    Item: sbyte;
     readonly length: int;
     at(index: int): Nullable<System_Internal.SByte>;
     fill(value: sbyte, start?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
-    getEnumerator(): IEnumerator<System_Internal.SByte>;
+    GetEnumerator(): IEnumerator<System_Internal.SByte>;
     includes(value: sbyte, fromIndex?: int): boolean;
     indexOf(value: sbyte, fromIndex?: int): int;
     join(separator?: string): string;
@@ -227,7 +227,7 @@ export const Int8Array: {
 export type Int8Array = Int8Array$instance;
 
 export interface JSArray_1$instance<T> {
-    item: T;
+    Item: T;
     readonly length: int;
     at(index: int): T;
     concat(...items: unknown[]): JSArray_1<T>;
@@ -256,7 +256,7 @@ export interface JSArray_1$instance<T> {
     forEach(callback: Action<T>): void;
     forEach(callback: Action<T, System_Internal.Int32>): void;
     forEach(callback: Action<T, System_Internal.Int32, JSArray_1<T>>): void;
-    getEnumerator(): IEnumerator<T>;
+    GetEnumerator(): IEnumerator<T>;
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
@@ -289,7 +289,7 @@ export interface JSArray_1$instance<T> {
     toReversed(): JSArray_1<T>;
     toSorted(compareFunc?: Func<T, T, System_Internal.Double>): JSArray_1<T>;
     toSpliced(start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
-    toString(): string;
+    ToString(): string;
     unshift(item: T): int;
     unshift(...items: T[]): int;
     values(): IEnumerable__System_Collections_Generic<T>;
@@ -321,7 +321,7 @@ export interface Map_2$instance<K, V> {
     forEach(callback: Action<V, K>): void;
     forEach(callback: Action<V>): void;
     get(key: K): V | undefined;
-    getEnumerator(): IEnumerator<KeyValuePair<K, V>>;
+    GetEnumerator(): IEnumerator<KeyValuePair<K, V>>;
     has(key: K): boolean;
     keys(): IEnumerable__System_Collections_Generic<K>;
     set(key: K, value: V): Map_2<K, V>;
@@ -349,7 +349,7 @@ export interface RegExp$instance {
     readonly unicode: boolean;
     exec(str: string): RegExpMatchResult | undefined;
     test(str: string): boolean;
-    toString(): string;
+    ToString(): string;
 }
 
 
@@ -365,7 +365,7 @@ export interface RegExpMatchResult$instance {
     readonly groups: (string | undefined)[];
     readonly index: int;
     readonly input: string;
-    readonly item: string;
+    readonly Item: string;
     readonly length: int;
     readonly value: string;
 }
@@ -388,7 +388,7 @@ export interface Set_1$instance<T> {
     forEach(callback: Action<T, T, Set_1<T>>): void;
     forEach(callback: Action<T, T>): void;
     forEach(callback: Action<T>): void;
-    getEnumerator(): IEnumerator<T>;
+    GetEnumerator(): IEnumerator<T>;
     has(value: T): boolean;
     intersection(other: Set_1<T>): Set_1<T>;
     isDisjointFrom(other: Set_1<T>): boolean;
@@ -411,11 +411,11 @@ export type Set_1<T> = Set_1$instance<T>;
 
 export interface Uint16Array$instance {
     readonly byteLength: int;
-    item: ushort;
+    Item: ushort;
     readonly length: int;
     at(index: int): Nullable<System_Internal.UInt16>;
     fill(value: ushort, start?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
-    getEnumerator(): IEnumerator<System_Internal.UInt16>;
+    GetEnumerator(): IEnumerator<System_Internal.UInt16>;
     includes(value: ushort, fromIndex?: int): boolean;
     indexOf(value: ushort, fromIndex?: int): int;
     join(separator?: string): string;
@@ -439,11 +439,11 @@ export type Uint16Array = Uint16Array$instance;
 
 export interface Uint32Array$instance {
     readonly byteLength: int;
-    item: uint;
+    Item: uint;
     readonly length: int;
     at(index: int): Nullable<System_Internal.UInt32>;
     fill(value: uint, start?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
-    getEnumerator(): IEnumerator<System_Internal.UInt32>;
+    GetEnumerator(): IEnumerator<System_Internal.UInt32>;
     includes(value: uint, fromIndex?: int): boolean;
     indexOf(value: uint, fromIndex?: int): int;
     join(separator?: string): string;
@@ -467,11 +467,11 @@ export type Uint32Array = Uint32Array$instance;
 
 export interface Uint8Array$instance {
     readonly byteLength: int;
-    item: byte;
+    Item: byte;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Byte>;
     fill(value: byte, start?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
-    getEnumerator(): IEnumerator<System_Internal.Byte>;
+    GetEnumerator(): IEnumerator<System_Internal.Byte>;
     includes(value: byte, fromIndex?: int): boolean;
     indexOf(value: byte, fromIndex?: int): int;
     join(separator?: string): string;
@@ -495,17 +495,17 @@ export type Uint8Array = Uint8Array$instance;
 
 export interface Uint8ClampedArray$instance {
     readonly byteLength: int;
-    item: byte;
+    Item: byte;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Byte>;
     fill(value: byte, start?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
-    getEnumerator(): IEnumerator<System_Internal.Byte>;
+    GetEnumerator(): IEnumerator<System_Internal.Byte>;
     includes(value: byte, fromIndex?: int): boolean;
     indexOf(value: byte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint8ClampedArray;
     set(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
-    setClamped(index: int, value: int): void;
+    SetClamped(index: int, value: int): void;
     slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
     sort(compareFn?: Comparison<System_Internal.Byte>): Uint8ClampedArray;
     subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
@@ -578,19 +578,19 @@ export type console = console$instance;
 
 export abstract class Globals$instance {
     static readonly undefined: unknown | undefined;
-    static readonly infinity: double;
-    static readonly naN: double;
-    static boolean(value: unknown): boolean;
+    static readonly Infinity: double;
+    static readonly NaN: double;
+    static Boolean(value: unknown): boolean;
     static decodeURI(uri: string): string;
     static decodeURIComponent(component: string): string;
     static encodeURI(uri: string): string;
     static encodeURIComponent(component: string): string;
     static isFinite(value: double): boolean;
     static isNaN(value: double): boolean;
-    static number(value: unknown): double;
+    static Number(value: unknown): double;
     static parseFloat(str: string): double;
     static parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
-    static string(value: unknown): string;
+    static String(value: unknown): string;
 }
 
 
@@ -661,7 +661,7 @@ export abstract class Number$instance {
     static readonly MIN_SAFE_INTEGER: double;
     static readonly POSITIVE_INFINITY: double;
     static readonly NEGATIVE_INFINITY: double;
-    static readonly naN: double;
+    static readonly NaN: double;
     static readonly EPSILON: double;
     static isFinite(value: double): boolean;
     static isInteger(value: double): boolean;
