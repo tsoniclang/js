@@ -27,7 +27,7 @@ DOTNET_LIB="$PROJECT_DIR/../dotnet/versions/$DOTNET_MAJOR"
 CORE_LIB="$PROJECT_DIR/../core/versions/$DOTNET_MAJOR"
 
 # .NET runtime path (needed for BCL type resolution)
-DOTNET_VERSION="${DOTNET_VERSION:-10.0.0}"
+DOTNET_VERSION="${DOTNET_VERSION:-10.0.1}"
 DOTNET_HOME="${DOTNET_HOME:-$HOME/.dotnet}"
 DOTNET_RUNTIME_PATH="$DOTNET_HOME/shared/Microsoft.NETCore.App/$DOTNET_VERSION"
 
@@ -44,7 +44,6 @@ echo "  .NET Runtime:  $DOTNET_RUNTIME_PATH"
 echo "  BCL Library:   $DOTNET_LIB (external reference)"
 echo "  tsbindgen:     $TSBINDGEN_DIR"
 echo "  Output:        $OUT_DIR"
-echo "  Naming:        JS (camelCase)"
 echo ""
 
 # Verify prerequisites
@@ -99,7 +98,7 @@ cd "$TSBINDGEN_DIR"
 dotnet build src/tsbindgen/tsbindgen.csproj -c Release --verbosity quiet
 echo "  Done"
 
-# Generate types with JavaScript-style naming
+# Generate types with CLR-faithful naming.
 # Uses --lib to reference BCL types from @tsonic/dotnet instead of regenerating them
 # Uses --namespace-map to emit as index.d.ts/index.js for cleaner imports
 # Uses --flatten-class to export Globals methods as top-level functions
@@ -108,7 +107,6 @@ dotnet run --project src/tsbindgen/tsbindgen.csproj --no-build -c Release -- \
     generate -a "$JSRUNTIME_DLL" -d "$DOTNET_RUNTIME_PATH" -o "$OUT_DIR" \
     --lib "$DOTNET_LIB" \
     --lib "$CORE_LIB" \
-    --naming js \
     --namespace-map "Tsonic.JSRuntime=index" \
     --flatten-class "Tsonic.JSRuntime.Globals"
 
