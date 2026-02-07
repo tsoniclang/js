@@ -42,6 +42,9 @@ export { Uint8Array as Uint8Array } from './index/internal/index.js';
 export { Uint8ClampedArray as Uint8ClampedArray } from './index/internal/index.js';
 export { WeakMap_2 as WeakMap } from './index/internal/index.js';
 export { WeakSet_1 as WeakSet } from './index/internal/index.js';
+// Extension methods (C# using semantics)
+export type { ExtensionMethods_Tsonic_JSRuntime as ExtensionMethods } from './__internal/extensions/index.js';
+
 
 // Flattened exports from static classes
 // From Tsonic.JSRuntime.Globals
