@@ -87,8 +87,11 @@ export const Date: {
 export type Date = Date$instance;
 
 export interface Float32Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: float;
+    [index: number]: float;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Single>;
     fill(value: float, start?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
@@ -115,8 +118,11 @@ export const Float32Array: {
 export type Float32Array = Float32Array$instance;
 
 export interface Float64Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: double;
+    [index: number]: double;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Double>;
     fill(value: double, start?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
@@ -143,8 +149,11 @@ export const Float64Array: {
 export type Float64Array = Float64Array$instance;
 
 export interface Int16Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: short;
+    [index: number]: short;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Int16>;
     fill(value: short, start?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
@@ -171,8 +180,11 @@ export const Int16Array: {
 export type Int16Array = Int16Array$instance;
 
 export interface Int32Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: int;
+    [index: number]: int;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Int32>;
     fill(value: int, start?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
@@ -199,8 +211,11 @@ export const Int32Array: {
 export type Int32Array = Int32Array$instance;
 
 export interface Int8Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: sbyte;
+    [index: number]: sbyte;
     readonly length: int;
     at(index: int): Nullable<System_Internal.SByte>;
     fill(value: sbyte, start?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
@@ -227,7 +242,10 @@ export const Int8Array: {
 export type Int8Array = Int8Array$instance;
 
 export interface JSArray_1$instance<T> {
-    Item: T;
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
+    [index: number]: T;
     readonly length: int;
     at(index: int): T;
     concat(...items: unknown[]): JSArray_1<T>;
@@ -313,6 +331,9 @@ export const JSArray_1: {
 export type JSArray_1<T> = JSArray_1$instance<T>;
 
 export interface Map_2$instance<K, V> {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly size: int;
     clear(): void;
     delete(key: K): boolean;
@@ -365,7 +386,7 @@ export interface RegExpMatchResult$instance {
     readonly groups: (string | undefined)[];
     readonly index: int;
     readonly input: string;
-    readonly Item: string;
+    readonly [groupIndex: number]: string | undefined;
     readonly length: int;
     readonly value: string;
 }
@@ -379,6 +400,9 @@ export const RegExpMatchResult: {
 export type RegExpMatchResult = RegExpMatchResult$instance;
 
 export interface Set_1$instance<T> {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly size: int;
     add(value: T): Set_1<T>;
     clear(): void;
@@ -410,8 +434,11 @@ export const Set_1: {
 export type Set_1<T> = Set_1$instance<T>;
 
 export interface Uint16Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: ushort;
+    [index: number]: ushort;
     readonly length: int;
     at(index: int): Nullable<System_Internal.UInt16>;
     fill(value: ushort, start?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
@@ -438,8 +465,11 @@ export const Uint16Array: {
 export type Uint16Array = Uint16Array$instance;
 
 export interface Uint32Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: uint;
+    [index: number]: uint;
     readonly length: int;
     at(index: int): Nullable<System_Internal.UInt32>;
     fill(value: uint, start?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
@@ -466,8 +496,11 @@ export const Uint32Array: {
 export type Uint32Array = Uint32Array$instance;
 
 export interface Uint8Array$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: byte;
+    [index: number]: byte;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Byte>;
     fill(value: byte, start?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
@@ -494,8 +527,11 @@ export const Uint8Array: {
 export type Uint8Array = Uint8Array$instance;
 
 export interface Uint8ClampedArray$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+
     readonly byteLength: int;
-    Item: byte;
+    [index: number]: byte;
     readonly length: int;
     at(index: int): Nullable<System_Internal.Byte>;
     fill(value: byte, start?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;

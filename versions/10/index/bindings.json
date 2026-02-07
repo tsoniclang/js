@@ -35,6 +35,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.ArrayBuffer",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -56,6 +57,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.ArrayBuffer",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -70,6 +72,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.ArrayBuffer",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -106,6 +109,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -125,6 +129,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -144,6 +149,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -163,6 +169,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -182,6 +189,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -201,6 +209,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -220,6 +229,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -239,6 +249,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -258,6 +269,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -277,6 +289,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -296,6 +309,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -315,6 +329,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -334,6 +349,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -353,6 +369,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -372,6 +389,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -391,6 +409,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -410,6 +429,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -429,6 +449,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -448,6 +469,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -467,6 +489,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -486,6 +509,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -505,6 +529,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -524,6 +549,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -543,6 +569,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -562,6 +589,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -581,6 +609,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -600,6 +629,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -619,6 +649,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -638,6 +669,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -657,6 +689,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -676,6 +709,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -695,6 +729,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -714,6 +749,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -733,6 +769,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -752,6 +789,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -771,6 +809,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -790,6 +829,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -809,6 +849,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -828,6 +869,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -847,6 +889,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -866,6 +909,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -885,6 +929,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -904,6 +949,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -923,6 +969,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -942,6 +989,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -961,6 +1009,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -977,6 +1026,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -987,6 +1037,7 @@
           "normalizedSignature": "constructor|(System.Double):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -997,6 +1048,7 @@
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1007,6 +1059,7 @@
           "normalizedSignature": "constructor|(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 7,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Date",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -1056,6 +1109,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1075,6 +1129,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1094,6 +1149,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1113,6 +1169,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1132,6 +1189,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1151,6 +1209,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1170,6 +1229,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1189,6 +1249,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1208,6 +1269,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1227,6 +1289,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1246,6 +1309,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1267,6 +1331,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1285,6 +1350,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1303,6 +1369,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1321,6 +1388,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -1335,6 +1403,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1345,6 +1414,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1355,6 +1425,7 @@
           "normalizedSignature": "constructor|(System.Single[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -1404,6 +1475,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1423,6 +1495,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1442,6 +1515,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1461,6 +1535,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1480,6 +1555,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1499,6 +1575,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1518,6 +1595,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1537,6 +1615,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1556,6 +1635,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1575,6 +1655,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1594,6 +1675,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1615,6 +1697,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1633,6 +1716,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1651,6 +1735,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1669,6 +1754,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -1683,6 +1769,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1693,6 +1780,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1703,6 +1791,7 @@
           "normalizedSignature": "constructor|(System.Double[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Float64Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -1752,6 +1841,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1771,6 +1861,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1790,6 +1881,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1809,6 +1901,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1828,6 +1921,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1847,6 +1941,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1866,6 +1961,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1885,6 +1981,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1904,6 +2001,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1923,6 +2021,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1942,6 +2041,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -1963,6 +2063,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1981,6 +2082,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -1999,6 +2101,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2017,6 +2120,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -2031,6 +2135,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2041,6 +2146,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Int16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2051,6 +2157,7 @@
           "normalizedSignature": "constructor|(System.Int16[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -2100,6 +2207,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2119,6 +2227,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2138,6 +2247,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2157,6 +2267,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2176,6 +2287,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2195,6 +2307,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2214,6 +2327,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2233,6 +2347,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2252,6 +2367,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2271,6 +2387,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2290,6 +2407,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2311,6 +2429,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2329,6 +2448,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2347,6 +2467,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2365,6 +2486,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -2379,6 +2501,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2389,6 +2512,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2399,6 +2523,7 @@
           "normalizedSignature": "constructor|(System.Int32[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -2448,6 +2573,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2467,6 +2593,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2486,6 +2613,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2505,6 +2633,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2524,6 +2653,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2543,6 +2673,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2562,6 +2693,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2581,6 +2713,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2600,6 +2733,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2619,6 +2753,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2638,6 +2773,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2659,6 +2795,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2677,6 +2814,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2695,6 +2833,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2713,6 +2852,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -2727,6 +2867,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2737,6 +2878,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.SByte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -2747,6 +2889,7 @@
           "normalizedSignature": "constructor|(System.SByte[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Int8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -2763,9 +2906,6 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
-      "typeParameters": [
-        "T"
-      ],
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
         "clrName": "System.Object"
@@ -2783,6 +2923,9 @@
           "clrName": "System.Collections.IEnumerable"
         }
       ],
+      "typeParameters": [
+        "T"
+      ],
       "methods": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::setLength(System.Int32):System.Void",
@@ -2799,6 +2942,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2818,6 +2962,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2837,6 +2982,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2856,6 +3002,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2875,6 +3022,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2894,6 +3042,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2913,6 +3062,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2932,6 +3082,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2951,6 +3102,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2970,6 +3122,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -2989,6 +3142,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3008,6 +3162,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3027,6 +3182,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3046,6 +3202,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3065,6 +3222,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3084,6 +3242,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3103,6 +3262,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3122,6 +3282,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3141,6 +3302,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3160,6 +3322,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3179,6 +3342,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3198,6 +3362,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3217,6 +3382,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3236,6 +3402,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3255,6 +3422,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3274,6 +3442,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3293,6 +3462,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3312,6 +3482,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3331,6 +3502,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3350,6 +3522,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3369,6 +3542,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3388,6 +3562,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3407,6 +3582,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3426,6 +3602,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3445,6 +3622,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3464,6 +3642,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3483,6 +3662,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3502,6 +3682,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3521,6 +3702,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3540,6 +3722,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3559,6 +3742,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3578,6 +3762,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3597,6 +3782,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3616,6 +3802,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3635,6 +3822,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3654,6 +3842,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3673,6 +3862,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3692,6 +3882,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3711,6 +3902,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3730,6 +3922,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3749,6 +3942,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3768,6 +3962,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3787,6 +3982,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3806,6 +4002,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3825,6 +4022,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3844,6 +4042,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3863,6 +4062,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3882,6 +4082,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3901,6 +4102,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3920,6 +4122,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3939,6 +4142,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3958,6 +4162,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3977,6 +4182,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -3996,6 +4202,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4015,6 +4222,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4034,6 +4242,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4053,6 +4262,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4072,6 +4282,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4091,6 +4302,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4112,6 +4324,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4130,6 +4343,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4144,6 +4358,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4154,6 +4369,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4164,6 +4380,7 @@
           "normalizedSignature": "constructor|(T[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4174,6 +4391,7 @@
           "normalizedSignature": "constructor|(List_1):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4184,6 +4402,7 @@
           "normalizedSignature": "constructor|(IEnumerable_1):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4200,10 +4419,6 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "typeParameters": [
-        "K",
-        "V"
-      ],
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
         "clrName": "System.Object"
@@ -4221,6 +4436,10 @@
           "clrName": "System.Collections.IEnumerable"
         }
       ],
+      "typeParameters": [
+        "K",
+        "V"
+      ],
       "methods": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::get(K):V",
@@ -4237,6 +4456,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4256,6 +4476,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4275,6 +4496,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4294,6 +4516,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4313,6 +4536,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4332,6 +4556,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4351,6 +4576,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4370,6 +4596,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4389,6 +4616,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4408,6 +4636,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4427,6 +4656,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4446,6 +4676,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4467,6 +4698,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4481,6 +4713,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4491,6 +4724,7 @@
           "normalizedSignature": "constructor|(IEnumerable_1):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Map\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4527,6 +4761,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4546,6 +4781,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4565,6 +4801,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4586,6 +4823,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4604,6 +4842,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4622,6 +4861,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4640,6 +4880,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4658,6 +4899,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4676,6 +4918,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4694,6 +4937,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4712,6 +4956,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4730,6 +4975,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4744,6 +4990,7 @@
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4754,6 +5001,7 @@
           "normalizedSignature": "constructor|(System.String,System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExp",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4791,6 +5039,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4809,6 +5058,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4827,6 +5077,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4845,6 +5096,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4863,6 +5115,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -4881,6 +5134,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4895,6 +5149,7 @@
           "normalizedSignature": "constructor|(System.String,System.Int32,System.String,System.String[]):void|static=false",
           "isStatic": false,
           "parameterCount": 4,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.RegExpMatchResult",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -4911,9 +5166,6 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
-      "typeParameters": [
-        "T"
-      ],
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
         "clrName": "System.Object"
@@ -4931,6 +5183,9 @@
           "clrName": "System.Collections.IEnumerable"
         }
       ],
+      "typeParameters": [
+        "T"
+      ],
       "methods": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::add(T):Set_1",
@@ -4947,6 +5202,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4966,6 +5222,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -4985,6 +5242,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5004,6 +5262,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5023,6 +5282,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5042,6 +5302,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5061,6 +5322,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5080,6 +5342,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5099,6 +5362,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5118,6 +5382,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5137,6 +5402,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5156,6 +5422,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5175,6 +5442,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5194,6 +5462,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5213,6 +5482,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5232,6 +5502,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5251,6 +5522,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5270,6 +5542,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5291,6 +5564,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -5305,6 +5579,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5315,6 +5590,7 @@
           "normalizedSignature": "constructor|(IEnumerable_1):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Set\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -5364,6 +5640,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5383,6 +5660,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5402,6 +5680,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5421,6 +5700,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5440,6 +5720,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5459,6 +5740,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5478,6 +5760,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5497,6 +5780,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5516,6 +5800,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5535,6 +5820,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5554,6 +5840,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5575,6 +5862,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5593,6 +5881,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5611,6 +5900,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5629,6 +5919,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -5643,6 +5934,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5653,6 +5945,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5663,6 +5956,7 @@
           "normalizedSignature": "constructor|(System.UInt16[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint16Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -5712,6 +6006,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5731,6 +6026,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5750,6 +6046,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5769,6 +6066,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5788,6 +6086,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5807,6 +6106,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5826,6 +6126,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5845,6 +6146,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5864,6 +6166,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5883,6 +6186,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5902,6 +6206,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -5923,6 +6228,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5941,6 +6247,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5959,6 +6266,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -5977,6 +6285,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -5991,6 +6300,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6001,6 +6311,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6011,6 +6322,7 @@
           "normalizedSignature": "constructor|(System.UInt32[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint32Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6060,6 +6372,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6079,6 +6392,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6098,6 +6412,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6117,6 +6432,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6136,6 +6452,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6155,6 +6472,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6174,6 +6492,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6193,6 +6512,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6212,6 +6532,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6231,6 +6552,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6250,6 +6572,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6271,6 +6594,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6289,6 +6613,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6307,6 +6632,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6325,6 +6651,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6339,6 +6666,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6349,6 +6677,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6359,6 +6688,7 @@
           "normalizedSignature": "constructor|(System.Byte[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8Array",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6408,6 +6738,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6427,6 +6758,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6446,6 +6778,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6465,6 +6798,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6484,6 +6818,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6503,6 +6838,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6522,6 +6858,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6541,6 +6878,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6560,6 +6898,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6579,6 +6918,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6598,6 +6938,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6617,6 +6958,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6638,6 +6980,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6656,6 +6999,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6674,6 +7018,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6692,6 +7037,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6706,6 +7052,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6716,6 +7063,7 @@
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -6726,6 +7074,7 @@
           "normalizedSignature": "constructor|(System.Byte[]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Uint8ClampedArray",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6742,14 +7091,14 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "typeParameters": [
-        "K",
-        "V"
-      ],
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
         "clrName": "System.Object"
       },
+      "typeParameters": [
+        "K",
+        "V"
+      ],
       "methods": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::get(K):V",
@@ -6766,6 +7115,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakMap\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6785,6 +7135,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakMap\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6804,6 +7155,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakMap\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6823,6 +7175,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakMap\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6839,6 +7192,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakMap\u00602",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6855,13 +7209,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
-      "typeParameters": [
-        "T"
-      ],
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
         "clrName": "System.Object"
       },
+      "typeParameters": [
+        "T"
+      ],
       "methods": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakSet\u00601::add(T):WeakSet_1",
@@ -6878,6 +7232,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakSet\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6897,6 +7252,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakSet\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6916,6 +7272,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakSet\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6932,6 +7289,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.WeakSet\u00601",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -6968,6 +7326,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -6987,6 +7346,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7006,6 +7366,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7025,6 +7386,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7044,6 +7406,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7063,6 +7426,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7082,6 +7446,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7101,6 +7466,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7120,6 +7486,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7139,6 +7506,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7158,6 +7526,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7177,6 +7546,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7196,6 +7566,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7215,6 +7586,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7234,6 +7606,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7253,6 +7626,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7272,6 +7646,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7291,6 +7666,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7310,6 +7686,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.console",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7351,6 +7728,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7370,6 +7748,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7389,6 +7768,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7408,6 +7788,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7427,6 +7808,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7446,6 +7828,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7465,6 +7848,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7484,6 +7868,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7503,6 +7888,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7522,6 +7908,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7541,6 +7928,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7556,6 +7944,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -7567,6 +7956,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -7578,6 +7968,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Globals",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -7616,6 +8007,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSON",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7635,6 +8027,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.JSON",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7676,6 +8069,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7695,6 +8089,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7714,6 +8109,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7733,6 +8129,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7752,6 +8149,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7771,6 +8169,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7790,6 +8189,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7809,6 +8209,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7828,6 +8229,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7847,6 +8249,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7866,6 +8269,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7885,6 +8289,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7904,6 +8309,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7923,6 +8329,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7942,6 +8349,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7961,6 +8369,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7980,6 +8389,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -7999,6 +8409,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8018,6 +8429,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8037,6 +8449,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8056,6 +8469,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8075,6 +8489,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8094,6 +8509,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8113,6 +8529,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8132,6 +8549,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8151,6 +8569,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8170,6 +8589,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8189,6 +8609,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8208,6 +8629,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8227,6 +8649,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8246,6 +8669,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8265,6 +8689,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8284,6 +8709,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8303,6 +8729,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8322,6 +8749,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8341,6 +8769,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8356,6 +8785,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8367,6 +8797,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8378,6 +8809,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8389,6 +8821,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8400,6 +8833,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8411,6 +8845,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8422,6 +8857,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8433,6 +8869,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Math",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -8471,6 +8908,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8490,6 +8928,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8509,6 +8948,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8528,6 +8968,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8547,6 +8988,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8566,6 +9008,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -8581,6 +9024,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8592,6 +9036,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8603,6 +9048,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8614,6 +9060,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8625,6 +9072,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8636,6 +9084,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8647,6 +9096,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         },
@@ -8658,6 +9108,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "isLiteral": true,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime"
         }
@@ -8696,6 +9147,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8715,6 +9167,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8734,6 +9187,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8753,6 +9207,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8772,6 +9227,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8791,6 +9247,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8810,6 +9267,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8829,6 +9287,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8848,6 +9307,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8867,6 +9327,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8886,6 +9347,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8905,6 +9367,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8924,6 +9387,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8943,6 +9407,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8962,6 +9427,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -8981,6 +9447,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9000,6 +9467,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9019,6 +9487,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9038,6 +9507,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9057,6 +9527,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9076,6 +9547,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9095,6 +9567,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9114,6 +9587,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9133,6 +9607,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9152,6 +9627,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9171,6 +9647,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9190,6 +9667,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9209,6 +9687,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9228,6 +9707,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9247,6 +9727,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9266,6 +9747,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9285,6 +9767,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9304,6 +9787,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9323,6 +9807,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9342,6 +9827,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9361,6 +9847,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9380,6 +9867,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9399,6 +9887,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": true
@@ -9418,6 +9907,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9437,6 +9927,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9456,6 +9947,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9497,6 +9989,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Timers",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9516,6 +10009,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Timers",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9535,6 +10029,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Timers",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9554,6 +10049,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Timers",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9573,6 +10069,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Timers",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
@@ -9592,6 +10089,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Timers",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
