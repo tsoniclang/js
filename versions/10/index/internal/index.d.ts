@@ -6,16 +6,16 @@
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 // Import types from other namespaces
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, KeyValuePair, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections.js";
-import type { IEnumerable } from "@tsonic/dotnet/System.Collections.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, Byte, Comparison, Double, Func, Int16, Int32, Int64, Nullable, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple, Void } from "@tsonic/dotnet/System.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { IEnumerable_1, IEnumerator_1, KeyValuePair_2, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections/internal/index.js";
+import type { IEnumerable } from "@tsonic/dotnet/System.Collections/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action, Action_1, Action_2, Action_3, Boolean as ClrBoolean, Byte, Comparison_1, Double, Func_2, Func_3, Func_4, Func_5, Int16, Int32, Int64, Nullable_1, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple_2, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ArrayBuffer$instance {
     readonly byteLength: int;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): ArrayBuffer;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): ArrayBuffer;
 }
 
 
@@ -46,20 +46,20 @@ export interface Date$instance {
     getUTCMonth(): int;
     getUTCSeconds(): int;
     setDate(day: int): double;
-    setFullYear(year: int, month?: Nullable<System_Internal.Int32>, day?: Nullable<System_Internal.Int32>): double;
-    setHours(hour: int, min?: Nullable<System_Internal.Int32>, sec?: Nullable<System_Internal.Int32>, ms?: Nullable<System_Internal.Int32>): double;
+    setFullYear(year: int, month?: Nullable_1<System_Internal.Int32>, day?: Nullable_1<System_Internal.Int32>): double;
+    setHours(hour: int, min?: Nullable_1<System_Internal.Int32>, sec?: Nullable_1<System_Internal.Int32>, ms?: Nullable_1<System_Internal.Int32>): double;
     setMilliseconds(ms: int): double;
-    setMinutes(min: int, sec?: Nullable<System_Internal.Int32>, ms?: Nullable<System_Internal.Int32>): double;
-    setMonth(month: int, day?: Nullable<System_Internal.Int32>): double;
-    setSeconds(sec: int, ms?: Nullable<System_Internal.Int32>): double;
+    setMinutes(min: int, sec?: Nullable_1<System_Internal.Int32>, ms?: Nullable_1<System_Internal.Int32>): double;
+    setMonth(month: int, day?: Nullable_1<System_Internal.Int32>): double;
+    setSeconds(sec: int, ms?: Nullable_1<System_Internal.Int32>): double;
     setTime(milliseconds: double): double;
     setUTCDate(day: int): double;
-    setUTCFullYear(year: int, month?: Nullable<System_Internal.Int32>, day?: Nullable<System_Internal.Int32>): double;
-    setUTCHours(hour: int, min?: Nullable<System_Internal.Int32>, sec?: Nullable<System_Internal.Int32>, ms?: Nullable<System_Internal.Int32>): double;
+    setUTCFullYear(year: int, month?: Nullable_1<System_Internal.Int32>, day?: Nullable_1<System_Internal.Int32>): double;
+    setUTCHours(hour: int, min?: Nullable_1<System_Internal.Int32>, sec?: Nullable_1<System_Internal.Int32>, ms?: Nullable_1<System_Internal.Int32>): double;
     setUTCMilliseconds(ms: int): double;
-    setUTCMinutes(min: int, sec?: Nullable<System_Internal.Int32>, ms?: Nullable<System_Internal.Int32>): double;
-    setUTCMonth(month: int, day?: Nullable<System_Internal.Int32>): double;
-    setUTCSeconds(sec: int, ms?: Nullable<System_Internal.Int32>): double;
+    setUTCMinutes(min: int, sec?: Nullable_1<System_Internal.Int32>, ms?: Nullable_1<System_Internal.Int32>): double;
+    setUTCMonth(month: int, day?: Nullable_1<System_Internal.Int32>): double;
+    setUTCSeconds(sec: int, ms?: Nullable_1<System_Internal.Int32>): double;
     toDateString(): string;
     toISOString(): string;
     toJSON(): string;
@@ -93,23 +93,23 @@ export interface Float32Array$instance {
     readonly byteLength: int;
     [index: number]: float;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.Single>;
-    fill(value: float, start?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
-    GetEnumerator(): IEnumerator<System_Internal.Single>;
+    at(index: int): Nullable_1<System_Internal.Single>;
+    fill(value: float, start?: int, end?: Nullable_1<System_Internal.Int32>): Float32Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.Single>;
     includes(value: float, fromIndex?: int): boolean;
     indexOf(value: float, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Float32Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.Single>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
-    sort(compareFn?: Comparison<System_Internal.Single>): Float32Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Float32Array;
+    set(array: IEnumerable_1<System_Internal.Single>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Float32Array;
+    sort(compareFn?: Comparison_1<System_Internal.Single>): Float32Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Float32Array;
 }
 
 
 export const Float32Array: {
     new(length: int): Float32Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.Single>): Float32Array;
+    new(values: IEnumerable_1<System_Internal.Single>): Float32Array;
     new(values: float[]): Float32Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -124,23 +124,23 @@ export interface Float64Array$instance {
     readonly byteLength: int;
     [index: number]: double;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.Double>;
-    fill(value: double, start?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
-    GetEnumerator(): IEnumerator<System_Internal.Double>;
+    at(index: int): Nullable_1<System_Internal.Double>;
+    fill(value: double, start?: int, end?: Nullable_1<System_Internal.Int32>): Float64Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.Double>;
     includes(value: double, fromIndex?: int): boolean;
     indexOf(value: double, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Float64Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.Double>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
-    sort(compareFn?: Comparison<System_Internal.Double>): Float64Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Float64Array;
+    set(array: IEnumerable_1<System_Internal.Double>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Float64Array;
+    sort(compareFn?: Comparison_1<System_Internal.Double>): Float64Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Float64Array;
 }
 
 
 export const Float64Array: {
     new(length: int): Float64Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.Double>): Float64Array;
+    new(values: IEnumerable_1<System_Internal.Double>): Float64Array;
     new(values: double[]): Float64Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -155,23 +155,23 @@ export interface Int16Array$instance {
     readonly byteLength: int;
     [index: number]: short;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.Int16>;
-    fill(value: short, start?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
-    GetEnumerator(): IEnumerator<System_Internal.Int16>;
+    at(index: int): Nullable_1<System_Internal.Int16>;
+    fill(value: short, start?: int, end?: Nullable_1<System_Internal.Int32>): Int16Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.Int16>;
     includes(value: short, fromIndex?: int): boolean;
     indexOf(value: short, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Int16Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.Int16>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
-    sort(compareFn?: Comparison<System_Internal.Int16>): Int16Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Int16Array;
+    set(array: IEnumerable_1<System_Internal.Int16>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Int16Array;
+    sort(compareFn?: Comparison_1<System_Internal.Int16>): Int16Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Int16Array;
 }
 
 
 export const Int16Array: {
     new(length: int): Int16Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.Int16>): Int16Array;
+    new(values: IEnumerable_1<System_Internal.Int16>): Int16Array;
     new(values: short[]): Int16Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -186,23 +186,23 @@ export interface Int32Array$instance {
     readonly byteLength: int;
     [index: number]: int;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.Int32>;
-    fill(value: int, start?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
-    GetEnumerator(): IEnumerator<System_Internal.Int32>;
+    at(index: int): Nullable_1<System_Internal.Int32>;
+    fill(value: int, start?: int, end?: Nullable_1<System_Internal.Int32>): Int32Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.Int32>;
     includes(value: int, fromIndex?: int): boolean;
     indexOf(value: int, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Int32Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.Int32>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
-    sort(compareFn?: Comparison<System_Internal.Int32>): Int32Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Int32Array;
+    set(array: IEnumerable_1<System_Internal.Int32>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Int32Array;
+    sort(compareFn?: Comparison_1<System_Internal.Int32>): Int32Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Int32Array;
 }
 
 
 export const Int32Array: {
     new(length: int): Int32Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.Int32>): Int32Array;
+    new(values: IEnumerable_1<System_Internal.Int32>): Int32Array;
     new(values: int[]): Int32Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -217,23 +217,23 @@ export interface Int8Array$instance {
     readonly byteLength: int;
     [index: number]: sbyte;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.SByte>;
-    fill(value: sbyte, start?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
-    GetEnumerator(): IEnumerator<System_Internal.SByte>;
+    at(index: int): Nullable_1<System_Internal.SByte>;
+    fill(value: sbyte, start?: int, end?: Nullable_1<System_Internal.Int32>): Int8Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.SByte>;
     includes(value: sbyte, fromIndex?: int): boolean;
     indexOf(value: sbyte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Int8Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.SByte>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
-    sort(compareFn?: Comparison<System_Internal.SByte>): Int8Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Int8Array;
+    set(array: IEnumerable_1<System_Internal.SByte>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Int8Array;
+    sort(compareFn?: Comparison_1<System_Internal.SByte>): Int8Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Int8Array;
 }
 
 
 export const Int8Array: {
     new(length: int): Int8Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.SByte>): Int8Array;
+    new(values: IEnumerable_1<System_Internal.SByte>): Int8Array;
     new(values: sbyte[]): Int8Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -249,68 +249,68 @@ export interface JSArray_1$instance<T> {
     readonly length: int;
     at(index: int): T;
     concat(...items: unknown[]): JSArray_1<T>;
-    copyWithin(target: int, start?: int, end?: Nullable<System_Internal.Int32>): JSArray_1<T>;
-    entries(): IEnumerable__System_Collections_Generic<ValueTuple<System_Internal.Int32, T>>;
-    every(callback: Func<T, System_Internal.Boolean>): boolean;
-    every(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): boolean;
-    fill(value: T, start?: int, end?: Nullable<System_Internal.Int32>): JSArray_1<T>;
-    filter(callback: Func<T, System_Internal.Boolean>): JSArray_1<T>;
-    filter(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): JSArray_1<T>;
-    filter(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): JSArray_1<T>;
-    find(callback: Func<T, System_Internal.Boolean>): T;
-    find(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): T;
-    find(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): T;
-    findIndex(callback: Func<T, System_Internal.Boolean>): int;
-    findIndex(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): int;
-    findIndex(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): int;
-    findLast(callback: Func<T, System_Internal.Boolean>): T;
-    findLast(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): T;
-    findLast(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): T;
-    findLastIndex(callback: Func<T, System_Internal.Boolean>): int;
-    findLastIndex(callback: Func<T, System_Internal.Int32, System_Internal.Boolean>): int;
-    findLastIndex(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): int;
+    copyWithin(target: int, start?: int, end?: Nullable_1<System_Internal.Int32>): JSArray_1<T>;
+    entries(): IEnumerable_1<ValueTuple_2<System_Internal.Int32, T>>;
+    every(callback: Func_2<T, System_Internal.Boolean>): boolean;
+    every(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): boolean;
+    fill(value: T, start?: int, end?: Nullable_1<System_Internal.Int32>): JSArray_1<T>;
+    filter(callback: Func_2<T, System_Internal.Boolean>): JSArray_1<T>;
+    filter(callback: Func_3<T, System_Internal.Int32, System_Internal.Boolean>): JSArray_1<T>;
+    filter(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): JSArray_1<T>;
+    find(callback: Func_2<T, System_Internal.Boolean>): T;
+    find(callback: Func_3<T, System_Internal.Int32, System_Internal.Boolean>): T;
+    find(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): T;
+    findIndex(callback: Func_2<T, System_Internal.Boolean>): int;
+    findIndex(callback: Func_3<T, System_Internal.Int32, System_Internal.Boolean>): int;
+    findIndex(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): int;
+    findLast(callback: Func_2<T, System_Internal.Boolean>): T;
+    findLast(callback: Func_3<T, System_Internal.Int32, System_Internal.Boolean>): T;
+    findLast(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): T;
+    findLastIndex(callback: Func_2<T, System_Internal.Boolean>): int;
+    findLastIndex(callback: Func_3<T, System_Internal.Int32, System_Internal.Boolean>): int;
+    findLastIndex(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): int;
     flat(depth?: int): JSArray_1<unknown>;
-    flatMap<TResult>(callback: Func<T, System_Internal.Int32, JSArray_1<T>, unknown>): JSArray_1<TResult>;
-    forEach(callback: Action<T>): void;
-    forEach(callback: Action<T, System_Internal.Int32>): void;
-    forEach(callback: Action<T, System_Internal.Int32, JSArray_1<T>>): void;
-    GetEnumerator(): IEnumerator<T>;
+    flatMap<TResult>(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, unknown>): JSArray_1<TResult>;
+    forEach(callback: Action_1<T>): void;
+    forEach(callback: Action_2<T, System_Internal.Int32>): void;
+    forEach(callback: Action_3<T, System_Internal.Int32, JSArray_1<T>>): void;
+    GetEnumerator(): IEnumerator_1<T>;
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
-    keys(): IEnumerable__System_Collections_Generic<System_Internal.Int32>;
-    lastIndexOf(searchElement: T, fromIndex?: Nullable<System_Internal.Int32>): int;
-    map<TResult>(callback: Func<T, TResult>): JSArray_1<TResult>;
-    map<TResult>(callback: Func<T, System_Internal.Int32, TResult>): JSArray_1<TResult>;
-    map<TResult>(callback: Func<T, System_Internal.Int32, JSArray_1<T>, TResult>): JSArray_1<TResult>;
+    keys(): IEnumerable_1<System_Internal.Int32>;
+    lastIndexOf(searchElement: T, fromIndex?: Nullable_1<System_Internal.Int32>): int;
+    map<TResult>(callback: Func_2<T, TResult>): JSArray_1<TResult>;
+    map<TResult>(callback: Func_3<T, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    map<TResult>(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, TResult>): JSArray_1<TResult>;
     pop(): T;
     push(item: T): int;
     push(...items: T[]): int;
-    reduce<TResult>(callback: Func<TResult, T, TResult>, initialValue: TResult): TResult;
-    reduce<TResult>(callback: Func<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
-    reduce<TResult>(callback: Func<TResult, T, System_Internal.Int32, JSArray_1<T>, TResult>, initialValue: TResult): TResult;
-    reduce(callback: Func<T, T, T>): T;
-    reduceRight<TResult>(callback: Func<TResult, T, TResult>, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: Func<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: Func<TResult, T, System_Internal.Int32, JSArray_1<T>, TResult>, initialValue: TResult): TResult;
+    reduce<TResult>(callback: Func_3<TResult, T, TResult>, initialValue: TResult): TResult;
+    reduce<TResult>(callback: Func_4<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
+    reduce<TResult>(callback: Func_5<TResult, T, System_Internal.Int32, JSArray_1<T>, TResult>, initialValue: TResult): TResult;
+    reduce(callback: Func_3<T, T, T>): T;
+    reduceRight<TResult>(callback: Func_3<TResult, T, TResult>, initialValue: TResult): TResult;
+    reduceRight<TResult>(callback: Func_4<TResult, T, System_Internal.Int32, TResult>, initialValue: TResult): TResult;
+    reduceRight<TResult>(callback: Func_5<TResult, T, System_Internal.Int32, JSArray_1<T>, TResult>, initialValue: TResult): TResult;
     reverse(): JSArray_1<T>;
     setLength(newLength: int): void;
     shift(): T;
-    slice(start?: int, end?: Nullable<System_Internal.Int32>): JSArray_1<T>;
-    some(callback: Func<T, System_Internal.Boolean>): boolean;
-    some(callback: Func<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): boolean;
-    sort(compareFunc?: Func<T, T, System_Internal.Double>): JSArray_1<T>;
-    splice(start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
+    slice(start?: int, end?: Nullable_1<System_Internal.Int32>): JSArray_1<T>;
+    some(callback: Func_2<T, System_Internal.Boolean>): boolean;
+    some(callback: Func_4<T, System_Internal.Int32, JSArray_1<T>, System_Internal.Boolean>): boolean;
+    sort(compareFunc?: Func_3<T, T, System_Internal.Double>): JSArray_1<T>;
+    splice(start: int, deleteCount?: Nullable_1<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
     toArray(): T[];
-    toList(): List<T>;
+    toList(): List_1<T>;
     toLocaleString(): string;
     toReversed(): JSArray_1<T>;
-    toSorted(compareFunc?: Func<T, T, System_Internal.Double>): JSArray_1<T>;
-    toSpliced(start: int, deleteCount?: Nullable<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
+    toSorted(compareFunc?: Func_3<T, T, System_Internal.Double>): JSArray_1<T>;
+    toSpliced(start: int, deleteCount?: Nullable_1<System_Internal.Int32>, ...items: T[]): JSArray_1<T>;
     ToString(): string;
     unshift(item: T): int;
     unshift(...items: T[]): int;
-    values(): IEnumerable__System_Collections_Generic<T>;
+    values(): IEnumerable_1<T>;
     with(index: int, value: T): JSArray_1<T>;
 }
 
@@ -319,10 +319,10 @@ export const JSArray_1: {
     new<T>(): JSArray_1<T>;
     new<T>(capacity: int): JSArray_1<T>;
     new<T>(source: T[]): JSArray_1<T>;
-    new<T>(source: List<T>): JSArray_1<T>;
-    new<T>(source: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
-    from<T, TSource, TResult>(iterable: IEnumerable__System_Collections_Generic<TSource>, mapFunc: Func<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
-    from<T>(iterable: IEnumerable__System_Collections_Generic<T>): JSArray_1<T>;
+    new<T>(source: List_1<T>): JSArray_1<T>;
+    new<T>(source: IEnumerable_1<T>): JSArray_1<T>;
+    from<T, TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_3<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    from<T>(iterable: IEnumerable_1<T>): JSArray_1<T>;
     isArray<T>(value: unknown): boolean;
     of<T>(...items: T[]): JSArray_1<T>;
 };
@@ -337,22 +337,22 @@ export interface Map_2$instance<K, V> {
     readonly size: int;
     clear(): void;
     delete(key: K): boolean;
-    entries(): IEnumerable__System_Collections_Generic<ValueTuple<K, V>>;
-    forEach(callback: Action<V, K, Map_2<K, V>>): void;
-    forEach(callback: Action<V, K>): void;
-    forEach(callback: Action<V>): void;
+    entries(): IEnumerable_1<ValueTuple_2<K, V>>;
+    forEach(callback: Action_3<V, K, Map_2<K, V>>): void;
+    forEach(callback: Action_2<V, K>): void;
+    forEach(callback: Action_1<V>): void;
     get(key: K): V | undefined;
-    GetEnumerator(): IEnumerator<KeyValuePair<K, V>>;
+    GetEnumerator(): IEnumerator_1<KeyValuePair_2<K, V>>;
     has(key: K): boolean;
-    keys(): IEnumerable__System_Collections_Generic<K>;
+    keys(): IEnumerable_1<K>;
     set(key: K, value: V): Map_2<K, V>;
-    values(): IEnumerable__System_Collections_Generic<V>;
+    values(): IEnumerable_1<V>;
 }
 
 
 export const Map_2: {
     new<K, V>(): Map_2<K, V>;
-    new<K, V>(entries: IEnumerable__System_Collections_Generic<ValueTuple<K, V>>): Map_2<K, V>;
+    new<K, V>(entries: IEnumerable_1<ValueTuple_2<K, V>>): Map_2<K, V>;
 };
 
 
@@ -408,26 +408,26 @@ export interface Set_1$instance<T> {
     clear(): void;
     delete(value: T): boolean;
     difference(other: Set_1<T>): Set_1<T>;
-    entries(): IEnumerable__System_Collections_Generic<ValueTuple<T, T>>;
-    forEach(callback: Action<T, T, Set_1<T>>): void;
-    forEach(callback: Action<T, T>): void;
-    forEach(callback: Action<T>): void;
-    GetEnumerator(): IEnumerator<T>;
+    entries(): IEnumerable_1<ValueTuple_2<T, T>>;
+    forEach(callback: Action_3<T, T, Set_1<T>>): void;
+    forEach(callback: Action_2<T, T>): void;
+    forEach(callback: Action_1<T>): void;
+    GetEnumerator(): IEnumerator_1<T>;
     has(value: T): boolean;
     intersection(other: Set_1<T>): Set_1<T>;
     isDisjointFrom(other: Set_1<T>): boolean;
     isSubsetOf(other: Set_1<T>): boolean;
     isSupersetOf(other: Set_1<T>): boolean;
-    keys(): IEnumerable__System_Collections_Generic<T>;
+    keys(): IEnumerable_1<T>;
     symmetricDifference(other: Set_1<T>): Set_1<T>;
     union(other: Set_1<T>): Set_1<T>;
-    values(): IEnumerable__System_Collections_Generic<T>;
+    values(): IEnumerable_1<T>;
 }
 
 
 export const Set_1: {
     new<T>(): Set_1<T>;
-    new<T>(values: IEnumerable__System_Collections_Generic<T>): Set_1<T>;
+    new<T>(values: IEnumerable_1<T>): Set_1<T>;
 };
 
 
@@ -440,23 +440,23 @@ export interface Uint16Array$instance {
     readonly byteLength: int;
     [index: number]: ushort;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.UInt16>;
-    fill(value: ushort, start?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
-    GetEnumerator(): IEnumerator<System_Internal.UInt16>;
+    at(index: int): Nullable_1<System_Internal.UInt16>;
+    fill(value: ushort, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint16Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.UInt16>;
     includes(value: ushort, fromIndex?: int): boolean;
     indexOf(value: ushort, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint16Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.UInt16>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
-    sort(compareFn?: Comparison<System_Internal.UInt16>): Uint16Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint16Array;
+    set(array: IEnumerable_1<System_Internal.UInt16>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint16Array;
+    sort(compareFn?: Comparison_1<System_Internal.UInt16>): Uint16Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint16Array;
 }
 
 
 export const Uint16Array: {
     new(length: int): Uint16Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.UInt16>): Uint16Array;
+    new(values: IEnumerable_1<System_Internal.UInt16>): Uint16Array;
     new(values: ushort[]): Uint16Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -471,23 +471,23 @@ export interface Uint32Array$instance {
     readonly byteLength: int;
     [index: number]: uint;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.UInt32>;
-    fill(value: uint, start?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
-    GetEnumerator(): IEnumerator<System_Internal.UInt32>;
+    at(index: int): Nullable_1<System_Internal.UInt32>;
+    fill(value: uint, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint32Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.UInt32>;
     includes(value: uint, fromIndex?: int): boolean;
     indexOf(value: uint, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint32Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.UInt32>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
-    sort(compareFn?: Comparison<System_Internal.UInt32>): Uint32Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint32Array;
+    set(array: IEnumerable_1<System_Internal.UInt32>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint32Array;
+    sort(compareFn?: Comparison_1<System_Internal.UInt32>): Uint32Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint32Array;
 }
 
 
 export const Uint32Array: {
     new(length: int): Uint32Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.UInt32>): Uint32Array;
+    new(values: IEnumerable_1<System_Internal.UInt32>): Uint32Array;
     new(values: uint[]): Uint32Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -502,23 +502,23 @@ export interface Uint8Array$instance {
     readonly byteLength: int;
     [index: number]: byte;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.Byte>;
-    fill(value: byte, start?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
-    GetEnumerator(): IEnumerator<System_Internal.Byte>;
+    at(index: int): Nullable_1<System_Internal.Byte>;
+    fill(value: byte, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint8Array;
+    GetEnumerator(): IEnumerator_1<System_Internal.Byte>;
     includes(value: byte, fromIndex?: int): boolean;
     indexOf(value: byte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint8Array;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
-    sort(compareFn?: Comparison<System_Internal.Byte>): Uint8Array;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8Array;
+    set(array: IEnumerable_1<System_Internal.Byte>, offset?: int): void;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint8Array;
+    sort(compareFn?: Comparison_1<System_Internal.Byte>): Uint8Array;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint8Array;
 }
 
 
 export const Uint8Array: {
     new(length: int): Uint8Array;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.Byte>): Uint8Array;
+    new(values: IEnumerable_1<System_Internal.Byte>): Uint8Array;
     new(values: byte[]): Uint8Array;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -533,24 +533,24 @@ export interface Uint8ClampedArray$instance {
     readonly byteLength: int;
     [index: number]: byte;
     readonly length: int;
-    at(index: int): Nullable<System_Internal.Byte>;
-    fill(value: byte, start?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
-    GetEnumerator(): IEnumerator<System_Internal.Byte>;
+    at(index: int): Nullable_1<System_Internal.Byte>;
+    fill(value: byte, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint8ClampedArray;
+    GetEnumerator(): IEnumerator_1<System_Internal.Byte>;
     includes(value: byte, fromIndex?: int): boolean;
     indexOf(value: byte, fromIndex?: int): int;
     join(separator?: string): string;
     reverse(): Uint8ClampedArray;
-    set(array: IEnumerable__System_Collections_Generic<System_Internal.Byte>, offset?: int): void;
+    set(array: IEnumerable_1<System_Internal.Byte>, offset?: int): void;
     SetClamped(index: int, value: int): void;
-    slice(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
-    sort(compareFn?: Comparison<System_Internal.Byte>): Uint8ClampedArray;
-    subarray(begin?: int, end?: Nullable<System_Internal.Int32>): Uint8ClampedArray;
+    slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint8ClampedArray;
+    sort(compareFn?: Comparison_1<System_Internal.Byte>): Uint8ClampedArray;
+    subarray(begin?: int, end?: Nullable_1<System_Internal.Int32>): Uint8ClampedArray;
 }
 
 
 export const Uint8ClampedArray: {
     new(length: int): Uint8ClampedArray;
-    new(values: IEnumerable__System_Collections_Generic<System_Internal.Byte>): Uint8ClampedArray;
+    new(values: IEnumerable_1<System_Internal.Byte>): Uint8ClampedArray;
     new(values: byte[]): Uint8ClampedArray;
     readonly BYTES_PER_ELEMENT: int;
 };
@@ -625,7 +625,7 @@ export abstract class Globals$instance {
     static isNaN(value: double): boolean;
     static Number(value: unknown): double;
     static parseFloat(str: string): double;
-    static parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
+    static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): Nullable_1<System_Internal.Int64>;
     static String(value: unknown): string;
 }
 
@@ -704,7 +704,7 @@ export abstract class Number$instance {
     static isNaN(value: double): boolean;
     static isSafeInteger(value: double): boolean;
     static parseFloat(str: string): double;
-    static parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
+    static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): Nullable_1<System_Internal.Int64>;
 }
 
 
@@ -722,24 +722,24 @@ export abstract class String$instance {
     static includes(str: string, searchString: string): boolean;
     static indexOf(str: string, searchString: string, position?: int): int;
     static isWellFormed(str: string): boolean;
-    static lastIndexOf(str: string, searchString: string, position?: Nullable<System_Internal.Int32>): int;
+    static lastIndexOf(str: string, searchString: string, position?: Nullable_1<System_Internal.Int32>): int;
     static length(str: string): int;
     static localeCompare(str: string, compareString: string): int;
-    static match(str: string, pattern: string): List<System_Internal.String> | undefined;
-    static matchAll(str: string, pattern: string): List<List<System_Internal.String>>;
+    static match(str: string, pattern: string): List_1<System_Internal.String> | undefined;
+    static matchAll(str: string, pattern: string): List_1<List_1<System_Internal.String>>;
     static normalize(str: string, form?: string): string;
     static padEnd(str: string, targetLength: int, padString?: string): string;
     static padStart(str: string, targetLength: int, padString?: string): string;
-    static raw(template: List<System_Internal.String>, ...substitutions: unknown[]): string;
+    static raw(template: List_1<System_Internal.String>, ...substitutions: unknown[]): string;
     static repeat(str: string, count: int): string;
     static replace(str: string, search: string, replacement: string): string;
     static replaceAll(str: string, search: string, replacement: string): string;
     static search(str: string, pattern: string): int;
-    static slice(str: string, start: int, end?: Nullable<System_Internal.Int32>): string;
-    static split(str: string, separator: string, limit?: Nullable<System_Internal.Int32>): List<System_Internal.String>;
+    static slice(str: string, start: int, end?: Nullable_1<System_Internal.Int32>): string;
+    static split(str: string, separator: string, limit?: Nullable_1<System_Internal.Int32>): List_1<System_Internal.String>;
     static startsWith(str: string, searchString: string): boolean;
-    static substr(str: string, start: int, length?: Nullable<System_Internal.Int32>): string;
-    static substring(str: string, start: int, end?: Nullable<System_Internal.Int32>): string;
+    static substr(str: string, start: int, length?: Nullable_1<System_Internal.Int32>): string;
+    static substring(str: string, start: int, end?: Nullable_1<System_Internal.Int32>): string;
     static toLocaleLowerCase(str: string): string;
     static toLocaleUpperCase(str: string): string;
     static toLowerCase(str: string): string;
@@ -760,9 +760,9 @@ export type String = String$instance;
 export abstract class Timers$instance {
     static clearInterval(id: int): void;
     static clearTimeout(id: int): void;
-    static setInterval<T>(callback: Action<T>, intervalMs: int, arg: T): int;
+    static setInterval<T>(callback: Action_1<T>, intervalMs: int, arg: T): int;
     static setInterval(callback: Action, intervalMs: int): int;
-    static setTimeout<T>(callback: Action<T>, delayMs: int, arg: T): int;
+    static setTimeout<T>(callback: Action_1<T>, delayMs: int, arg: T): int;
     static setTimeout(callback: Action, delayMs?: int): int;
 }
 

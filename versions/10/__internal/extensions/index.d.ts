@@ -10,6 +10,9 @@ import * as System_Collections_Generic from "@tsonic/dotnet/System.Collections.G
 // Import primitive type aliases
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
+// Import sticky extension scope helper
+import type { Rewrap } from '@tsonic/core/lang.js';
+
 // Import CLR type aliases for generic type arguments
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 
@@ -17,51 +20,65 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { ptr } from '@tsonic/core/types.js';
 
 export interface __Ext_Tsonic_JSRuntime_String {
-  toUpperCase(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  toLowerCase(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  trim(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  trimStart(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  trimEnd(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  substring(start: int, end?: System.Nullable_1<System_Internal.Int32>): ExtensionMethods_Tsonic_JSRuntime<string>;
-  slice(start: int, end?: System.Nullable_1<System_Internal.Int32>): ExtensionMethods_Tsonic_JSRuntime<string>;
-  indexOf(searchString: string, position?: int): ExtensionMethods_Tsonic_JSRuntime<int>;
-  lastIndexOf(searchString: string, position?: System.Nullable_1<System_Internal.Int32>): ExtensionMethods_Tsonic_JSRuntime<int>;
-  startsWith(searchString: string): ExtensionMethods_Tsonic_JSRuntime<boolean>;
-  endsWith(searchString: string): ExtensionMethods_Tsonic_JSRuntime<boolean>;
-  includes(searchString: string): ExtensionMethods_Tsonic_JSRuntime<boolean>;
-  replace(search: string, replacement: string): ExtensionMethods_Tsonic_JSRuntime<string>;
-  repeat(count: int): ExtensionMethods_Tsonic_JSRuntime<string>;
-  padStart(targetLength: int, padString?: string): ExtensionMethods_Tsonic_JSRuntime<string>;
-  padEnd(targetLength: int, padString?: string): ExtensionMethods_Tsonic_JSRuntime<string>;
-  charAt(index: int): ExtensionMethods_Tsonic_JSRuntime<string>;
-  charCodeAt(index: int): ExtensionMethods_Tsonic_JSRuntime<int>;
-  split(separator: string, limit?: System.Nullable_1<System_Internal.Int32>): ExtensionMethods_Tsonic_JSRuntime<System_Collections_Generic.List_1<System_Internal.String>>;
-  length(): ExtensionMethods_Tsonic_JSRuntime<int>;
-  at(index: int): ExtensionMethods_Tsonic_JSRuntime<string>;
-  codePointAt(index: int): ExtensionMethods_Tsonic_JSRuntime<int>;
-  concat(...strings: string[]): ExtensionMethods_Tsonic_JSRuntime<string>;
-  localeCompare(compareString: string): ExtensionMethods_Tsonic_JSRuntime<int>;
-  match(pattern: string): ExtensionMethods_Tsonic_JSRuntime<System_Collections_Generic.List_1<System_Internal.String> | undefined>;
-  matchAll(pattern: string): ExtensionMethods_Tsonic_JSRuntime<System_Collections_Generic.List_1<System_Collections_Generic.List_1<System_Internal.String>>>;
-  search(pattern: string): ExtensionMethods_Tsonic_JSRuntime<int>;
-  replaceAll(search: string, replacement: string): ExtensionMethods_Tsonic_JSRuntime<string>;
-  normalize(form?: string): ExtensionMethods_Tsonic_JSRuntime<string>;
-  substr(start: int, length?: System.Nullable_1<System_Internal.Int32>): ExtensionMethods_Tsonic_JSRuntime<string>;
-  toLocaleLowerCase(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  toLocaleUpperCase(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  toString(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  valueOf(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  isWellFormed(): ExtensionMethods_Tsonic_JSRuntime<boolean>;
-  toWellFormed(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  trimLeft(): ExtensionMethods_Tsonic_JSRuntime<string>;
-  trimRight(): ExtensionMethods_Tsonic_JSRuntime<string>;
+  toUpperCase(): Rewrap<this, string>;
+  toLowerCase(): Rewrap<this, string>;
+  trim(): Rewrap<this, string>;
+  trimStart(): Rewrap<this, string>;
+  trimEnd(): Rewrap<this, string>;
+  substring(start: int, end?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
+  slice(start: int, end?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
+  indexOf(searchString: string, position?: int): Rewrap<this, int>;
+  lastIndexOf(searchString: string, position?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, int>;
+  startsWith(searchString: string): Rewrap<this, boolean>;
+  endsWith(searchString: string): Rewrap<this, boolean>;
+  includes(searchString: string): Rewrap<this, boolean>;
+  replace(search: string, replacement: string): Rewrap<this, string>;
+  repeat(count: int): Rewrap<this, string>;
+  padStart(targetLength: int, padString?: string): Rewrap<this, string>;
+  padEnd(targetLength: int, padString?: string): Rewrap<this, string>;
+  charAt(index: int): Rewrap<this, string>;
+  charCodeAt(index: int): Rewrap<this, int>;
+  split(separator: string, limit?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, System_Collections_Generic.List_1<System_Internal.String>>;
+  length(): Rewrap<this, int>;
+  at(index: int): Rewrap<this, string>;
+  codePointAt(index: int): Rewrap<this, int>;
+  concat(...strings: string[]): Rewrap<this, string>;
+  localeCompare(compareString: string): Rewrap<this, int>;
+  match(pattern: string): Rewrap<this, System_Collections_Generic.List_1<System_Internal.String> | undefined>;
+  matchAll(pattern: string): Rewrap<this, System_Collections_Generic.List_1<System_Collections_Generic.List_1<System_Internal.String>>>;
+  search(pattern: string): Rewrap<this, int>;
+  replaceAll(search: string, replacement: string): Rewrap<this, string>;
+  normalize(form?: string): Rewrap<this, string>;
+  substr(start: int, length?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
+  toLocaleLowerCase(): Rewrap<this, string>;
+  toLocaleUpperCase(): Rewrap<this, string>;
+  toString(): Rewrap<this, string>;
+  valueOf(): Rewrap<this, string>;
+  isWellFormed(): Rewrap<this, boolean>;
+  toWellFormed(): Rewrap<this, string>;
+  trimLeft(): Rewrap<this, string>;
+  trimRight(): Rewrap<this, string>;
 }
 
+// Internal helper types for sticky extension scopes
+type __TsonicExtMapOf<T> = T extends { __tsonic_ext?: infer M } ? M : {};
+type __TsonicMergeExtMaps<A, B> = Omit<A, keyof B> & B;
+type __TsonicWithExt<TShape, K extends string, TApplier> = { __tsonic_ext?: __TsonicMergeExtMaps<__TsonicExtMapOf<TShape>, { [P in K]: TApplier }> };
+type __TsonicPreferExt<A, B> = Omit<A, keyof B> & B;
+
 // Generic helper type for extension methods in namespace: Tsonic.JSRuntime
+type __TsonicExtSurface_Tsonic_JSRuntime<TShape> =
+  (
+    (TShape extends string ? __Ext_Tsonic_JSRuntime_String : {})
+  );
+
+interface __TsonicExtApplier_Tsonic_JSRuntime {
+  __tsonic_shape: unknown;
+  __tsonic_type: __TsonicExtSurface_Tsonic_JSRuntime<this["__tsonic_shape"]>;
+}
+
 export type ExtensionMethods_Tsonic_JSRuntime<TShape> =
   TShape extends null | undefined ? TShape
   : TShape extends void ? void
-  : TShape & (
-    (TShape extends string ? __Ext_Tsonic_JSRuntime_String : {})
-  );
+  : TShape & __TsonicWithExt<TShape, "Tsonic.JSRuntime", __TsonicExtApplier_Tsonic_JSRuntime> & __TsonicExtSurface_Tsonic_JSRuntime<TShape>;
 
