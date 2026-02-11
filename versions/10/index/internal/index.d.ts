@@ -14,6 +14,8 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Action, Action_1, Action_2, Action_3, Boolean as ClrBoolean, Byte, Comparison_1, Double, Func_2, Func_3, Func_4, Func_5, Int16, Int32, Int64, Nullable_1, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple_2, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ArrayBuffer$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_ArrayBuffer: never;
+
     readonly byteLength: int;
     slice(begin?: int, end?: Nullable_1<System_Internal.Int32>): ArrayBuffer;
 }
@@ -27,6 +29,8 @@ export const ArrayBuffer: {
 export type ArrayBuffer = ArrayBuffer$instance;
 
 export interface Date$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Date: never;
+
     getDate(): int;
     getDay(): int;
     getFullYear(): int;
@@ -87,11 +91,12 @@ export const Date: {
 export type Date = Date$instance;
 
 export interface Float32Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Float32Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: float;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.Single>;
     fill(value: float, start?: int, end?: Nullable_1<System_Internal.Int32>): Float32Array;
@@ -115,14 +120,15 @@ export const Float32Array: {
 };
 
 
-export type Float32Array = Float32Array$instance;
+export type Float32Array = Float32Array$instance & { [index: number]: float; };
 
 export interface Float64Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Float64Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: double;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.Double>;
     fill(value: double, start?: int, end?: Nullable_1<System_Internal.Int32>): Float64Array;
@@ -146,14 +152,15 @@ export const Float64Array: {
 };
 
 
-export type Float64Array = Float64Array$instance;
+export type Float64Array = Float64Array$instance & { [index: number]: double; };
 
 export interface Int16Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Int16Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: short;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.Int16>;
     fill(value: short, start?: int, end?: Nullable_1<System_Internal.Int32>): Int16Array;
@@ -177,14 +184,15 @@ export const Int16Array: {
 };
 
 
-export type Int16Array = Int16Array$instance;
+export type Int16Array = Int16Array$instance & { [index: number]: short; };
 
 export interface Int32Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Int32Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: int;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.Int32>;
     fill(value: int, start?: int, end?: Nullable_1<System_Internal.Int32>): Int32Array;
@@ -208,14 +216,15 @@ export const Int32Array: {
 };
 
 
-export type Int32Array = Int32Array$instance;
+export type Int32Array = Int32Array$instance & { [index: number]: int; };
 
 export interface Int8Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Int8Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: sbyte;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.SByte>;
     fill(value: sbyte, start?: int, end?: Nullable_1<System_Internal.Int32>): Int8Array;
@@ -239,13 +248,14 @@ export const Int8Array: {
 };
 
 
-export type Int8Array = Int8Array$instance;
+export type Int8Array = Int8Array$instance & { [index: number]: sbyte; };
 
 export interface JSArray_1$instance<T> {
+    readonly __tsonic_type_Tsonic_JSRuntime_JSArray_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
-    [index: number]: T;
     readonly length: int;
     at(index: int): T;
     concat(...items: unknown[]): JSArray_1<T>;
@@ -328,9 +338,11 @@ export const JSArray_1: {
 };
 
 
-export type JSArray_1<T> = JSArray_1$instance<T>;
+export type JSArray_1<T> = JSArray_1$instance<T> & { [index: number]: T; };
 
 export interface Map_2$instance<K, V> {
+    readonly __tsonic_type_Tsonic_JSRuntime_Map_2: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
@@ -359,6 +371,8 @@ export const Map_2: {
 export type Map_2<K, V> = Map_2$instance<K, V>;
 
 export interface RegExp$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_RegExp: never;
+
     readonly dotAll: boolean;
     readonly flags: string;
     readonly global: boolean;
@@ -383,10 +397,11 @@ export const RegExp: {
 export type RegExp = RegExp$instance;
 
 export interface RegExpMatchResult$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_RegExpMatchResult: never;
+
     readonly groups: (string | undefined)[];
     readonly index: int;
     readonly input: string;
-    readonly [groupIndex: number]: string | undefined;
     readonly length: int;
     readonly value: string;
 }
@@ -397,9 +412,11 @@ export const RegExpMatchResult: {
 };
 
 
-export type RegExpMatchResult = RegExpMatchResult$instance;
+export type RegExpMatchResult = RegExpMatchResult$instance & { readonly [groupIndex: number]: string | undefined; };
 
 export interface Set_1$instance<T> {
+    readonly __tsonic_type_Tsonic_JSRuntime_Set_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
@@ -434,11 +451,12 @@ export const Set_1: {
 export type Set_1<T> = Set_1$instance<T>;
 
 export interface Uint16Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Uint16Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: ushort;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.UInt16>;
     fill(value: ushort, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint16Array;
@@ -462,14 +480,15 @@ export const Uint16Array: {
 };
 
 
-export type Uint16Array = Uint16Array$instance;
+export type Uint16Array = Uint16Array$instance & { [index: number]: ushort; };
 
 export interface Uint32Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Uint32Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: uint;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.UInt32>;
     fill(value: uint, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint32Array;
@@ -493,14 +512,15 @@ export const Uint32Array: {
 };
 
 
-export type Uint32Array = Uint32Array$instance;
+export type Uint32Array = Uint32Array$instance & { [index: number]: uint; };
 
 export interface Uint8Array$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Uint8Array: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: byte;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.Byte>;
     fill(value: byte, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint8Array;
@@ -524,14 +544,15 @@ export const Uint8Array: {
 };
 
 
-export type Uint8Array = Uint8Array$instance;
+export type Uint8Array = Uint8Array$instance & { [index: number]: byte; };
 
 export interface Uint8ClampedArray$instance {
+    readonly __tsonic_type_Tsonic_JSRuntime_Uint8ClampedArray: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
 
     readonly byteLength: int;
-    [index: number]: byte;
     readonly length: int;
     at(index: int): Nullable_1<System_Internal.Byte>;
     fill(value: byte, start?: int, end?: Nullable_1<System_Internal.Int32>): Uint8ClampedArray;
@@ -556,9 +577,11 @@ export const Uint8ClampedArray: {
 };
 
 
-export type Uint8ClampedArray = Uint8ClampedArray$instance;
+export type Uint8ClampedArray = Uint8ClampedArray$instance & { [index: number]: byte; };
 
 export interface WeakMap_2$instance<K, V> {
+    readonly __tsonic_type_Tsonic_JSRuntime_WeakMap_2: never;
+
     delete(key: K): boolean;
     get(key: K): V | undefined;
     has(key: K): boolean;
@@ -574,6 +597,8 @@ export const WeakMap_2: {
 export type WeakMap_2<K, V> = WeakMap_2$instance<K, V>;
 
 export interface WeakSet_1$instance<T> {
+    readonly __tsonic_type_Tsonic_JSRuntime_WeakSet_1: never;
+
     add(value: T): WeakSet_1<T>;
     delete(value: T): boolean;
     has(value: T): boolean;
