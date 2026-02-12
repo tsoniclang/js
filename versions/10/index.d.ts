@@ -59,3 +59,6 @@ export declare function Number(value: unknown): double;
 export declare function parseFloat(str: string): double;
 export declare function parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
 export declare function String(value: unknown): string;
+export declare const Infinity: double;
+export declare const NaN: double;
+export declare const undefined: unknown | undefined;

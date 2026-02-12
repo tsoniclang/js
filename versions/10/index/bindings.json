@@ -10101,116 +10101,90 @@
       "constructors": []
     }
   ],
-  "flattenedExports": [
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "parseInt",
-      "normalizedSignature": "parseInt|(System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663411
-      }
+  "exports": {
+    "parseInt": {
+      "kind": "method",
+      "clrName": "parseInt",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "parseFloat",
-      "normalizedSignature": "parseFloat|(System.String):System.Double|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663412
-      }
+    "parseFloat": {
+      "kind": "method",
+      "clrName": "parseFloat",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "isNaN",
-      "normalizedSignature": "isNaN|(System.Double):System.Boolean|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663413
-      }
+    "isNaN": {
+      "kind": "method",
+      "clrName": "isNaN",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "isFinite",
-      "normalizedSignature": "isFinite|(System.Double):System.Boolean|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663414
-      }
+    "isFinite": {
+      "kind": "method",
+      "clrName": "isFinite",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "encodeURIComponent",
-      "normalizedSignature": "encodeURIComponent|(System.String):System.String|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663418
-      }
+    "encodeURIComponent": {
+      "kind": "method",
+      "clrName": "encodeURIComponent",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "decodeURIComponent",
-      "normalizedSignature": "decodeURIComponent|(System.String):System.String|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663419
-      }
+    "decodeURIComponent": {
+      "kind": "method",
+      "clrName": "decodeURIComponent",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "encodeURI",
-      "normalizedSignature": "encodeURI|(System.String):System.String|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663420
-      }
+    "encodeURI": {
+      "kind": "method",
+      "clrName": "encodeURI",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "decodeURI",
-      "normalizedSignature": "decodeURI|(System.String):System.String|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663421
-      }
+    "decodeURI": {
+      "kind": "method",
+      "clrName": "decodeURI",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "Number",
-      "normalizedSignature": "Number|(System.Object):System.Double|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663422
-      }
+    "Number": {
+      "kind": "method",
+      "clrName": "Number",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "String",
-      "normalizedSignature": "String|(System.Object):System.String|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663423
-      }
+    "String": {
+      "kind": "method",
+      "clrName": "String",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     },
-    {
-      "sourceClass": "Tsonic.JSRuntime.Globals",
-      "clrMethodName": "Boolean",
-      "normalizedSignature": "Boolean|(System.Object):System.Boolean|static=true",
-      "target": {
-        "declaringClrType": "Tsonic.JSRuntime.Globals",
-        "declaringAssemblyName": "Tsonic.JSRuntime",
-        "metadataToken": 100663424
-      }
+    "Boolean": {
+      "kind": "method",
+      "clrName": "Boolean",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
+    },
+    "Infinity": {
+      "kind": "field",
+      "clrName": "Infinity",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
+    },
+    "NaN": {
+      "kind": "field",
+      "clrName": "NaN",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
+    },
+    "undefined": {
+      "kind": "field",
+      "clrName": "undefined",
+      "declaringClrType": "Tsonic.JSRuntime.Globals",
+      "declaringAssemblyName": "Tsonic.JSRuntime"
     }
-  ]
+  }
 }
