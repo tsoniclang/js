@@ -1,6 +1,24 @@
 # @tsonic/js
 
-TypeScript type definitions for the JavaScript Runtime (JSRuntime) library.
+JavaScript-style APIs for **Tsonic** (TypeScript → .NET).
+
+Use `@tsonic/js` when you want a JS-like standard library (`console`, `JSON`, `Map`, `Set`, `Date`, timers, etc.) while still compiling to a native binary with `tsonic`.
+
+## Quick Start
+
+### New project
+
+```bash
+mkdir my-app && cd my-app
+tsonic init --js
+npm run dev
+```
+
+### Existing project
+
+```bash
+tsonic add js
+```
 
 ## Versioning
 
@@ -10,46 +28,43 @@ This repo is versioned by **.NET major**:
 
 When publishing, run: `npm publish versions/10 --access public`
 
-## Features
+## Core APIs (what you get)
 
-- **JavaScript-like APIs for .NET** - Array, Map, Set, Date, Math, JSON, and more
-- **Global functions** - `parseInt`, `parseFloat`, `encodeURI`, etc. as top-level exports
-- **camelCase members** - TypeScript-friendly naming conventions
-- **Primitive aliases** - `int`, `long`, etc. via `@tsonic/core`
-- **Full type safety** - Complete TypeScript declarations
-
-## Installation
-
-```bash
-npm install @tsonic/js @tsonic/dotnet @tsonic/core
-```
+- `console` (JS-style console)
+- `JSON` (`parse` / `stringify`)
+- `Map`, `Set`, `WeakMap`, `WeakSet`
+- `Date`, `Math`, `RegExp`, `Number`, `String`
+- Timers via `Timers.setTimeout` / `Timers.setInterval`
+- JS-style `Array` via `JSArray<T>`
+- Common globals (e.g. `parseInt`, `parseFloat`, `encodeURI`, …)
 
 ## Usage
 
-### Global Functions
+### `console` + JSON
 
 ```typescript
-import { parseInt, parseFloat, isNaN, encodeURIComponent } from "@tsonic/js";
+import { console, JSON } from "@tsonic/js/index.js";
 
-const num = parseInt("42", 10);
-const float = parseFloat("3.14");
-const encoded = encodeURIComponent("hello world");
+export function main(): void {
+  const value = JSON.parse<{ x: number }>('{"x": 1}');
+  console.log(JSON.stringify(value));
+}
 ```
 
-### Array Operations
+### Timers
 
 ```typescript
-import { JSArray } from "@tsonic/js";
+import { Timers, console } from "@tsonic/js/index.js";
 
-const arr = new JSArray<number>();
-arr.push(1, 2, 3);
-const mapped = arr.map(x => x * 2);
+export function main(): void {
+  Timers.setTimeout(() => console.log("later"), 250);
+}
 ```
 
-### Map and Set
+### Collections (`Map` / `Set`)
 
 ```typescript
-import { Map, Set } from "@tsonic/js";
+import { Map, Set } from "@tsonic/js/index.js";
 
 const map = new Map<string, number>();
 map.set("key", 42);
@@ -58,30 +73,24 @@ const set = new Set<string>();
 set.add("value");
 ```
 
-### Date and Math
+### JSArray
 
 ```typescript
-import { Date, Math } from "@tsonic/js";
+import { JSArray } from "@tsonic/js/index.js";
 
-const now = new Date();
-const random = Math.random();
-const max = Math.max(1, 2, 3);
+const arr = new JSArray<number>();
+arr.push(1, 2, 3);
+const mapped = arr.map((x) => x * 2);
+void mapped;
 ```
 
-### JSON
+## Relationship to `@tsonic/nodejs`
 
-```typescript
-import { JSON } from "@tsonic/js";
-
-const obj = JSON.parse('{"key": "value"}');
-const str = JSON.stringify(obj);
-```
+If you want Node-style modules (`fs`, `path`, `crypto`, `http`, …), use `@tsonic/nodejs`.
 
 ## Naming Conventions
 
-- **Types**: PascalCase (matches .NET)
-- **Members**: camelCase (TypeScript convention)
-- **Global functions**: camelCase (JavaScript convention)
+- `@tsonic/js` intentionally uses **JavaScript-style naming** (camelCase members).
 
 ## Development
 
