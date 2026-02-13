@@ -1,6 +1,28 @@
 # @tsonic/js
 
-TypeScript type definitions for the JavaScript Runtime (JSRuntime) library.
+TypeScript type definitions for the **Tsonic JavaScript Runtime** (`Tsonic.JSRuntime`).
+
+`@tsonic/js` gives you JavaScript-like APIs (e.g. `JSON`, `Map`, `Set`, `Date`, timers, `console`, etc.) implemented on .NET and consumable from Tsonic projects.
+
+## What this package is (and isn’t)
+
+- ✅ TypeScript bindings (`.d.ts`) for the `Tsonic.JSRuntime` .NET library.
+- ❌ Not a Node/JS runtime package. The `.js` files are **module stubs** and must not be executed.
+- ✅ The real implementation is a **.NET DLL** that Tsonic references during compilation.
+
+## Quick start (Tsonic)
+
+If you want JSRuntime available in a Tsonic workspace, use the CLI command:
+
+```bash
+tsonic add js
+```
+
+This will:
+
+- install `@tsonic/js` (types) as a dev dependency
+- copy `Tsonic.JSRuntime.dll` into `./libs/` for deterministic builds
+- add the DLL to your workspace config (`dotnet.libraries`)
 
 ## Versioning
 
@@ -29,7 +51,7 @@ npm install @tsonic/js @tsonic/dotnet @tsonic/core
 ### Global Functions
 
 ```typescript
-import { parseInt, parseFloat, isNaN, encodeURIComponent } from "@tsonic/js";
+import { parseInt, parseFloat, isNaN, encodeURIComponent } from "@tsonic/js/index.js";
 
 const num = parseInt("42", 10);
 const float = parseFloat("3.14");
@@ -39,7 +61,7 @@ const encoded = encodeURIComponent("hello world");
 ### Array Operations
 
 ```typescript
-import { JSArray } from "@tsonic/js";
+import { JSArray } from "@tsonic/js/index.js";
 
 const arr = new JSArray<number>();
 arr.push(1, 2, 3);
@@ -49,7 +71,7 @@ const mapped = arr.map(x => x * 2);
 ### Map and Set
 
 ```typescript
-import { Map, Set } from "@tsonic/js";
+import { Map, Set } from "@tsonic/js/index.js";
 
 const map = new Map<string, number>();
 map.set("key", 42);
@@ -61,7 +83,7 @@ set.add("value");
 ### Date and Math
 
 ```typescript
-import { Date, Math } from "@tsonic/js";
+import { Date, Math } from "@tsonic/js/index.js";
 
 const now = new Date();
 const random = Math.random();
@@ -71,7 +93,7 @@ const max = Math.max(1, 2, 3);
 ### JSON
 
 ```typescript
-import { JSON } from "@tsonic/js";
+import { JSON } from "@tsonic/js/index.js";
 
 const obj = JSON.parse('{"key": "value"}');
 const str = JSON.stringify(obj);
@@ -80,8 +102,7 @@ const str = JSON.stringify(obj);
 ## Naming Conventions
 
 - **Types**: PascalCase (matches .NET)
-- **Members**: camelCase (TypeScript convention)
-- **Global functions**: camelCase (JavaScript convention)
+- **Members**: This package reflects the underlying .NET API surface. `Tsonic.JSRuntime` intentionally uses JavaScript-style naming.
 
 ## Development
 
