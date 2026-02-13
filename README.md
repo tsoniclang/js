@@ -10,14 +10,15 @@ Use `@tsonic/js` when you want a JS-like standard library (`console`, `JSON`, `M
 
 ```bash
 mkdir my-app && cd my-app
-tsonic init --js
+tsonic init
+tsonic add npm @tsonic/js
 npm run dev
 ```
 
 ### Existing project
 
 ```bash
-tsonic add js
+tsonic add npm @tsonic/js
 ```
 
 ## Versioning
