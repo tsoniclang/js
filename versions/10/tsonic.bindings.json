@@ -1,0 +1,8 @@
+{
+  "dotnet": {
+    "packageReferences": [
+      { "id": "Tsonic.JSRuntime", "version": "0.0.2", "types": "@tsonic/js" }
+    ]
+  }
+}
+
