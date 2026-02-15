@@ -6,21 +6,35 @@ This package is part of Tsonic: https://tsonic.org.
 
 Use `@tsonic/js` when you want a JS-like standard library (`console`, `JSON`, `Map`, `Set`, `Date`, timers, etc.) while still compiling to a native binary with `tsonic`.
 
-## Quick Start
+## Prerequisites
 
-### New project
+- Install the .NET 10 SDK (required by Tsonic): https://dotnet.microsoft.com/download
+- Verify: `dotnet --version`
+
+## Quick Start
 
 ```bash
 mkdir my-app && cd my-app
-tsonic init
-tsonic add npm @tsonic/js
+npx --yes tsonic@latest init
+npx --yes tsonic@latest add npm @tsonic/js
+
+# Replace the default App.ts with a JSRuntime example
+cat > packages/my-app/src/App.ts <<'EOF'
+import { console, JSON } from "@tsonic/js/index.js";
+
+export function main(): void {
+  const value = JSON.parse<{ x: number }>('{"x": 1}');
+  console.log(JSON.stringify(value));
+}
+EOF
+
 npm run dev
 ```
 
-### Existing project
+## Existing project
 
 ```bash
-tsonic add npm @tsonic/js
+npx --yes tsonic@latest add npm @tsonic/js
 ```
 
 ## Versioning
