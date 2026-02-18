@@ -1,31 +1,47 @@
 # @tsonic/js
 
-JavaScript-style APIs for **Tsonic** (TypeScript → .NET).
+JavaScript-style APIs for **Tsonic**.
+
+This package is part of Tsonic: https://tsonic.org.
 
 Use `@tsonic/js` when you want a JS-like standard library (`console`, `JSON`, `Map`, `Set`, `Date`, timers, etc.) while still compiling to a native binary with `tsonic`.
 
-## Quick Start
+## Prerequisites
 
-### New project
+- Install the .NET 10 SDK (required by Tsonic): https://dotnet.microsoft.com/download
+- Verify: `dotnet --version`
+
+## Quick Start
 
 ```bash
 mkdir my-app && cd my-app
-tsonic init
-tsonic add npm @tsonic/js
+npx --yes tsonic@latest init
+npx --yes tsonic@latest add npm @tsonic/js
+
+# Replace the default App.ts with a JSRuntime example
+cat > packages/my-app/src/App.ts <<'EOF'
+import { console, JSON } from "@tsonic/js/index.js";
+
+export function main(): void {
+  const value = JSON.parse<{ x: number }>('{"x": 1}');
+  console.log(JSON.stringify(value));
+}
+EOF
+
 npm run dev
 ```
 
-### Existing project
+## Existing project
 
 ```bash
-tsonic add npm @tsonic/js
+npx --yes tsonic@latest add npm @tsonic/js
 ```
 
 ## Versioning
 
-This repo is versioned by **.NET major**:
+This repo is versioned by runtime major:
 
-- **.NET 10** → `versions/10/` → npm: `@tsonic/js@10.x`
+- `10` → `versions/10/` → npm: `@tsonic/js@10.x`
 
 When publishing, run: `npm publish versions/10 --access public`
 
@@ -95,22 +111,7 @@ If you want Node-style modules (`fs`, `path`, `crypto`, `http`, …), use `@tson
 
 ## Development
 
-### Regenerating Types
-
-To regenerate TypeScript declarations:
-
-```bash
-./__build/scripts/generate.sh
-```
-
-**Prerequisites:**
-- .NET 10 SDK installed
-- `tsbindgen` repository at `../tsbindgen`
-- `js-runtime` repository at `../js-runtime` (built with `dotnet build -c Release`)
-
-**Environment variables:**
-- `DOTNET_VERSION` - .NET runtime version (default: `10.0.0`)
-- `DOTNET_HOME` - .NET installation directory (default: `$HOME/.dotnet`)
+See `__build/` for regeneration scripts.
 
 ## License
 
