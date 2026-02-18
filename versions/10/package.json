@@ -20,7 +20,7 @@
     "url": "https://github.com/tsoniclang/js.git"
   },
   "peerDependencies": {
-    "@tsonic/dotnet": "10.0.26",
-    "@tsonic/core": "10.0.26"
+    "@tsonic/dotnet": "10.0.27",
+    "@tsonic/core": "10.0.27"
   }
 }
