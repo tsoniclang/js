@@ -8,9 +8,6 @@ import * as Internal from './index/internal/index.js';
 // Primitive type aliases for flattened exports
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Namespace imports for flattened exports
-import * as System_Internal from "@tsonic/dotnet/System.js";
-
 // Cross-namespace type imports for constraints
 import type { IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, KeyValuePair, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { IEnumerable } from '@tsonic/dotnet/System.Collections.js';
@@ -57,7 +54,7 @@ export declare function isFinite(value: double): boolean;
 export declare function isNaN(value: double): boolean;
 export declare function Number(value: unknown): double;
 export declare function parseFloat(str: string): double;
-export declare function parseInt(str: string, radix?: Nullable<System_Internal.Int32>): Nullable<System_Internal.Int64>;
+export declare function parseInt(str: string, radix?: Nullable<int>): Nullable<long>;
 export declare function String(value: unknown): string;
 export declare const Infinity: double;
 export declare const NaN: double;
