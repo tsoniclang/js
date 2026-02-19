@@ -64,7 +64,6 @@ export interface __Ext_Tsonic_JSRuntime_String {
 type __TsonicExtMapOf<T> = T extends { __tsonic_ext?: infer M } ? M : {};
 type __TsonicMergeExtMaps<A, B> = A & B;
 type __TsonicWithExt<TShape, K extends string, TApplier> = { __tsonic_ext?: __TsonicMergeExtMaps<__TsonicExtMapOf<TShape>, { [P in K]: TApplier }> };
-type __TsonicPreferExt<A, B> = A & B;
 
 // Generic helper type for extension methods in namespace: Tsonic.JSRuntime
 type __TsonicExtSurface_Tsonic_JSRuntime<TShape> =
