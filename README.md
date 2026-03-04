@@ -1,33 +1,34 @@
 # @tsonic/js
 
-JavaScript-style APIs for **Tsonic**.
+JavaScript runtime bindings for **Tsonic**.
 
 This package is part of Tsonic: https://tsonic.org.
 
-Use `@tsonic/js` when you want a JS-like standard library (`console`, `JSON`, `Map`, `Set`, `Date`, timers, etc.) while still compiling to a native binary with `tsonic`.
+`@tsonic/js` provides JS runtime APIs (`JSON`, `console`, `Map`, `Set`, `Date`, timers, etc.) for Tsonic projects.
 
 ## Prerequisites
 
-- Install the .NET 10 SDK (required by Tsonic): https://dotnet.microsoft.com/download
+- Install the .NET 10 SDK: https://dotnet.microsoft.com/download
 - Verify: `dotnet --version`
 
-## Quick Start
+## Quick Start (surface-first, no `@tsonic/js` imports required)
 
 ```bash
 mkdir my-app && cd my-app
-npx --yes tsonic@latest init
+npx --yes tsonic@latest init --surface js
 npx --yes tsonic@latest add npm @tsonic/js
+```
 
-# Replace the default App.ts with a JSRuntime example
-cat > packages/my-app/src/App.ts <<'EOF'
-import { console, JSON } from "@tsonic/js/index.js";
-
+```ts
 export function main(): void {
   const value = JSON.parse<{ x: number }>('{"x": 1}');
   console.log(JSON.stringify(value));
 }
-EOF
+```
 
+Build/run:
+
+```bash
 npm run dev
 ```
 
@@ -37,81 +38,48 @@ npm run dev
 npx --yes tsonic@latest add npm @tsonic/js
 ```
 
-## Versioning
+If the workspace is not already JS surface, set:
 
-This repo is versioned by runtime major:
+```bash
+npx --yes tsonic@latest init --surface js
+```
 
-- `10` → `versions/10/` → npm: `@tsonic/js@10.x`
+## Optional direct imports
 
-When publishing, run: `npm publish versions/10 --access public`
+Surface mode enables natural JS authoring, but direct package imports remain supported:
 
-## Core APIs (what you get)
+```ts
+import { Timers, JSArray } from "@tsonic/js/index.js";
+```
 
-- `console` (JS-style console)
-- `JSON` (`parse` / `stringify`)
+## Core APIs
+
+- `console`
+- `JSON`
 - `Map`, `Set`, `WeakMap`, `WeakSet`
 - `Date`, `Math`, `RegExp`, `Number`, `String`
-- Timers via `Timers.setTimeout` / `Timers.setInterval`
-- JS-style `Array` via `JSArray<T>`
-- Common globals (e.g. `parseInt`, `parseFloat`, `encodeURI`, …)
-
-## Usage
-
-### `console` + JSON
-
-```typescript
-import { console, JSON } from "@tsonic/js/index.js";
-
-export function main(): void {
-  const value = JSON.parse<{ x: number }>('{"x": 1}');
-  console.log(JSON.stringify(value));
-}
-```
-
-### Timers
-
-```typescript
-import { Timers, console } from "@tsonic/js/index.js";
-
-export function main(): void {
-  Timers.setTimeout(() => console.log("later"), 250);
-}
-```
-
-### Collections (`Map` / `Set`)
-
-```typescript
-import { Map, Set } from "@tsonic/js/index.js";
-
-const map = new Map<string, number>();
-map.set("key", 42);
-
-const set = new Set<string>();
-set.add("value");
-```
-
-### JSArray
-
-```typescript
-import { JSArray } from "@tsonic/js/index.js";
-
-const arr = new JSArray<number>();
-arr.push(1, 2, 3);
-const mapped = arr.map((x) => x * 2);
-void mapped;
-```
+- `Timers`
+- `JSArray<T>`
+- globals like `parseInt`, `parseFloat`, `encodeURI`
 
 ## Relationship to `@tsonic/nodejs`
 
-If you want Node-style modules (`fs`, `path`, `crypto`, `http`, …), use `@tsonic/nodejs`.
+- `@tsonic/js` = JS runtime surface
+- `@tsonic/nodejs` = Node-style modules (`node:fs`, `node:path`, `node:crypto`, ...)
 
-## Naming Conventions
+## Versioning
 
-- `@tsonic/js` intentionally uses **JavaScript-style naming** (camelCase members).
+- `10` → `versions/10/` → npm: `@tsonic/js@10.x`
+
+Publish:
+
+```bash
+npm publish versions/10 --access public
+```
 
 ## Development
 
-See `__build/` for regeneration scripts.
+See `__build/`.
 
 ## License
 
