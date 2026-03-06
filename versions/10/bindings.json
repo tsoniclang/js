@@ -20,6 +20,11 @@
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Math"
     },
+    "Number": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Number"
+    },
     "RegExp": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
@@ -37,10 +42,16 @@
       "type": "Tsonic.JSRuntime.Set`1",
       "csharpName": "Set"
     },
+    "String": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.String"
+    },
     "Array": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.JSArray`1",
+      "staticType": "Tsonic.JSRuntime.JSArrayStatics",
       "csharpName": "JSArray"
     },
     "ReadonlyArray": {
@@ -72,6 +83,16 @@
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Globals",
       "csharpName": "Globals.isNaN"
+    },
+    "RangeError": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.RangeError"
+    },
+    "Error": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Error"
     }
   }
 }

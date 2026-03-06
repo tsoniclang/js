@@ -2,6 +2,20 @@
   "name": "@tsonic/js",
   "version": "10.0.39",
   "description": "TypeScript type definitions for JavaScript Runtime (JSRuntime) library",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "core-globals.d.ts",
+    "globals.d.ts",
+    "bindings.json",
+    "families.json",
+    "tsonic.bindings.json",
+    "tsonic.surface.json",
+    "README.md",
+    "LICENSE"
+  ],
   "type": "module",
   "keywords": [
     "javascript",
@@ -19,7 +33,7 @@
     "type": "git",
     "url": "https://github.com/tsoniclang/js.git"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@tsonic/dotnet": "10.0.35",
     "@tsonic/core": "10.0.35"
   }

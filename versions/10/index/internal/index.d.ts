@@ -10,8 +10,10 @@ import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Coll
 import type { IEnumerable_1, IEnumerator_1, KeyValuePair_2, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
 import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections/internal/index.js";
 import type { IEnumerable } from "@tsonic/dotnet/System.Collections/internal/index.js";
+import * as System_Runtime_Serialization_Internal from "@tsonic/dotnet/System.Runtime.Serialization/internal/index.js";
+import type { ISerializable } from "@tsonic/dotnet/System.Runtime.Serialization/internal/index.js";
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
-import type { Action, Action_1, Action_2, Action_3, Boolean as ClrBoolean, Byte, Comparison_1, Double, Func_2, Func_3, Func_4, Func_5, Int16, Int32, Int64, Nullable_1, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple_2, Void } from "@tsonic/dotnet/System/internal/index.js";
+import type { Action, Action_1, Action_2, Action_3, Boolean as ClrBoolean, Byte, Comparison_1, Double, Exception, Func_2, Func_3, Func_4, Func_5, Int16, Int32, Int64, Nullable_1, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple_2, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ArrayBuffer$instance {
     readonly __tsonic_type_Tsonic_JSRuntime_ArrayBuffer: never;
@@ -89,6 +91,26 @@ export const Date: {
 
 
 export type Date = Date$instance;
+
+export interface Error$instance extends Exception {
+    readonly __tsonic_type_Tsonic_JSRuntime_Error: never;
+
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
+    readonly message: string;
+    readonly name: string;
+    readonly stack: string | undefined;
+}
+
+
+export const Error: {
+    new(): Error;
+    new(message: string): Error;
+    new(message: string, innerException: Exception): Error;
+};
+
+
+export type Error = Error$instance;
 
 export interface Float32Array$instance {
     readonly __tsonic_type_Tsonic_JSRuntime_Float32Array: never;
@@ -369,6 +391,24 @@ export const Map_2: {
 
 
 export type Map_2<K, V> = Map_2$instance<K, V>;
+
+export interface RangeError$instance extends Error {
+    readonly __tsonic_type_Tsonic_JSRuntime_RangeError: never;
+
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
+    readonly name: string;
+}
+
+
+export const RangeError: {
+    new(): RangeError;
+    new(message: string): RangeError;
+    new(message: string, innerException: Exception): RangeError;
+};
+
+
+export type RangeError = RangeError$instance;
 
 export interface RegExp$instance {
     readonly __tsonic_type_Tsonic_JSRuntime_RegExp: never;
@@ -657,6 +697,18 @@ export abstract class Globals$instance {
 
 export type Globals = Globals$instance;
 
+export abstract class JSArrayStatics$instance {
+    static from<TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_3<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    static from<T>(iterable: IEnumerable_1<T>): JSArray_1<T>;
+    static from<TResult>(source: string, mapFunc: Func_3<System_Internal.String, System_Internal.Int32, TResult>): JSArray_1<TResult>;
+    static from(source: string): JSArray_1<System_Internal.String>;
+    static isArray(value: unknown): boolean;
+    static of<T>(...items: T[]): JSArray_1<T>;
+}
+
+
+export type JSArrayStatics = JSArrayStatics$instance;
+
 export abstract class JSON$instance {
     static parse<T>(text: string): T;
     static stringify(value: unknown): string;
@@ -730,6 +782,8 @@ export abstract class Number$instance {
     static isSafeInteger(value: double): boolean;
     static parseFloat(str: string): double;
     static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): Nullable_1<System_Internal.Int64>;
+    static toString(value: double): string;
+    static valueOf(value: double): double;
 }
 
 
