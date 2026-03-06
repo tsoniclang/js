@@ -2,6 +2,8 @@
   "schemaVersion": 1,
   "id": "@tsonic/js",
   "extends": [],
-  "requiredTypeRoots": ["."],
+  "requiredTypeRoots": [
+    "."
+  ],
   "useStandardLib": false
 }
