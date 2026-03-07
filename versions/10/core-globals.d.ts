@@ -26,6 +26,7 @@ declare global {
   }
 
   interface String {
+    readonly [n: number]: string;
   }
 
   interface Number {

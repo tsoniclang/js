@@ -8,27 +8,32 @@
     "Date": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.Date"
+      "type": "Tsonic.JSRuntime.Date",
+      "staticType": "Tsonic.JSRuntime.Date"
     },
     "JSON": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.JSON"
+      "type": "Tsonic.JSRuntime.JSON",
+      "staticType": "Tsonic.JSRuntime.JSON"
     },
     "Math": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.Math"
+      "type": "Tsonic.JSRuntime.Math",
+      "staticType": "Tsonic.JSRuntime.Math"
     },
     "Number": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.Number"
+      "type": "Tsonic.JSRuntime.Number",
+      "staticType": "Tsonic.JSRuntime.Number"
     },
     "RegExp": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.RegExp"
+      "type": "Tsonic.JSRuntime.RegExp",
+      "staticType": "Tsonic.JSRuntime.RegExp"
     },
     "Map": {
       "kind": "global",
@@ -42,10 +47,17 @@
       "type": "Tsonic.JSRuntime.Set`1",
       "csharpName": "Set"
     },
+    "Object": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Object",
+      "staticType": "Tsonic.JSRuntime.Object"
+    },
     "String": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.String"
+      "type": "Tsonic.JSRuntime.String",
+      "staticType": "Tsonic.JSRuntime.String"
     },
     "Array": {
       "kind": "global",
@@ -83,6 +95,30 @@
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Globals",
       "csharpName": "Globals.isNaN"
+    },
+    "setTimeout": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Timers",
+      "csharpName": "Timers.setTimeout"
+    },
+    "clearTimeout": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Timers",
+      "csharpName": "Timers.clearTimeout"
+    },
+    "setInterval": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Timers",
+      "csharpName": "Timers.setInterval"
+    },
+    "clearInterval": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Timers",
+      "csharpName": "Timers.clearInterval"
     },
     "RangeError": {
       "kind": "global",

@@ -2,6 +2,7 @@
   "bindingVersion": 1,
   "packageName": "@tsonic/js",
   "surfaceMode": "@tsonic/js",
+  "assemblyName": "Tsonic.JSRuntime",
   "runtimePackages": [
     "@tsonic/js"
   ],
