@@ -12,7 +12,7 @@ import * as Internal from './index/internal/index.js';
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 // Cross-namespace type imports for constraints
-import type { IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, KeyValuePair, List } from '@tsonic/dotnet/System.Collections.Generic.js';
+import type { IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { IEnumerable } from '@tsonic/dotnet/System.Collections.js';
 import type { Action, Boolean as ClrBoolean, Byte, Comparison, Double, Exception, Func, Int16, Int32, Int64, Nullable, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple, Void } from '@tsonic/dotnet/System.js';
 import type { ISerializable } from '@tsonic/dotnet/System.Runtime.Serialization.js';
@@ -35,6 +35,7 @@ export { Map_2 as Map } from './index/internal/index.js';
 export { Math$instance as Math } from './index/internal/index.js';
 export { Number$instance as Number } from './index/internal/index.js';
 export { Object$instance as Object } from './index/internal/index.js';
+export { ProcessKeepAlive$instance as ProcessKeepAlive } from './index/internal/index.js';
 export { RangeError as RangeError } from './index/internal/index.js';
 export { RegExp as RegExp } from './index/internal/index.js';
 export { RegExpMatchResult as RegExpMatchResult } from './index/internal/index.js';

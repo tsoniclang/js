@@ -4387,9 +4387,29 @@
           "isExtensionMethod": false
         },
         {
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::from(IEnumerable_1,Func_2):JSArray_1",
+          "clrName": "from",
+          "metadataToken": 100663567,
+          "canonicalSignature": "(IEnumerable_1,Func_2):JSArray_1",
+          "normalizedSignature": "from|(IEnumerable_1,Func_2):JSArray_1|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 2,
+          "parameterCount": 2,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Tsonic.JSRuntime.JSArray\u00601",
+          "declaringAssemblyName": "Tsonic.JSRuntime",
+          "isExtensionMethod": false
+        },
+        {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::of(T[]):JSArray_1",
           "clrName": "of",
-          "metadataToken": 100663567,
+          "metadataToken": 100663568,
           "canonicalSignature": "(T[]):JSArray_1",
           "normalizedSignature": "of|(T[]):JSArray_1|static=true",
           "emitScope": "ClassSurface",
@@ -4409,7 +4429,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArray\u00601::GetEnumerator():IEnumerator_1",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663568,
+          "metadataToken": 100663569,
           "canonicalSignature": "():IEnumerator_1",
           "normalizedSignature": "GetEnumerator|():IEnumerator_1|static=false",
           "emitScope": "ClassSurface",
@@ -4547,7 +4567,7 @@
           "stableId": "System.Private.CoreLib:System.Collections.Generic.IEnumerable\u00601",
           "clrName": "System.Collections.Generic.IEnumerable\u00601",
           "typeArguments": [
-            "KeyValuePair_2[[K,V]]"
+            "ValueTuple_2[[K,V]]"
           ]
         },
         {
@@ -4563,7 +4583,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::get(K):V",
           "clrName": "get",
-          "metadataToken": 100663589,
+          "metadataToken": 100663592,
           "canonicalSignature": "(K):V",
           "normalizedSignature": "get|(K):V|static=false",
           "emitScope": "ClassSurface",
@@ -4583,7 +4603,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::set(K,V):Map_2",
           "clrName": "set",
-          "metadataToken": 100663590,
+          "metadataToken": 100663593,
           "canonicalSignature": "(K,V):Map_2",
           "normalizedSignature": "set|(K,V):Map_2|static=false",
           "emitScope": "ClassSurface",
@@ -4603,7 +4623,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::has(K):System.Boolean",
           "clrName": "has",
-          "metadataToken": 100663591,
+          "metadataToken": 100663594,
           "canonicalSignature": "(K):System.Boolean",
           "normalizedSignature": "has|(K):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -4623,7 +4643,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::delete(K):System.Boolean",
           "clrName": "delete",
-          "metadataToken": 100663592,
+          "metadataToken": 100663595,
           "canonicalSignature": "(K):System.Boolean",
           "normalizedSignature": "delete|(K):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -4643,7 +4663,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::clear():System.Void",
           "clrName": "clear",
-          "metadataToken": 100663593,
+          "metadataToken": 100663596,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "clear|():System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -4663,7 +4683,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::keys():IEnumerable_1",
           "clrName": "keys",
-          "metadataToken": 100663594,
+          "metadataToken": 100663597,
           "canonicalSignature": "():IEnumerable_1",
           "normalizedSignature": "keys|():IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
@@ -4683,7 +4703,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::values():IEnumerable_1",
           "clrName": "values",
-          "metadataToken": 100663595,
+          "metadataToken": 100663598,
           "canonicalSignature": "():IEnumerable_1",
           "normalizedSignature": "values|():IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
@@ -4703,7 +4723,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::entries():IEnumerable_1",
           "clrName": "entries",
-          "metadataToken": 100663596,
+          "metadataToken": 100663599,
           "canonicalSignature": "():IEnumerable_1",
           "normalizedSignature": "entries|():IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
@@ -4723,7 +4743,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::forEach(Action_3):System.Void",
           "clrName": "forEach",
-          "metadataToken": 100663597,
+          "metadataToken": 100663600,
           "canonicalSignature": "(Action_3):System.Void",
           "normalizedSignature": "forEach|(Action_3):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -4743,7 +4763,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::forEach(Action_2):System.Void",
           "clrName": "forEach",
-          "metadataToken": 100663598,
+          "metadataToken": 100663601,
           "canonicalSignature": "(Action_2):System.Void",
           "normalizedSignature": "forEach|(Action_2):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -4763,7 +4783,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::forEach(Action_1):System.Void",
           "clrName": "forEach",
-          "metadataToken": 100663599,
+          "metadataToken": 100663602,
           "canonicalSignature": "(Action_1):System.Void",
           "normalizedSignature": "forEach|(Action_1):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -4783,7 +4803,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::GetEnumerator():IEnumerator_1",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663600,
+          "metadataToken": 100663603,
           "canonicalSignature": "():IEnumerator_1",
           "normalizedSignature": "GetEnumerator|():IEnumerator_1|static=false",
           "emitScope": "ClassSurface",
@@ -4827,7 +4847,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::.ctor():void",
-          "metadataToken": 100663585,
+          "metadataToken": 100663588,
           "canonicalSignature": "():void",
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
@@ -4838,7 +4858,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Map\u00602::.ctor(IEnumerable_1):void",
-          "metadataToken": 100663586,
+          "metadataToken": 100663589,
           "canonicalSignature": "(IEnumerable_1):void",
           "normalizedSignature": "constructor|(IEnumerable_1):void|static=false",
           "isStatic": false,
@@ -4897,7 +4917,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RangeError::.ctor():void",
-          "metadataToken": 100663651,
+          "metadataToken": 100663657,
           "canonicalSignature": "():void",
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
@@ -4908,7 +4928,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RangeError::.ctor(System.String):void",
-          "metadataToken": 100663652,
+          "metadataToken": 100663658,
           "canonicalSignature": "(System.String):void",
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
@@ -4919,7 +4939,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RangeError::.ctor(System.String,System.Exception):void",
-          "metadataToken": 100663653,
+          "metadataToken": 100663659,
           "canonicalSignature": "(System.String,System.Exception):void",
           "normalizedSignature": "constructor|(System.String,System.Exception):void|static=false",
           "isStatic": false,
@@ -4949,7 +4969,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RegExp::exec(System.String):Tsonic.JSRuntime.RegExpMatchResult",
           "clrName": "exec",
-          "metadataToken": 100663667,
+          "metadataToken": 100663673,
           "canonicalSignature": "(System.String):Tsonic.JSRuntime.RegExpMatchResult",
           "normalizedSignature": "exec|(System.String):Tsonic.JSRuntime.RegExpMatchResult|static=false",
           "emitScope": "ClassSurface",
@@ -4969,7 +4989,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RegExp::test(System.String):System.Boolean",
           "clrName": "test",
-          "metadataToken": 100663668,
+          "metadataToken": 100663674,
           "canonicalSignature": "(System.String):System.Boolean",
           "normalizedSignature": "test|(System.String):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -4989,7 +5009,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RegExp::ToString():System.String",
           "clrName": "ToString",
-          "metadataToken": 100663669,
+          "metadataToken": 100663675,
           "canonicalSignature": "():System.String",
           "normalizedSignature": "ToString|():System.String|static=false",
           "emitScope": "ClassSurface",
@@ -5185,7 +5205,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RegExp::.ctor(System.String):void",
-          "metadataToken": 100663655,
+          "metadataToken": 100663661,
           "canonicalSignature": "(System.String):void",
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
@@ -5196,7 +5216,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RegExp::.ctor(System.String,System.String):void",
-          "metadataToken": 100663656,
+          "metadataToken": 100663662,
           "canonicalSignature": "(System.String,System.String):void",
           "normalizedSignature": "constructor|(System.String,System.String):void|static=false",
           "isStatic": false,
@@ -5344,7 +5364,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.RegExpMatchResult::.ctor(System.String,System.Int32,System.String,System.String[]):void",
-          "metadataToken": 100663671,
+          "metadataToken": 100663677,
           "canonicalSignature": "(System.String,System.Int32,System.String,System.String[]):void",
           "normalizedSignature": "constructor|(System.String,System.Int32,System.String,System.String[]):void|static=false",
           "isStatic": false,
@@ -5390,7 +5410,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::add(T):Set_1",
           "clrName": "add",
-          "metadataToken": 100663681,
+          "metadataToken": 100663687,
           "canonicalSignature": "(T):Set_1",
           "normalizedSignature": "add|(T):Set_1|static=false",
           "emitScope": "ClassSurface",
@@ -5410,7 +5430,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::has(T):System.Boolean",
           "clrName": "has",
-          "metadataToken": 100663682,
+          "metadataToken": 100663688,
           "canonicalSignature": "(T):System.Boolean",
           "normalizedSignature": "has|(T):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -5430,7 +5450,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::delete(T):System.Boolean",
           "clrName": "delete",
-          "metadataToken": 100663683,
+          "metadataToken": 100663689,
           "canonicalSignature": "(T):System.Boolean",
           "normalizedSignature": "delete|(T):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -5450,7 +5470,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::clear():System.Void",
           "clrName": "clear",
-          "metadataToken": 100663684,
+          "metadataToken": 100663690,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "clear|():System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -5470,7 +5490,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::keys():IEnumerable_1",
           "clrName": "keys",
-          "metadataToken": 100663685,
+          "metadataToken": 100663691,
           "canonicalSignature": "():IEnumerable_1",
           "normalizedSignature": "keys|():IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
@@ -5490,7 +5510,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::values():IEnumerable_1",
           "clrName": "values",
-          "metadataToken": 100663686,
+          "metadataToken": 100663692,
           "canonicalSignature": "():IEnumerable_1",
           "normalizedSignature": "values|():IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
@@ -5510,7 +5530,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::entries():IEnumerable_1",
           "clrName": "entries",
-          "metadataToken": 100663687,
+          "metadataToken": 100663693,
           "canonicalSignature": "():IEnumerable_1",
           "normalizedSignature": "entries|():IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
@@ -5530,7 +5550,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::forEach(Action_3):System.Void",
           "clrName": "forEach",
-          "metadataToken": 100663688,
+          "metadataToken": 100663694,
           "canonicalSignature": "(Action_3):System.Void",
           "normalizedSignature": "forEach|(Action_3):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -5550,7 +5570,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::forEach(Action_2):System.Void",
           "clrName": "forEach",
-          "metadataToken": 100663689,
+          "metadataToken": 100663695,
           "canonicalSignature": "(Action_2):System.Void",
           "normalizedSignature": "forEach|(Action_2):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -5570,7 +5590,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::forEach(Action_1):System.Void",
           "clrName": "forEach",
-          "metadataToken": 100663690,
+          "metadataToken": 100663696,
           "canonicalSignature": "(Action_1):System.Void",
           "normalizedSignature": "forEach|(Action_1):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -5590,7 +5610,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::difference(Set_1):Set_1",
           "clrName": "difference",
-          "metadataToken": 100663691,
+          "metadataToken": 100663697,
           "canonicalSignature": "(Set_1):Set_1",
           "normalizedSignature": "difference|(Set_1):Set_1|static=false",
           "emitScope": "ClassSurface",
@@ -5610,7 +5630,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::intersection(Set_1):Set_1",
           "clrName": "intersection",
-          "metadataToken": 100663692,
+          "metadataToken": 100663698,
           "canonicalSignature": "(Set_1):Set_1",
           "normalizedSignature": "intersection|(Set_1):Set_1|static=false",
           "emitScope": "ClassSurface",
@@ -5630,7 +5650,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::union(Set_1):Set_1",
           "clrName": "union",
-          "metadataToken": 100663693,
+          "metadataToken": 100663699,
           "canonicalSignature": "(Set_1):Set_1",
           "normalizedSignature": "union|(Set_1):Set_1|static=false",
           "emitScope": "ClassSurface",
@@ -5650,7 +5670,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::symmetricDifference(Set_1):Set_1",
           "clrName": "symmetricDifference",
-          "metadataToken": 100663694,
+          "metadataToken": 100663700,
           "canonicalSignature": "(Set_1):Set_1",
           "normalizedSignature": "symmetricDifference|(Set_1):Set_1|static=false",
           "emitScope": "ClassSurface",
@@ -5670,7 +5690,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::isSubsetOf(Set_1):System.Boolean",
           "clrName": "isSubsetOf",
-          "metadataToken": 100663695,
+          "metadataToken": 100663701,
           "canonicalSignature": "(Set_1):System.Boolean",
           "normalizedSignature": "isSubsetOf|(Set_1):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -5690,7 +5710,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::isSupersetOf(Set_1):System.Boolean",
           "clrName": "isSupersetOf",
-          "metadataToken": 100663696,
+          "metadataToken": 100663702,
           "canonicalSignature": "(Set_1):System.Boolean",
           "normalizedSignature": "isSupersetOf|(Set_1):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -5710,7 +5730,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::isDisjointFrom(Set_1):System.Boolean",
           "clrName": "isDisjointFrom",
-          "metadataToken": 100663697,
+          "metadataToken": 100663703,
           "canonicalSignature": "(Set_1):System.Boolean",
           "normalizedSignature": "isDisjointFrom|(Set_1):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -5730,7 +5750,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::GetEnumerator():IEnumerator_1",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663698,
+          "metadataToken": 100663704,
           "canonicalSignature": "():IEnumerator_1",
           "normalizedSignature": "GetEnumerator|():IEnumerator_1|static=false",
           "emitScope": "ClassSurface",
@@ -5774,7 +5794,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::.ctor():void",
-          "metadataToken": 100663678,
+          "metadataToken": 100663684,
           "canonicalSignature": "():void",
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
@@ -5785,7 +5805,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Set\u00601::.ctor(IEnumerable_1):void",
-          "metadataToken": 100663679,
+          "metadataToken": 100663685,
           "canonicalSignature": "(IEnumerable_1):void",
           "normalizedSignature": "constructor|(IEnumerable_1):void|static=false",
           "isStatic": false,
@@ -5828,7 +5848,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::at(System.Int32):System.Nullable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "at",
-          "metadataToken": 100663758,
+          "metadataToken": 100663764,
           "canonicalSignature": "(System.Int32):System.Nullable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "at|(System.Int32):System.Nullable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -5848,7 +5868,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::fill(System.UInt16,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "clrName": "fill",
-          "metadataToken": 100663759,
+          "metadataToken": 100663765,
           "canonicalSignature": "(System.UInt16,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "normalizedSignature": "fill|(System.UInt16,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array|static=false",
           "emitScope": "ClassSurface",
@@ -5868,7 +5888,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::set(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "metadataToken": 100663760,
+          "metadataToken": 100663766,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -5888,7 +5908,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::subarray(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "clrName": "subarray",
-          "metadataToken": 100663761,
+          "metadataToken": 100663767,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "normalizedSignature": "subarray|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array|static=false",
           "emitScope": "ClassSurface",
@@ -5908,7 +5928,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::slice(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "clrName": "slice",
-          "metadataToken": 100663762,
+          "metadataToken": 100663768,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "normalizedSignature": "slice|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array|static=false",
           "emitScope": "ClassSurface",
@@ -5928,7 +5948,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::indexOf(System.UInt16,System.Int32):System.Int32",
           "clrName": "indexOf",
-          "metadataToken": 100663763,
+          "metadataToken": 100663769,
           "canonicalSignature": "(System.UInt16,System.Int32):System.Int32",
           "normalizedSignature": "indexOf|(System.UInt16,System.Int32):System.Int32|static=false",
           "emitScope": "ClassSurface",
@@ -5948,7 +5968,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::includes(System.UInt16,System.Int32):System.Boolean",
           "clrName": "includes",
-          "metadataToken": 100663764,
+          "metadataToken": 100663770,
           "canonicalSignature": "(System.UInt16,System.Int32):System.Boolean",
           "normalizedSignature": "includes|(System.UInt16,System.Int32):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -5968,7 +5988,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::join(System.String):System.String",
           "clrName": "join",
-          "metadataToken": 100663765,
+          "metadataToken": 100663771,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "join|(System.String):System.String|static=false",
           "emitScope": "ClassSurface",
@@ -5988,7 +6008,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::reverse():Tsonic.JSRuntime.Uint16Array",
           "clrName": "reverse",
-          "metadataToken": 100663766,
+          "metadataToken": 100663772,
           "canonicalSignature": "():Tsonic.JSRuntime.Uint16Array",
           "normalizedSignature": "reverse|():Tsonic.JSRuntime.Uint16Array|static=false",
           "emitScope": "ClassSurface",
@@ -6008,7 +6028,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::sort(System.Comparison_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "clrName": "sort",
-          "metadataToken": 100663767,
+          "metadataToken": 100663773,
           "canonicalSignature": "(System.Comparison_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array",
           "normalizedSignature": "sort|(System.Comparison_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint16Array|static=false",
           "emitScope": "ClassSurface",
@@ -6028,7 +6048,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::GetEnumerator():System.Collections.Generic.IEnumerator_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663768,
+          "metadataToken": 100663774,
           "canonicalSignature": "():System.Collections.Generic.IEnumerator_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "GetEnumerator|():System.Collections.Generic.IEnumerator_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -6129,7 +6149,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::.ctor(System.Int32):void",
-          "metadataToken": 100663751,
+          "metadataToken": 100663757,
           "canonicalSignature": "(System.Int32):void",
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
@@ -6140,7 +6160,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::.ctor(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "metadataToken": 100663752,
+          "metadataToken": 100663758,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.UInt16,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
@@ -6151,7 +6171,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint16Array::.ctor(System.UInt16[]):void",
-          "metadataToken": 100663753,
+          "metadataToken": 100663759,
           "canonicalSignature": "(System.UInt16[]):void",
           "normalizedSignature": "constructor|(System.UInt16[]):void|static=false",
           "isStatic": false,
@@ -6194,7 +6214,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::at(System.Int32):System.Nullable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "at",
-          "metadataToken": 100663778,
+          "metadataToken": 100663784,
           "canonicalSignature": "(System.Int32):System.Nullable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "at|(System.Int32):System.Nullable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -6214,7 +6234,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::fill(System.UInt32,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "clrName": "fill",
-          "metadataToken": 100663779,
+          "metadataToken": 100663785,
           "canonicalSignature": "(System.UInt32,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "normalizedSignature": "fill|(System.UInt32,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array|static=false",
           "emitScope": "ClassSurface",
@@ -6234,7 +6254,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::set(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "metadataToken": 100663780,
+          "metadataToken": 100663786,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -6254,7 +6274,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::subarray(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "clrName": "subarray",
-          "metadataToken": 100663781,
+          "metadataToken": 100663787,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "normalizedSignature": "subarray|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array|static=false",
           "emitScope": "ClassSurface",
@@ -6274,7 +6294,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::slice(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "clrName": "slice",
-          "metadataToken": 100663782,
+          "metadataToken": 100663788,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "normalizedSignature": "slice|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array|static=false",
           "emitScope": "ClassSurface",
@@ -6294,7 +6314,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::indexOf(System.UInt32,System.Int32):System.Int32",
           "clrName": "indexOf",
-          "metadataToken": 100663783,
+          "metadataToken": 100663789,
           "canonicalSignature": "(System.UInt32,System.Int32):System.Int32",
           "normalizedSignature": "indexOf|(System.UInt32,System.Int32):System.Int32|static=false",
           "emitScope": "ClassSurface",
@@ -6314,7 +6334,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::includes(System.UInt32,System.Int32):System.Boolean",
           "clrName": "includes",
-          "metadataToken": 100663784,
+          "metadataToken": 100663790,
           "canonicalSignature": "(System.UInt32,System.Int32):System.Boolean",
           "normalizedSignature": "includes|(System.UInt32,System.Int32):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -6334,7 +6354,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::join(System.String):System.String",
           "clrName": "join",
-          "metadataToken": 100663785,
+          "metadataToken": 100663791,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "join|(System.String):System.String|static=false",
           "emitScope": "ClassSurface",
@@ -6354,7 +6374,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::reverse():Tsonic.JSRuntime.Uint32Array",
           "clrName": "reverse",
-          "metadataToken": 100663786,
+          "metadataToken": 100663792,
           "canonicalSignature": "():Tsonic.JSRuntime.Uint32Array",
           "normalizedSignature": "reverse|():Tsonic.JSRuntime.Uint32Array|static=false",
           "emitScope": "ClassSurface",
@@ -6374,7 +6394,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::sort(System.Comparison_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "clrName": "sort",
-          "metadataToken": 100663787,
+          "metadataToken": 100663793,
           "canonicalSignature": "(System.Comparison_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array",
           "normalizedSignature": "sort|(System.Comparison_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint32Array|static=false",
           "emitScope": "ClassSurface",
@@ -6394,7 +6414,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::GetEnumerator():System.Collections.Generic.IEnumerator_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663788,
+          "metadataToken": 100663794,
           "canonicalSignature": "():System.Collections.Generic.IEnumerator_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "GetEnumerator|():System.Collections.Generic.IEnumerator_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -6495,7 +6515,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::.ctor(System.Int32):void",
-          "metadataToken": 100663771,
+          "metadataToken": 100663777,
           "canonicalSignature": "(System.Int32):void",
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
@@ -6506,7 +6526,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::.ctor(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "metadataToken": 100663772,
+          "metadataToken": 100663778,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.UInt32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
@@ -6517,7 +6537,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint32Array::.ctor(System.UInt32[]):void",
-          "metadataToken": 100663773,
+          "metadataToken": 100663779,
           "canonicalSignature": "(System.UInt32[]):void",
           "normalizedSignature": "constructor|(System.UInt32[]):void|static=false",
           "isStatic": false,
@@ -6560,7 +6580,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::at(System.Int32):System.Nullable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "at",
-          "metadataToken": 100663798,
+          "metadataToken": 100663804,
           "canonicalSignature": "(System.Int32):System.Nullable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "at|(System.Int32):System.Nullable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -6580,7 +6600,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::fill(System.Byte,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "clrName": "fill",
-          "metadataToken": 100663799,
+          "metadataToken": 100663805,
           "canonicalSignature": "(System.Byte,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "normalizedSignature": "fill|(System.Byte,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array|static=false",
           "emitScope": "ClassSurface",
@@ -6600,7 +6620,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::set(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "metadataToken": 100663800,
+          "metadataToken": 100663806,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -6620,7 +6640,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::subarray(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "clrName": "subarray",
-          "metadataToken": 100663801,
+          "metadataToken": 100663807,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "normalizedSignature": "subarray|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array|static=false",
           "emitScope": "ClassSurface",
@@ -6640,7 +6660,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::slice(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "clrName": "slice",
-          "metadataToken": 100663802,
+          "metadataToken": 100663808,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "normalizedSignature": "slice|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array|static=false",
           "emitScope": "ClassSurface",
@@ -6660,7 +6680,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::indexOf(System.Byte,System.Int32):System.Int32",
           "clrName": "indexOf",
-          "metadataToken": 100663803,
+          "metadataToken": 100663809,
           "canonicalSignature": "(System.Byte,System.Int32):System.Int32",
           "normalizedSignature": "indexOf|(System.Byte,System.Int32):System.Int32|static=false",
           "emitScope": "ClassSurface",
@@ -6680,7 +6700,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::includes(System.Byte,System.Int32):System.Boolean",
           "clrName": "includes",
-          "metadataToken": 100663804,
+          "metadataToken": 100663810,
           "canonicalSignature": "(System.Byte,System.Int32):System.Boolean",
           "normalizedSignature": "includes|(System.Byte,System.Int32):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -6700,7 +6720,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::join(System.String):System.String",
           "clrName": "join",
-          "metadataToken": 100663805,
+          "metadataToken": 100663811,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "join|(System.String):System.String|static=false",
           "emitScope": "ClassSurface",
@@ -6720,7 +6740,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::reverse():Tsonic.JSRuntime.Uint8Array",
           "clrName": "reverse",
-          "metadataToken": 100663806,
+          "metadataToken": 100663812,
           "canonicalSignature": "():Tsonic.JSRuntime.Uint8Array",
           "normalizedSignature": "reverse|():Tsonic.JSRuntime.Uint8Array|static=false",
           "emitScope": "ClassSurface",
@@ -6740,7 +6760,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::sort(System.Comparison_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "clrName": "sort",
-          "metadataToken": 100663807,
+          "metadataToken": 100663813,
           "canonicalSignature": "(System.Comparison_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array",
           "normalizedSignature": "sort|(System.Comparison_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8Array|static=false",
           "emitScope": "ClassSurface",
@@ -6760,7 +6780,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::GetEnumerator():System.Collections.Generic.IEnumerator_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663808,
+          "metadataToken": 100663814,
           "canonicalSignature": "():System.Collections.Generic.IEnumerator_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "GetEnumerator|():System.Collections.Generic.IEnumerator_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -6861,7 +6881,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::.ctor(System.Int32):void",
-          "metadataToken": 100663791,
+          "metadataToken": 100663797,
           "canonicalSignature": "(System.Int32):void",
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
@@ -6872,7 +6892,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::.ctor(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "metadataToken": 100663792,
+          "metadataToken": 100663798,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
@@ -6883,7 +6903,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8Array::.ctor(System.Byte[]):void",
-          "metadataToken": 100663793,
+          "metadataToken": 100663799,
           "canonicalSignature": "(System.Byte[]):void",
           "normalizedSignature": "constructor|(System.Byte[]):void|static=false",
           "isStatic": false,
@@ -6926,7 +6946,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::SetClamped(System.Int32,System.Int32):System.Void",
           "clrName": "SetClamped",
-          "metadataToken": 100663818,
+          "metadataToken": 100663824,
           "canonicalSignature": "(System.Int32,System.Int32):System.Void",
           "normalizedSignature": "SetClamped|(System.Int32,System.Int32):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -6946,7 +6966,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::at(System.Int32):System.Nullable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "at",
-          "metadataToken": 100663819,
+          "metadataToken": 100663825,
           "canonicalSignature": "(System.Int32):System.Nullable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "at|(System.Int32):System.Nullable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -6966,7 +6986,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::fill(System.Byte,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "clrName": "fill",
-          "metadataToken": 100663820,
+          "metadataToken": 100663826,
           "canonicalSignature": "(System.Byte,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "normalizedSignature": "fill|(System.Byte,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray|static=false",
           "emitScope": "ClassSurface",
@@ -6986,7 +7006,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::set(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "clrName": "set",
-          "metadataToken": 100663821,
+          "metadataToken": 100663827,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void",
           "normalizedSignature": "set|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Int32):System.Void|static=false",
           "emitScope": "ClassSurface",
@@ -7006,7 +7026,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::subarray(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "clrName": "subarray",
-          "metadataToken": 100663822,
+          "metadataToken": 100663828,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "normalizedSignature": "subarray|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray|static=false",
           "emitScope": "ClassSurface",
@@ -7026,7 +7046,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::slice(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "clrName": "slice",
-          "metadataToken": 100663823,
+          "metadataToken": 100663829,
           "canonicalSignature": "(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "normalizedSignature": "slice|(System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray|static=false",
           "emitScope": "ClassSurface",
@@ -7046,7 +7066,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::indexOf(System.Byte,System.Int32):System.Int32",
           "clrName": "indexOf",
-          "metadataToken": 100663824,
+          "metadataToken": 100663830,
           "canonicalSignature": "(System.Byte,System.Int32):System.Int32",
           "normalizedSignature": "indexOf|(System.Byte,System.Int32):System.Int32|static=false",
           "emitScope": "ClassSurface",
@@ -7066,7 +7086,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::includes(System.Byte,System.Int32):System.Boolean",
           "clrName": "includes",
-          "metadataToken": 100663825,
+          "metadataToken": 100663831,
           "canonicalSignature": "(System.Byte,System.Int32):System.Boolean",
           "normalizedSignature": "includes|(System.Byte,System.Int32):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -7086,7 +7106,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::join(System.String):System.String",
           "clrName": "join",
-          "metadataToken": 100663826,
+          "metadataToken": 100663832,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "join|(System.String):System.String|static=false",
           "emitScope": "ClassSurface",
@@ -7106,7 +7126,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::reverse():Tsonic.JSRuntime.Uint8ClampedArray",
           "clrName": "reverse",
-          "metadataToken": 100663827,
+          "metadataToken": 100663833,
           "canonicalSignature": "():Tsonic.JSRuntime.Uint8ClampedArray",
           "normalizedSignature": "reverse|():Tsonic.JSRuntime.Uint8ClampedArray|static=false",
           "emitScope": "ClassSurface",
@@ -7126,7 +7146,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::sort(System.Comparison_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "clrName": "sort",
-          "metadataToken": 100663828,
+          "metadataToken": 100663834,
           "canonicalSignature": "(System.Comparison_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray",
           "normalizedSignature": "sort|(System.Comparison_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Tsonic.JSRuntime.Uint8ClampedArray|static=false",
           "emitScope": "ClassSurface",
@@ -7146,7 +7166,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::GetEnumerator():System.Collections.Generic.IEnumerator_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "GetEnumerator",
-          "metadataToken": 100663829,
+          "metadataToken": 100663835,
           "canonicalSignature": "():System.Collections.Generic.IEnumerator_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "GetEnumerator|():System.Collections.Generic.IEnumerator_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
@@ -7247,7 +7267,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::.ctor(System.Int32):void",
-          "metadataToken": 100663811,
+          "metadataToken": 100663817,
           "canonicalSignature": "(System.Int32):void",
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
@@ -7258,7 +7278,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::.ctor(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "metadataToken": 100663812,
+          "metadataToken": 100663818,
           "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
           "normalizedSignature": "constructor|(System.Collections.Generic.IEnumerable_1[[System.Byte,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
@@ -7269,7 +7289,7 @@
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Uint8ClampedArray::.ctor(System.Byte[]):void",
-          "metadataToken": 100663813,
+          "metadataToken": 100663819,
           "canonicalSignature": "(System.Byte[]):void",
           "normalizedSignature": "constructor|(System.Byte[]):void|static=false",
           "isStatic": false,
@@ -7303,7 +7323,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::get(K):V",
           "clrName": "get",
-          "metadataToken": 100663832,
+          "metadataToken": 100663838,
           "canonicalSignature": "(K):V",
           "normalizedSignature": "get|(K):V|static=false",
           "emitScope": "ClassSurface",
@@ -7323,7 +7343,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::set(K,V):WeakMap_2",
           "clrName": "set",
-          "metadataToken": 100663833,
+          "metadataToken": 100663839,
           "canonicalSignature": "(K,V):WeakMap_2",
           "normalizedSignature": "set|(K,V):WeakMap_2|static=false",
           "emitScope": "ClassSurface",
@@ -7343,7 +7363,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::has(K):System.Boolean",
           "clrName": "has",
-          "metadataToken": 100663834,
+          "metadataToken": 100663840,
           "canonicalSignature": "(K):System.Boolean",
           "normalizedSignature": "has|(K):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -7363,7 +7383,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::delete(K):System.Boolean",
           "clrName": "delete",
-          "metadataToken": 100663835,
+          "metadataToken": 100663841,
           "canonicalSignature": "(K):System.Boolean",
           "normalizedSignature": "delete|(K):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -7387,7 +7407,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakMap\u00602::.ctor():void",
-          "metadataToken": 100663831,
+          "metadataToken": 100663837,
           "canonicalSignature": "():void",
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
@@ -7420,7 +7440,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakSet\u00601::add(T):WeakSet_1",
           "clrName": "add",
-          "metadataToken": 100663837,
+          "metadataToken": 100663843,
           "canonicalSignature": "(T):WeakSet_1",
           "normalizedSignature": "add|(T):WeakSet_1|static=false",
           "emitScope": "ClassSurface",
@@ -7440,7 +7460,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakSet\u00601::has(T):System.Boolean",
           "clrName": "has",
-          "metadataToken": 100663838,
+          "metadataToken": 100663844,
           "canonicalSignature": "(T):System.Boolean",
           "normalizedSignature": "has|(T):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -7460,7 +7480,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakSet\u00601::delete(T):System.Boolean",
           "clrName": "delete",
-          "metadataToken": 100663839,
+          "metadataToken": 100663845,
           "canonicalSignature": "(T):System.Boolean",
           "normalizedSignature": "delete|(T):System.Boolean|static=false",
           "emitScope": "ClassSurface",
@@ -7484,7 +7504,7 @@
       "constructors": [
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.WeakSet\u00601::.ctor():void",
-          "metadataToken": 100663836,
+          "metadataToken": 100663842,
           "canonicalSignature": "():void",
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
@@ -8195,7 +8215,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::isArray(System.Object):System.Boolean",
           "clrName": "isArray",
-          "metadataToken": 100663570,
+          "metadataToken": 100663571,
           "canonicalSignature": "(System.Object):System.Boolean",
           "normalizedSignature": "isArray|(System.Object):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -8213,11 +8233,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(IEnumerable_1):JSArray_1",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(IEnumerable_1):T[]",
           "clrName": "from",
-          "metadataToken": 100663571,
-          "canonicalSignature": "(IEnumerable_1):JSArray_1",
-          "normalizedSignature": "from|(IEnumerable_1):JSArray_1|static=true",
+          "metadataToken": 100663572,
+          "canonicalSignature": "(IEnumerable_1):T[]",
+          "normalizedSignature": "from|(IEnumerable_1):T[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -8233,11 +8253,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(System.String):Tsonic.JSRuntime.JSArray_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(System.String):System.String[]",
           "clrName": "from",
-          "metadataToken": 100663572,
-          "canonicalSignature": "(System.String):Tsonic.JSRuntime.JSArray_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "from|(System.String):Tsonic.JSRuntime.JSArray_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "metadataToken": 100663573,
+          "canonicalSignature": "(System.String):System.String[]",
+          "normalizedSignature": "from|(System.String):System.String[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -8253,11 +8273,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(IEnumerable_1,Func_3):JSArray_1",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(IEnumerable_1,Func_3):TResult[]",
           "clrName": "from",
-          "metadataToken": 100663573,
-          "canonicalSignature": "(IEnumerable_1,Func_3):JSArray_1",
-          "normalizedSignature": "from|(IEnumerable_1,Func_3):JSArray_1|static=true",
+          "metadataToken": 100663574,
+          "canonicalSignature": "(IEnumerable_1,Func_3):TResult[]",
+          "normalizedSignature": "from|(IEnumerable_1,Func_3):TResult[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 2,
@@ -8273,11 +8293,31 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(System.String,Func_3):JSArray_1",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(IEnumerable_1,Func_2):TResult[]",
           "clrName": "from",
-          "metadataToken": 100663574,
-          "canonicalSignature": "(System.String,Func_3):JSArray_1",
-          "normalizedSignature": "from|(System.String,Func_3):JSArray_1|static=true",
+          "metadataToken": 100663575,
+          "canonicalSignature": "(IEnumerable_1,Func_2):TResult[]",
+          "normalizedSignature": "from|(IEnumerable_1,Func_2):TResult[]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 2,
+          "parameterCount": 2,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Tsonic.JSRuntime.JSArrayStatics",
+          "declaringAssemblyName": "Tsonic.JSRuntime",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(System.String,Func_3):TResult[]",
+          "clrName": "from",
+          "metadataToken": 100663576,
+          "canonicalSignature": "(System.String,Func_3):TResult[]",
+          "normalizedSignature": "from|(System.String,Func_3):TResult[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -8293,11 +8333,31 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::of(T[]):JSArray_1",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::from(System.String,Func_2):TResult[]",
+          "clrName": "from",
+          "metadataToken": 100663577,
+          "canonicalSignature": "(System.String,Func_2):TResult[]",
+          "normalizedSignature": "from|(System.String,Func_2):TResult[]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 1,
+          "parameterCount": 2,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Tsonic.JSRuntime.JSArrayStatics",
+          "declaringAssemblyName": "Tsonic.JSRuntime",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSArrayStatics::of(T[]):T[]",
           "clrName": "of",
-          "metadataToken": 100663575,
-          "canonicalSignature": "(T[]):JSArray_1",
-          "normalizedSignature": "of|(T[]):JSArray_1|static=true",
+          "metadataToken": 100663578,
+          "canonicalSignature": "(T[]):T[]",
+          "normalizedSignature": "of|(T[]):T[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -8337,7 +8397,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSON::parse(System.String):T",
           "clrName": "parse",
-          "metadataToken": 100663576,
+          "metadataToken": 100663579,
           "canonicalSignature": "(System.String):T",
           "normalizedSignature": "parse|(System.String):T|static=true",
           "emitScope": "ClassSurface",
@@ -8357,7 +8417,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.JSON::stringify(System.Object):System.String",
           "clrName": "stringify",
-          "metadataToken": 100663580,
+          "metadataToken": 100663583,
           "canonicalSignature": "(System.Object):System.String",
           "normalizedSignature": "stringify|(System.Object):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -8399,7 +8459,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::abs(System.Double):System.Double",
           "clrName": "abs",
-          "metadataToken": 100663602,
+          "metadataToken": 100663605,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "abs|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8419,7 +8479,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::ceil(System.Double):System.Int64",
           "clrName": "ceil",
-          "metadataToken": 100663603,
+          "metadataToken": 100663606,
           "canonicalSignature": "(System.Double):System.Int64",
           "normalizedSignature": "ceil|(System.Double):System.Int64|static=true",
           "emitScope": "ClassSurface",
@@ -8439,7 +8499,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::floor(System.Double):System.Int64",
           "clrName": "floor",
-          "metadataToken": 100663604,
+          "metadataToken": 100663607,
           "canonicalSignature": "(System.Double):System.Int64",
           "normalizedSignature": "floor|(System.Double):System.Int64|static=true",
           "emitScope": "ClassSurface",
@@ -8459,7 +8519,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::round(System.Double):System.Int64",
           "clrName": "round",
-          "metadataToken": 100663605,
+          "metadataToken": 100663608,
           "canonicalSignature": "(System.Double):System.Int64",
           "normalizedSignature": "round|(System.Double):System.Int64|static=true",
           "emitScope": "ClassSurface",
@@ -8479,7 +8539,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::sqrt(System.Double):System.Double",
           "clrName": "sqrt",
-          "metadataToken": 100663606,
+          "metadataToken": 100663609,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "sqrt|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8499,7 +8559,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::pow(System.Double,System.Double):System.Double",
           "clrName": "pow",
-          "metadataToken": 100663607,
+          "metadataToken": 100663610,
           "canonicalSignature": "(System.Double,System.Double):System.Double",
           "normalizedSignature": "pow|(System.Double,System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8519,7 +8579,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::max(System.Double[]):System.Double",
           "clrName": "max",
-          "metadataToken": 100663608,
+          "metadataToken": 100663611,
           "canonicalSignature": "(System.Double[]):System.Double",
           "normalizedSignature": "max|(System.Double[]):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8539,7 +8599,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::min(System.Double[]):System.Double",
           "clrName": "min",
-          "metadataToken": 100663609,
+          "metadataToken": 100663612,
           "canonicalSignature": "(System.Double[]):System.Double",
           "normalizedSignature": "min|(System.Double[]):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8559,7 +8619,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::sin(System.Double):System.Double",
           "clrName": "sin",
-          "metadataToken": 100663610,
+          "metadataToken": 100663613,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "sin|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8579,7 +8639,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::cos(System.Double):System.Double",
           "clrName": "cos",
-          "metadataToken": 100663611,
+          "metadataToken": 100663614,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "cos|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8599,7 +8659,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::tan(System.Double):System.Double",
           "clrName": "tan",
-          "metadataToken": 100663612,
+          "metadataToken": 100663615,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "tan|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8619,7 +8679,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::asin(System.Double):System.Double",
           "clrName": "asin",
-          "metadataToken": 100663613,
+          "metadataToken": 100663616,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "asin|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8639,7 +8699,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::acos(System.Double):System.Double",
           "clrName": "acos",
-          "metadataToken": 100663614,
+          "metadataToken": 100663617,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "acos|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8659,7 +8719,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::atan(System.Double):System.Double",
           "clrName": "atan",
-          "metadataToken": 100663615,
+          "metadataToken": 100663618,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "atan|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8679,7 +8739,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::atan2(System.Double,System.Double):System.Double",
           "clrName": "atan2",
-          "metadataToken": 100663616,
+          "metadataToken": 100663619,
           "canonicalSignature": "(System.Double,System.Double):System.Double",
           "normalizedSignature": "atan2|(System.Double,System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8699,7 +8759,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::exp(System.Double):System.Double",
           "clrName": "exp",
-          "metadataToken": 100663617,
+          "metadataToken": 100663620,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "exp|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8719,7 +8779,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::log(System.Double):System.Double",
           "clrName": "log",
-          "metadataToken": 100663618,
+          "metadataToken": 100663621,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "log|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8739,7 +8799,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::log10(System.Double):System.Double",
           "clrName": "log10",
-          "metadataToken": 100663619,
+          "metadataToken": 100663622,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "log10|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8759,7 +8819,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::log2(System.Double):System.Double",
           "clrName": "log2",
-          "metadataToken": 100663620,
+          "metadataToken": 100663623,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "log2|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8779,7 +8839,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::random():System.Double",
           "clrName": "random",
-          "metadataToken": 100663621,
+          "metadataToken": 100663624,
           "canonicalSignature": "():System.Double",
           "normalizedSignature": "random|():System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8799,7 +8859,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::sign(System.Double):System.Int32",
           "clrName": "sign",
-          "metadataToken": 100663622,
+          "metadataToken": 100663625,
           "canonicalSignature": "(System.Double):System.Int32",
           "normalizedSignature": "sign|(System.Double):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -8819,7 +8879,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::trunc(System.Double):System.Int64",
           "clrName": "trunc",
-          "metadataToken": 100663623,
+          "metadataToken": 100663626,
           "canonicalSignature": "(System.Double):System.Int64",
           "normalizedSignature": "trunc|(System.Double):System.Int64|static=true",
           "emitScope": "ClassSurface",
@@ -8839,7 +8899,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::sinh(System.Double):System.Double",
           "clrName": "sinh",
-          "metadataToken": 100663624,
+          "metadataToken": 100663627,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "sinh|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8859,7 +8919,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::cosh(System.Double):System.Double",
           "clrName": "cosh",
-          "metadataToken": 100663625,
+          "metadataToken": 100663628,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "cosh|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8879,7 +8939,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::tanh(System.Double):System.Double",
           "clrName": "tanh",
-          "metadataToken": 100663626,
+          "metadataToken": 100663629,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "tanh|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8899,7 +8959,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::asinh(System.Double):System.Double",
           "clrName": "asinh",
-          "metadataToken": 100663627,
+          "metadataToken": 100663630,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "asinh|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8919,7 +8979,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::acosh(System.Double):System.Double",
           "clrName": "acosh",
-          "metadataToken": 100663628,
+          "metadataToken": 100663631,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "acosh|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8939,7 +8999,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::atanh(System.Double):System.Double",
           "clrName": "atanh",
-          "metadataToken": 100663629,
+          "metadataToken": 100663632,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "atanh|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8959,7 +9019,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::cbrt(System.Double):System.Double",
           "clrName": "cbrt",
-          "metadataToken": 100663630,
+          "metadataToken": 100663633,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "cbrt|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8979,7 +9039,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::hypot(System.Double[]):System.Double",
           "clrName": "hypot",
-          "metadataToken": 100663631,
+          "metadataToken": 100663634,
           "canonicalSignature": "(System.Double[]):System.Double",
           "normalizedSignature": "hypot|(System.Double[]):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -8999,7 +9059,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::expm1(System.Double):System.Double",
           "clrName": "expm1",
-          "metadataToken": 100663632,
+          "metadataToken": 100663635,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "expm1|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9019,7 +9079,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::log1p(System.Double):System.Double",
           "clrName": "log1p",
-          "metadataToken": 100663633,
+          "metadataToken": 100663636,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "log1p|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9039,7 +9099,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::fround(System.Double):System.Double",
           "clrName": "fround",
-          "metadataToken": 100663634,
+          "metadataToken": 100663637,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "fround|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9059,7 +9119,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::imul(System.Int32,System.Int32):System.Int32",
           "clrName": "imul",
-          "metadataToken": 100663635,
+          "metadataToken": 100663638,
           "canonicalSignature": "(System.Int32,System.Int32):System.Int32",
           "normalizedSignature": "imul|(System.Int32,System.Int32):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -9079,7 +9139,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::clz32(System.Int32):System.Int32",
           "clrName": "clz32",
-          "metadataToken": 100663636,
+          "metadataToken": 100663639,
           "canonicalSignature": "(System.Int32):System.Int32",
           "normalizedSignature": "clz32|(System.Int32):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -9099,7 +9159,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Math::f16round(System.Double):System.Double",
           "clrName": "f16round",
-          "metadataToken": 100663637,
+          "metadataToken": 100663640,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "f16round|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9238,7 +9298,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::parseInt(System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Double",
           "clrName": "parseInt",
-          "metadataToken": 100663639,
+          "metadataToken": 100663642,
           "canonicalSignature": "(System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Double",
           "normalizedSignature": "parseInt|(System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9258,7 +9318,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::parseFloat(System.String):System.Double",
           "clrName": "parseFloat",
-          "metadataToken": 100663640,
+          "metadataToken": 100663643,
           "canonicalSignature": "(System.String):System.Double",
           "normalizedSignature": "parseFloat|(System.String):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9278,7 +9338,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isNaN(System.Double):System.Boolean",
           "clrName": "isNaN",
-          "metadataToken": 100663641,
+          "metadataToken": 100663644,
           "canonicalSignature": "(System.Double):System.Boolean",
           "normalizedSignature": "isNaN|(System.Double):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9298,7 +9358,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isFinite(System.Double):System.Boolean",
           "clrName": "isFinite",
-          "metadataToken": 100663642,
+          "metadataToken": 100663645,
           "canonicalSignature": "(System.Double):System.Boolean",
           "normalizedSignature": "isFinite|(System.Double):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9318,7 +9378,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isInteger(System.Double):System.Boolean",
           "clrName": "isInteger",
-          "metadataToken": 100663643,
+          "metadataToken": 100663646,
           "canonicalSignature": "(System.Double):System.Boolean",
           "normalizedSignature": "isInteger|(System.Double):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9338,7 +9398,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isSafeInteger(System.Double):System.Boolean",
           "clrName": "isSafeInteger",
-          "metadataToken": 100663644,
+          "metadataToken": 100663647,
           "canonicalSignature": "(System.Double):System.Boolean",
           "normalizedSignature": "isSafeInteger|(System.Double):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9358,7 +9418,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Double):System.String",
           "clrName": "toString",
-          "metadataToken": 100663645,
+          "metadataToken": 100663648,
           "canonicalSignature": "(System.Double):System.String",
           "normalizedSignature": "toString|(System.Double):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9378,7 +9438,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Double):System.Double",
           "clrName": "valueOf",
-          "metadataToken": 100663646,
+          "metadataToken": 100663649,
           "canonicalSignature": "(System.Double):System.Double",
           "normalizedSignature": "valueOf|(System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -9517,7 +9577,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Object::keys(System.Object):System.String[]",
           "clrName": "keys",
-          "metadataToken": 100663648,
+          "metadataToken": 100663651,
           "canonicalSignature": "(System.Object):System.String[]",
           "normalizedSignature": "keys|(System.Object):System.String[]|static=true",
           "emitScope": "ClassSurface",
@@ -9537,7 +9597,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Object::values(System.Object):System.Object[]",
           "clrName": "values",
-          "metadataToken": 100663649,
+          "metadataToken": 100663652,
           "canonicalSignature": "(System.Object):System.Object[]",
           "normalizedSignature": "values|(System.Object):System.Object[]|static=true",
           "emitScope": "ClassSurface",
@@ -9557,7 +9617,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Object::entries(System.Object):System.ValueTuple_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]][]",
           "clrName": "entries",
-          "metadataToken": 100663650,
+          "metadataToken": 100663653,
           "canonicalSignature": "(System.Object):System.ValueTuple_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]][]",
           "normalizedSignature": "entries|(System.Object):System.ValueTuple_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]][]|static=true",
           "emitScope": "ClassSurface",
@@ -9571,6 +9631,68 @@
           "isSealed": false,
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Object",
+          "declaringAssemblyName": "Tsonic.JSRuntime",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.ProcessKeepAlive",
+      "clrName": "Tsonic.JSRuntime.ProcessKeepAlive",
+      "assemblyName": "Tsonic.JSRuntime",
+      "metadataToken": 0,
+      "kind": "StaticNamespace",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": true,
+      "isStatic": true,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "methods": [
+        {
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.ProcessKeepAlive::Acquire():System.Void",
+          "clrName": "Acquire",
+          "metadataToken": 100663654,
+          "canonicalSignature": "():System.Void",
+          "normalizedSignature": "Acquire|():System.Void|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Tsonic.JSRuntime.ProcessKeepAlive",
+          "declaringAssemblyName": "Tsonic.JSRuntime",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.ProcessKeepAlive::Release():System.Void",
+          "clrName": "Release",
+          "metadataToken": 100663655,
+          "canonicalSignature": "():System.Void",
+          "normalizedSignature": "Release|():System.Void|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Tsonic.JSRuntime.ProcessKeepAlive",
           "declaringAssemblyName": "Tsonic.JSRuntime",
           "isExtensionMethod": false
         }
@@ -9599,7 +9721,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toUpperCase(System.String):System.String",
           "clrName": "toUpperCase",
-          "metadataToken": 100663700,
+          "metadataToken": 100663706,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "toUpperCase|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9619,7 +9741,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toLowerCase(System.String):System.String",
           "clrName": "toLowerCase",
-          "metadataToken": 100663701,
+          "metadataToken": 100663707,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "toLowerCase|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9639,7 +9761,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trim(System.String):System.String",
           "clrName": "trim",
-          "metadataToken": 100663702,
+          "metadataToken": 100663708,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "trim|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9659,7 +9781,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimStart(System.String):System.String",
           "clrName": "trimStart",
-          "metadataToken": 100663703,
+          "metadataToken": 100663709,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "trimStart|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9679,7 +9801,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimEnd(System.String):System.String",
           "clrName": "trimEnd",
-          "metadataToken": 100663704,
+          "metadataToken": 100663710,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "trimEnd|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9699,7 +9821,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::substring(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
           "clrName": "substring",
-          "metadataToken": 100663705,
+          "metadataToken": 100663711,
           "canonicalSignature": "(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
           "normalizedSignature": "substring|(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9719,7 +9841,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::slice(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
           "clrName": "slice",
-          "metadataToken": 100663706,
+          "metadataToken": 100663712,
           "canonicalSignature": "(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
           "normalizedSignature": "slice|(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9739,7 +9861,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::indexOf(System.String,System.String,System.Int32):System.Int32",
           "clrName": "indexOf",
-          "metadataToken": 100663707,
+          "metadataToken": 100663713,
           "canonicalSignature": "(System.String,System.String,System.Int32):System.Int32",
           "normalizedSignature": "indexOf|(System.String,System.String,System.Int32):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -9759,7 +9881,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::lastIndexOf(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Int32",
           "clrName": "lastIndexOf",
-          "metadataToken": 100663708,
+          "metadataToken": 100663714,
           "canonicalSignature": "(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Int32",
           "normalizedSignature": "lastIndexOf|(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -9779,7 +9901,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::startsWith(System.String,System.String):System.Boolean",
           "clrName": "startsWith",
-          "metadataToken": 100663709,
+          "metadataToken": 100663715,
           "canonicalSignature": "(System.String,System.String):System.Boolean",
           "normalizedSignature": "startsWith|(System.String,System.String):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9799,7 +9921,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::endsWith(System.String,System.String):System.Boolean",
           "clrName": "endsWith",
-          "metadataToken": 100663710,
+          "metadataToken": 100663716,
           "canonicalSignature": "(System.String,System.String):System.Boolean",
           "normalizedSignature": "endsWith|(System.String,System.String):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9819,7 +9941,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::includes(System.String,System.String):System.Boolean",
           "clrName": "includes",
-          "metadataToken": 100663711,
+          "metadataToken": 100663717,
           "canonicalSignature": "(System.String,System.String):System.Boolean",
           "normalizedSignature": "includes|(System.String,System.String):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -9839,7 +9961,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::replace(System.String,System.String,System.String):System.String",
           "clrName": "replace",
-          "metadataToken": 100663712,
+          "metadataToken": 100663718,
           "canonicalSignature": "(System.String,System.String,System.String):System.String",
           "normalizedSignature": "replace|(System.String,System.String,System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9859,7 +9981,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::repeat(System.String,System.Int32):System.String",
           "clrName": "repeat",
-          "metadataToken": 100663713,
+          "metadataToken": 100663719,
           "canonicalSignature": "(System.String,System.Int32):System.String",
           "normalizedSignature": "repeat|(System.String,System.Int32):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9879,7 +10001,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::padStart(System.String,System.Int32,System.String):System.String",
           "clrName": "padStart",
-          "metadataToken": 100663714,
+          "metadataToken": 100663720,
           "canonicalSignature": "(System.String,System.Int32,System.String):System.String",
           "normalizedSignature": "padStart|(System.String,System.Int32,System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9899,7 +10021,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::padEnd(System.String,System.Int32,System.String):System.String",
           "clrName": "padEnd",
-          "metadataToken": 100663715,
+          "metadataToken": 100663721,
           "canonicalSignature": "(System.String,System.Int32,System.String):System.String",
           "normalizedSignature": "padEnd|(System.String,System.Int32,System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9919,7 +10041,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::charAt(System.String,System.Int32):System.String",
           "clrName": "charAt",
-          "metadataToken": 100663716,
+          "metadataToken": 100663722,
           "canonicalSignature": "(System.String,System.Int32):System.String",
           "normalizedSignature": "charAt|(System.String,System.Int32):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -9939,7 +10061,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::charCodeAt(System.String,System.Int32):System.Int32",
           "clrName": "charCodeAt",
-          "metadataToken": 100663717,
+          "metadataToken": 100663723,
           "canonicalSignature": "(System.String,System.Int32):System.Int32",
           "normalizedSignature": "charCodeAt|(System.String,System.Int32):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -9959,7 +10081,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::split(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "split",
-          "metadataToken": 100663718,
+          "metadataToken": 100663724,
           "canonicalSignature": "(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "split|(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
           "emitScope": "ClassSurface",
@@ -9979,7 +10101,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::length(System.String):System.Int32",
           "clrName": "length",
-          "metadataToken": 100663719,
+          "metadataToken": 100663725,
           "canonicalSignature": "(System.String):System.Int32",
           "normalizedSignature": "length|(System.String):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -9999,7 +10121,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::at(System.String,System.Int32):System.String",
           "clrName": "at",
-          "metadataToken": 100663720,
+          "metadataToken": 100663726,
           "canonicalSignature": "(System.String,System.Int32):System.String",
           "normalizedSignature": "at|(System.String,System.Int32):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10019,7 +10141,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::codePointAt(System.String,System.Int32):System.Int32",
           "clrName": "codePointAt",
-          "metadataToken": 100663721,
+          "metadataToken": 100663727,
           "canonicalSignature": "(System.String,System.Int32):System.Int32",
           "normalizedSignature": "codePointAt|(System.String,System.Int32):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -10039,7 +10161,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::concat(System.String,System.String[]):System.String",
           "clrName": "concat",
-          "metadataToken": 100663722,
+          "metadataToken": 100663728,
           "canonicalSignature": "(System.String,System.String[]):System.String",
           "normalizedSignature": "concat|(System.String,System.String[]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10059,7 +10181,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::localeCompare(System.String,System.String):System.Int32",
           "clrName": "localeCompare",
-          "metadataToken": 100663723,
+          "metadataToken": 100663729,
           "canonicalSignature": "(System.String,System.String):System.Int32",
           "normalizedSignature": "localeCompare|(System.String,System.String):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -10079,7 +10201,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::match(System.String,System.String):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "match",
-          "metadataToken": 100663724,
+          "metadataToken": 100663730,
           "canonicalSignature": "(System.String,System.String):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "match|(System.String,System.String):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
           "emitScope": "ClassSurface",
@@ -10099,7 +10221,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::matchAll(System.String,System.String):System.Collections.Generic.List_1[[System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "matchAll",
-          "metadataToken": 100663725,
+          "metadataToken": 100663731,
           "canonicalSignature": "(System.String,System.String):System.Collections.Generic.List_1[[System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "matchAll|(System.String,System.String):System.Collections.Generic.List_1[[System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
           "emitScope": "ClassSurface",
@@ -10119,7 +10241,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::search(System.String,System.String):System.Int32",
           "clrName": "search",
-          "metadataToken": 100663726,
+          "metadataToken": 100663732,
           "canonicalSignature": "(System.String,System.String):System.Int32",
           "normalizedSignature": "search|(System.String,System.String):System.Int32|static=true",
           "emitScope": "ClassSurface",
@@ -10139,7 +10261,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::replaceAll(System.String,System.String,System.String):System.String",
           "clrName": "replaceAll",
-          "metadataToken": 100663727,
+          "metadataToken": 100663733,
           "canonicalSignature": "(System.String,System.String,System.String):System.String",
           "normalizedSignature": "replaceAll|(System.String,System.String,System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10159,7 +10281,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::normalize(System.String,System.String):System.String",
           "clrName": "normalize",
-          "metadataToken": 100663728,
+          "metadataToken": 100663734,
           "canonicalSignature": "(System.String,System.String):System.String",
           "normalizedSignature": "normalize|(System.String,System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10179,7 +10301,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::substr(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
           "clrName": "substr",
-          "metadataToken": 100663729,
+          "metadataToken": 100663735,
           "canonicalSignature": "(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
           "normalizedSignature": "substr|(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10199,7 +10321,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toLocaleLowerCase(System.String):System.String",
           "clrName": "toLocaleLowerCase",
-          "metadataToken": 100663730,
+          "metadataToken": 100663736,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "toLocaleLowerCase|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10219,7 +10341,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toLocaleUpperCase(System.String):System.String",
           "clrName": "toLocaleUpperCase",
-          "metadataToken": 100663731,
+          "metadataToken": 100663737,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "toLocaleUpperCase|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10239,7 +10361,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toString(System.String):System.String",
           "clrName": "toString",
-          "metadataToken": 100663732,
+          "metadataToken": 100663738,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "toString|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10259,7 +10381,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::valueOf(System.String):System.String",
           "clrName": "valueOf",
-          "metadataToken": 100663733,
+          "metadataToken": 100663739,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "valueOf|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10279,7 +10401,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::isWellFormed(System.String):System.Boolean",
           "clrName": "isWellFormed",
-          "metadataToken": 100663734,
+          "metadataToken": 100663740,
           "canonicalSignature": "(System.String):System.Boolean",
           "normalizedSignature": "isWellFormed|(System.String):System.Boolean|static=true",
           "emitScope": "ClassSurface",
@@ -10299,7 +10421,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toWellFormed(System.String):System.String",
           "clrName": "toWellFormed",
-          "metadataToken": 100663735,
+          "metadataToken": 100663741,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "toWellFormed|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10319,7 +10441,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimLeft(System.String):System.String",
           "clrName": "trimLeft",
-          "metadataToken": 100663736,
+          "metadataToken": 100663742,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "trimLeft|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10339,7 +10461,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimRight(System.String):System.String",
           "clrName": "trimRight",
-          "metadataToken": 100663737,
+          "metadataToken": 100663743,
           "canonicalSignature": "(System.String):System.String",
           "normalizedSignature": "trimRight|(System.String):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10359,7 +10481,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::fromCharCode(System.Int32[]):System.String",
           "clrName": "fromCharCode",
-          "metadataToken": 100663738,
+          "metadataToken": 100663744,
           "canonicalSignature": "(System.Int32[]):System.String",
           "normalizedSignature": "fromCharCode|(System.Int32[]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10379,7 +10501,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::fromCodePoint(System.Int32[]):System.String",
           "clrName": "fromCodePoint",
-          "metadataToken": 100663739,
+          "metadataToken": 100663745,
           "canonicalSignature": "(System.Int32[]):System.String",
           "normalizedSignature": "fromCodePoint|(System.Int32[]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10399,7 +10521,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::raw(System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]):System.String",
           "clrName": "raw",
-          "metadataToken": 100663740,
+          "metadataToken": 100663746,
           "canonicalSignature": "(System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]):System.String",
           "normalizedSignature": "raw|(System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]):System.String|static=true",
           "emitScope": "ClassSurface",
@@ -10441,7 +10563,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Timers::setTimeout(System.Action,System.Double):System.Double",
           "clrName": "setTimeout",
-          "metadataToken": 100663743,
+          "metadataToken": 100663749,
           "canonicalSignature": "(System.Action,System.Double):System.Double",
           "normalizedSignature": "setTimeout|(System.Action,System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -10461,7 +10583,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Timers::setTimeout(Action_1,System.Double,T):System.Double",
           "clrName": "setTimeout",
-          "metadataToken": 100663744,
+          "metadataToken": 100663750,
           "canonicalSignature": "(Action_1,System.Double,T):System.Double",
           "normalizedSignature": "setTimeout|(Action_1,System.Double,T):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -10481,7 +10603,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Timers::clearTimeout(System.Double):System.Void",
           "clrName": "clearTimeout",
-          "metadataToken": 100663745,
+          "metadataToken": 100663751,
           "canonicalSignature": "(System.Double):System.Void",
           "normalizedSignature": "clearTimeout|(System.Double):System.Void|static=true",
           "emitScope": "ClassSurface",
@@ -10501,7 +10623,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Timers::setInterval(System.Action,System.Double):System.Double",
           "clrName": "setInterval",
-          "metadataToken": 100663746,
+          "metadataToken": 100663752,
           "canonicalSignature": "(System.Action,System.Double):System.Double",
           "normalizedSignature": "setInterval|(System.Action,System.Double):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -10521,7 +10643,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Timers::setInterval(Action_1,System.Double,T):System.Double",
           "clrName": "setInterval",
-          "metadataToken": 100663747,
+          "metadataToken": 100663753,
           "canonicalSignature": "(Action_1,System.Double,T):System.Double",
           "normalizedSignature": "setInterval|(Action_1,System.Double,T):System.Double|static=true",
           "emitScope": "ClassSurface",
@@ -10541,7 +10663,7 @@
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Timers::clearInterval(System.Double):System.Void",
           "clrName": "clearInterval",
-          "metadataToken": 100663748,
+          "metadataToken": 100663754,
           "canonicalSignature": "(System.Double):System.Void",
           "normalizedSignature": "clearInterval|(System.Double):System.Void|static=true",
           "emitScope": "ClassSurface",

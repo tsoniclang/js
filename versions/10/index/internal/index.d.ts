@@ -7,7 +7,7 @@ import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint12
 
 // Import types from other namespaces
 import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
-import type { IEnumerable_1, IEnumerator_1, KeyValuePair_2, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { IEnumerable_1, IEnumerator_1, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
 import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections/internal/index.js";
 import type { IEnumerable } from "@tsonic/dotnet/System.Collections/internal/index.js";
 import * as System_Runtime_Serialization_Internal from "@tsonic/dotnet/System.Runtime.Serialization/internal/index.js";
@@ -353,6 +353,7 @@ export const JSArray_1: {
     new<T>(source: T[]): JSArray_1<T>;
     new<T>(source: List_1<T>): JSArray_1<T>;
     new<T>(source: IEnumerable_1<T>): JSArray_1<T>;
+    from<T, TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_2<TSource, TResult>): JSArray_1<TResult>;
     from<T, TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_3<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
     from<T>(iterable: IEnumerable_1<T>): JSArray_1<T>;
     isArray<T>(value: unknown): boolean;
@@ -376,7 +377,7 @@ export interface Map_2$instance<K, V> {
     forEach(callback: Action_2<V, K>): void;
     forEach(callback: Action_1<V>): void;
     get(key: K): V | undefined;
-    GetEnumerator(): IEnumerator_1<KeyValuePair_2<K, V>>;
+    GetEnumerator(): IEnumerator_1<ValueTuple_2<K, V>>;
     has(key: K): boolean;
     keys(): IEnumerable_1<K>;
     set(key: K, value: V): Map_2<K, V>;
@@ -698,12 +699,14 @@ export abstract class Globals$instance {
 export type Globals = Globals$instance;
 
 export abstract class JSArrayStatics$instance {
-    static from<TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_3<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
-    static from<T>(iterable: IEnumerable_1<T>): JSArray_1<T>;
-    static from<TResult>(source: string, mapFunc: Func_3<System_Internal.String, System_Internal.Int32, TResult>): JSArray_1<TResult>;
-    static from(source: string): JSArray_1<System_Internal.String>;
+    static from<TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_2<TSource, TResult>): TResult[];
+    static from<TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_3<TSource, System_Internal.Int32, TResult>): TResult[];
+    static from<T>(iterable: IEnumerable_1<T>): T[];
+    static from<TResult>(source: string, mapFunc: Func_2<System_Internal.String, TResult>): TResult[];
+    static from<TResult>(source: string, mapFunc: Func_3<System_Internal.String, System_Internal.Int32, TResult>): TResult[];
+    static from(source: string): string[];
     static isArray(value: unknown): boolean;
-    static of<T>(...items: T[]): JSArray_1<T>;
+    static of<T>(...items: T[]): T[];
 }
 
 
@@ -797,6 +800,14 @@ export abstract class Object$instance {
 
 
 export type Object = Object$instance;
+
+export abstract class ProcessKeepAlive$instance {
+    static Acquire(): void;
+    static Release(): void;
+}
+
+
+export type ProcessKeepAlive = ProcessKeepAlive$instance;
 
 export abstract class String$instance {
     static at(str: string, index: int): string;
