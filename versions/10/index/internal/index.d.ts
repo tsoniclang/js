@@ -690,7 +690,7 @@ export abstract class Globals$instance {
     static isNaN(value: double): boolean;
     static Number(value: unknown): double;
     static parseFloat(str: string): double;
-    static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): Nullable_1<System_Internal.Int64>;
+    static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): double;
     static String(value: unknown): string;
 }
 
@@ -781,13 +781,22 @@ export abstract class Number$instance {
     static isNaN(value: double): boolean;
     static isSafeInteger(value: double): boolean;
     static parseFloat(str: string): double;
-    static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): Nullable_1<System_Internal.Int64>;
+    static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): double;
     static toString(value: double): string;
     static valueOf(value: double): double;
 }
 
 
 export type Number = Number$instance;
+
+export abstract class Object$instance {
+    static entries(value: unknown): ValueTuple_2<System_Internal.String, unknown>[];
+    static keys(value: unknown): string[];
+    static values(value: unknown): (unknown | undefined)[];
+}
+
+
+export type Object = Object$instance;
 
 export abstract class String$instance {
     static at(str: string, index: int): string;
@@ -837,12 +846,12 @@ export abstract class String$instance {
 export type String = String$instance;
 
 export abstract class Timers$instance {
-    static clearInterval(id: int): void;
-    static clearTimeout(id: int): void;
-    static setInterval<T>(callback: Action_1<T>, intervalMs: int, arg: T): int;
-    static setInterval(callback: Action, intervalMs: int): int;
-    static setTimeout<T>(callback: Action_1<T>, delayMs: int, arg: T): int;
-    static setTimeout(callback: Action, delayMs?: int): int;
+    static clearInterval(id: double): void;
+    static clearTimeout(id: double): void;
+    static setInterval<T>(callback: Action_1<T>, intervalMs: double, arg: T): double;
+    static setInterval(callback: Action, intervalMs: double): double;
+    static setTimeout<T>(callback: Action_1<T>, delayMs: double, arg: T): double;
+    static setTimeout(callback: Action, delayMs?: double): double;
 }
 
 

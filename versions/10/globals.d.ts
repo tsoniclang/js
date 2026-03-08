@@ -1,4 +1,5 @@
-import type { int, long, double } from "@tsonic/core/types.js";
+import type { int, long } from "@tsonic/core/types.js";
+import type { Date as JSRuntimeDate } from "./index/internal/index.js";
 
 declare global {
   class RangeError extends Error {
@@ -58,24 +59,24 @@ declare global {
 
   interface Number {
     toString(): string;
-    valueOf(): double;
+    valueOf(): number;
   }
 
   interface NumberConstructor {
-    readonly EPSILON: double;
-    readonly MAX_SAFE_INTEGER: double;
-    readonly MAX_VALUE: double;
-    readonly MIN_SAFE_INTEGER: double;
-    readonly MIN_VALUE: double;
-    readonly NEGATIVE_INFINITY: double;
-    readonly POSITIVE_INFINITY: double;
-    readonly NaN: double;
-    isFinite(value: double): boolean;
-    isInteger(value: double): boolean;
-    isNaN(value: double): boolean;
-    isSafeInteger(value: double): boolean;
-    parseFloat(str: string): double;
-    parseInt(str: string, radix?: int): long | undefined;
+    readonly EPSILON: number;
+    readonly MAX_SAFE_INTEGER: number;
+    readonly MAX_VALUE: number;
+    readonly MIN_SAFE_INTEGER: number;
+    readonly MIN_VALUE: number;
+    readonly NEGATIVE_INFINITY: number;
+    readonly POSITIVE_INFINITY: number;
+    readonly NaN: number;
+    isFinite(value: number): boolean;
+    isInteger(value: number): boolean;
+    isNaN(value: number): boolean;
+    isSafeInteger(value: number): boolean;
+    parseFloat(str: string): number;
+    parseInt(str: string, radix?: number): number;
   }
 
   interface Array<T> {
@@ -231,9 +232,7 @@ declare global {
     of<T>(...items: T[]): T[];
   }
 
-  interface Date {
-    toISOString(): string;
-    getTime(): long;
+  interface Date extends JSRuntimeDate {
   }
 
   interface DateConstructor {
@@ -249,10 +248,10 @@ declare global {
   }
 
   interface Math {
-    round(x: double): double;
-    max(...values: double[]): double;
-    min(...values: double[]): double;
-    random(): double;
+    round(x: number): number;
+    max(...values: double[]): number;
+    min(...values: double[]): number;
+    random(): number;
   }
 
   interface RegExpMatchArray extends Array<string> {
@@ -275,8 +274,15 @@ declare global {
     clear(): void;
     delete(key: K): boolean;
     get(key: K): V | undefined;
+    entries(): Iterable<[K, V]>;
+    forEach(callback: (value: V) => void): void;
+    forEach(callback: (value: V, key: K) => void): void;
+    forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void;
     has(key: K): boolean;
+    keys(): Iterable<K>;
     set(key: K, value: V): this;
+    values(): Iterable<V>;
+    [Symbol.iterator](): IterableIterator<[K, V]>;
   }
 
   interface MapConstructor {
@@ -288,11 +294,24 @@ declare global {
     add(value: T): this;
     clear(): void;
     delete(value: T): boolean;
+    entries(): Iterable<[T, T]>;
+    forEach(callback: (value: T) => void): void;
+    forEach(callback: (value: T, key: T) => void): void;
+    forEach(callback: (value: T, key: T, set: Set<T>) => void): void;
     has(value: T): boolean;
+    keys(): Iterable<T>;
+    values(): Iterable<T>;
+    [Symbol.iterator](): IterableIterator<T>;
   }
 
   interface SetConstructor {
     new<T = unknown>(values?: readonly T[] | null): Set<T>;
+  }
+
+  interface ObjectConstructor {
+    entries(obj: unknown): [string, unknown][];
+    keys(obj: unknown): string[];
+    values(obj: unknown): unknown[];
   }
 
   const String: StringConstructor;
@@ -313,21 +332,23 @@ declare global {
 
   const Set: SetConstructor;
 
-  function parseInt(str: string, radix?: int): long | undefined;
+  const Object: ObjectConstructor;
 
-  function parseFloat(str: string): double;
+  function parseInt(str: string, radix?: number): number;
 
-  function isFinite(value: double): boolean;
+  function parseFloat(str: string): number;
 
-  function isNaN(value: double): boolean;
+  function isFinite(value: number): boolean;
 
-  function setTimeout(handler: (...args: unknown[]) => void, timeout?: int, ...args: unknown[]): int;
+  function isNaN(value: number): boolean;
 
-  function clearTimeout(id: int): void;
+  function setTimeout(handler: (...args: unknown[]) => void, timeout?: number, ...args: unknown[]): number;
 
-  function setInterval(handler: (...args: unknown[]) => void, timeout?: int, ...args: unknown[]): int;
+  function clearTimeout(id: number): void;
 
-  function clearInterval(id: int): void;
+  function setInterval(handler: (...args: unknown[]) => void, timeout?: number, ...args: unknown[]): number;
+
+  function clearInterval(id: number): void;
 }
 
 export {};

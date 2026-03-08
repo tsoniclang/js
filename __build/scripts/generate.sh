@@ -33,6 +33,7 @@ DOTNET_RUNTIME_PATH="$DOTNET_HOME/shared/Microsoft.NETCore.App/$DOTNET_VERSION"
 
 # Tsonic.JSRuntime.dll path
 JSRUNTIME_DLL="$JS_RUNTIME_DIR/artifacts/bin/Tsonic.JSRuntime/Release/net${DOTNET_MAJOR}.0/Tsonic.JSRuntime.dll"
+SURFACE_PACKAGE="$JS_RUNTIME_DIR/surface/$DOTNET_MAJOR/tsbindgen.surface-package.json"
 
 echo "================================================================"
 echo "Generating @tsonic/js TypeScript Declarations"
@@ -44,6 +45,7 @@ echo "  .NET Runtime:  $DOTNET_RUNTIME_PATH"
 echo "  BCL Library:   $DOTNET_LIB (external reference)"
 echo "  tsbindgen:     $TSBINDGEN_DIR"
 echo "  Output:        $OUT_DIR"
+echo "  Surface:       $SURFACE_PACKAGE"
 echo ""
 
 # Verify prerequisites
@@ -74,6 +76,12 @@ fi
 if [ ! -d "$CORE_LIB" ]; then
     echo "ERROR: @tsonic/core not found at $CORE_LIB"
     echo "Clone it: git clone https://github.com/tsoniclang/core ../core"
+    exit 1
+fi
+
+if [ ! -f "$SURFACE_PACKAGE" ]; then
+    echo "ERROR: JS surface package not found at $SURFACE_PACKAGE"
+    echo "Expected runtime-owned surface config in ../js-runtime/surface/$DOTNET_MAJOR"
     exit 1
 fi
 
@@ -113,10 +121,50 @@ dotnet run --project src/tsbindgen/tsbindgen.csproj --no-build -c Release -- \
     --lib "$CORE_LIB" \
     --namespace-map "Tsonic.JSRuntime=index" \
     --flatten-class "Tsonic.JSRuntime.Globals" \
-    --surface-package "$PROJECT_DIR/__build/templates/$DOTNET_MAJOR/tsbindgen.surface-package.json"
+    --surface-package "$SURFACE_PACKAGE"
 
 cp -f "$PROJECT_DIR/README.md" "$OUT_DIR/README.md"
 cp -f "$PROJECT_DIR/LICENSE" "$OUT_DIR/LICENSE"
+
+echo "[4/4] Verifying npm package contents..."
+PACK_JSON="$(cd "$PROJECT_DIR" && npm pack --dry-run --json "./versions/$DOTNET_MAJOR")"
+node - "$OUT_DIR" "$PACK_JSON" <<'NODE'
+const fs = require("node:fs");
+const path = require("node:path");
+
+const outDir = path.resolve(process.argv[2]);
+const packJson = JSON.parse(process.argv[3]);
+const packEntry = Array.isArray(packJson) ? packJson[0] : packJson;
+const packedFiles = new Set(
+  (packEntry.files ?? []).map((entry) => String(entry.path).replace(/\\/g, "/"))
+);
+
+const expectedFiles = [];
+const walk = (dir) => {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walk(fullPath);
+      continue;
+    }
+    expectedFiles.push(path.relative(outDir, fullPath).replace(/\\/g, "/"));
+  }
+};
+walk(outDir);
+
+const missing = expectedFiles
+  .filter((file) => !packedFiles.has(file))
+  .sort();
+
+if (missing.length > 0) {
+  console.error("ERROR: npm pack is missing generated files:");
+  for (const file of missing) {
+    console.error(`  - ${file}`);
+  }
+  process.exit(1);
+}
+NODE
+echo "  Done"
 
 echo ""
 echo "================================================================"
