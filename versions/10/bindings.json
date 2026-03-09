@@ -50,6 +50,15 @@
         "contributesTypeIdentity": true
       }
     },
+    "Boolean": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.BooleanOps",
+      "csharpName": "Globals.Boolean",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
     "RegExp": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",

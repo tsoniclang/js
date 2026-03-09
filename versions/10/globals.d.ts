@@ -62,6 +62,21 @@ declare global {
     valueOf(): number;
   }
 
+  interface Boolean {
+    toString(): string;
+    valueOf(): boolean;
+  }
+
+  interface BooleanConstructor {
+    (value?: unknown): boolean;
+  }
+
+  interface ImportMeta {
+    readonly url: string;
+    readonly filename: string;
+    readonly dirname: string;
+  }
+
   interface NumberConstructor {
     readonly EPSILON: number;
     readonly MAX_SAFE_INTEGER: number;
@@ -325,6 +340,8 @@ declare global {
   const String: StringConstructor;
 
   const Number: NumberConstructor;
+
+  const Boolean: BooleanConstructor;
 
   const console: Console;
 

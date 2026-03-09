@@ -54,6 +54,7 @@ interface __TsonicExtMethods_Tsonic_JSRuntime {
   toLocaleLowerCase(this: string): Rewrap<this, string>;
   toLocaleUpperCase(this: string): Rewrap<this, string>;
   toLowerCase(this: string): Rewrap<this, string>;
+  toString(this: boolean): Rewrap<this, string>;
   toString(this: double): Rewrap<this, string>;
   toString(this: int): Rewrap<this, string>;
   toString(this: long): Rewrap<this, string>;
@@ -68,6 +69,7 @@ interface __TsonicExtMethods_Tsonic_JSRuntime {
   trimLeft(this: string): Rewrap<this, string>;
   trimRight(this: string): Rewrap<this, string>;
   trimStart(this: string): Rewrap<this, string>;
+  valueOf(this: boolean): Rewrap<this, boolean>;
   valueOf(this: double): Rewrap<this, double>;
   valueOf(this: int): Rewrap<this, int>;
   valueOf(this: long): Rewrap<this, long>;
