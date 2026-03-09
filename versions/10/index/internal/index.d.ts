@@ -688,7 +688,15 @@ export abstract class Globals$instance {
     static encodeURI(uri: string): string;
     static encodeURIComponent(component: string): string;
     static isFinite(value: double): boolean;
+    static isFinite(value: int): boolean;
+    static isFinite(value: long): boolean;
+    static isFinite(value: Nullable_1<System_Internal.Int32>): boolean;
+    static isFinite(value: Nullable_1<System_Internal.Int64>): boolean;
     static isNaN(value: double): boolean;
+    static isNaN(value: int): boolean;
+    static isNaN(value: long): boolean;
+    static isNaN(value: Nullable_1<System_Internal.Int32>): boolean;
+    static isNaN(value: Nullable_1<System_Internal.Int64>): boolean;
     static Number(value: unknown): double;
     static parseFloat(str: string): double;
     static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): double;
@@ -780,13 +788,39 @@ export abstract class Number$instance {
     static readonly NaN: double;
     static readonly EPSILON: double;
     static isFinite(value: double): boolean;
+    static isFinite(value: int): boolean;
+    static isFinite(value: long): boolean;
+    static isFinite(value: Nullable_1<System_Internal.Int32>): boolean;
+    static isFinite(value: Nullable_1<System_Internal.Int64>): boolean;
     static isInteger(value: double): boolean;
+    static isInteger(value: int): boolean;
+    static isInteger(value: long): boolean;
+    static isInteger(value: Nullable_1<System_Internal.Int32>): boolean;
+    static isInteger(value: Nullable_1<System_Internal.Int64>): boolean;
     static isNaN(value: double): boolean;
+    static isNaN(value: int): boolean;
+    static isNaN(value: long): boolean;
+    static isNaN(value: Nullable_1<System_Internal.Int32>): boolean;
+    static isNaN(value: Nullable_1<System_Internal.Int64>): boolean;
     static isSafeInteger(value: double): boolean;
+    static isSafeInteger(value: int): boolean;
+    static isSafeInteger(value: long): boolean;
+    static isSafeInteger(value: Nullable_1<System_Internal.Int32>): boolean;
+    static isSafeInteger(value: Nullable_1<System_Internal.Int64>): boolean;
     static parseFloat(str: string): double;
     static parseInt(str: string, radix?: Nullable_1<System_Internal.Int32>): double;
     static toString(value: double): string;
+    static toString(value: int): string;
+    static toString(value: long): string;
+    static toString(value: Nullable_1<System_Internal.Double>): string;
+    static toString(value: Nullable_1<System_Internal.Int32>): string;
+    static toString(value: Nullable_1<System_Internal.Int64>): string;
     static valueOf(value: double): double;
+    static valueOf(value: int): int;
+    static valueOf(value: long): long;
+    static valueOf(value: Nullable_1<System_Internal.Double>): Nullable_1<System_Internal.Double>;
+    static valueOf(value: Nullable_1<System_Internal.Int32>): Nullable_1<System_Internal.Int32>;
+    static valueOf(value: Nullable_1<System_Internal.Int64>): Nullable_1<System_Internal.Int64>;
 }
 
 
