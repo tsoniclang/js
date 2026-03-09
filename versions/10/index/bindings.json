@@ -9473,7 +9473,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::parseFloat(System.String):System.Double",
@@ -9493,7 +9496,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isNaN(System.Double):System.Boolean",
@@ -9513,7 +9519,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isNaN(System.Int32):System.Boolean",
@@ -9533,7 +9542,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isNaN(System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9553,7 +9565,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isNaN(System.Int64):System.Boolean",
@@ -9573,7 +9588,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isNaN(System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9593,7 +9611,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isFinite(System.Double):System.Boolean",
@@ -9613,7 +9634,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isFinite(System.Int32):System.Boolean",
@@ -9633,7 +9657,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isFinite(System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9653,7 +9680,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isFinite(System.Int64):System.Boolean",
@@ -9673,7 +9703,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isFinite(System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9693,7 +9726,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isInteger(System.Double):System.Boolean",
@@ -9713,7 +9749,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isInteger(System.Int32):System.Boolean",
@@ -9733,7 +9772,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isInteger(System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9753,7 +9795,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isInteger(System.Int64):System.Boolean",
@@ -9773,7 +9818,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isInteger(System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9793,7 +9841,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isSafeInteger(System.Double):System.Boolean",
@@ -9813,7 +9864,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isSafeInteger(System.Int32):System.Boolean",
@@ -9833,7 +9887,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isSafeInteger(System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9853,7 +9910,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isSafeInteger(System.Int64):System.Boolean",
@@ -9873,7 +9933,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::isSafeInteger(System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Boolean",
@@ -9893,7 +9956,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Double):System.String",
@@ -9913,7 +9979,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
@@ -9933,7 +10002,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Int32):System.String",
@@ -9953,7 +10025,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
@@ -9973,7 +10048,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Int64):System.String",
@@ -9993,7 +10071,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::toString(System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
@@ -10013,7 +10094,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Double):System.Double",
@@ -10033,7 +10117,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10053,7 +10140,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Int32):System.Int32",
@@ -10073,7 +10163,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10093,7 +10186,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Int64):System.Int64",
@@ -10113,7 +10209,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.Number::valueOf(System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10133,7 +10232,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.Number",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         }
       ],
       "properties": [],
@@ -10416,7 +10518,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toLowerCase(System.String):System.String",
@@ -10436,7 +10541,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trim(System.String):System.String",
@@ -10456,7 +10564,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimStart(System.String):System.String",
@@ -10476,7 +10587,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimEnd(System.String):System.String",
@@ -10496,7 +10610,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::substring(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
@@ -10516,7 +10633,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::slice(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
@@ -10536,7 +10656,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::indexOf(System.String,System.String,System.Int32):System.Int32",
@@ -10556,7 +10679,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::lastIndexOf(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Int32",
@@ -10576,7 +10702,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::startsWith(System.String,System.String):System.Boolean",
@@ -10596,7 +10725,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::endsWith(System.String,System.String):System.Boolean",
@@ -10616,7 +10748,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::includes(System.String,System.String):System.Boolean",
@@ -10636,7 +10771,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::replace(System.String,System.String,System.String):System.String",
@@ -10656,7 +10794,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::repeat(System.String,System.Int32):System.String",
@@ -10676,7 +10817,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::padStart(System.String,System.Int32,System.String):System.String",
@@ -10696,7 +10840,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::padEnd(System.String,System.Int32,System.String):System.String",
@@ -10716,7 +10863,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::charAt(System.String,System.Int32):System.String",
@@ -10736,7 +10886,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::charCodeAt(System.String,System.Int32):System.Int32",
@@ -10756,14 +10909,17 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::split(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::split(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String[]",
           "clrName": "split",
           "metadataToken": 100663758,
-          "canonicalSignature": "(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "split|(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "canonicalSignature": "(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String[]",
+          "normalizedSignature": "split|(System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -10776,7 +10932,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::length(System.String):System.Int32",
@@ -10796,7 +10955,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::at(System.String,System.Int32):System.String",
@@ -10816,7 +10978,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::codePointAt(System.String,System.Int32):System.Int32",
@@ -10836,7 +11001,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::concat(System.String,System.String[]):System.String",
@@ -10856,7 +11024,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::localeCompare(System.String,System.String):System.Int32",
@@ -10876,14 +11047,17 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::match(System.String,System.String):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::match(System.String,System.String):System.String[]",
           "clrName": "match",
           "metadataToken": 100663764,
-          "canonicalSignature": "(System.String,System.String):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "match|(System.String,System.String):System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "canonicalSignature": "(System.String,System.String):System.String[]",
+          "normalizedSignature": "match|(System.String,System.String):System.String[]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -10896,14 +11070,17 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
-          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::matchAll(System.String,System.String):System.Collections.Generic.List_1[[System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::matchAll(System.String,System.String):System.String[][]",
           "clrName": "matchAll",
           "metadataToken": 100663765,
-          "canonicalSignature": "(System.String,System.String):System.Collections.Generic.List_1[[System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "matchAll|(System.String,System.String):System.Collections.Generic.List_1[[System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "canonicalSignature": "(System.String,System.String):System.String[][]",
+          "normalizedSignature": "matchAll|(System.String,System.String):System.String[][]|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -10916,7 +11093,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::search(System.String,System.String):System.Int32",
@@ -10936,7 +11116,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::replaceAll(System.String,System.String,System.String):System.String",
@@ -10956,7 +11139,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::normalize(System.String,System.String):System.String",
@@ -10976,7 +11162,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::substr(System.String,System.Int32,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.String",
@@ -10996,7 +11185,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toLocaleLowerCase(System.String):System.String",
@@ -11016,7 +11208,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toLocaleUpperCase(System.String):System.String",
@@ -11036,7 +11231,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toString(System.String):System.String",
@@ -11056,7 +11254,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::valueOf(System.String):System.String",
@@ -11076,7 +11277,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::isWellFormed(System.String):System.Boolean",
@@ -11096,7 +11300,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::toWellFormed(System.String):System.String",
@@ -11116,7 +11323,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimLeft(System.String):System.String",
@@ -11136,7 +11346,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::trimRight(System.String):System.String",
@@ -11156,7 +11369,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::fromCharCode(System.Int32[]):System.String",
@@ -11176,7 +11392,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::fromCodePoint(System.Int32[]):System.String",
@@ -11196,7 +11415,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Tsonic.JSRuntime:Tsonic.JSRuntime.String::raw(System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]):System.String",
@@ -11216,7 +11438,10 @@
           "visibility": "Public",
           "declaringClrType": "Tsonic.JSRuntime.String",
           "declaringAssemblyName": "Tsonic.JSRuntime",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         }
       ],
       "properties": [],

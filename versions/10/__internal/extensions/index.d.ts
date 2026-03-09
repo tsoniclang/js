@@ -5,7 +5,6 @@
 
 // Import namespace modules for cross-namespace type references
 import * as System from "@tsonic/dotnet/System/internal/index.js";
-import * as System_Collections_Generic from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
 
 // Import primitive type aliases
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
@@ -38,8 +37,8 @@ interface __TsonicExtMethods_Tsonic_JSRuntime {
   lastIndexOf(this: string, searchString: string, position?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, int>;
   length(this: string): Rewrap<this, int>;
   localeCompare(this: string, compareString: string): Rewrap<this, int>;
-  match(this: string, pattern: string): Rewrap<this, System_Collections_Generic.List_1<System_Internal.String> | undefined>;
-  matchAll(this: string, pattern: string): Rewrap<this, System_Collections_Generic.List_1<System_Collections_Generic.List_1<System_Internal.String>>>;
+  match(this: string, pattern: string): Rewrap<this, string[] | undefined>;
+  matchAll(this: string, pattern: string): Rewrap<this, string[][]>;
   normalize(this: string, form?: string): Rewrap<this, string>;
   padEnd(this: string, targetLength: int, padString?: string): Rewrap<this, string>;
   padStart(this: string, targetLength: int, padString?: string): Rewrap<this, string>;
@@ -48,7 +47,7 @@ interface __TsonicExtMethods_Tsonic_JSRuntime {
   replaceAll(this: string, search: string, replacement: string): Rewrap<this, string>;
   search(this: string, pattern: string): Rewrap<this, int>;
   slice(this: string, start: int, end?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
-  split(this: string, separator: string, limit?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, System_Collections_Generic.List_1<System_Internal.String>>;
+  split(this: string, separator: string, limit?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string[]>;
   startsWith(this: string, searchString: string): Rewrap<this, boolean>;
   substr(this: string, start: int, length?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
   substring(this: string, start: int, end?: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
