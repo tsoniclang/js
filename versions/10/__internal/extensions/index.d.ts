@@ -56,6 +56,11 @@ interface __TsonicExtMethods_Tsonic_JSRuntime {
   toLocaleUpperCase(this: string): Rewrap<this, string>;
   toLowerCase(this: string): Rewrap<this, string>;
   toString(this: double): Rewrap<this, string>;
+  toString(this: int): Rewrap<this, string>;
+  toString(this: long): Rewrap<this, string>;
+  toString(this: System.Nullable_1<System_Internal.Double>): Rewrap<this, string>;
+  toString(this: System.Nullable_1<System_Internal.Int32>): Rewrap<this, string>;
+  toString(this: System.Nullable_1<System_Internal.Int64>): Rewrap<this, string>;
   toString(this: string): Rewrap<this, string>;
   toUpperCase(this: string): Rewrap<this, string>;
   toWellFormed(this: string): Rewrap<this, string>;
@@ -65,6 +70,11 @@ interface __TsonicExtMethods_Tsonic_JSRuntime {
   trimRight(this: string): Rewrap<this, string>;
   trimStart(this: string): Rewrap<this, string>;
   valueOf(this: double): Rewrap<this, double>;
+  valueOf(this: int): Rewrap<this, int>;
+  valueOf(this: long): Rewrap<this, long>;
+  valueOf(this: System.Nullable_1<System_Internal.Double>): Rewrap<this, System.Nullable_1<System_Internal.Double>>;
+  valueOf(this: System.Nullable_1<System_Internal.Int32>): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  valueOf(this: System.Nullable_1<System_Internal.Int64>): Rewrap<this, System.Nullable_1<System_Internal.Int64>>;
   valueOf(this: string): Rewrap<this, string>;
 }
 

@@ -1,5 +1,5 @@
 import type { int, long } from "@tsonic/core/types.js";
-import type { Date as JSRuntimeDate } from "./index/internal/index.js";
+import type { Date as JSRuntimeDate, Uint8Array as JSRuntimeUint8Array } from "./index/internal/index.js";
 
 declare global {
   class RangeError extends Error {
@@ -235,11 +235,19 @@ declare global {
   interface Date extends JSRuntimeDate {
   }
 
+  interface Uint8Array extends JSRuntimeUint8Array {
+  }
+
   interface DateConstructor {
     new(): Date;
     new(value: string | number | long): Date;
     now(): long;
     parse(s: string): long;
+  }
+
+  interface Uint8ArrayConstructor {
+    new(length: number): Uint8Array;
+    new(values: Iterable<number> | ArrayLike<number>): Uint8Array;
   }
 
   interface JSON {
@@ -321,6 +329,8 @@ declare global {
   const console: Console;
 
   const Date: DateConstructor;
+
+  const Uint8Array: Uint8ArrayConstructor;
 
   const JSON: JSON;
 
