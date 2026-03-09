@@ -653,6 +653,14 @@ export const WeakSet_1: {
 
 export type WeakSet_1<T> = WeakSet_1$instance<T>;
 
+export abstract class BooleanOps$instance {
+    static toString(value: boolean): string;
+    static valueOf(value: boolean): boolean;
+}
+
+
+export type BooleanOps = BooleanOps$instance;
+
 export abstract class console$instance {
     static assert(condition: boolean, message?: string): void;
     static clear(): void;

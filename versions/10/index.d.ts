@@ -19,6 +19,7 @@ import type { ISerializable } from '@tsonic/dotnet/System.Runtime.Serialization.
 
 // Public API exports (curated - no internal $instance/$views leakage)
 export { ArrayBuffer as ArrayBuffer } from './index/internal/index.js';
+export { BooleanOps$instance as BooleanOps } from './index/internal/index.js';
 export { console$instance as console } from './index/internal/index.js';
 export { Date as Date } from './index/internal/index.js';
 export { Error as Error } from './index/internal/index.js';
