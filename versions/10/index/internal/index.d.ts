@@ -858,8 +858,8 @@ export abstract class String$instance {
     static lastIndexOf(str: string, searchString: string, position?: Nullable_1<System_Internal.Int32>): int;
     static length(str: string): int;
     static localeCompare(str: string, compareString: string): int;
-    static match(str: string, pattern: string): List_1<System_Internal.String> | undefined;
-    static matchAll(str: string, pattern: string): List_1<List_1<System_Internal.String>>;
+    static match(str: string, pattern: string): string[] | undefined;
+    static matchAll(str: string, pattern: string): string[][];
     static normalize(str: string, form?: string): string;
     static padEnd(str: string, targetLength: int, padString?: string): string;
     static padStart(str: string, targetLength: int, padString?: string): string;
@@ -869,7 +869,7 @@ export abstract class String$instance {
     static replaceAll(str: string, search: string, replacement: string): string;
     static search(str: string, pattern: string): int;
     static slice(str: string, start: int, end?: Nullable_1<System_Internal.Int32>): string;
-    static split(str: string, separator: string, limit?: Nullable_1<System_Internal.Int32>): List_1<System_Internal.String>;
+    static split(str: string, separator: string, limit?: Nullable_1<System_Internal.Int32>): string[];
     static startsWith(str: string, searchString: string): boolean;
     static substr(str: string, start: int, length?: Nullable_1<System_Internal.Int32>): string;
     static substring(str: string, start: int, end?: Nullable_1<System_Internal.Int32>): string;
