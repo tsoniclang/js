@@ -257,7 +257,7 @@ declare global {
     new(): Date;
     new(value: string | number | long): Date;
     now(): long;
-    parse(s: string): long;
+    parse(s: string): number;
   }
 
   interface Uint8ArrayConstructor {
