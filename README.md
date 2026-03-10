@@ -15,8 +15,7 @@ This package is part of Tsonic: https://tsonic.org.
 
 ```bash
 mkdir my-app && cd my-app
-npx --yes tsonic@latest init --surface js
-npx --yes tsonic@latest add npm @tsonic/js
+npx --yes tsonic@latest init --surface @tsonic/js
 ```
 
 ```ts
@@ -38,10 +37,13 @@ npm run dev
 npx --yes tsonic@latest add npm @tsonic/js
 ```
 
-If the workspace is not already JS surface, set:
+If the workspace is not already JS surface, set `surface` in
+`tsonic.workspace.json` to `@tsonic/js`:
 
-```bash
-npx --yes tsonic@latest init --surface js
+```json
+{
+  "surface": "@tsonic/js"
+}
 ```
 
 ## Optional direct imports
