@@ -53,6 +53,7 @@ declare global {
   }
 
   interface StringConstructor {
+    (value?: unknown): string;
     fromCharCode(...codes: int[]): string;
     fromCodePoint(...codePoints: int[]): string;
   }
@@ -78,6 +79,7 @@ declare global {
   }
 
   interface NumberConstructor {
+    (value?: unknown): number;
     readonly EPSILON: number;
     readonly MAX_SAFE_INTEGER: number;
     readonly MAX_VALUE: number;

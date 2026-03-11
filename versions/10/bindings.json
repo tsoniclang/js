@@ -46,6 +46,7 @@
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Number",
       "staticType": "Tsonic.JSRuntime.Number",
+      "csharpName": "Globals.Number",
       "typeSemantics": {
         "contributesTypeIdentity": true
       }
@@ -100,6 +101,7 @@
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.String",
       "staticType": "Tsonic.JSRuntime.String",
+      "csharpName": "Globals.String",
       "typeSemantics": {
         "contributesTypeIdentity": true
       }
