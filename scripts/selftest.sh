@@ -39,8 +39,10 @@ GLOBALS="$PROJECT_ROOT/versions/$DOTNET_MAJOR/globals.d.ts"
 grep -Fq "readonly url: string;" "$GLOBALS"
 grep -Fq "readonly filename: string;" "$GLOBALS"
 grep -Fq "readonly dirname: string;" "$GLOBALS"
+grep -Fq "(value?: unknown): string;" "$GLOBALS"
 grep -Fq "toString(): string;" "$GLOBALS"
 grep -Fq "valueOf(): boolean;" "$GLOBALS"
+grep -Fq "(value?: unknown): number;" "$GLOBALS"
 grep -Fq "readonly length: int;" "$GLOBALS"
 grep -Fq "indexOf(searchString: string, position?: int): int;" "$GLOBALS"
 grep -Fq "now(): long;" "$GLOBALS"
@@ -60,6 +62,8 @@ cat >"$APP_PATH" <<'EOF'
 import type { int, long } from "@tsonic/core/types.js";
 
 export function main(): void {
+  const stringified: string = String(123);
+  const numeric: number = Number("42");
   const stringLength: int = "tsonic".length;
   const arrayLength: int = [1, 2, 3].length;
   const firstIndex: int = "banana".indexOf("na");
@@ -75,6 +79,8 @@ export function main(): void {
       arrayLength.toString(),
       firstIndex.toString(),
       lastIndex.toString(),
+      stringified,
+      numeric.toString(),
       rounded.toString(),
     ]
       .join(",")
@@ -88,6 +94,6 @@ OUTPUT="$(
     | sed '/^Running /d;/^Process exited with code /d;/^─/d;/^$/d' \
     | tail -n 1
 )"
-[ "$OUTPUT" = "6,3,2,5,43" ]
+[ "$OUTPUT" = "6,3,2,5,123,42,43" ]
 
 echo "js selftest passed"
