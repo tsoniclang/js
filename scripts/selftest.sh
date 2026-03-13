@@ -7,6 +7,26 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DOTNET_MAJOR="${1:-10}"
 WORK_DIR="$(mktemp -d "${TMPDIR:-/tmp}/js-selftest.XXXXXX")"
 TSONIC_CLI="${TSONIC_CLI:-tsonic@latest}"
+LOCAL_NUGET_FEED="$WORK_DIR/local-nuget"
+export NUGET_PACKAGES="$WORK_DIR/nuget-packages"
+
+assert_local_dependency_alignment() {
+  local dependency_name="$1"
+  local dependency_version="$2"
+  local sibling_package_json="$PROJECT_ROOT/../${dependency_name#@tsonic/}/versions/$DOTNET_MAJOR/package.json"
+
+  if [ ! -f "$sibling_package_json" ]; then
+    return
+  fi
+
+  local sibling_version
+  sibling_version="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.version);' "$sibling_package_json")"
+
+  if [ "$dependency_version" != "$sibling_version" ]; then
+    echo "Local dependency drift detected for $dependency_name: package.json pins $dependency_version but sibling repo is $sibling_version" >&2
+    exit 1
+  fi
+}
 
 cleanup() {
   rm -rf "$WORK_DIR"
@@ -31,8 +51,33 @@ run_tsonic_in() {
   )
 }
 
+write_local_nuget_config() {
+  local workspace_dir="$1"
+  cat >"$workspace_dir/nuget.config" <<EOF
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="local" value="$LOCAL_NUGET_FEED" />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+  </packageSources>
+</configuration>
+EOF
+}
+
+pack_local_runtime_packages() {
+  mkdir -p "$LOCAL_NUGET_FEED"
+  dotnet pack "$PROJECT_ROOT/../runtime/src/Tsonic.Runtime/Tsonic.Runtime.csproj" -c Release -o "$LOCAL_NUGET_FEED" >/dev/null
+  dotnet pack "$PROJECT_ROOT/../js-runtime/src/Tsonic.JSRuntime/Tsonic.JSRuntime.csproj" -c Release -o "$LOCAL_NUGET_FEED" >/dev/null
+}
+
 cd "$PROJECT_ROOT"
 npm run "generate:$DOTNET_MAJOR" >/dev/null
+
+PINNED_CORE_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/core"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
+PINNED_DOTNET_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/dotnet"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
+assert_local_dependency_alignment "@tsonic/core" "$PINNED_CORE_VERSION"
+assert_local_dependency_alignment "@tsonic/dotnet" "$PINNED_DOTNET_VERSION"
 
 GLOBALS="$PROJECT_ROOT/versions/$DOTNET_MAJOR/globals.d.ts"
 
@@ -49,7 +94,9 @@ grep -Fq "now(): long;" "$GLOBALS"
 grep -Fq "parse(s: string): number;" "$GLOBALS"
 grep -Fq "round(x: number): number;" "$GLOBALS"
 
+pack_local_runtime_packages
 run_tsonic_in "$WORK_DIR" init --surface @tsonic/js >/dev/null
+write_local_nuget_config "$WORK_DIR"
 npm --prefix "$WORK_DIR" install \
   "$PROJECT_ROOT/../core/versions/$DOTNET_MAJOR" \
   "$PROJECT_ROOT/../dotnet/versions/$DOTNET_MAJOR" \
