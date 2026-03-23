@@ -356,7 +356,7 @@ export const JSArray_1: {
     from<T, TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_2<TSource, TResult>): JSArray_1<TResult>;
     from<T, TSource, TResult>(iterable: IEnumerable_1<TSource>, mapFunc: Func_3<TSource, System_Internal.Int32, TResult>): JSArray_1<TResult>;
     from<T>(iterable: IEnumerable_1<T>): JSArray_1<T>;
-    isArray<T>(value: unknown): boolean;
+    isArray<T>(value: unknown): value is readonly T[] | T[];
     of<T>(...items: T[]): JSArray_1<T>;
 };
 
@@ -721,7 +721,7 @@ export abstract class JSArrayStatics$instance {
     static from<TResult>(source: string, mapFunc: Func_2<System_Internal.String, TResult>): TResult[];
     static from<TResult>(source: string, mapFunc: Func_3<System_Internal.String, System_Internal.Int32, TResult>): TResult[];
     static from(source: string): string[];
-    static isArray(value: unknown): boolean;
+    static isArray(value: unknown): value is readonly unknown[] | unknown[];
     static of<T>(...items: T[]): T[];
 }
 

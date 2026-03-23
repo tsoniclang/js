@@ -93,6 +93,7 @@ grep -Fq "indexOf(searchString: string, position?: int): int;" "$GLOBALS"
 grep -Fq "now(): long;" "$GLOBALS"
 grep -Fq "parse(s: string): number;" "$GLOBALS"
 grep -Fq "round(x: number): number;" "$GLOBALS"
+grep -Fq "isArray(value: unknown): value is readonly unknown[] | unknown[];" "$GLOBALS"
 
 pack_local_runtime_packages
 run_tsonic_in "$WORK_DIR" init --surface @tsonic/js >/dev/null

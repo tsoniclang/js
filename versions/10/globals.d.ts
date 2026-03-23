@@ -241,7 +241,7 @@ declare global {
   }
 
   interface ArrayConstructor {
-    isArray(value: unknown): boolean;
+    isArray(value: unknown): value is readonly unknown[] | unknown[];
     from(source: string): string[];
     from<TResult>(source: string, mapfn: (value: string, index: int) => TResult): TResult[];
     from<T>(source: Iterable<T> | ArrayLike<T>): T[];

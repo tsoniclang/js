@@ -88,6 +88,14 @@ fi
 # Ensure output directory exists
 mkdir -p "$OUT_DIR"
 
+patch_generated_types() {
+  local globals_file="$OUT_DIR/globals.d.ts"
+  local internal_file="$OUT_DIR/index/internal/index.d.ts"
+
+  perl -0pi -e 's/isArray\(value: unknown\): boolean;/isArray(value: unknown): value is readonly unknown[] | unknown[];/g' "$globals_file" "$internal_file"
+  perl -0pi -e 's/isArray<T>\(value: unknown\): boolean;/isArray<T>(value: unknown): value is readonly T[] | T[];/g' "$internal_file"
+}
+
 # Clean output directory (keep package metadata files)
 echo "[1/3] Cleaning output directory..."
 cd "$OUT_DIR"
@@ -122,6 +130,8 @@ dotnet run --project src/tsbindgen/tsbindgen.csproj --no-build -c Release -- \
     --namespace-map "Tsonic.JSRuntime=index" \
     --flatten-class "Tsonic.JSRuntime.Globals" \
     --surface-package "$SURFACE_PACKAGE"
+
+patch_generated_types
 
 cp -f "$PROJECT_DIR/README.md" "$OUT_DIR/README.md"
 cp -f "$PROJECT_DIR/LICENSE" "$OUT_DIR/LICENSE"
