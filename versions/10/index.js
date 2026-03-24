@@ -3,7 +3,6 @@
 // Module Stub - Do Not Execute
 
 throw new Error(
-  'Cannot import CLR namespace Tsonic.JSRuntime in JavaScript runtime. ' +
-  'This module provides TypeScript type definitions only. ' +
-  'Actual implementation requires .NET runtime via Tsonic compiler.'
+  'Cannot execute @tsonic/js directly in JavaScript. ' +
+  'This package is a Tsonic source package and must be compiled by Tsonic.'
 );

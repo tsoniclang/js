@@ -1,7 +1,29 @@
 import type { int, long } from "@tsonic/core/types.js";
-import type { Date as JSRuntimeDate, Uint8Array as JSRuntimeUint8Array } from "./index/internal/index.js";
+import type {
+  ArrayBuffer as NativeArrayBuffer,
+  Date as NativeDate,
+  Error as NativeError,
+  Float32Array as NativeFloat32Array,
+  Float64Array as NativeFloat64Array,
+  Int16Array as NativeInt16Array,
+  Int32Array as NativeInt32Array,
+  Int8Array as NativeInt8Array,
+  Uint16Array as NativeUint16Array,
+  Uint32Array as NativeUint32Array,
+  Uint8Array as NativeUint8Array,
+  Uint8ClampedArray as NativeUint8ClampedArray,
+  WeakMap as NativeWeakMap,
+  WeakSet as NativeWeakSet,
+} from "./index/internal/index.js";
 
 declare global {
+  interface Error extends NativeError {
+  }
+
+  interface ErrorConstructor {
+    new(message?: string): Error;
+  }
+
   class RangeError extends Error {
     constructor(message?: string);
   }
@@ -249,10 +271,37 @@ declare global {
     of<T>(...items: T[]): T[];
   }
 
-  interface Date extends JSRuntimeDate {
+  interface Date extends NativeDate {
   }
 
-  interface Uint8Array extends JSRuntimeUint8Array {
+  interface Uint8Array extends NativeUint8Array {
+  }
+
+  interface ArrayBuffer extends NativeArrayBuffer {
+  }
+
+  interface Int8Array extends NativeInt8Array {
+  }
+
+  interface Uint8ClampedArray extends NativeUint8ClampedArray {
+  }
+
+  interface Int16Array extends NativeInt16Array {
+  }
+
+  interface Uint16Array extends NativeUint16Array {
+  }
+
+  interface Int32Array extends NativeInt32Array {
+  }
+
+  interface Uint32Array extends NativeUint32Array {
+  }
+
+  interface Float32Array extends NativeFloat32Array {
+  }
+
+  interface Float64Array extends NativeFloat64Array {
   }
 
   interface DateConstructor {
@@ -267,15 +316,99 @@ declare global {
     new(values: Iterable<number> | ArrayLike<number>): Uint8Array;
   }
 
+  interface ArrayBufferConstructor {
+    new(byteLength: number): ArrayBuffer;
+  }
+
+  interface Int8ArrayConstructor {
+    new(length: number): Int8Array;
+    new(values: Iterable<number> | ArrayLike<number>): Int8Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Uint8ClampedArrayConstructor {
+    new(length: number): Uint8ClampedArray;
+    new(values: Iterable<number> | ArrayLike<number>): Uint8ClampedArray;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Int16ArrayConstructor {
+    new(length: number): Int16Array;
+    new(values: Iterable<number> | ArrayLike<number>): Int16Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Uint16ArrayConstructor {
+    new(length: number): Uint16Array;
+    new(values: Iterable<number> | ArrayLike<number>): Uint16Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Int32ArrayConstructor {
+    new(length: number): Int32Array;
+    new(values: Iterable<number> | ArrayLike<number>): Int32Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Uint32ArrayConstructor {
+    new(length: number): Uint32Array;
+    new(values: Iterable<number> | ArrayLike<number>): Uint32Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Float32ArrayConstructor {
+    new(length: number): Float32Array;
+    new(values: Iterable<number> | ArrayLike<number>): Float32Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
+  interface Float64ArrayConstructor {
+    new(length: number): Float64Array;
+    new(values: Iterable<number> | ArrayLike<number>): Float64Array;
+    readonly BYTES_PER_ELEMENT: number;
+  }
+
   interface JSON {
     parse<T = unknown>(text: string): T;
     stringify(value: unknown, replacer?: unknown, space?: string | number | int): string;
   }
 
   interface Math {
+    abs(x: number): number;
+    acos(x: number): number;
+    acosh(x: number): number;
+    asin(x: number): number;
+    asinh(x: number): number;
+    atan(x: number): number;
+    atan2(y: number, x: number): number;
+    atanh(x: number): number;
+    cbrt(x: number): number;
+    ceil(x: number): number;
+    clz32(x: number): number;
+    cos(x: number): number;
+    cosh(x: number): number;
+    exp(x: number): number;
+    expm1(x: number): number;
+    f16round(x: number): number;
+    floor(x: number): number;
+    fround(x: number): number;
+    hypot(...values: number[]): number;
+    imul(a: number, b: number): number;
+    log(x: number): number;
+    log10(x: number): number;
+    log1p(x: number): number;
+    log2(x: number): number;
+    pow(x: number, y: number): number;
     round(x: number): number;
-    max(...values: double[]): number;
-    min(...values: double[]): number;
+    sign(x: number): number;
+    sin(x: number): number;
+    sinh(x: number): number;
+    sqrt(x: number): number;
+    tan(x: number): number;
+    tanh(x: number): number;
+    trunc(x: number): number;
+    max(...values: number[]): number;
+    min(...values: number[]): number;
     random(): number;
   }
 
@@ -333,11 +466,27 @@ declare global {
     new<T = unknown>(values?: readonly T[] | null): Set<T>;
   }
 
+  interface WeakMap<K extends object, V> extends NativeWeakMap<K, V> {
+  }
+
+  interface WeakMapConstructor {
+    new<K extends object, V>(entries?: readonly (readonly [K, V])[] | null): WeakMap<K, V>;
+  }
+
+  interface WeakSet<T extends object> extends NativeWeakSet<T> {
+  }
+
+  interface WeakSetConstructor {
+    new<T extends object = object>(values?: readonly T[] | null): WeakSet<T>;
+  }
+
   interface ObjectConstructor {
     entries(obj: unknown): [string, unknown][];
     keys(obj: unknown): string[];
     values(obj: unknown): unknown[];
   }
+
+  const Error: ErrorConstructor;
 
   const String: StringConstructor;
 
@@ -349,7 +498,25 @@ declare global {
 
   const Date: DateConstructor;
 
+  const ArrayBuffer: ArrayBufferConstructor;
+
+  const Int8Array: Int8ArrayConstructor;
+
   const Uint8Array: Uint8ArrayConstructor;
+
+  const Uint8ClampedArray: Uint8ClampedArrayConstructor;
+
+  const Int16Array: Int16ArrayConstructor;
+
+  const Uint16Array: Uint16ArrayConstructor;
+
+  const Int32Array: Int32ArrayConstructor;
+
+  const Uint32Array: Uint32ArrayConstructor;
+
+  const Float32Array: Float32ArrayConstructor;
+
+  const Float64Array: Float64ArrayConstructor;
 
   const JSON: JSON;
 
@@ -361,11 +528,23 @@ declare global {
 
   const Set: SetConstructor;
 
+  const WeakMap: WeakMapConstructor;
+
+  const WeakSet: WeakSetConstructor;
+
   const Object: ObjectConstructor;
 
   function parseInt(str: string, radix?: number): number;
 
   function parseFloat(str: string): number;
+
+  function decodeURI(uri: string): string;
+
+  function decodeURIComponent(component: string): string;
+
+  function encodeURI(uri: string): string;
+
+  function encodeURIComponent(component: string): string;
 
   function isFinite(value: number): boolean;
 
