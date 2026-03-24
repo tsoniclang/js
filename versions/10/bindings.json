@@ -25,6 +25,87 @@
         "contributesTypeIdentity": true
       }
     },
+    "ArrayBuffer": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.ArrayBuffer",
+      "staticType": "Tsonic.JSRuntime.ArrayBuffer",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Int8Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Int8Array",
+      "staticType": "Tsonic.JSRuntime.Int8Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Uint8ClampedArray": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Uint8ClampedArray",
+      "staticType": "Tsonic.JSRuntime.Uint8ClampedArray",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Int16Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Int16Array",
+      "staticType": "Tsonic.JSRuntime.Int16Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Uint16Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Uint16Array",
+      "staticType": "Tsonic.JSRuntime.Uint16Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Int32Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Int32Array",
+      "staticType": "Tsonic.JSRuntime.Int32Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Uint32Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Uint32Array",
+      "staticType": "Tsonic.JSRuntime.Uint32Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Float32Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Float32Array",
+      "staticType": "Tsonic.JSRuntime.Float32Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
+    "Float64Array": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Float64Array",
+      "staticType": "Tsonic.JSRuntime.Float64Array",
+      "typeSemantics": {
+        "contributesTypeIdentity": true
+      }
+    },
     "JSON": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",

@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "tsonic-source-package",
+  "assemblyName": "Tsonic.JSRuntime",
   "surfaces": [
     "@tsonic/js"
   ],
@@ -15,14 +16,21 @@
   "dotnet": {
     "packageReferences": [
       {
+        "id": "Tsonic.Runtime",
+        "version": "0.0.3",
+        "types": "@tsonic/core"
+      },
+      {
         "id": "Tsonic.JSRuntime",
-        "version": "0.0.9"
+        "version": "0.0.9",
+        "types": "@tsonic/js"
       }
     ]
   },
   "source": {
     "exports": {
       ".": "./src/index.ts",
+      "./index.js": "./src/index.ts",
       "./Boolean.js": "./src/Boolean.ts",
       "./console.js": "./src/console.ts",
       "./Globals.js": "./src/Globals.ts",

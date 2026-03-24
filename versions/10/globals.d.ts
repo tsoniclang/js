@@ -374,9 +374,41 @@ declare global {
   }
 
   interface Math {
+    abs(x: number): number;
+    acos(x: number): number;
+    acosh(x: number): number;
+    asin(x: number): number;
+    asinh(x: number): number;
+    atan(x: number): number;
+    atan2(y: number, x: number): number;
+    atanh(x: number): number;
+    cbrt(x: number): number;
+    ceil(x: number): number;
+    clz32(x: number): number;
+    cos(x: number): number;
+    cosh(x: number): number;
+    exp(x: number): number;
+    expm1(x: number): number;
+    f16round(x: number): number;
+    floor(x: number): number;
+    fround(x: number): number;
+    hypot(...values: number[]): number;
+    imul(a: number, b: number): number;
+    log(x: number): number;
+    log10(x: number): number;
+    log1p(x: number): number;
+    log2(x: number): number;
+    pow(x: number, y: number): number;
     round(x: number): number;
-    max(...values: double[]): number;
-    min(...values: double[]): number;
+    sign(x: number): number;
+    sin(x: number): number;
+    sinh(x: number): number;
+    sqrt(x: number): number;
+    tan(x: number): number;
+    tanh(x: number): number;
+    trunc(x: number): number;
+    max(...values: number[]): number;
+    min(...values: number[]): number;
     random(): number;
   }
 
