@@ -48,10 +48,11 @@ If the workspace is not already JS surface, set `surface` in
 
 ## Optional direct imports
 
-Surface mode enables natural JS authoring, but direct package imports remain supported:
+Surface mode enables natural JS authoring, but explicit subpath imports remain supported:
 
 ```ts
-import { Timers, JSArray } from "@tsonic/js/index.js";
+import { Date as JSImportDate } from "@tsonic/js/Date.js";
+import { round } from "@tsonic/js/Math.js";
 ```
 
 ## Core APIs
@@ -61,7 +62,6 @@ import { Timers, JSArray } from "@tsonic/js/index.js";
 - `Map`, `Set`, `WeakMap`, `WeakSet`
 - `Date`, `Math`, `RegExp`, `Number`, `String`
 - `Timers`
-- `JSArray<T>`
 - globals like `parseInt`, `parseFloat`, `encodeURI`
 
 ## Relationship to `@tsonic/nodejs`

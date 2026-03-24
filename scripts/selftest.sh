@@ -71,37 +71,29 @@ pack_local_runtime_packages() {
   dotnet pack "$PROJECT_ROOT/../js-runtime/src/Tsonic.JSRuntime/Tsonic.JSRuntime.csproj" -c Release -o "$LOCAL_NUGET_FEED" >/dev/null
 }
 
-cd "$PROJECT_ROOT"
-npm run "generate:$DOTNET_MAJOR" >/dev/null
-
 PINNED_CORE_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/core"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
 PINNED_DOTNET_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/dotnet"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
 assert_local_dependency_alignment "@tsonic/core" "$PINNED_CORE_VERSION"
 assert_local_dependency_alignment "@tsonic/dotnet" "$PINNED_DOTNET_VERSION"
 
-GLOBALS="$PROJECT_ROOT/versions/$DOTNET_MAJOR/globals.d.ts"
-
-grep -Fq "readonly url: string;" "$GLOBALS"
-grep -Fq "readonly filename: string;" "$GLOBALS"
-grep -Fq "readonly dirname: string;" "$GLOBALS"
-grep -Fq "(value?: unknown): string;" "$GLOBALS"
-grep -Fq "toString(): string;" "$GLOBALS"
-grep -Fq "valueOf(): boolean;" "$GLOBALS"
-grep -Fq "(value?: unknown): number;" "$GLOBALS"
-grep -Fq "readonly length: int;" "$GLOBALS"
-grep -Fq "indexOf(searchString: string, position?: int): int;" "$GLOBALS"
-grep -Fq "now(): long;" "$GLOBALS"
-grep -Fq "parse(s: string): number;" "$GLOBALS"
-grep -Fq "round(x: number): number;" "$GLOBALS"
-grep -Fq "isArray(value: unknown): value is readonly unknown[] | unknown[];" "$GLOBALS"
-
 pack_local_runtime_packages
-run_tsonic_in "$WORK_DIR" init --surface @tsonic/js >/dev/null
+
+cat >"$WORK_DIR/package.json" <<EOF
+{
+  "name": "js-next-selftest",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@tsonic/core": "file:$PROJECT_ROOT/../core/versions/$DOTNET_MAJOR",
+    "@tsonic/dotnet": "file:$PROJECT_ROOT/../dotnet/versions/$DOTNET_MAJOR",
+    "@tsonic/js": "file:$PROJECT_ROOT/versions/$DOTNET_MAJOR"
+  }
+}
+EOF
+
+npm --prefix "$WORK_DIR" install >/dev/null
+run_tsonic_in "$WORK_DIR" init --surface @tsonic/js --skip-types >/dev/null
 write_local_nuget_config "$WORK_DIR"
-npm --prefix "$WORK_DIR" install \
-  "$PROJECT_ROOT/../core/versions/$DOTNET_MAJOR" \
-  "$PROJECT_ROOT/../dotnet/versions/$DOTNET_MAJOR" \
-  "$PROJECT_ROOT/versions/$DOTNET_MAJOR" >/dev/null
 
 PROJECT_NAME="$(basename "$WORK_DIR")"
 APP_PATH="$WORK_DIR/packages/$PROJECT_NAME/src/App.ts"
@@ -110,38 +102,60 @@ cat >"$APP_PATH" <<'EOF'
 import type { int, long } from "@tsonic/core/types.js";
 
 export function main(): void {
+  const parsed: number = parseInt("42");
+  const parsedFloat: number = parseFloat("42.5");
+  const finite: boolean = isFinite(parsedFloat);
+  const nan: boolean = isNaN(parseFloat("not-a-number"));
   const stringified: string = String(123);
   const numeric: number = Number("42");
-  const stringLength: int = "tsonic".length;
-  const arrayLength: int = [1, 2, 3].length;
-  const firstIndex: int = "banana".indexOf("na");
-  const lastIndex: int = "banana".lastIndexOf("a");
-  const parsed: number = Date.parse("2024-01-01T00:00:00Z");
-  const now: long = Date.now();
+  const truthy: boolean = Boolean(1);
+  const falsey: boolean = Boolean(0);
   const rounded: number = Math.round(42.7);
-  void parsed;
-  void now;
+  const epoch: number = Date.parse("2024-01-01T00:00:00Z");
+  const now: long = Date.now();
+  const stringLength: int = "tsonic".length;
+  const bytes = new Uint8Array([1, 2, 3]);
+  const map = new Map<string, number>();
+  map.set("answer", 42);
+  const set = new Set<number>();
+  set.add(1);
+  set.add(2);
+  set.add(3);
+
+  if (bytes.length !== 3) throw new Error("bad bytes");
+  if (map.get("answer") !== 42) throw new Error("bad map");
+  if (set.size !== 3) throw new Error("bad set");
+  if (!Array.isArray([1, 2, 3])) throw new Error("bad array");
+  if (stringLength !== 6) throw new Error("bad string length");
+
   console.log(
     [
-      stringLength.toString(),
-      arrayLength.toString(),
-      firstIndex.toString(),
-      lastIndex.toString(),
+      parsed.toString(),
+      parsedFloat.toString(),
+      finite.toString(),
+      nan.toString(),
       stringified,
       numeric.toString(),
       rounded.toString(),
-    ]
-      .join(",")
+      (epoch > 0).toString(),
+      (now > 0).toString(),
+      truthy.toString(),
+      String(falsey),
+      bytes.length.toString(),
+      map.get("answer")!.toString(),
+      set.size.toString(),
+    ].join(",")
   );
 }
 EOF
 
 run_tsonic_in "$WORK_DIR" build >/dev/null
+
 OUTPUT="$(
   run_tsonic_in "$WORK_DIR" run 2>/dev/null \
     | sed '/^Running /d;/^Process exited with code /d;/^─/d;/^$/d' \
     | tail -n 1
 )"
-[ "$OUTPUT" = "6,3,2,5,123,42,43" ]
+[ "$OUTPUT" = "42,42.5,true,true,123,42,43,true,true,true,false,3,42,3" ]
 
 echo "js selftest passed"

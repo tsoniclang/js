@@ -1,14 +1,29 @@
 {
   "name": "@tsonic/js",
-  "version": "10.0.48",
-  "description": "TypeScript type definitions for JavaScript Runtime (JSRuntime) library",
-  "main": "index.d.ts",
+  "version": "10.0.49",
+  "description": "Native Tsonic implementation of JavaScript runtime globals",
+  "main": "index.js",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./Boolean.js": "./src/Boolean.ts",
+    "./console.js": "./src/console.ts",
+    "./Globals.js": "./src/Globals.ts",
+    "./Math.js": "./src/Math.ts",
+    "./Date.js": "./src/date-module.ts",
+    "./Number.js": "./src/Number.ts",
+    "./String.js": "./src/String.ts"
+  },
   "files": [
     "**/*.d.ts",
     "**/*.js",
+    "src/**/*.ts",
     "**/bindings.json",
     "families.json",
+    "tsonic/package-manifest.json",
     "tsonic.bindings.json",
     "tsonic.surface.json",
     "README.md",
@@ -18,11 +33,10 @@
   "keywords": [
     "javascript",
     "typescript",
-    "types",
     "tsonic",
     "dotnet",
-    "clr",
-    "jsruntime",
+    "source-package",
+    "native",
     "net10"
   ],
   "author": "Tsonic Team",

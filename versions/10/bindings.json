@@ -3,12 +3,14 @@
     "console": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.console"
+      "type": "Tsonic.JSRuntime.console",
+      "sourceImport": "@tsonic/js/console.js"
     },
     "Date": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Date",
+      "sourceImport": "@tsonic/js/Date.js",
       "staticType": "Tsonic.JSRuntime.Date",
       "typeSemantics": {
         "contributesTypeIdentity": true
@@ -36,6 +38,7 @@
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Math",
+      "sourceImport": "@tsonic/js/Math.js",
       "staticType": "Tsonic.JSRuntime.Math",
       "typeSemantics": {
         "contributesTypeIdentity": false
@@ -45,6 +48,7 @@
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Number",
+      "sourceImport": "@tsonic/js/Number.js",
       "staticType": "Tsonic.JSRuntime.Number",
       "csharpName": "Globals.Number",
       "typeSemantics": {
@@ -54,7 +58,8 @@
     "Boolean": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
-      "type": "Tsonic.JSRuntime.BooleanOps",
+      "type": "Tsonic.JSRuntime.Boolean",
+      "sourceImport": "@tsonic/js/Boolean.js",
       "csharpName": "Globals.Boolean",
       "typeSemantics": {
         "contributesTypeIdentity": true
@@ -100,6 +105,7 @@
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.String",
+      "sourceImport": "@tsonic/js/String.js",
       "staticType": "Tsonic.JSRuntime.String",
       "csharpName": "Globals.String",
       "typeSemantics": {
@@ -129,24 +135,28 @@
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
       "csharpName": "Globals.parseInt"
     },
     "parseFloat": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
       "csharpName": "Globals.parseFloat"
     },
     "isFinite": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
       "csharpName": "Globals.isFinite"
     },
     "isNaN": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
       "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
       "csharpName": "Globals.isNaN"
     },
     "setTimeout": {

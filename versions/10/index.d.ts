@@ -17,26 +17,23 @@ import type { IEnumerable } from '@tsonic/dotnet/System.Collections.js';
 import type { Action, Boolean as ClrBoolean, Byte, Comparison, Double, Exception, Func, Int16, Int32, Int64, Nullable, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, ValueTuple, Void } from '@tsonic/dotnet/System.js';
 import type { ISerializable } from '@tsonic/dotnet/System.Runtime.Serialization.js';
 
-// Public API exports (curated - no internal $instance/$views leakage)
+// Public JS constructor/object exports
 export { ArrayBuffer as ArrayBuffer } from './index/internal/index.js';
-export { BooleanOps$instance as BooleanOps } from './index/internal/index.js';
+export { Boolean$instance as Boolean } from './index/internal/index.js';
 export { console$instance as console } from './index/internal/index.js';
-export { Date as Date } from './index/internal/index.js';
+export declare const Date: typeof Internal.Date;
+export type Date = Internal.Date;
 export { Error as Error } from './index/internal/index.js';
 export { Float32Array as Float32Array } from './index/internal/index.js';
 export { Float64Array as Float64Array } from './index/internal/index.js';
-export { Globals$instance as Globals } from './index/internal/index.js';
 export { Int16Array as Int16Array } from './index/internal/index.js';
 export { Int32Array as Int32Array } from './index/internal/index.js';
 export { Int8Array as Int8Array } from './index/internal/index.js';
-export { JSArray_1 as JSArray } from './index/internal/index.js';
-export { JSArrayStatics$instance as JSArrayStatics } from './index/internal/index.js';
 export { JSON$instance as JSON } from './index/internal/index.js';
 export { Map_2 as Map } from './index/internal/index.js';
 export { Math$instance as Math } from './index/internal/index.js';
 export { Number$instance as Number } from './index/internal/index.js';
 export { Object$instance as Object } from './index/internal/index.js';
-export { ProcessKeepAlive$instance as ProcessKeepAlive } from './index/internal/index.js';
 export { RangeError as RangeError } from './index/internal/index.js';
 export { RegExp as RegExp } from './index/internal/index.js';
 export { RegExpMatchResult as RegExpMatchResult } from './index/internal/index.js';
@@ -45,12 +42,11 @@ export { String$instance as String } from './index/internal/index.js';
 export { Timers$instance as Timers } from './index/internal/index.js';
 export { Uint16Array as Uint16Array } from './index/internal/index.js';
 export { Uint32Array as Uint32Array } from './index/internal/index.js';
-export { Uint8Array as Uint8Array } from './index/internal/index.js';
+export declare const Uint8Array: typeof Internal.Uint8Array;
+export type Uint8Array = Internal.Uint8Array;
 export { Uint8ClampedArray as Uint8ClampedArray } from './index/internal/index.js';
 export { WeakMap_2 as WeakMap } from './index/internal/index.js';
 export { WeakSet_1 as WeakSet } from './index/internal/index.js';
-// Extension methods (C# using semantics)
-export type { ExtensionMethods_Tsonic_JSRuntime as ExtensionMethods } from './__internal/extensions/index.js';
 
 
 // Flattened exports from static classes
