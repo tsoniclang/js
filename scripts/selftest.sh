@@ -100,6 +100,7 @@ APP_PATH="$WORK_DIR/packages/$PROJECT_NAME/src/App.ts"
 
 cat >"$APP_PATH" <<'EOF'
 import type { int, long } from "@tsonic/core/types.js";
+import type { Date as JSImportDate } from "@tsonic/js/index.js";
 
 export function main(): void {
   const parsed: number = parseInt("42");
@@ -113,6 +114,14 @@ export function main(): void {
   const rounded: number = Math.round(42.7);
   const epoch: number = Date.parse("2024-01-01T00:00:00Z");
   const now: long = Date.now();
+  const utcDate: Date = new Date(epoch);
+  const importedDate: JSImportDate = new Date(epoch);
+  const iso: string = utcDate.toISOString();
+  const millis: long = importedDate.getTime();
+  const encodedComponent: string = encodeURIComponent("a b+c");
+  const decodedComponent: string = decodeURIComponent(encodedComponent);
+  const encodedUri: string = encodeURI("https://example.com/a path?q=a b#x");
+  const decodedUri: string = decodeURI(encodedUri);
   const stringLength: int = "tsonic".length;
   const bytes = new Uint8Array([1, 2, 3]);
   const map = new Map<string, number>();
@@ -127,6 +136,12 @@ export function main(): void {
   if (set.size !== 3) throw new Error("bad set");
   if (!Array.isArray([1, 2, 3])) throw new Error("bad array");
   if (stringLength !== 6) throw new Error("bad string length");
+  if (!iso.startsWith("2024-01-01T00:00:00")) throw new Error("bad date iso");
+  if (millis !== epoch) throw new Error("bad date millis");
+  if (encodedComponent !== "a%20b%2Bc") throw new Error("bad encodeURIComponent");
+  if (decodedComponent !== "a b+c") throw new Error("bad decodeURIComponent");
+  if (!encodedUri.includes("https://example.com/a%20path?q=a%20b#x")) throw new Error("bad encodeURI");
+  if (decodedUri !== "https://example.com/a path?q=a b#x") throw new Error("bad decodeURI");
 
   console.log(
     [
@@ -139,8 +154,14 @@ export function main(): void {
       rounded.toString(),
       (epoch > 0).toString(),
       (now > 0).toString(),
+      iso.startsWith("2024-01-01T00:00:00").toString(),
+      (millis === epoch).toString(),
       truthy.toString(),
       String(falsey),
+      encodedComponent,
+      decodedComponent,
+      encodedUri.includes("https://example.com/a%20path?q=a%20b#x").toString(),
+      (decodedUri === "https://example.com/a path?q=a b#x").toString(),
       bytes.length.toString(),
       map.get("answer")!.toString(),
       set.size.toString(),
@@ -156,6 +177,6 @@ OUTPUT="$(
     | sed '/^Running /d;/^Process exited with code /d;/^─/d;/^$/d' \
     | tail -n 1
 )"
-[ "$OUTPUT" = "42,42.5,true,true,123,42,43,true,true,true,false,3,42,3" ]
+[ "$OUTPUT" = "42,42.5,true,true,123,42,43,true,true,true,true,true,false,a%20b%2Bc,a b+c,true,true,3,42,3" ]
 
 echo "js selftest passed"

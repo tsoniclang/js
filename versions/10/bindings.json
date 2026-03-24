@@ -240,6 +240,34 @@
       "sourceImport": "@tsonic/js/Globals.js",
       "csharpName": "Globals.isNaN"
     },
+    "decodeURI": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
+      "csharpName": "Globals.decodeURI"
+    },
+    "decodeURIComponent": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
+      "csharpName": "Globals.decodeURIComponent"
+    },
+    "encodeURI": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
+      "csharpName": "Globals.encodeURI"
+    },
+    "encodeURIComponent": {
+      "kind": "global",
+      "assembly": "Tsonic.JSRuntime",
+      "type": "Tsonic.JSRuntime.Globals",
+      "sourceImport": "@tsonic/js/Globals.js",
+      "csharpName": "Globals.encodeURIComponent"
+    },
     "setTimeout": {
       "kind": "global",
       "assembly": "Tsonic.JSRuntime",
