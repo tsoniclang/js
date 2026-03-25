@@ -27,7 +27,7 @@
     "src/**/*.ts",
     "**/bindings.json",
     "families.json",
-    "tsonic/package-manifest.json",
+    "tsonic.package.json",
     "tsonic.bindings.json",
     "tsonic.surface.json",
     "README.md",
