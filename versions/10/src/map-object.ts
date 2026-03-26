@@ -1,6 +1,5 @@
 import type { int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import { IndexIterator } from "./index-iterator.js";
 import { sameValueZero } from "./same-value-zero.js";
 
 type MapEntry<K, V> = {
@@ -8,7 +7,7 @@ type MapEntry<K, V> = {
   value: V;
 };
 
-export class Map<K, V> {
+export class MapObject<K, V> {
   private readonly entriesStore: List<MapEntry<K, V>> = new List<
     MapEntry<K, V>
   >();
@@ -49,14 +48,11 @@ export class Map<K, V> {
     return true;
   }
 
-  public entries(): IterableIterator<[K, V]> {
-    return new IndexIterator(
-      () => this.entriesStore.Count,
-      (index) => {
-        const entry = this.entriesStore[index]!;
-        return [entry.key, entry.value];
-      }
-    );
+  public *entries(): IterableIterator<[K, V]> {
+    for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
+      const entry = this.entriesStore[i]!;
+      yield [entry.key, entry.value];
+    }
   }
 
   public forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void {
@@ -75,11 +71,10 @@ export class Map<K, V> {
     return this.findIndex(key) >= 0;
   }
 
-  public keys(): IterableIterator<K> {
-    return new IndexIterator(
-      () => this.entriesStore.Count,
-      (index) => this.entriesStore[index]!.key
-    );
+  public *keys(): IterableIterator<K> {
+    for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
+      yield this.entriesStore[i]!.key;
+    }
   }
 
   public set(key: K, value: V): this {
@@ -93,11 +88,10 @@ export class Map<K, V> {
     return this;
   }
 
-  public values(): IterableIterator<V> {
-    return new IndexIterator(
-      () => this.entriesStore.Count,
-      (index) => this.entriesStore[index]!.value
-    );
+  public *values(): IterableIterator<V> {
+    for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
+      yield this.entriesStore[i]!.value;
+    }
   }
 
   public [Symbol.iterator](): IterableIterator<[K, V]> {

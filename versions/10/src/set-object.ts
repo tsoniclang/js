@@ -1,9 +1,8 @@
 import type { int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import { IndexIterator } from "./index-iterator.js";
 import { sameValueZero } from "./same-value-zero.js";
 
-export class Set<T> {
+export class SetObject<T> {
   private readonly valuesStore: List<T> = new List<T>();
 
   public constructor(values?: readonly T[] | null) {
@@ -49,14 +48,11 @@ export class Set<T> {
     return true;
   }
 
-  public entries(): IterableIterator<[T, T]> {
-    return new IndexIterator(
-      () => this.valuesStore.Count,
-      (index) => {
-        const value = this.valuesStore[index]!;
-        return [value, value];
-      }
-    );
+  public *entries(): IterableIterator<[T, T]> {
+    for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
+      const value = this.valuesStore[i]!;
+      yield [value, value];
+    }
   }
 
   public forEach(callback: (value: T, key: T, set: Set<T>) => void): void {
@@ -74,11 +70,10 @@ export class Set<T> {
     return this.values();
   }
 
-  public values(): IterableIterator<T> {
-    return new IndexIterator(
-      () => this.valuesStore.Count,
-      (index) => this.valuesStore[index]!
-    );
+  public *values(): IterableIterator<T> {
+    for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
+      yield this.valuesStore[i]!;
+    }
   }
 
   public [Symbol.iterator](): IterableIterator<T> {

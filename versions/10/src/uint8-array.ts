@@ -1,5 +1,4 @@
 import type { int } from "@tsonic/core/types.js";
-import { IndexIterator } from "./index-iterator.js";
 import { toInt } from "./int32.js";
 
 const normalizeByte = (value: number): number => {
@@ -61,7 +60,7 @@ const createZeroFilled = (length: int): number[] => {
   return result;
 };
 
-export class Uint8Array {
+export class Uint8ArrayObject {
   [index: number]: number;
 
   public static readonly BYTES_PER_ELEMENT: number = 1;
@@ -93,11 +92,10 @@ export class Uint8Array {
     return this.data[index];
   }
 
-  public entries(): IterableIterator<[int, number]> {
-    return new IndexIterator(
-      () => this.length,
-      (index) => [index, this.data[index]!] as [int, number]
-    );
+  public *entries(): IterableIterator<[int, number]> {
+    for (let index = 0 as int; index < this.length; index = (index + 1) as int) {
+      yield [index, this.data[index]!];
+    }
   }
 
   public fill(value: number, start?: int, end?: int): Uint8Array {
@@ -129,13 +127,6 @@ export class Uint8Array {
     return this.data.join(separator);
   }
 
-  public keys(): IterableIterator<int> {
-    return new IndexIterator(
-      () => this.length,
-      (index) => index
-    );
-  }
-
   public reverse(): Uint8Array {
     this.data.reverse();
     return this;
@@ -163,7 +154,7 @@ export class Uint8Array {
     for (let index = start; index < finish; index = (index + 1) as int) {
       result.push(this.data[index]!);
     }
-    return new Uint8Array(result);
+    return new Uint8ArrayObject(result);
   }
 
   public sort(compareFn?: (left: number, right: number) => number): Uint8Array {
@@ -177,11 +168,16 @@ export class Uint8Array {
     return this.slice(begin, end);
   }
 
-  public values(): IterableIterator<number> {
-    return new IndexIterator(
-      () => this.length,
-      (index) => this.data[index]!
-    );
+  public *keys(): IterableIterator<int> {
+    for (let index = 0 as int; index < this.length; index = (index + 1) as int) {
+      yield index;
+    }
+  }
+
+  public *values(): IterableIterator<number> {
+    for (let index = 0 as int; index < this.length; index = (index + 1) as int) {
+      yield this.data[index]!;
+    }
   }
 
   public [Symbol.iterator](): IterableIterator<number> {

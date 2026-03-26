@@ -1,11 +1,12 @@
 import type { double, int, long } from "@tsonic/core/types.js";
-import type { ArrayBuffer as JSImportArrayBuffer } from "./src/array-buffer-object.js";
-import type { Date as JSImportDate } from "./src/date-object.js";
-import type { Error as JSImportError } from "./src/error-object.js";
-import type { Map as JSImportMap } from "./src/map-object.js";
-import type { RegExp as JSImportRegExp } from "./src/regexp-object.js";
-import type { Set as JSImportSet } from "./src/set-object.js";
-import type { Uint8Array as JSImportUint8Array } from "./src/uint8-array.js";
+import type { ArrayBufferObject as JSImportArrayBuffer } from "./src/array-buffer-object.js";
+import type { DateObject as JSImportDate } from "./src/date-object.js";
+import type { ErrorObject as JSImportError } from "./src/error-object.js";
+import type { MapObject as JSImportMap } from "./src/map-object.js";
+import type { RangeErrorObject as JSImportRangeError } from "./src/range-error.js";
+import type { RegExpObject as JSImportRegExp } from "./src/regexp-object.js";
+import type { SetObject as JSImportSet } from "./src/set-object.js";
+import type { Uint8ArrayObject as JSImportUint8Array } from "./src/uint8-array.js";
 
 declare global {
   interface Error extends JSImportError {
@@ -24,7 +25,7 @@ declare global {
     new(message?: string): RangeError;
   }
 
-  interface RangeError extends Error {
+  interface RangeError extends Error, JSImportRangeError {
   }
 
   interface Function {

@@ -1,4 +1,4 @@
-export class Error {
+export class ErrorObject {
   public readonly name: string = "Error";
   public readonly message: string;
   public readonly stack?: string;
