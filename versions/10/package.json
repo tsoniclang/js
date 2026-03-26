@@ -2,33 +2,36 @@
   "name": "@tsonic/js",
   "version": "10.0.49",
   "description": "Native Tsonic implementation of JavaScript runtime globals",
-  "main": "index.js",
-  "types": "index.d.ts",
   "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
-    },
-    "./index.js": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
-    },
+    ".": "./src/index.ts",
+    "./index.js": "./src/index.ts",
+    "./array-object.js": "./src/array-object.ts",
+    "./array-buffer-object.js": "./src/array-buffer-object.ts",
     "./Boolean.js": "./src/Boolean.ts",
     "./console.js": "./src/console.ts",
+    "./console-object.js": "./src/console-object.ts",
     "./Globals.js": "./src/Globals.ts",
+    "./error-object.js": "./src/error-object.ts",
     "./Math.js": "./src/Math.ts",
+    "./math-object.js": "./src/math-object.ts",
     "./Date.js": "./src/date-module.ts",
+    "./date-object.js": "./src/date-object.ts",
+    "./map-object.js": "./src/map-object.ts",
     "./Number.js": "./src/Number.ts",
-    "./String.js": "./src/String.ts"
+    "./number-object.js": "./src/number-object.ts",
+    "./object-object.js": "./src/object-object.ts",
+    "./range-error.js": "./src/range-error.ts",
+    "./regexp-object.js": "./src/regexp-object.ts",
+    "./set-object.js": "./src/set-object.ts",
+    "./String.js": "./src/String.ts",
+    "./timers.js": "./src/timers.ts",
+    "./uint8-array.js": "./src/uint8-array.ts"
   },
   "files": [
-    "**/*.d.ts",
-    "**/*.js",
+    "**/*.ts",
     "src/**/*.ts",
-    "**/bindings.json",
     "families.json",
     "tsonic.package.json",
-    "tsonic.bindings.json",
     "tsonic.surface.json",
     "README.md",
     "LICENSE"
