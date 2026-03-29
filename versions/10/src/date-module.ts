@@ -1,6 +1,3 @@
-
-import type {} from "./type-bootstrap.js";
-
 import type { int, long } from "@tsonic/core/types.js";
 import { DateTimeOffset, Double, TimeSpan } from "@tsonic/dotnet/System.js";
 

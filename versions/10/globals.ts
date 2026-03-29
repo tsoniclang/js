@@ -1,15 +1,42 @@
-import type { double, int, long } from "@tsonic/core/types.js";
-import type { ArrayBufferObject as JSImportArrayBuffer } from "./src/array-buffer-object.js";
-import type { DateObject as JSImportDate } from "./src/date-object.js";
-import type { ErrorObject as JSImportError } from "./src/error-object.js";
-import type { MapObject as JSImportMap } from "./src/map-object.js";
-import type { RangeErrorObject as JSImportRangeError } from "./src/range-error.js";
-import type { RegExpObject as JSImportRegExp } from "./src/regexp-object.js";
-import type { SetObject as JSImportSet } from "./src/set-object.js";
-import type { Uint8ArrayObject as JSImportUint8Array } from "./src/uint8-array.js";
+import type { byte, double, int, long } from "@tsonic/core/types.js";
+import { Array as SourceArray } from "./src/array-object.js";
+import { ArrayBuffer as SourceArrayBuffer } from "./src/array-buffer-object.js";
+import {
+  Boolean as SourceBoolean,
+  Number as SourceNumberFunction,
+  String as SourceString,
+  decodeURI as SourceDecodeURI,
+  decodeURIComponent as SourceDecodeURIComponent,
+  encodeURI as SourceEncodeURI,
+  encodeURIComponent as SourceEncodeURIComponent,
+  isFinite as SourceIsFinite,
+  isNaN as SourceIsNaN,
+  parseFloat as SourceParseFloat,
+  parseInt as SourceParseInt,
+} from "./src/Globals.js";
+import { console as SourceConsole } from "./src/console-object.js";
+import { Date as SourceDate } from "./src/date-object.js";
+import { Error as SourceError } from "./src/error-object.js";
+import { Float32Array as SourceFloat32Array } from "./src/float32-array.js";
+import { Float64Array as SourceFloat64Array } from "./src/float64-array.js";
+import { Map as SourceMap } from "./src/map-object.js";
+import { Math as SourceMath } from "./src/math-object.js";
+import { Number as SourceNumberStatics } from "./src/number-object.js";
+import { Object as SourceObject } from "./src/object-object.js";
+import { Int16Array as SourceInt16Array } from "./src/int16-array.js";
+import { Int32Array as SourceInt32Array } from "./src/int32-array.js";
+import { Int8Array as SourceInt8Array } from "./src/int8-array.js";
+import { JSON as SourceJSON } from "./src/json-object.js";
+import { RangeError as SourceRangeError } from "./src/range-error.js";
+import { RegExp as SourceRegExp } from "./src/regexp-object.js";
+import { Set as SourceSet } from "./src/set-object.js";
+import { Uint16Array as SourceUint16Array } from "./src/uint16-array.js";
+import { Uint32Array as SourceUint32Array } from "./src/uint32-array.js";
+import { Uint8Array as SourceUint8Array } from "./src/uint8-array.js";
+import { Uint8ClampedArray as SourceUint8ClampedArray } from "./src/uint8-clamped-array.js";
 
 declare global {
-  interface Error extends JSImportError {
+  interface Error extends SourceError {
     name: string;
     message: string;
     stack?: string;
@@ -25,7 +52,7 @@ declare global {
     new(message?: string): RangeError;
   }
 
-  interface RangeError extends Error, JSImportRangeError {
+  interface RangeError extends Error, SourceRangeError {
   }
 
   interface Function {
@@ -106,9 +133,10 @@ declare global {
     value: TReturn;
   }
 
-  type IteratorResult<T, TReturn = unknown> =
-    | IteratorYieldResult<T>
-    | IteratorReturnResult<TReturn>;
+  interface IteratorResult<T, TReturn = unknown> {
+    done: boolean;
+    value: T | TReturn;
+  }
 
   interface Iterator<T, TReturn = unknown, TNext = unknown> {
     next(...[value]: [] | [TNext]): IteratorResult<T, TReturn>;
@@ -225,7 +253,7 @@ declare global {
     toUpperCase(): string;
     toWellFormed(): string;
     valueOf(): string;
-    [Symbol.iterator](): IterableIterator<string, undefined, unknown>;
+    [Symbol.iterator](): IterableIterator<string, undefined, undefined>;
   }
 
   interface StringConstructor {
@@ -278,7 +306,7 @@ declare global {
     at(index: int): T;
     concat(...items: unknown[]): T[];
     copyWithin(target: int, start?: int, end?: int): T[];
-    entries(): IterableIterator<[int, T]>;
+    entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
     every(callback: (value: T, index: int, array: T[]) => boolean): boolean;
     fill(value: T, start?: int, end?: int): T[];
@@ -305,7 +333,7 @@ declare global {
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
-    keys(): IterableIterator<int>;
+    keys(): IterableIterator<int, undefined, undefined>;
     lastIndexOf(searchElement: T, fromIndex?: int): int;
     map<TResult>(callback: (value: T) => TResult): TResult[];
     map<TResult>(callback: (value: T, index: int) => TResult): TResult[];
@@ -342,9 +370,9 @@ declare global {
     toSpliced(start: int, deleteCount?: int, ...items: T[]): T[];
     toString(): string;
     unshift(...items: T[]): int;
-    values(): IterableIterator<T>;
+    values(): IterableIterator<T, undefined, undefined>;
     with(index: int, value: T): T[];
-    [Symbol.iterator](): IterableIterator<T>;
+    [Symbol.iterator](): IterableIterator<T, undefined, undefined>;
   }
 
   interface ReadonlyArray<T> {
@@ -352,7 +380,7 @@ declare global {
     readonly [n: number]: T;
     at(index: int): T;
     concat(...items: unknown[]): T[];
-    entries(): IterableIterator<[int, T]>;
+    entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
     every(callback: (value: T, index: int, array: readonly T[]) => boolean): boolean;
     filter(callback: (value: T) => boolean): T[];
@@ -378,7 +406,7 @@ declare global {
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
-    keys(): IterableIterator<int>;
+    keys(): IterableIterator<int, undefined, undefined>;
     lastIndexOf(searchElement: T, fromIndex?: int): int;
     map<TResult>(callback: (value: T) => TResult): TResult[];
     map<TResult>(callback: (value: T, index: int) => TResult): TResult[];
@@ -407,9 +435,9 @@ declare global {
     toReversed(): T[];
     toSorted(compareFunc?: (left: T, right: T) => double): T[];
     toString(): string;
-    values(): IterableIterator<T>;
+    values(): IterableIterator<T, undefined, undefined>;
     with(index: int, value: T): T[];
-    [Symbol.iterator](): IterableIterator<T>;
+    [Symbol.iterator](): IterableIterator<T, undefined, undefined>;
   }
 
   interface Console {
@@ -429,12 +457,12 @@ declare global {
     isArray(value: unknown): value is readonly unknown[] | unknown[];
     from(source: string): string[];
     from<TResult>(source: string, mapfn: (value: string, index: int) => TResult): TResult[];
-    from<T>(source: Iterable<T> | ArrayLike<T>): T[];
-    from<T, TResult>(source: Iterable<T> | ArrayLike<T>, mapfn: (value: T, index: int) => TResult): TResult[];
+    from<T>(source: Iterable<T>): T[];
+    from<T, TResult>(source: Iterable<T>, mapfn: (value: T, index: int) => TResult): TResult[];
     of<T>(...items: T[]): T[];
   }
 
-  interface Date extends JSImportDate {
+  interface Date extends SourceDate {
     getDate(): int;
     getDay(): int;
     getFullYear(): int;
@@ -480,35 +508,36 @@ declare global {
     valueOf(): long;
   }
 
-  interface ArrayBuffer extends JSImportArrayBuffer {
+  interface ArrayBuffer extends SourceArrayBuffer {
     readonly byteLength: int;
     slice(begin?: int, end?: int): ArrayBuffer;
   }
 
-  interface TypedArrayLike<T, TSelf> extends ArrayLike<T>, Iterable<T> {
+  interface TypedArrayLike<T, TSelf> extends ArrayLike<T>, Iterable<T, undefined, undefined> {
     readonly byteLength: int;
     readonly length: int;
     at(index: int): T | undefined;
-    entries(): IterableIterator<[int, T]>;
+    entries(): IterableIterator<[int, T], undefined, undefined>;
     fill(value: T, start?: int, end?: int): TSelf;
     includes(value: T, fromIndex?: int): boolean;
     indexOf(value: T, fromIndex?: int): int;
     join(separator?: string): string;
-    keys(): IterableIterator<int>;
+    keys(): IterableIterator<int, undefined, undefined>;
     reverse(): TSelf;
-    set(array: Iterable<T> | ArrayLike<T>, offset?: int): void;
+    set(index: int, value: number): void;
+    set(array: Iterable<T> | TSelf, offset?: int): void;
     slice(begin?: int, end?: int): TSelf;
     sort(compareFn?: (left: T, right: T) => double): TSelf;
     subarray(begin?: int, end?: int): TSelf;
-    values(): IterableIterator<T>;
+    values(): IterableIterator<T, undefined, undefined>;
     [index: number]: T;
-    [Symbol.iterator](): IterableIterator<T>;
+    [Symbol.iterator](): IterableIterator<T, undefined, undefined>;
   }
 
   interface Int8Array extends TypedArrayLike<number, Int8Array> {
   }
 
-  interface Uint8Array extends TypedArrayLike<number, Uint8Array>, JSImportUint8Array {
+  interface Uint8Array extends TypedArrayLike<byte, Uint8Array> {
   }
 
   interface Uint8ClampedArray extends TypedArrayLike<number, Uint8ClampedArray> {
@@ -543,7 +572,7 @@ declare global {
   interface Uint8ArrayConstructor {
     readonly prototype: Uint8Array;
     new(length: int): Uint8Array;
-    new(values: Iterable<number> | ArrayLike<number>): Uint8Array;
+    new(values: byte[] | Uint8Array | Iterable<number>): Uint8Array;
   }
 
   interface ArrayBufferConstructor {
@@ -554,56 +583,56 @@ declare global {
   interface Int8ArrayConstructor {
     readonly prototype: Int8Array;
     new(length: int): Int8Array;
-    new(values: Iterable<number> | ArrayLike<number>): Int8Array;
+    new(values: number[] | Int8Array | Iterable<number>): Int8Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint8ClampedArrayConstructor {
     readonly prototype: Uint8ClampedArray;
     new(length: int): Uint8ClampedArray;
-    new(values: Iterable<number> | ArrayLike<number>): Uint8ClampedArray;
+    new(values: number[] | Uint8ClampedArray | Iterable<number>): Uint8ClampedArray;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int16ArrayConstructor {
     readonly prototype: Int16Array;
     new(length: int): Int16Array;
-    new(values: Iterable<number> | ArrayLike<number>): Int16Array;
+    new(values: number[] | Int16Array | Iterable<number>): Int16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint16ArrayConstructor {
     readonly prototype: Uint16Array;
     new(length: int): Uint16Array;
-    new(values: Iterable<number> | ArrayLike<number>): Uint16Array;
+    new(values: number[] | Uint16Array | Iterable<number>): Uint16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int32ArrayConstructor {
     readonly prototype: Int32Array;
     new(length: int): Int32Array;
-    new(values: Iterable<number> | ArrayLike<number>): Int32Array;
+    new(values: number[] | Int32Array | Iterable<number>): Int32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint32ArrayConstructor {
     readonly prototype: Uint32Array;
     new(length: int): Uint32Array;
-    new(values: Iterable<number> | ArrayLike<number>): Uint32Array;
+    new(values: number[] | Uint32Array | Iterable<number>): Uint32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float32ArrayConstructor {
     readonly prototype: Float32Array;
     new(length: int): Float32Array;
-    new(values: Iterable<number> | ArrayLike<number>): Float32Array;
+    new(values: number[] | Float32Array | Iterable<number>): Float32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float64ArrayConstructor {
     readonly prototype: Float64Array;
     new(length: int): Float64Array;
-    new(values: Iterable<number> | ArrayLike<number>): Float64Array;
+    new(values: number[] | Float64Array | Iterable<number>): Float64Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
@@ -656,7 +685,7 @@ declare global {
     input?: string;
   }
 
-  interface RegExp extends JSImportRegExp {
+  interface RegExp extends SourceRegExp {
     readonly source: string;
     readonly flags: string;
     exec(string: string): RegExpMatchArray | null;
@@ -670,20 +699,18 @@ declare global {
     (pattern: string | RegExp, flags?: string): RegExp;
   }
 
-  interface Map<K, V> extends JSImportMap<K, V> {
+  interface Map<K, V> extends SourceMap<K, V> {
     readonly size: int;
     clear(): void;
     delete(key: K): boolean;
-    entries(): IterableIterator<[K, V]>;
-    forEach(callback: (value: V) => void): void;
-    forEach(callback: (value: V, key: K) => void): void;
+    entries(): IterableIterator<[K, V], undefined, undefined>;
     forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void;
     get(key: K): V | undefined;
     has(key: K): boolean;
-    keys(): IterableIterator<K>;
+    keys(): IterableIterator<K, undefined, undefined>;
     set(key: K, value: V): this;
-    values(): IterableIterator<V>;
-    [Symbol.iterator](): IterableIterator<[K, V]>;
+    values(): IterableIterator<V, undefined, undefined>;
+    [Symbol.iterator](): IterableIterator<[K, V], undefined, undefined>;
   }
 
   interface MapConstructor {
@@ -691,19 +718,17 @@ declare global {
     new<K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V>;
   }
 
-  interface Set<T> extends JSImportSet<T> {
+  interface Set<T> extends SourceSet<T> {
     readonly size: int;
     add(value: T): this;
     clear(): void;
     delete(value: T): boolean;
-    entries(): IterableIterator<[T, T]>;
-    forEach(callback: (value: T) => void): void;
-    forEach(callback: (value: T, key: T) => void): void;
+    entries(): IterableIterator<[T, T], undefined, undefined>;
     forEach(callback: (value: T, key: T, set: Set<T>) => void): void;
     has(value: T): boolean;
-    keys(): IterableIterator<T>;
-    values(): IterableIterator<T>;
-    [Symbol.iterator](): IterableIterator<T>;
+    keys(): IterableIterator<T, undefined, undefined>;
+    values(): IterableIterator<T, undefined, undefined>;
+    [Symbol.iterator](): IterableIterator<T, undefined, undefined>;
   }
 
   interface SetConstructor {
@@ -741,77 +766,93 @@ declare global {
     values(obj: unknown): unknown[];
   }
 
-  const Error: ErrorConstructor;
+  const Error: typeof SourceError;
 
-  const String: StringConstructor;
+  const String: typeof SourceString;
 
-  const Number: NumberConstructor;
+  const Number: typeof SourceNumberFunction & typeof SourceNumberStatics;
 
-  const Boolean: BooleanConstructor;
+  const Boolean: typeof SourceBoolean;
 
-  const console: Console;
+  const console: typeof SourceConsole;
 
-  const Date: DateConstructor;
+  const Date: typeof SourceDate;
 
-  const Array: ArrayConstructor;
+  const Array: ArrayConstructor & typeof SourceArray;
 
-  const ArrayBuffer: ArrayBufferConstructor;
+  const ArrayBuffer: typeof SourceArrayBuffer;
 
-  const Int8Array: Int8ArrayConstructor;
+  const Int8Array: typeof SourceInt8Array;
 
-  const Uint8Array: Uint8ArrayConstructor;
+  const Uint8Array: typeof SourceUint8Array;
 
-  const Uint8ClampedArray: Uint8ClampedArrayConstructor;
+  const Uint8ClampedArray: typeof SourceUint8ClampedArray;
 
-  const Int16Array: Int16ArrayConstructor;
+  const Int16Array: typeof SourceInt16Array;
 
-  const Uint16Array: Uint16ArrayConstructor;
+  const Uint16Array: typeof SourceUint16Array;
 
-  const Int32Array: Int32ArrayConstructor;
+  const Int32Array: typeof SourceInt32Array;
 
-  const Uint32Array: Uint32ArrayConstructor;
+  const Uint32Array: typeof SourceUint32Array;
 
-  const Float32Array: Float32ArrayConstructor;
+  const Float32Array: typeof SourceFloat32Array;
 
-  const Float64Array: Float64ArrayConstructor;
+  const Float64Array: typeof SourceFloat64Array;
 
-  const JSON: JSON;
+  const JSON: typeof SourceJSON;
 
-  const Math: Math;
+  const Math: typeof SourceMath;
 
-  const RegExp: RegExpConstructor;
+  const RegExp: typeof SourceRegExp;
 
-  const Map: MapConstructor;
+  const Map: typeof SourceMap;
 
-  const Set: SetConstructor;
+  const Set: typeof SourceSet;
 
   const WeakMap: WeakMapConstructor;
 
   const WeakSet: WeakSetConstructor;
 
-  const Object: ObjectConstructor;
+  const Object: typeof SourceObject;
 
-  const RangeError: RangeErrorConstructor;
+  const RangeError: typeof SourceRangeError;
 
   const Symbol: SymbolConstructor;
 
   const Promise: PromiseConstructor;
 
-  function parseInt(value: string, radix?: number): number;
+  const parseInt: typeof SourceParseInt;
 
-  function parseFloat(value: string): number;
+  const parseFloat: typeof SourceParseFloat;
 
-  function decodeURI(uri: string): string;
+  function setTimeout(
+    handler: (...args: unknown[]) => void,
+    timeout?: int,
+    ...args: unknown[]
+  ): int;
 
-  function decodeURIComponent(component: string): string;
+  function clearTimeout(id: int): void;
 
-  function encodeURI(uri: string): string;
+  function setInterval(
+    handler: (...args: unknown[]) => void,
+    timeout?: int,
+    ...args: unknown[]
+  ): int;
 
-  function encodeURIComponent(component: string): string;
+  function clearInterval(id: int): void;
 
-  function isFinite(value: number): boolean;
+  const decodeURI: typeof SourceDecodeURI;
 
-  function isNaN(value: number): boolean;
+  const decodeURIComponent: typeof SourceDecodeURIComponent;
+
+  const encodeURI: typeof SourceEncodeURI;
+
+  const encodeURIComponent: typeof SourceEncodeURIComponent;
+
+  const isFinite: typeof SourceIsFinite;
+
+  const isNaN: typeof SourceIsNaN;
 
 }
 

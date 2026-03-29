@@ -6,6 +6,12 @@
   "scripts": {
     "generate:10": "echo '@tsonic/js is source-of-truth TypeScript; no generation step'",
     "selftest": "bash scripts/selftest.sh",
-    "publish:10": "bash scripts/selftest.sh && npm publish ./versions/10 --access public"
-  }
+    "publish:10": "bash scripts/selftest.sh && npm publish ./versions/10 --access public",
+    "build": "tsonic build",
+    "dev": "tsonic run"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {}
 }

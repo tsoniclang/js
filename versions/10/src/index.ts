@@ -1,19 +1,26 @@
-export { ArrayBufferObject as ArrayBuffer } from "./array-buffer-object.js";
+export { ArrayBuffer } from "./array-buffer-object.js";
 export { console } from "./console-object.js";
-export { DateObject as Date } from "./date-object.js";
-export { ErrorObject as Error } from "./error-object.js";
+export { Date } from "./date-object.js";
+export { Error } from "./error-object.js";
 export { Math } from "./math-object.js";
-export { MapObject as Map } from "./map-object.js";
-export { Number as NumberObject } from "./number-object.js";
-export { RangeErrorObject as RangeError } from "./range-error.js";
-export { RegExpObject as RegExp } from "./regexp-object.js";
+export { Map } from "./map-object.js";
+export { Number } from "./number-object.js";
+export { RangeError } from "./range-error.js";
+export { RegExp } from "./regexp-object.js";
 export { Array } from "./array-object.js";
-export { SetObject as Set } from "./set-object.js";
-export { Uint8ArrayObject as Uint8Array } from "./uint8-array.js";
+export { Set } from "./set-object.js";
+export { Int8Array } from "./int8-array.js";
+export { Uint8ClampedArray } from "./uint8-clamped-array.js";
+export { Int16Array } from "./int16-array.js";
+export { Uint16Array } from "./uint16-array.js";
+export { Int32Array } from "./int32-array.js";
+export { Uint32Array } from "./uint32-array.js";
+export { Float32Array } from "./float32-array.js";
+export { Float64Array } from "./float64-array.js";
+export { Uint8Array } from "./uint8-array.js";
 
 export {
   Boolean,
-  Number,
   String,
   decodeURIComponent,
   encodeURIComponent,

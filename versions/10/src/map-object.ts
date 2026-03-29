@@ -7,7 +7,7 @@ type MapEntry<K, V> = {
   value: V;
 };
 
-export class MapObject<K, V> {
+export class Map<K, V> {
   private readonly entriesStore: List<MapEntry<K, V>> = new List<
     MapEntry<K, V>
   >();
@@ -48,7 +48,7 @@ export class MapObject<K, V> {
     return true;
   }
 
-  public *entries(): IterableIterator<[K, V]> {
+  public *entries(): Generator<[K, V], undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       const entry = this.entriesStore[i]!;
       yield [entry.key, entry.value];
@@ -71,7 +71,7 @@ export class MapObject<K, V> {
     return this.findIndex(key) >= 0;
   }
 
-  public *keys(): IterableIterator<K> {
+  public *keys(): Generator<K, undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       yield this.entriesStore[i]!.key;
     }
@@ -88,13 +88,13 @@ export class MapObject<K, V> {
     return this;
   }
 
-  public *values(): IterableIterator<V> {
+  public *values(): Generator<V, undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       yield this.entriesStore[i]!.value;
     }
   }
 
-  public [Symbol.iterator](): IterableIterator<[K, V]> {
+  public [Symbol.iterator](): Generator<[K, V], undefined, undefined> {
     return this.entries();
   }
 }

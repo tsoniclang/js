@@ -2,7 +2,7 @@ import type { int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { sameValueZero } from "./same-value-zero.js";
 
-export class SetObject<T> {
+export class Set<T> {
   private readonly valuesStore: List<T> = new List<T>();
 
   public constructor(values?: readonly T[] | null) {
@@ -48,7 +48,7 @@ export class SetObject<T> {
     return true;
   }
 
-  public *entries(): IterableIterator<[T, T]> {
+  public *entries(): Generator<[T, T], undefined, undefined> {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       const value = this.valuesStore[i]!;
       yield [value, value];
@@ -66,17 +66,17 @@ export class SetObject<T> {
     return this.findIndex(value) >= 0;
   }
 
-  public keys(): IterableIterator<T> {
+  public keys(): Generator<T, undefined, undefined> {
     return this.values();
   }
 
-  public *values(): IterableIterator<T> {
+  public *values(): Generator<T, undefined, undefined> {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       yield this.valuesStore[i]!;
     }
   }
 
-  public [Symbol.iterator](): IterableIterator<T> {
+  public [Symbol.iterator](): Generator<T, undefined, undefined> {
     return this.values();
   }
 }

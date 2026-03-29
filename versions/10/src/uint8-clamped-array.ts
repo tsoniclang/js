@@ -1,16 +1,16 @@
 import type { byte, int } from "@tsonic/core/types.js";
 import {
   numericIdentity,
-  normalizeUint8,
+  normalizeUint8Clamped,
   TypedArrayConstructorInput,
   TypedArrayBase,
 } from "./typed-array-core.js";
 
-function wrapUint8Array(values: byte[]): Uint8Array {
-  return new Uint8Array(values);
+function wrapUint8ClampedArray(values: byte[]): Uint8ClampedArray {
+  return new Uint8ClampedArray(values);
 }
 
-export class Uint8Array extends TypedArrayBase<byte, Uint8Array> {
+export class Uint8ClampedArray extends TypedArrayBase<byte, Uint8ClampedArray> {
   public static readonly BYTES_PER_ELEMENT: int = 1 as int;
 
   public constructor(
@@ -18,11 +18,11 @@ export class Uint8Array extends TypedArrayBase<byte, Uint8Array> {
   ) {
     super(
       lengthOrValues,
-      Uint8Array.BYTES_PER_ELEMENT,
+      Uint8ClampedArray.BYTES_PER_ELEMENT,
       0 as byte,
-      normalizeUint8,
+      normalizeUint8Clamped,
       numericIdentity,
-      wrapUint8Array
+      wrapUint8ClampedArray
     );
   }
 }

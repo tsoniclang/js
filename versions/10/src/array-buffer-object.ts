@@ -1,4 +1,5 @@
 import type { int } from "@tsonic/core/types.js";
+import { trunc } from "./math-intrinsics.js";
 import { toInt } from "./int32.js";
 
 const clampIndex = (
@@ -10,7 +11,7 @@ const clampIndex = (
     return fallback;
   }
 
-  const normalized = toInt(Math.trunc(value));
+  const normalized = toInt(trunc(value));
   if (normalized < 0) {
     const fromEnd = toInt(length + normalized);
     return fromEnd < (0 as int) ? (0 as int) : fromEnd;
@@ -29,7 +30,7 @@ const zeroBytes = (length: int): number[] => {
   return result;
 };
 
-export class ArrayBufferObject {
+export class ArrayBuffer {
   private readonly bytes: number[];
 
   public constructor(byteLength: int) {
@@ -44,6 +45,6 @@ export class ArrayBufferObject {
     const start = clampIndex(begin, this.byteLength, 0 as int);
     const finish = clampIndex(end, this.byteLength, this.byteLength);
     const length = finish > start ? toInt(finish - start) : (0 as int);
-    return new ArrayBufferObject(length);
+    return new ArrayBuffer(length);
   }
 }

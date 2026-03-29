@@ -1,9 +1,12 @@
-export class ErrorObject {
-  public readonly name: string = "Error";
-  public readonly message: string;
-  public readonly stack?: string;
+import { Exception } from "@tsonic/dotnet/System.js";
+
+export class Error extends Exception {
+  public name: string = "Error";
+  public message: string;
+  public stack?: string;
 
   public constructor(message?: string) {
+    super(message ?? "");
     this.message = message ?? "";
   }
 

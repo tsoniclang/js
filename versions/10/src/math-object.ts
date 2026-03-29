@@ -29,9 +29,9 @@ import {
   sqrt,
   tan,
   trunc,
-} from "./Math.js";
+} from "./math-intrinsics.js";
 
-abstract class JSImportMath {
+export abstract class Math {
   public static readonly E = E;
   public static readonly PI = PI;
   public static readonly LN2 = LN2;
@@ -129,5 +129,3 @@ abstract class JSImportMath {
     return trunc(value);
   }
 }
-
-export { JSImportMath as Math };

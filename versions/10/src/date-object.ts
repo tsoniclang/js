@@ -17,7 +17,7 @@ const invalidDate = (): DateTimeOffset => DateTimeOffset.MinValue;
 const getLocalOffset = (): TimeSpan =>
   TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
 
-export class DateObject {
+export class Date {
   private value: DateTimeOffset;
 
   public constructor(

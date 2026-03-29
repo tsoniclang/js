@@ -51,8 +51,8 @@ If the workspace is not already JS surface, set `surface` in
 Surface mode enables natural JS authoring, but explicit subpath imports remain supported:
 
 ```ts
-import { Date as JSImportDate } from "@tsonic/js/Date.js";
-import { round } from "@tsonic/js/Math.js";
+import { Date } from "@tsonic/js/index.js";
+import { Math } from "@tsonic/js/index.js";
 ```
 
 ## Core APIs

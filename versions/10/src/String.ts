@@ -1,6 +1,3 @@
-
-import type {} from "./type-bootstrap.js";
-
 import type { char, int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import {

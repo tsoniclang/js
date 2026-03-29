@@ -1,6 +1,3 @@
-
-import type {} from "./type-bootstrap.js";
-
 import {
   ManualResetEventSlim,
   Monitor,

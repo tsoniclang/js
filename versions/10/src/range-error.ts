@@ -1,7 +1,7 @@
-import { ErrorObject } from "./error-object.js";
+import { Error } from "./error-object.js";
 
-export class RangeErrorObject extends ErrorObject {
-  public readonly name: string = "RangeError";
+export class RangeError extends Error {
+  public name: string = "RangeError";
 
   public constructor(message?: string) {
     super(message);

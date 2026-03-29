@@ -44,14 +44,14 @@ const toMatchArray = (
   return values;
 };
 
-export class RegExpObject {
+export class RegExp {
   public readonly source: string;
   public readonly flags: string;
 
   private readonly regex: Regex;
 
   public constructor(pattern: string | RegExp, flags: string = "") {
-    if (pattern instanceof RegExpObject) {
+    if (pattern instanceof RegExp) {
       this.source = pattern.source;
       this.flags = flags === "" ? pattern.flags : flags;
     } else {
