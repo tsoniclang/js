@@ -1,24 +1,24 @@
 import { debug, error, info, log, warn } from "./console.js";
 
 abstract class ConsoleModule {
-  public static debug(first: unknown, ...rest: unknown[]): void {
-    debug(first, ...rest);
+  public static debug(...data: unknown[]): void {
+    debug(...data);
   }
 
-  public static error(first: unknown, ...rest: unknown[]): void {
-    error(first, ...rest);
+  public static error(...data: unknown[]): void {
+    error(...data);
   }
 
-  public static info(first: unknown, ...rest: unknown[]): void {
-    info(first, ...rest);
+  public static info(...data: unknown[]): void {
+    info(...data);
   }
 
-  public static log(first: unknown, ...rest: unknown[]): void {
-    log(first, ...rest);
+  public static log(...data: unknown[]): void {
+    log(...data);
   }
 
-  public static warn(first: unknown, ...rest: unknown[]): void {
-    warn(first, ...rest);
+  public static warn(...data: unknown[]): void {
+    warn(...data);
   }
 }
 

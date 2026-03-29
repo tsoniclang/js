@@ -1,6 +1,3 @@
-
-import type {} from "./type-bootstrap.js";
-
 import { Math as DotnetMath, Random } from "@tsonic/dotnet/System.js";
 
 const randomSource = new Random();

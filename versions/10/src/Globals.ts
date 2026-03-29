@@ -1,6 +1,3 @@
-
-import type {} from "./type-bootstrap.js";
-
 import {
   Convert,
   Double,
@@ -13,6 +10,8 @@ import {
 } from "@tsonic/dotnet/System.Globalization.js";
 
 const nan = (): number => Double.NaN;
+const MAX_SAFE_INTEGER: number = 9_007_199_254_740_991;
+const MIN_SAFE_INTEGER: number = MAX_SAFE_INTEGER * -1;
 
 const toNumericValue = (value: unknown): number => {
   return Convert.ToDouble(value, CultureInfo.InvariantCulture);
@@ -114,7 +113,15 @@ export const parseFloat = (value: string): number => {
 
 export const isFinite = (value: number): boolean => Double.IsFinite(value);
 
+export const isInteger = (value: number): boolean =>
+  Double.IsFinite(value) && value % 1 === 0;
+
 export const isNaN = (value: number): boolean => Double.IsNaN(value);
+
+export const isSafeInteger = (value: number): boolean =>
+  isInteger(value) &&
+  value <= MAX_SAFE_INTEGER &&
+  value >= MIN_SAFE_INTEGER;
 
 export const Number = (value?: unknown): number => {
   if (value === undefined || value === null) {
@@ -185,7 +192,7 @@ export const String = (value?: unknown): string => {
     if (Double.IsNegativeInfinity(numericValue)) {
       return "-Infinity";
     }
-    return Convert.ToString(numericValue, CultureInfo.InvariantCulture) ?? "";
+    return (numericValue as Double).ToString(CultureInfo.InvariantCulture) ?? "";
   }
 
   return Convert.ToString(value) ?? "";

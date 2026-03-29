@@ -1,0 +1,20 @@
+import { Exception } from "@tsonic/dotnet/System.js";
+
+export class Error extends Exception {
+  public name: string = "Error";
+  public message: string;
+  public stack?: string;
+
+  public constructor(message?: string) {
+    super(message ?? "");
+    this.message = message ?? "";
+  }
+
+  public toString(): string {
+    if (this.message === "") {
+      return this.name;
+    }
+
+    return `${this.name}: ${this.message}`;
+  }
+}

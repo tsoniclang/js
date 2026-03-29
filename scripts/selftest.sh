@@ -6,7 +6,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DOTNET_MAJOR="${1:-10}"
 WORK_DIR="$(mktemp -d "${TMPDIR:-/tmp}/js-selftest.XXXXXX")"
-TSONIC_CLI="${TSONIC_CLI:-tsonic@latest}"
+if [ -n "${TSONIC_CLI:-}" ]; then
+  TSONIC_CLI="$TSONIC_CLI"
+elif [ -f "$PROJECT_ROOT/../tsonic/packages/cli/dist/index.js" ]; then
+  TSONIC_CLI="$PROJECT_ROOT/../tsonic/packages/cli/dist/index.js"
+else
+  TSONIC_CLI="tsonic@latest"
+fi
 LOCAL_NUGET_FEED="$WORK_DIR/local-nuget"
 export NUGET_PACKAGES="$WORK_DIR/nuget-packages"
 
@@ -68,7 +74,6 @@ EOF
 pack_local_runtime_packages() {
   mkdir -p "$LOCAL_NUGET_FEED"
   dotnet pack "$PROJECT_ROOT/../runtime/src/Tsonic.Runtime/Tsonic.Runtime.csproj" -c Release -o "$LOCAL_NUGET_FEED" >/dev/null
-  dotnet pack "$PROJECT_ROOT/../js-runtime/src/Tsonic.JSRuntime/Tsonic.JSRuntime.csproj" -c Release -o "$LOCAL_NUGET_FEED" >/dev/null
 }
 
 PINNED_CORE_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/core"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
@@ -100,7 +105,7 @@ APP_PATH="$WORK_DIR/packages/$PROJECT_NAME/src/App.ts"
 
 cat >"$APP_PATH" <<'EOF'
 import type { int, long } from "@tsonic/core/types.js";
-import type { Date as JSImportDate } from "@tsonic/js/index.js";
+import type { Date as SourceDate } from "@tsonic/js/index.js";
 
 export function main(): void {
   const parsed: number = parseInt("42");
@@ -115,7 +120,7 @@ export function main(): void {
   const epoch: number = Date.parse("2024-01-01T00:00:00Z");
   const now: long = Date.now();
   const utcDate: Date = new Date(epoch);
-  const importedDate: JSImportDate = new Date(epoch);
+  const importedDate: SourceDate = new Date(epoch);
   const iso: string = utcDate.toISOString();
   const millis: long = importedDate.getTime();
   const encodedComponent: string = encodeURIComponent("a b+c");
