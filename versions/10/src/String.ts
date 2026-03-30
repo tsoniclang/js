@@ -18,8 +18,10 @@ import { Group, Regex } from "@tsonic/dotnet/System.Text.RegularExpressions.js";
 const asDotnetString = (value: string): DotnetString =>
   value as unknown as DotnetString;
 
+const toChars = (value: string): char[] => asDotnetString(value).ToCharArray();
+
 const getLength = (value: string): int => {
-  const chars = asDotnetString(value).ToCharArray();
+  const chars = toChars(value);
   return chars.length;
 };
 
@@ -102,11 +104,13 @@ export const indexOf = (
 ): int => asDotnetString(value).IndexOf(searchString, position);
 
 export const isWellFormed = (value: string): boolean => {
-  for (let i = 0 as int; i < getLength(value); i += 1) {
-    const current = asDotnetString(value)[i]!;
+  const chars = toChars(value);
+
+  for (let i = 0 as int; i < chars.length; i += 1) {
+    const current = chars[i]!;
     if (Char.IsSurrogate(current)) {
       if (Char.IsHighSurrogate(current)) {
-        if (i + 1 >= getLength(value) || !Char.IsLowSurrogate(asDotnetString(value)[i + 1]!)) {
+        if (i + 1 >= chars.length || !Char.IsLowSurrogate(chars[i + 1]!)) {
           return false;
         }
         i += 1;
@@ -328,14 +332,15 @@ export const toUpperCase = (value: string): string =>
 
 export const toWellFormed = (value: string): string => {
   const builder = new StringBuilder();
+  const chars = toChars(value);
 
-  for (let i = 0 as int; i < getLength(value); i += 1) {
-    const current = asDotnetString(value)[i]!;
+  for (let i = 0 as int; i < chars.length; i += 1) {
+    const current = chars[i]!;
     if (Char.IsSurrogate(current)) {
       if (Char.IsHighSurrogate(current)) {
-        if (i + 1 < getLength(value) && Char.IsLowSurrogate(asDotnetString(value)[i + 1]!)) {
+        if (i + 1 < chars.length && Char.IsLowSurrogate(chars[i + 1]!)) {
           builder.Append(current);
-          builder.Append(asDotnetString(value)[i + 1]!);
+          builder.Append(chars[i + 1]!);
           i += 1;
         } else {
           builder.Append("\uFFFD");
