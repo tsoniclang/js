@@ -2,9 +2,9 @@ import type { int, short } from "@tsonic/core/types.js";
 import {
   numericIdentity,
   normalizeInt16,
-  TypedArrayConstructorInput,
   TypedArrayBase,
 } from "./typed-array-core.js";
+import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapInt16Array(values: short[]): Int16Array {
   return new Int16Array(values);

@@ -2,9 +2,16 @@
   "name": "@tsonic/js",
   "version": "10.0.49",
   "description": "Native Tsonic implementation of JavaScript runtime globals",
+  "types": "./index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./index.js": "./src/index.ts",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./index.js": {
+      "types": "./index.d.ts",
+      "default": "./src/index.ts"
+    },
     "./Array.js": "./src/array-object.ts",
     "./array-buffer-object.js": "./src/array-buffer-object.ts",
     "./ArrayBuffer.js": "./src/array-buffer-object.ts",

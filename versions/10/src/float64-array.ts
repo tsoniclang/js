@@ -2,9 +2,9 @@ import type { double, int } from "@tsonic/core/types.js";
 import {
   numericIdentity,
   normalizeFloat64,
-  TypedArrayConstructorInput,
   TypedArrayBase,
 } from "./typed-array-core.js";
+import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapFloat64Array(values: double[]): Float64Array {
   return new Float64Array(values);

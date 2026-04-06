@@ -1,4 +1,4 @@
-import type { int } from "@tsonic/core/types.js";
+import type { int, JsValue } from "@tsonic/core/types.js";
 
 export class IndexIterator<T> implements IterableIterator<T> {
   private index: int = 0 as int;
@@ -33,7 +33,7 @@ export class IndexIterator<T> implements IterableIterator<T> {
     };
   }
 
-  public throw(error?: unknown): IteratorResult<T, undefined> {
+  public throw(error?: JsValue): IteratorResult<T, undefined> {
     throw error;
   }
 

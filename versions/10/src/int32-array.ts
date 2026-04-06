@@ -2,9 +2,9 @@ import type { int } from "@tsonic/core/types.js";
 import {
   numericIdentity,
   normalizeInt32,
-  TypedArrayConstructorInput,
   TypedArrayBase,
 } from "./typed-array-core.js";
+import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapInt32Array(values: int[]): Int32Array {
   return new Int32Array(values);

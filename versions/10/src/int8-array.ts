@@ -2,9 +2,9 @@ import type { int, sbyte } from "@tsonic/core/types.js";
 import {
   normalizeInt8,
   numericIdentity,
-  TypedArrayConstructorInput,
   TypedArrayBase,
 } from "./typed-array-core.js";
+import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapInt8Array(values: sbyte[]): Int8Array {
   return new Int8Array(values);

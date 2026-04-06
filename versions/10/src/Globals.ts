@@ -8,16 +8,17 @@ import {
   CultureInfo,
   NumberStyles,
 } from "@tsonic/dotnet/System.Globalization.js";
+import type { JsValue } from "@tsonic/core/types.js";
 
 const nan = (): number => Double.NaN;
 const MAX_SAFE_INTEGER: number = 9_007_199_254_740_991;
 const MIN_SAFE_INTEGER: number = MAX_SAFE_INTEGER * -1;
 
-const toNumericValue = (value: unknown): number => {
+const toNumericValue = (value: JsValue): number => {
   return Convert.ToDouble(value, CultureInfo.InvariantCulture);
 };
 
-const isNumericValue = (value: unknown): boolean => {
+const isNumericValue = (value: JsValue): boolean => {
   switch (Convert.GetTypeCode(value)) {
     case TypeCode.SByte:
     case TypeCode.Byte:
@@ -123,7 +124,7 @@ export const isSafeInteger = (value: number): boolean =>
   value <= MAX_SAFE_INTEGER &&
   value >= MIN_SAFE_INTEGER;
 
-export const Number = (value?: unknown): number => {
+export const Number = (value?: JsValue): number => {
   if (value === undefined || value === null) {
     return 0;
   }
@@ -164,7 +165,7 @@ export const Number = (value?: unknown): number => {
   }
 };
 
-export const String = (value?: unknown): string => {
+export const String = (value?: JsValue): string => {
   if (value === undefined) {
     return "undefined";
   }
@@ -198,7 +199,7 @@ export const String = (value?: unknown): string => {
   return Convert.ToString(value) ?? "";
 };
 
-export const Boolean = (value?: unknown): boolean => {
+export const Boolean = (value?: JsValue): boolean => {
   if (value === undefined || value === null) {
     return false;
   }

@@ -2,9 +2,9 @@ import type { byte, int } from "@tsonic/core/types.js";
 import {
   numericIdentity,
   normalizeUint8,
-  TypedArrayConstructorInput,
   TypedArrayBase,
 } from "./typed-array-core.js";
+import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapUint8Array(values: byte[]): Uint8Array {
   return new Uint8Array(values);

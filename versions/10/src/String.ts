@@ -1,4 +1,5 @@
-import type { char, int } from "@tsonic/core/types.js";
+import { asinterface } from "@tsonic/core/lang.js";
+import type { char, int, JsValue } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import {
   Char,
@@ -16,7 +17,7 @@ import { NormalizationForm, StringBuilder } from "@tsonic/dotnet/System.Text.js"
 import { Group, Regex } from "@tsonic/dotnet/System.Text.RegularExpressions.js";
 
 const asDotnetString = (value: string): DotnetString =>
-  value as unknown as DotnetString;
+  asinterface<DotnetString>(value);
 
 const toChars = (value: string): char[] => asDotnetString(value).ToCharArray();
 
@@ -376,7 +377,7 @@ export const fromCodePoint = (...codePoints: int[]): string => {
 
 export const raw = (
   template: List<string>,
-  ...substitutions: unknown[]
+  ...substitutions: JsValue[]
 ): string => {
   const builder = new StringBuilder();
 

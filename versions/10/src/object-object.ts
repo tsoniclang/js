@@ -1,49 +1,12 @@
 import type { IDictionary } from "@tsonic/dotnet/System.Collections.js";
-import { Dictionary } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { Type } from "@tsonic/dotnet/System.js";
 import { BindingFlags } from "@tsonic/dotnet/System.Reflection.js";
 import { JsonElement, JsonValueKind } from "@tsonic/dotnet/System.Text.Json.js";
+import type { JsValue } from "@tsonic/core/types.js";
+import { jsValueFromJsonElement } from "./js-value-from-json.ts";
+import { getClrType } from "./object-reflection.ts";
 
-type Reflectable = {
-  GetType(): Type;
-};
-
-const fromJsonElement = (element: JsonElement): unknown => {
-  switch (element.ValueKind) {
-    case JsonValueKind.Null:
-      return null;
-    case JsonValueKind.True:
-      return true;
-    case JsonValueKind.False:
-      return false;
-    case JsonValueKind.Number:
-      return element.GetDouble();
-    case JsonValueKind.String:
-      return element.GetString();
-    case JsonValueKind.Array: {
-      const result: unknown[] = [];
-      const enumerator = element.EnumerateArray();
-      while (enumerator.MoveNext()) {
-        result.push(fromJsonElement(enumerator.Current));
-      }
-      return result;
-    }
-    case JsonValueKind.Object: {
-      const result = new Dictionary<string, unknown>();
-      const enumerator = element.EnumerateObject();
-      while (enumerator.MoveNext()) {
-        const property = enumerator.Current;
-        result.Add(property.Name, fromJsonElement(property.Value));
-      }
-      return result;
-    }
-    default:
-      return undefined;
-  }
-};
-
-const enumerateEntries = (value: unknown): [string, unknown][] => {
-  const result: [string, unknown][] = [];
+const enumerateEntries = (value: JsValue): [string, JsValue][] => {
+  const result: [string, JsValue][] = [];
   if (value === null || value === undefined) {
     return result;
   }
@@ -57,7 +20,7 @@ const enumerateEntries = (value: unknown): [string, unknown][] => {
     const enumerator = jsonValue.EnumerateObject();
     while (enumerator.MoveNext()) {
       const property = enumerator.Current;
-      result.push([property.Name, fromJsonElement(property.Value)]);
+      result.push([property.Name, jsValueFromJsonElement(property.Value)]);
     }
     return result;
   }
@@ -74,7 +37,7 @@ const enumerateEntries = (value: unknown): [string, unknown][] => {
   } catch {
   }
 
-  const properties = (value as Reflectable).GetType().GetProperties(
+  const properties = getClrType(value as object).GetProperties(
     BindingFlags.Public | BindingFlags.Instance
   );
   for (const property of properties) {
@@ -87,15 +50,15 @@ const enumerateEntries = (value: unknown): [string, unknown][] => {
 };
 
 export abstract class Object {
-  public static keys(value: unknown): string[] {
+  public static keys(value: JsValue): string[] {
     return enumerateEntries(value).map(([key]) => key);
   }
 
-  public static values(value: unknown): unknown[] {
+  public static values(value: JsValue): JsValue[] {
     return enumerateEntries(value).map(([, entryValue]) => entryValue);
   }
 
-  public static entries(value: unknown): [string, unknown][] {
+  public static entries(value: JsValue): [string, JsValue][] {
     return enumerateEntries(value);
   }
 }
