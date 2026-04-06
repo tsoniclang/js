@@ -1,14 +1,52 @@
-import { Double, Object as DotnetObject } from "@tsonic/dotnet/System.js";
+import {
+  Convert,
+  Double,
+  Object as DotnetObject,
+  TypeCode,
+} from "@tsonic/dotnet/System.js";
+import { CultureInfo } from "@tsonic/dotnet/System.Globalization.js";
 import type { JsValue } from "@tsonic/core/types.js";
+
+const isNumericValue = (value: JsValue): boolean => {
+  switch (Convert.GetTypeCode(value)) {
+    case TypeCode.SByte:
+    case TypeCode.Byte:
+    case TypeCode.Int16:
+    case TypeCode.UInt16:
+    case TypeCode.Int32:
+    case TypeCode.UInt32:
+    case TypeCode.Int64:
+    case TypeCode.UInt64:
+    case TypeCode.Single:
+    case TypeCode.Double:
+    case TypeCode.Decimal:
+      return true;
+    default:
+      return false;
+  }
+};
+
+const toNumericValue = (value: JsValue): number => {
+  return Convert.ToDouble(value, CultureInfo.InvariantCulture);
+};
 
 export const sameValueZero = <T>(left: T, right: T): boolean => {
   const leftValue = left as JsValue | undefined;
   const rightValue = right as JsValue | undefined;
 
-  if (typeof leftValue === "number" && typeof rightValue === "number") {
+  if (
+    leftValue !== undefined &&
+    leftValue !== null &&
+    rightValue !== undefined &&
+    rightValue !== null &&
+    isNumericValue(leftValue) &&
+    isNumericValue(rightValue)
+  ) {
+    const leftNumber = toNumericValue(leftValue);
+    const rightNumber = toNumericValue(rightValue);
     return (
-      leftValue === rightValue ||
-      (Double.IsNaN(leftValue) && Double.IsNaN(rightValue))
+      leftNumber === rightNumber ||
+      (Double.IsNaN(leftNumber) && Double.IsNaN(rightNumber))
     );
   }
 
