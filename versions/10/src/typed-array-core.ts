@@ -8,6 +8,7 @@ import type {
   uint,
   ushort,
 } from "@tsonic/core/types.js";
+import { overloads as O } from "@tsonic/core/lang.js";
 import { Convert } from "@tsonic/dotnet/System.js";
 import { round, trunc } from "./math-intrinsics.js";
 import { isInt32, toInt } from "./int32.js";
@@ -221,32 +222,33 @@ export class TypedArrayBase<
   }
 
   public set(index: int, value: number): void;
-  public set(
-    source: TypedArrayInput<TElement>,
-    offset?: int
-  ): void;
-  public set(
-    sourceOrIndex: int | TypedArrayInput<TElement>,
-    offsetOrValue: int | number = 0 as int
-  ): void {
-    if (typeof sourceOrIndex === "number") {
-      let targetIndex: int;
-      if (isInt32(sourceOrIndex)) {
-        targetIndex = sourceOrIndex;
-      } else {
-        targetIndex = toInt(sourceOrIndex);
-      }
-      if (targetIndex < (0 as int) || targetIndex >= this.length) {
-        return;
-      }
-      this.data[targetIndex] = this.normalizeElementFn(offsetOrValue);
+  public set(source: TypedArrayInput<TElement>, offset?: int): void;
+  public set(_sourceOrIndex: any, _offsetOrValue: any = 0 as int): any {
+    throw new Error("stub");
+  }
+
+  public set_index(index: int, value: number): void {
+    let targetIndex: int;
+    if (isInt32(index)) {
+      targetIndex = index;
+    } else {
+      targetIndex = toInt(index);
+    }
+    if (targetIndex < (0 as int) || targetIndex >= this.length) {
       return;
     }
+    this.data[targetIndex] = this.normalizeElementFn(value);
+  }
 
-    const items = this.materializeInput(sourceOrIndex);
-    const normalizedOffset = isInt32(offsetOrValue)
-      ? offsetOrValue
-      : toInt(offsetOrValue);
+  public set_source(
+    source: TypedArrayInput<TElement>,
+    offset?: int
+  ): void {
+    const items = this.materializeInput(source);
+    const resolvedOffset = offset ?? (0 as int);
+    const normalizedOffset = isInt32(resolvedOffset)
+      ? resolvedOffset
+      : toInt(resolvedOffset);
     const start =
       normalizedOffset < (0 as int) ? (0 as int) : normalizedOffset;
     for (let index = 0 as int; index < items.length; index = (index + 1) as int) {
@@ -297,3 +299,19 @@ export class TypedArrayBase<
     return this.values();
   }
 }
+
+declare class TypedArraySetOverloadSelf extends TypedArrayBase<
+  number,
+  TypedArraySetOverloadSelf
+> {}
+
+O<TypedArrayBase<number, TypedArraySetOverloadSelf>>().method(
+  x => x.set_index
+).family(
+  x => x.set
+);
+O<TypedArrayBase<number, TypedArraySetOverloadSelf>>().method(
+  x => x.set_source
+).family(
+  x => x.set
+);

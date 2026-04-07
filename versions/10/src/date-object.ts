@@ -1,6 +1,6 @@
 import { Convert, DateTime, DateTimeOffset, Double, TimeSpan, TimeZoneInfo } from "@tsonic/dotnet/System.js";
 import { CultureInfo, DateTimeStyles } from "@tsonic/dotnet/System.Globalization.js";
-import type { int, long } from "@tsonic/core/types.js";
+import type { int, long, JsValue } from "@tsonic/core/types.js";
 
 const epoch = new DateTimeOffset(
   1970 as int,
@@ -21,7 +21,7 @@ export class Date {
   private value: DateTimeOffset;
 
   public constructor(
-    valueOrYear?: unknown,
+    valueOrYear?: JsValue,
     month?: number,
     day?: number,
     hours?: number,
