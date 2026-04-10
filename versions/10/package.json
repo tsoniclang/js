@@ -38,7 +38,9 @@
     "./Uint16Array.js": "./src/uint16-array.ts",
     "./Uint32Array.js": "./src/uint32-array.ts",
     "./Uint8Array.js": "./src/uint8-array.ts",
-    "./Uint8ClampedArray.js": "./src/uint8-clamped-array.ts"
+    "./Uint8ClampedArray.js": "./src/uint8-clamped-array.ts",
+    "./WeakMap.js": "./src/weak-map-object.ts",
+    "./WeakSet.js": "./src/weak-set-object.ts"
   },
   "files": [
     "**/*.ts",
@@ -66,7 +68,7 @@
     "url": "https://github.com/tsoniclang/js.git"
   },
   "dependencies": {
-    "@tsonic/dotnet": "10.0.40",
-    "@tsonic/core": "10.0.40"
+    "@tsonic/dotnet": "10.0.41",
+    "@tsonic/core": "10.0.41"
   }
 }

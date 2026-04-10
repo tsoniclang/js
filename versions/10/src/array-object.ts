@@ -1,6 +1,7 @@
 import type { double, int, JsValue } from "@tsonic/core/types.js";
 import { overloads as O } from "@tsonic/core/lang.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
+import { getClrType } from "./object-reflection.ts";
 import { sameValueZero } from "./same-value-zero.js";
 
 type JsRuntimeValue = JsValue | undefined;
@@ -140,9 +141,18 @@ export class Array<T = JsValue> {
   }
 
   public static isArray(
-    _value: JsRuntimeValue
-  ): _value is readonly JsRuntimeValue[] | JsRuntimeValue[] {
-    throw new Error("Array.isArray must be lowered by the compiler.");
+    value: JsRuntimeValue
+  ): value is readonly JsRuntimeValue[] | JsRuntimeValue[] {
+    if (value === undefined || value === null) {
+      return false;
+    }
+
+    if (typeof value !== "object") {
+      return false;
+    }
+
+    const clrType = getClrType(value as object);
+    return clrType.IsArray || clrType.Name === "Array" || clrType.Name.startsWith("Array`");
   }
 
   public static from(source: string): string[];
@@ -155,8 +165,16 @@ export class Array<T = JsValue> {
     source: Iterable<T>,
     mapfn: (value: T, index: int) => TResult
   ): TResult[];
-  public static from(_source: any, _mapfn?: any): any {
-    throw new Error("stub");
+  public static from(source: any, mapfn?: any): any {
+    if (typeof source === "string") {
+      return mapfn
+        ? this.from_stringMapped(source, mapfn)
+        : this.from_string(source);
+    }
+
+    return mapfn
+      ? this.from_iterableMapped(source, mapfn)
+      : this.from_iterable(source);
   }
 
   public static from_string(source: string): string[] {
@@ -193,10 +211,6 @@ export class Array<T = JsValue> {
     return this.valuesStore.ToArray();
   }
 
-  private createWrapped<TResult>(values: readonly TResult[] | TResult[]): Array<TResult> {
-    return wrapArray(values);
-  }
-
   public at(index: int): T {
     const normalized = normalizeElementIndex(index, this.valuesStore.Count);
     return normalized < 0 ? (undefined as T) : this.valuesStore[normalized]!;
@@ -214,7 +228,7 @@ export class Array<T = JsValue> {
 
       merged.Add(item as T);
     }
-    return this.createWrapped(merged.ToArray());
+    return wrapArray<T>(merged.ToArray());
   }
 
   public copyWithin(target: int, start?: int, end?: int): this {
@@ -248,8 +262,8 @@ export class Array<T = JsValue> {
 
   public every(callback: (value: T) => boolean): boolean;
   public every(callback: (value: T, index: int, array: T[]) => boolean): boolean;
-  public every(_callback: any): any {
-    throw new Error("stub");
+  public every(callback: any): any {
+    return this.every_full(callback);
   }
 
   public every_value(callback: (value: T) => boolean): boolean {
@@ -282,8 +296,8 @@ export class Array<T = JsValue> {
   public filter(
     callback: (value: T, index: int, array: readonly T[]) => boolean
   ): Array<T>;
-  public filter(_callback: any): any {
-    throw new Error("stub");
+  public filter(callback: any): any {
+    return this.filter_full(callback);
   }
 
   public filter_value(callback: (value: T) => boolean): Array<T> {
@@ -304,7 +318,7 @@ export class Array<T = JsValue> {
         filtered.Add(value);
       }
     }
-    return this.createWrapped(filtered.ToArray());
+    return wrapArray<T>(filtered.ToArray());
   }
 
   public find(callback: (value: T) => boolean): T | undefined;
@@ -312,8 +326,8 @@ export class Array<T = JsValue> {
   public find(
     callback: (value: T, index: int, array: readonly T[]) => boolean
   ): T | undefined;
-  public find(_callback: any): any {
-    throw new Error("stub");
+  public find(callback: any): any {
+    return this.find_full(callback);
   }
 
   public find_value(callback: (value: T) => boolean): T | undefined {
@@ -341,8 +355,8 @@ export class Array<T = JsValue> {
   public findIndex(
     callback: (value: T, index: int, array: readonly T[]) => boolean
   ): int;
-  public findIndex(_callback: any): any {
-    throw new Error("stub");
+  public findIndex(callback: any): any {
+    return this.findIndex_full(callback);
   }
 
   public findIndex_value(callback: (value: T) => boolean): int {
@@ -369,8 +383,8 @@ export class Array<T = JsValue> {
   public findLast(
     callback: (value: T, index: int, array: readonly T[]) => boolean
   ): T | undefined;
-  public findLast(_callback: any): any {
-    throw new Error("stub");
+  public findLast(callback: any): any {
+    return this.findLast_full(callback);
   }
 
   public findLast_value(callback: (value: T) => boolean): T | undefined {
@@ -398,8 +412,8 @@ export class Array<T = JsValue> {
   public findLastIndex(
     callback: (value: T, index: int, array: readonly T[]) => boolean
   ): int;
-  public findLastIndex(_callback: any): any {
-    throw new Error("stub");
+  public findLastIndex(callback: any): any {
+    return this.findLastIndex_full(callback);
   }
 
   public findLastIndex_value(callback: (value: T) => boolean): int {
@@ -430,7 +444,7 @@ export class Array<T = JsValue> {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       appendFlattened(flattened, this.valuesStore[i] as JsRuntimeValue, depth);
     }
-    return this.createWrapped(flattened.ToArray());
+    return wrapArray<JsRuntimeValue>(flattened.ToArray());
   }
 
   public flatMap<TResult>(
@@ -440,14 +454,14 @@ export class Array<T = JsValue> {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       appendFlattened(flattened, callback(this.valuesStore[i]!, i, this.toArray()), 1 as int);
     }
-    return this.createWrapped(flattened.ToArray() as TResult[]);
+    return wrapArray<TResult>(flattened.ToArray() as TResult[]);
   }
 
   public forEach(callback: (value: T) => void): void;
   public forEach(callback: (value: T, index: int) => void): void;
   public forEach(callback: (value: T, index: int, array: T[]) => void): void;
-  public forEach(_callback: any): any {
-    throw new Error("stub");
+  public forEach(callback: any): any {
+    return this.forEach_full(callback);
   }
 
   public forEach_value(callback: (value: T) => void): void {
@@ -513,8 +527,8 @@ export class Array<T = JsValue> {
   public map<TResult>(callback: (value: T) => TResult): Array<TResult>;
   public map<TResult>(callback: (value: T, index: int) => TResult): Array<TResult>;
   public map<TResult>(callback: (value: T, index: int, array: T[]) => TResult): Array<TResult>;
-  public map(_callback: any): any {
-    throw new Error("stub");
+  public map(callback: any): any {
+    return this.map_full(callback);
   }
 
   public map_value<TResult>(callback: (value: T) => TResult): Array<TResult> {
@@ -534,7 +548,7 @@ export class Array<T = JsValue> {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       mapped.Add(callback(this.valuesStore[i]!, i, this.toArray()));
     }
-    return this.createWrapped(mapped.ToArray());
+    return wrapArray<TResult>(mapped.ToArray());
   }
 
   public pop(): T {
@@ -600,8 +614,12 @@ export class Array<T = JsValue> {
     ) => TResult,
     initialValue: TResult
   ): TResult;
-  public reduce(_callback: any, _initialValue?: any): any {
-    throw new Error("stub");
+  public reduce(callback: any, initialValue?: any): any {
+    if (arguments.length > 1) {
+      return this.reduce_full_withInitial(callback, initialValue);
+    }
+
+    return this.reduce_full_noInitial(callback);
   }
 
   public reduce_pair_noInitial(
@@ -779,8 +797,12 @@ export class Array<T = JsValue> {
     ) => TResult,
     initialValue: TResult
   ): TResult;
-  public reduceRight(_callback: any, _initialValue?: any): any {
-    throw new Error("stub");
+  public reduceRight(callback: any, initialValue?: any): any {
+    if (arguments.length > 1) {
+      return this.reduceRight_full_withInitial(callback, initialValue);
+    }
+
+    return this.reduceRight_full_noInitial(callback);
   }
 
   public reduceRight_pair_noInitial(
@@ -937,13 +959,13 @@ export class Array<T = JsValue> {
     for (let i = from; i < to; i = (i + 1) as int) {
       values.Add(this.valuesStore[i]!);
     }
-    return this.createWrapped(values.ToArray());
+    return wrapArray<T>(values.ToArray());
   }
 
   public some(callback: (value: T) => boolean): boolean;
   public some(callback: (value: T, index: int, array: readonly T[]) => boolean): boolean;
-  public some(_callback: any): any {
-    throw new Error("stub");
+  public some(callback: any): any {
+    return this.some_full(callback);
   }
 
   public some_value(callback: (value: T) => boolean): boolean {
@@ -999,7 +1021,7 @@ export class Array<T = JsValue> {
     for (let i = (items.length - 1) as int; i >= 0; i = (i - 1) as int) {
       this.valuesStore.Insert(from, items[i]!);
     }
-    return this.createWrapped(removed.ToArray());
+    return wrapArray<T>(removed.ToArray());
   }
 
   public toLocaleString(): string {
@@ -1007,15 +1029,15 @@ export class Array<T = JsValue> {
   }
 
   public toReversed(): Array<T> {
-    return this.createWrapped(this.toArray()).reverse();
+    return wrapArray<T>(this.toArray()).reverse();
   }
 
   public toSorted(compareFunc?: (left: T, right: T) => double): Array<T> {
-    return this.createWrapped(this.toArray()).sort(compareFunc);
+    return wrapArray<T>(this.toArray()).sort(compareFunc);
   }
 
   public toSpliced(start: int, deleteCount?: int, ...items: T[]): Array<T> {
-    const clone = this.createWrapped(this.toArray());
+    const clone = wrapArray<T>(this.toArray());
     clone.splice(start, deleteCount, ...items);
     return clone;
   }
@@ -1040,7 +1062,7 @@ export class Array<T = JsValue> {
   }
 
   public with(index: int, value: T): Array<T> {
-    const clone = this.createWrapped(this.toArray());
+    const clone = wrapArray<T>(this.toArray());
     const normalized = normalizeElementIndex(index, clone.length);
     if (normalized >= 0) {
       clone.valuesStore[normalized] = value;

@@ -34,6 +34,8 @@ import { Uint16Array as SourceUint16Array } from "./src/uint16-array.js";
 import { Uint32Array as SourceUint32Array } from "./src/uint32-array.js";
 import { Uint8Array as SourceUint8Array } from "./src/uint8-array.js";
 import { Uint8ClampedArray as SourceUint8ClampedArray } from "./src/uint8-clamped-array.js";
+import { WeakMap as SourceWeakMap } from "./src/weak-map-object.js";
+import { WeakSet as SourceWeakSet } from "./src/weak-set-object.js";
 
 declare global {
   interface Error extends SourceError {
@@ -737,7 +739,7 @@ declare global {
     new<T = JsValue>(values?: readonly T[] | null): Set<T>;
   }
 
-  interface WeakMap<K extends object, V> {
+  interface WeakMap<K extends object, V> extends SourceWeakMap<K, V> {
     delete(key: K): boolean;
     get(key: K): V | undefined;
     has(key: K): boolean;
@@ -749,7 +751,7 @@ declare global {
     new<K extends object, V>(entries?: readonly (readonly [K, V])[] | null): WeakMap<K, V>;
   }
 
-  interface WeakSet<T extends object> {
+  interface WeakSet<T extends object> extends SourceWeakSet<T> {
     add(value: T): this;
     delete(value: T): boolean;
     has(value: T): boolean;
@@ -811,9 +813,9 @@ declare global {
 
   const Set: typeof SourceSet;
 
-  const WeakMap: WeakMapConstructor;
+  const WeakMap: typeof SourceWeakMap;
 
-  const WeakSet: WeakSetConstructor;
+  const WeakSet: typeof SourceWeakSet;
 
   const Object: typeof SourceObject;
 

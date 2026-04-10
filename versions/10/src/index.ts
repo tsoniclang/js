@@ -9,6 +9,8 @@ export { RangeError } from "./range-error.js";
 export { RegExp } from "./regexp-object.js";
 export { Array } from "./array-object.js";
 export { Set } from "./set-object.js";
+export { WeakMap } from "./weak-map-object.js";
+export { WeakSet } from "./weak-set-object.js";
 export { Int8Array } from "./int8-array.js";
 export { Uint8ClampedArray } from "./uint8-clamped-array.js";
 export { Int16Array } from "./int16-array.js";
