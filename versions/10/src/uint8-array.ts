@@ -25,4 +25,14 @@ export class Uint8Array extends TypedArrayBase<byte, Uint8Array> {
       wrapUint8Array
     );
   }
+
+  public toByteArrayRaw(): byte[] {
+    return this.data;
+  }
+
+  public static fromByteArrayRaw(values: byte[]): Uint8Array {
+    const result = new Uint8Array(0 as int);
+    result.replaceData(values);
+    return result;
+  }
 }

@@ -7,8 +7,8 @@ import { jsValueFromJsonElement } from "./js-value-from-json.ts";
 export class JSON {
   public static parse(text: string): JsValue;
   public static parse<T>(text: string): T;
-  public static parse(_text: unknown): unknown {
-    throw new Error("stub");
+  public static parse(text: unknown): unknown {
+    return this.parse_value(text as string);
   }
 
   public static parse_value(text: string): JsValue {

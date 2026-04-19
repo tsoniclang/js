@@ -76,6 +76,69 @@ pack_local_runtime_packages() {
   dotnet pack "$PROJECT_ROOT/../runtime/src/Tsonic.Runtime/Tsonic.Runtime.csproj" -c Release -o "$LOCAL_NUGET_FEED" >/dev/null
 }
 
+patch_workspace_for_tests() {
+  local workspace_dir="$1"
+  node - "$workspace_dir" <<'NODE'
+const fs = require("node:fs");
+const path = require("node:path");
+
+const workspaceDir = path.resolve(process.argv[2]);
+const workspacePath = path.join(workspaceDir, "tsonic.workspace.json");
+const workspace = JSON.parse(fs.readFileSync(workspacePath, "utf8"));
+workspace.testDotnet = {
+  packageReferences: [
+    { id: "Microsoft.NET.Test.Sdk", version: "17.11.1", types: false },
+    { id: "xunit", version: "2.9.2" },
+    { id: "xunit.runner.visualstudio", version: "2.5.6", types: false }
+  ]
+};
+fs.writeFileSync(workspacePath, JSON.stringify(workspace, null, 2) + "\n");
+
+const projectName = path.basename(workspaceDir);
+const projectConfigPath = path.join(
+  workspaceDir,
+  "packages",
+  projectName,
+  "tsonic.json"
+);
+const projectConfig = JSON.parse(fs.readFileSync(projectConfigPath, "utf8"));
+projectConfig.tests = {
+  entryPoint: "src/tests/index.ts",
+  outputDirectory: ".tsonic/generated-tests",
+  outputName: "JsNext.Selftests"
+};
+fs.writeFileSync(projectConfigPath, JSON.stringify(projectConfig, null, 2) + "\n");
+
+const runnerConfigPath = path.join(
+  workspaceDir,
+  "packages",
+  projectName,
+  "xunit.runner.json"
+);
+fs.writeFileSync(
+  runnerConfigPath,
+  JSON.stringify(
+    {
+      parallelizeTestCollections: false,
+      maxParallelThreads: 1
+    },
+    null,
+    2
+  ) + "\n"
+);
+NODE
+}
+
+copy_fixture_tree() {
+  local fixture_dir="$1"
+  local workspace_dir="$2"
+  local project_name
+  project_name="$(basename "$workspace_dir")"
+  local project_src="$workspace_dir/packages/$project_name/src"
+  mkdir -p "$project_src"
+  cp -R "$fixture_dir/." "$project_src/"
+}
+
 PINNED_CORE_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/core"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
 PINNED_DOTNET_VERSION="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); process.stdout.write(p.dependencies["@tsonic/dotnet"]);' "$PROJECT_ROOT/versions/$DOTNET_MAJOR/package.json")"
 assert_local_dependency_alignment "@tsonic/core" "$PINNED_CORE_VERSION"
@@ -99,89 +162,17 @@ EOF
 npm --prefix "$WORK_DIR" install >/dev/null
 run_tsonic_in "$WORK_DIR" init --surface @tsonic/js --skip-types >/dev/null
 write_local_nuget_config "$WORK_DIR"
-
-PROJECT_NAME="$(basename "$WORK_DIR")"
-APP_PATH="$WORK_DIR/packages/$PROJECT_NAME/src/App.ts"
-
-cat >"$APP_PATH" <<'EOF'
-import type { int, long } from "@tsonic/core/types.js";
-import type { Date as SourceDate } from "@tsonic/js/index.js";
-
-export function main(): void {
-  const parsed: number = parseInt("42");
-  const parsedFloat: number = parseFloat("42.5");
-  const finite: boolean = isFinite(parsedFloat);
-  const nan: boolean = isNaN(parseFloat("not-a-number"));
-  const stringified: string = String(123);
-  const numeric: number = Number("42");
-  const truthy: boolean = Boolean(1);
-  const falsey: boolean = Boolean(0);
-  const rounded: number = Math.round(42.7);
-  const epoch: number = Date.parse("2024-01-01T00:00:00Z");
-  const now: long = Date.now();
-  const utcDate: Date = new Date(epoch);
-  const importedDate: SourceDate = new Date(epoch);
-  const iso: string = utcDate.toISOString();
-  const millis: long = importedDate.getTime();
-  const encodedComponent: string = encodeURIComponent("a b+c");
-  const decodedComponent: string = decodeURIComponent(encodedComponent);
-  const encodedUri: string = encodeURI("https://example.com/a path?q=a b#x");
-  const decodedUri: string = decodeURI(encodedUri);
-  const stringLength: int = "tsonic".length;
-  const bytes = new Uint8Array([1, 2, 3]);
-  const map = new Map<string, number>();
-  map.set("answer", 42);
-  const set = new Set<number>();
-  set.add(1);
-  set.add(2);
-  set.add(3);
-
-  if (bytes.length !== 3) throw new Error("bad bytes");
-  if (map.get("answer") !== 42) throw new Error("bad map");
-  if (set.size !== 3) throw new Error("bad set");
-  if (!Array.isArray([1, 2, 3])) throw new Error("bad array");
-  if (stringLength !== 6) throw new Error("bad string length");
-  if (!iso.startsWith("2024-01-01T00:00:00")) throw new Error("bad date iso");
-  if (millis !== epoch) throw new Error("bad date millis");
-  if (encodedComponent !== "a%20b%2Bc") throw new Error("bad encodeURIComponent");
-  if (decodedComponent !== "a b+c") throw new Error("bad decodeURIComponent");
-  if (!encodedUri.includes("https://example.com/a%20path?q=a%20b#x")) throw new Error("bad encodeURI");
-  if (decodedUri !== "https://example.com/a path?q=a b#x") throw new Error("bad decodeURI");
-
-  console.log(
-    [
-      parsed.toString(),
-      parsedFloat.toString(),
-      finite.toString(),
-      nan.toString(),
-      stringified,
-      numeric.toString(),
-      rounded.toString(),
-      (epoch > 0).toString(),
-      (now > 0).toString(),
-      iso.startsWith("2024-01-01T00:00:00").toString(),
-      (millis === epoch).toString(),
-      truthy.toString(),
-      String(falsey),
-      encodedComponent,
-      decodedComponent,
-      encodedUri.includes("https://example.com/a%20path?q=a%20b#x").toString(),
-      (decodedUri === "https://example.com/a path?q=a b#x").toString(),
-      bytes.length.toString(),
-      map.get("answer")!.toString(),
-      set.size.toString(),
-    ].join(",")
-  );
-}
-EOF
+patch_workspace_for_tests "$WORK_DIR"
+copy_fixture_tree "$PROJECT_ROOT/test/fixtures/selftest" "$WORK_DIR"
 
 run_tsonic_in "$WORK_DIR" build >/dev/null
+run_tsonic_in "$WORK_DIR" test >/dev/null
 
 OUTPUT="$(
   run_tsonic_in "$WORK_DIR" run 2>/dev/null \
     | sed '/^Running /d;/^Process exited with code /d;/^─/d;/^$/d' \
     | tail -n 1
 )"
-[ "$OUTPUT" = "42,42.5,true,true,123,42,43,true,true,true,true,true,false,a%20b%2Bc,a b+c,true,true,3,42,3" ]
+[ "$OUTPUT" = "42,42.5,true,true,123,42,43,true,true,true,true,true,false,a%20b%2Bc,a b+c,true,true,3,9,4,5,0,42,3,abc,1,3,5,true,2,4,3,2,4,3,10,1,3,5,7,10,10,true,42,true" ]
 
 echo "js selftest passed"

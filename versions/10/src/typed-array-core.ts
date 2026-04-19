@@ -10,13 +10,14 @@ import type {
 } from "@tsonic/core/types.js";
 import { overloads as O } from "@tsonic/core/lang.js";
 import { Convert } from "@tsonic/dotnet/System.js";
+import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { round, trunc } from "./math-intrinsics.js";
 import { isInt32, toInt } from "./int32.js";
 
 export type TypedArrayInput<
   TElement extends number,
 > =
-  | TElement[]
+  | readonly TElement[]
   | Iterable<number>;
 
 export type TypedArrayConstructorInput<
@@ -103,7 +104,7 @@ export class TypedArrayBase<
 > {
   [index: number]: TElement;
 
-  protected readonly data: TElement[];
+  protected data: TElement[];
   private readonly bytesPerElementValue: int;
   private readonly zeroElementValue: TElement;
   private readonly normalizeElementFn: (value: number) => TElement;
@@ -134,27 +135,27 @@ export class TypedArrayBase<
   }
 
   private createZeroFilled(length: int): TElement[] {
-    const result: TElement[] = [];
+    const result = new List<TElement>();
     for (let index = 0 as int; index < length; index = (index + 1) as int) {
-      result.push(this.zeroElementValue);
+      result.Add(this.zeroElementValue);
     }
-    return result;
+    return result.ToArray();
   }
 
   protected toElementArray(source: Iterable<number>): TElement[] {
-    const result: TElement[] = [];
+    const result = new List<TElement>();
     for (const value of source) {
-      result.push(this.normalizeElementFn(value));
+      result.Add(this.normalizeElementFn(value));
     }
-    return result;
+    return result.ToArray();
   }
 
   protected cloneElements(source: readonly TElement[]): TElement[] {
-    const result: TElement[] = [];
+    const result = new List<TElement>();
     for (let index = 0 as int; index < source.length; index = (index + 1) as int) {
-      result.push(this.normalizeElementFn(this.toNumericValueFn(source[index]!)));
+      result.Add(this.normalizeElementFn(this.toNumericValueFn(source[index]!)));
     }
-    return result;
+    return result.ToArray();
   }
 
   protected materializeInput(source: TypedArrayInput<TElement>): TElement[] {
@@ -163,6 +164,10 @@ export class TypedArrayBase<
     }
 
     return this.toElementArray(source);
+  }
+
+  protected replaceData(values: TElement[]): void {
+    this.data = values;
   }
 
   public get byteLength(): int {
@@ -222,9 +227,21 @@ export class TypedArrayBase<
   }
 
   public set(index: int, value: number): void;
-  public set(source: TypedArrayInput<TElement>, offset?: int): void;
-  public set(_sourceOrIndex: any, _offsetOrValue: any = 0 as int): any {
-    throw new Error("stub");
+  public set(source: readonly TElement[], offset?: int): void;
+  public set(source: Iterable<number>, offset?: int): void;
+  public set(
+    sourceOrIndex: int | TypedArrayInput<TElement>,
+    offsetOrValue: number | int = 0 as int
+  ): void {
+    if (typeof sourceOrIndex === "number") {
+      return this.set_index(sourceOrIndex, offsetOrValue);
+    }
+
+    if (Array.isArray(sourceOrIndex)) {
+      return this.set_array(sourceOrIndex, offsetOrValue as int);
+    }
+
+    return this.set_iterable(sourceOrIndex, offsetOrValue as int);
   }
 
   public set_index(index: int, value: number): void {
@@ -240,10 +257,15 @@ export class TypedArrayBase<
     this.data[targetIndex] = this.normalizeElementFn(value);
   }
 
-  public set_source(
-    source: TypedArrayInput<TElement>,
-    offset?: int
-  ): void {
+  public set_array(source: readonly TElement[], offset?: int): void {
+    this.set_source(source, offset);
+  }
+
+  public set_iterable(source: Iterable<number>, offset?: int): void {
+    this.set_source(source, offset);
+  }
+
+  private set_source(source: TypedArrayInput<TElement>, offset?: int): void {
     const items = this.materializeInput(source);
     const resolvedOffset = offset ?? (0 as int);
     const normalizedOffset = isInt32(resolvedOffset)
@@ -311,7 +333,12 @@ O<TypedArrayBase<number, TypedArraySetOverloadSelf>>().method(
   x => x.set
 );
 O<TypedArrayBase<number, TypedArraySetOverloadSelf>>().method(
-  x => x.set_source
+  x => x.set_array
+).family(
+  x => x.set
+);
+O<TypedArrayBase<number, TypedArraySetOverloadSelf>>().method(
+  x => x.set_iterable
 ).family(
   x => x.set
 );
