@@ -166,7 +166,7 @@ patch_workspace_for_tests "$WORK_DIR"
 copy_fixture_tree "$PROJECT_ROOT/test/fixtures/selftest" "$WORK_DIR"
 
 run_tsonic_in "$WORK_DIR" build >/dev/null
-run_tsonic_in "$WORK_DIR" test >/dev/null
+run_tsonic_in "$WORK_DIR" test --test-progress
 
 OUTPUT="$(
   run_tsonic_in "$WORK_DIR" run 2>/dev/null \
