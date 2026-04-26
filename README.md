@@ -81,7 +81,15 @@ npm publish versions/10 --access public
 
 ## Development
 
-See `__build/`.
+Run the package validation suite with progress output:
+
+```bash
+npm run selftest
+```
+
+The selftest builds the package fixture and runs the JS API matrix for arrays,
+typed arrays, JSON, maps, sets, weak collections, numbers, strings, dates,
+timers, errors, console, globals, and regular expressions.
 
 ## License
 

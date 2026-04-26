@@ -22,7 +22,7 @@ Then build or run normally:
 tsonic run
 ```
 
-## What `init --surface @tsonic/js` changes
+## What `init --surface @tsonic/js` configures
 
 It sets the workspace surface and bootstraps the required type roots so the
 ambient JS world is available immediately.
@@ -51,7 +51,7 @@ Then set:
 
 in `tsonic.workspace.json`.
 
-## What you get immediately
+## Ambient API families
 
 - `console`
 - `JSON`

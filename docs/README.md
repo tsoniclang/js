@@ -4,7 +4,7 @@ title: JavaScript Surface
 
 # `@tsonic/js`
 
-`@tsonic/js` is the active JavaScript ambient surface for Tsonic.
+`@tsonic/js` is the JavaScript ambient surface for Tsonic.
 
 ## What it is
 
@@ -20,7 +20,7 @@ title: JavaScript Surface
 - the selected ambient surface for JS-style authoring
 - a real package with exports, ambient files, and package metadata
 
-That dual role is intentional and is part of the current source-first model.
+That dual role is intentional and is part of the source-package model.
 
 ## Quick start
 
@@ -57,7 +57,7 @@ import { Math } from "@tsonic/js/index.js";
 - [Modules](modules/)
 - [Runtime Model](runtime-model.md)
 
-## Current mental model
+## Package model
 
 Treat `@tsonic/js` as the canonical package users author against. The site does
-not explain the JS surface through an older multi-repo companion story.
+not present the JS surface as a separate CLR companion package.
