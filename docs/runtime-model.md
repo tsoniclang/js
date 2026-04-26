@@ -5,8 +5,7 @@
 - the ambient surface selected by the workspace
 - a first-party source package with explicit exports and ambient files
 
-That is the current public model. The site does not explain JS authoring
-through a separate companion-package story.
+The public model is surface-first authoring backed by a real source package.
 
 ## Surface behavior
 
@@ -28,7 +27,7 @@ The package is still a real `tsonic-source-package`. Its manifest defines:
 - required type roots
 - source namespace
 
-In the current package layout, those exports include:
+The package exports include:
 
 - `./JSON.js`
 - `./Date.js`
