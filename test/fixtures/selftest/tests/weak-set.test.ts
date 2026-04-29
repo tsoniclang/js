@@ -1,10 +1,14 @@
 import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
+class WeakSetValue {
+  id: number = 1;
+}
+
 export class WeakSetTests {
-  public weak_set_supports_add_has_and_delete(): void {
-    const set = new WeakSet<object>();
-    const value = { id: 1 };
+  weak_set_supports_add_has_and_delete(): void {
+    const set = new WeakSet<WeakSetValue>();
+    const value = new WeakSetValue();
 
     set.add(value);
 

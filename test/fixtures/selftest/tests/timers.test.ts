@@ -3,7 +3,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class TimersTests {
-  public async timeout_runs_handler(): Promise<void> {
+  async timeout_runs_handler(): Promise<void> {
     let fired = false;
 
     await new Promise<void>((resolve) => {
@@ -16,7 +16,7 @@ export class TimersTests {
     Assert.True(fired);
   }
 
-  public async interval_repeats_until_cleared(): Promise<void> {
+  async interval_repeats_until_cleared(): Promise<void> {
     let count = 0;
 
     await new Promise<void>((resolve) => {

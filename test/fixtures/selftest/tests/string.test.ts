@@ -17,7 +17,7 @@ import {
 } from "@tsonic/js/String.js";
 
 export class StringTests {
-  public module_helpers_cover_core_string_operations(): void {
+  module_helpers_cover_core_string_operations(): void {
     Assert.Equal("s", at("tsonic", 1));
     Assert.Equal("t", charAt("tsonic", 0));
     Assert.Equal("tsonic!", concat("tsonic", "!"));
@@ -28,7 +28,7 @@ export class StringTests {
     Assert.Equal("hahaha", repeat("ha", 3));
   }
 
-  public matching_replacing_normalizing_and_trimming_cover_remaining_string_surface(): void {
+  matching_replacing_normalizing_and_trimming_cover_remaining_string_surface(): void {
     Assert.Equal("trimmed", trim("  trimmed  "));
     Assert.Equal("a-b-c", replaceAll("a,b,c", ",", "-"));
     Assert.Equal("é", normalize("é", "NFC"));

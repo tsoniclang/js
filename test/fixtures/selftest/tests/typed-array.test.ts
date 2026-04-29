@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class TypedArrayTests {
-  public constructors_and_lengths_cover_all_first_party_typed_arrays(): void {
+  constructors_and_lengths_cover_all_first_party_typed_arrays(): void {
     Assert.Equal(3, new Int8Array([1, 2, 3]).length);
     Assert.Equal(3, new Uint8Array([1, 2, 3]).length);
     Assert.Equal(3, new Uint8ClampedArray([1, 2, 3]).length);
@@ -14,7 +14,7 @@ export class TypedArrayTests {
     Assert.Equal(3, new Float64Array([1, 2, 3]).length);
   }
 
-  public set_join_slice_and_subarray_cover_typed_array_surface(): void {
+  set_join_slice_and_subarray_cover_typed_array_surface(): void {
     const values = new Uint8Array(4);
     values.set([4, 5], 1);
     values.set(0, 9);
@@ -26,7 +26,7 @@ export class TypedArrayTests {
     Assert.Equal("4,5,0", values.subarray(1).join(","));
   }
 
-  public numeric_normalization_behaves_like_js_typed_arrays(): void {
+  numeric_normalization_behaves_like_js_typed_arrays(): void {
     const signed = new Int8Array(new Float64Array([257, -129]));
     const clamped = new Uint8ClampedArray(new Float64Array([-10, 12.6, 999]));
 

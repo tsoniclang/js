@@ -1,41 +1,19 @@
 import {
   Convert,
   Double,
-  TypeCode,
   Uri,
 } from "@tsonic/dotnet/System.js";
 import {
   CultureInfo,
   NumberStyles,
 } from "@tsonic/dotnet/System.Globalization.js";
-import type { JsValue } from "@tsonic/core/types.js";
 
 const nan = (): number => Double.NaN;
 const MAX_SAFE_INTEGER: number = 9_007_199_254_740_991;
 const MIN_SAFE_INTEGER: number = MAX_SAFE_INTEGER * -1;
-
-const toNumericValue = (value: JsValue): number => {
-  return Convert.ToDouble(value, CultureInfo.InvariantCulture);
-};
-
-const isNumericValue = (value: JsValue): boolean => {
-  switch (Convert.GetTypeCode(value)) {
-    case TypeCode.SByte:
-    case TypeCode.Byte:
-    case TypeCode.Int16:
-    case TypeCode.UInt16:
-    case TypeCode.Int32:
-    case TypeCode.UInt32:
-    case TypeCode.Int64:
-    case TypeCode.UInt64:
-    case TypeCode.Single:
-    case TypeCode.Double:
-    case TypeCode.Decimal:
-      return true;
-    default:
-      return false;
-  }
-};
+type NumberValue = string | number | boolean | null | undefined;
+type StringValue = string | number | boolean | object | null;
+type BooleanValue = string | number | boolean | object | null | undefined;
 
 const digitValue = (ch: string): number => {
   if (ch >= "0" && ch <= "9") {
@@ -124,54 +102,34 @@ export const isSafeInteger = (value: number): boolean =>
   value <= MAX_SAFE_INTEGER &&
   value >= MIN_SAFE_INTEGER;
 
-export const Number = (value?: JsValue): number => {
+export const Number = (value?: NumberValue): number => {
   if (value === undefined || value === null) {
     return 0;
   }
 
-  if (isNumericValue(value)) {
-    return toNumericValue(value);
+  if (typeof value === "number") {
+    return value;
   }
 
   if (typeof value === "boolean") {
     return value ? 1 : 0;
   }
 
-  if (typeof value === "string") {
-    const trimmed = value.trim();
-    if (trimmed.length === 0) {
-      return 0;
-    }
-
-    if (trimmed === "Infinity") {
-      return Double.PositiveInfinity;
-    }
-
-    if (trimmed === "-Infinity") {
-      return Double.NegativeInfinity;
-    }
-
-    try {
-      return Double.Parse(trimmed, NumberStyles.Float, CultureInfo.InvariantCulture);
-    } catch {
-      return nan();
-    }
+  const trimmed = value.trim();
+  if (trimmed.length === 0) {
+    return 0;
   }
 
   try {
-    return toNumericValue(value);
+    return Double.Parse(trimmed, NumberStyles.Float, CultureInfo.InvariantCulture);
   } catch {
     return nan();
   }
 };
 
-export const String = (value?: JsValue): string => {
-  if (value === undefined) {
-    return "undefined";
-  }
-
-  if (value === null) {
-    return "null";
+export const String = (value?: StringValue): string => {
+  if (value === undefined || value === null) {
+    return "";
   }
 
   if (typeof value === "string") {
@@ -182,24 +140,14 @@ export const String = (value?: JsValue): string => {
     return value ? "true" : "false";
   }
 
-  if (isNumericValue(value)) {
-    const numericValue = toNumericValue(value);
-    if (Double.IsNaN(numericValue)) {
-      return "NaN";
-    }
-    if (Double.IsPositiveInfinity(numericValue)) {
-      return "Infinity";
-    }
-    if (Double.IsNegativeInfinity(numericValue)) {
-      return "-Infinity";
-    }
-    return (numericValue as Double).ToString(CultureInfo.InvariantCulture) ?? "";
+  if (typeof value === "number") {
+    return Convert.ToString(value, CultureInfo.InvariantCulture) ?? "";
   }
 
   return Convert.ToString(value) ?? "";
 };
 
-export const Boolean = (value?: JsValue): boolean => {
+export const Boolean = (value?: BooleanValue): boolean => {
   if (value === undefined || value === null) {
     return false;
   }
@@ -208,13 +156,12 @@ export const Boolean = (value?: JsValue): boolean => {
     return value;
   }
 
-  if (typeof value === "string") {
-    return value.length > 0;
+  if (typeof value === "number") {
+    return value !== 0 && !Double.IsNaN(value);
   }
 
-  if (isNumericValue(value)) {
-    const numericValue = toNumericValue(value);
-    return !Double.IsNaN(numericValue) && numericValue !== 0;
+  if (typeof value === "string") {
+    return value.length > 0;
   }
 
   return true;

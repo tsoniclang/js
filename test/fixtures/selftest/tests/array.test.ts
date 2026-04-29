@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class ArrayTests {
-  public constructor_and_mutation_cover_core_array_methods(): void {
+  constructor_and_mutation_cover_core_array_methods(): void {
     const values = [1, 2, 3];
 
     Assert.Equal(3, values.length);
@@ -13,7 +13,7 @@ export class ArrayTests {
     Assert.Equal("0,2,3", values.join(","));
   }
 
-  public search_and_copy_methods_cover_indexing_slices_and_reverse(): void {
+  search_and_copy_methods_cover_indexing_slices_and_reverse(): void {
     const values = [1, 2, 3, 4, 5];
 
     Assert.Equal(3, values.at(2) as number);
@@ -25,7 +25,7 @@ export class ArrayTests {
     Assert.Equal("5,4,3,2,1", values.join(","));
   }
 
-  public higher_order_methods_cover_new_dispatchers(): void {
+  higher_order_methods_cover_new_dispatchers(): void {
     const values = [1, 2, 3, 4];
 
     Assert.True(values.every((value) => value > 0));

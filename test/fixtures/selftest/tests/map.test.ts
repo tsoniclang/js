@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class MapTests {
-  public set_get_has_delete_and_size_cover_map_core(): void {
+  set_get_has_delete_and_size_cover_map_core(): void {
     const map = new Map<string, number>();
     map.set("answer", 42);
     map.set("count", 3);
@@ -14,7 +14,7 @@ export class MapTests {
     Assert.Equal(1, map.size);
   }
 
-  public iteration_and_foreach_cover_remaining_map_surface(): void {
+  iteration_and_foreach_cover_remaining_map_surface(): void {
     const map = new Map<string, number>([["a", 1], ["b", 2]]);
     const entries: string[] = [];
     let total = 0;

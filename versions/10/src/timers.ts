@@ -1,4 +1,4 @@
-import type { int, JsValue } from "@tsonic/core/types.js";
+import type { int } from "@tsonic/core/types.js";
 import { CancellationTokenSource } from "@tsonic/dotnet/System.Threading.js";
 import { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 import { Map } from "./map-object.js";
@@ -6,6 +6,7 @@ import { Map } from "./map-object.js";
 const timeoutHandles = new Map<int, CancellationTokenSource>();
 const intervalHandles = new Map<int, CancellationTokenSource>();
 let nextTimerId = 1 as int;
+type TimerValue = string | number | boolean | object | null;
 
 const normalizeDelay = (value?: int): int => {
   if (value === undefined || value <= 0) {
@@ -35,9 +36,9 @@ const disposeTimer = (
 };
 
 export const setTimeout = (
-  handler: (...args: JsValue[]) => void,
+  handler: (...args: TimerValue[]) => void,
   timeout?: int,
-  ...args: JsValue[]
+  ...args: TimerValue[]
 ): int => {
   const id = allocateTimerId();
   const cancellation = new CancellationTokenSource();
@@ -68,9 +69,9 @@ export const clearTimeout = (id: int): void => {
 };
 
 export const setInterval = (
-  handler: (...args: JsValue[]) => void,
+  handler: (...args: TimerValue[]) => void,
   timeout?: int,
-  ...args: JsValue[]
+  ...args: TimerValue[]
 ): int => {
   const id = allocateTimerId();
   const cancellation = new CancellationTokenSource();

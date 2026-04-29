@@ -2,17 +2,22 @@ import type { int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { sameValueZero } from "./same-value-zero.js";
 
-type MapEntry<K, V> = {
-  readonly key: K;
+class MapEntry<K, V> {
+  key: K;
   value: V;
-};
+
+  constructor(key: K, value: V) {
+    this.key = key;
+    this.value = value;
+  }
+}
 
 export class Map<K, V> {
-  private readonly entriesStore: List<MapEntry<K, V>> = new List<
+  entriesStore: List<MapEntry<K, V>> = new List<
     MapEntry<K, V>
   >();
 
-  public constructor(entries?: readonly (readonly [K, V])[] | null) {
+  constructor(entries?: readonly (readonly [K, V])[] | null) {
     if (!entries) {
       return;
     }
@@ -22,11 +27,11 @@ export class Map<K, V> {
     }
   }
 
-  public get size(): int {
+  get size(): int {
     return this.entriesStore.Count;
   }
 
-  private findIndex(key: K): int {
+  findIndex(key: K): int {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       if (sameValueZero(this.entriesStore[i]!.key, key)) {
         return i;
@@ -35,11 +40,11 @@ export class Map<K, V> {
     return -1 as int;
   }
 
-  public clear(): void {
+  clear(): void {
     this.entriesStore.Clear();
   }
 
-  public delete(key: K): boolean {
+  delete(key: K): boolean {
     const index = this.findIndex(key);
     if (index < 0) {
       return false;
@@ -48,53 +53,53 @@ export class Map<K, V> {
     return true;
   }
 
-  public *entries(): Generator<[K, V], undefined, undefined> {
+  *entries(): Generator<[K, V], undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       const entry = this.entriesStore[i]!;
       yield [entry.key, entry.value];
     }
   }
 
-  public forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void {
+  forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       const entry = this.entriesStore[i]!;
       callback(entry.value, entry.key, this);
     }
   }
 
-  public get(key: K): V | undefined {
+  get(key: K): V | undefined {
     const index = this.findIndex(key);
     return index < 0 ? undefined : this.entriesStore[index]!.value;
   }
 
-  public has(key: K): boolean {
+  has(key: K): boolean {
     return this.findIndex(key) >= 0;
   }
 
-  public *keys(): Generator<K, undefined, undefined> {
+  *keys(): Generator<K, undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       yield this.entriesStore[i]!.key;
     }
   }
 
-  public set(key: K, value: V): this {
+  set(key: K, value: V): this {
     const index = this.findIndex(key);
     if (index >= 0) {
       this.entriesStore[index]!.value = value;
       return this;
     }
 
-    this.entriesStore.Add({ key, value });
+    this.entriesStore.Add(new MapEntry(key, value));
     return this;
   }
 
-  public *values(): Generator<V, undefined, undefined> {
+  *values(): Generator<V, undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       yield this.entriesStore[i]!.value;
     }
   }
 
-  public [Symbol.iterator](): Generator<[K, V], undefined, undefined> {
+  [Symbol.iterator](): Generator<[K, V], undefined, undefined> {
     return this.entries();
   }
 }

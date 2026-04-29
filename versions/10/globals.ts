@@ -1,4 +1,4 @@
-import type { byte, double, int, JsValue, long } from "@tsonic/core/types.js";
+import type { byte, double, int, long } from "@tsonic/core/types.js";
 import { Array as SourceArray } from "./src/array-object.js";
 import { ArrayBuffer as SourceArrayBuffer } from "./src/array-buffer-object.js";
 import {
@@ -37,6 +37,8 @@ import { Uint8ClampedArray as SourceUint8ClampedArray } from "./src/uint8-clampe
 import { WeakMap as SourceWeakMap } from "./src/weak-map-object.js";
 import { WeakSet as SourceWeakSet } from "./src/weak-set-object.js";
 
+type RuntimeValue = string | number | boolean | object | null;
+
 declare global {
   interface Error extends SourceError {
     name: string;
@@ -69,7 +71,7 @@ declare global {
 
   interface IArguments {
     readonly length: int;
-    readonly [index: number]: JsValue;
+    readonly [index: number]: RuntimeValue;
   }
 
   interface Object {
@@ -77,7 +79,7 @@ declare global {
   }
 
   interface SymbolConstructor {
-    (description?: Exclude<JsValue, symbol>): symbol;
+    (description?: string | number): symbol;
     readonly iterator: unique symbol;
     readonly asyncIterator: unique symbol;
     readonly hasInstance: unique symbol;
@@ -96,11 +98,11 @@ declare global {
     ): Promise<TResult1>;
     then<TResult1, TResult2>(
       onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
-      onrejected: ((reason: JsValue) => TResult2 | PromiseLike<TResult2>) | undefined | null
+      onrejected: ((reason: RuntimeValue) => TResult2 | PromiseLike<TResult2>) | undefined | null
     ): Promise<TResult1 | TResult2>;
     catch(): Promise<T>;
     catch<TResult>(
-      onrejected: ((reason: JsValue) => TResult | PromiseLike<TResult>) | undefined | null
+      onrejected: ((reason: RuntimeValue) => TResult | PromiseLike<TResult>) | undefined | null
     ): Promise<T | TResult>;
     finally(onfinally?: (() => void) | undefined | null): Promise<T>;
   }
@@ -112,16 +114,16 @@ declare global {
     ): PromiseLike<TResult1>;
     then<TResult1, TResult2>(
       onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
-      onrejected: ((reason: JsValue) => TResult2 | PromiseLike<TResult2>) | undefined | null
+      onrejected: ((reason: RuntimeValue) => TResult2 | PromiseLike<TResult2>) | undefined | null
     ): PromiseLike<TResult1 | TResult2>;
   }
 
   interface PromiseConstructor {
-    new <T>(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: JsValue) => void) => void): Promise<T>;
+    new <T>(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: RuntimeValue) => void) => void): Promise<T>;
     resolve(): Promise<void>;
     resolve<T>(value: T | PromiseLike<T>): Promise<T>;
-    reject<T>(reason?: JsValue): Promise<T>;
-    reject(reason?: JsValue): Promise<JsValue>;
+    reject<T>(reason?: RuntimeValue): Promise<T>;
+    reject(reason?: RuntimeValue): Promise<RuntimeValue>;
     all<T>(values: readonly (T | PromiseLike<T>)[]): Promise<T[]>;
     race<T>(values: readonly (T | PromiseLike<T>)[]): Promise<T>;
   }
@@ -144,7 +146,7 @@ declare global {
   interface Iterator<T, TReturn = undefined, TNext = undefined> {
     next(...[value]: [] | [TNext]): IteratorResult<T, TReturn>;
     return?(value?: TReturn): IteratorResult<T, TReturn>;
-    throw?(e?: JsValue): IteratorResult<T, TReturn>;
+    throw?(e?: RuntimeValue): IteratorResult<T, TReturn>;
   }
 
   interface Iterable<T, TReturn = undefined, TNext = undefined> {
@@ -164,7 +166,7 @@ declare global {
   interface AsyncIterator<T, TReturn = undefined, TNext = undefined> {
     next(...[value]: [] | [TNext]): Promise<IteratorResult<T, TReturn>>;
     return?(value?: TReturn | PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>;
-    throw?(e?: JsValue): Promise<IteratorResult<T, TReturn>>;
+    throw?(e?: RuntimeValue): Promise<IteratorResult<T, TReturn>>;
   }
 
   interface AsyncIterable<T, TReturn = undefined, TNext = undefined> {
@@ -176,19 +178,19 @@ declare global {
     [Symbol.asyncIterator](): AsyncIterableIterator<T, TReturn, TNext>;
   }
 
-  interface Generator<T = JsValue, TReturn = undefined, TNext = undefined>
+  interface Generator<T = RuntimeValue, TReturn = undefined, TNext = undefined>
     extends IteratorObject<T, TReturn, TNext> {
     next(...[value]: [] | [TNext]): IteratorResult<T, TReturn>;
     return(value: TReturn): IteratorResult<T, TReturn>;
-    throw(e: JsValue): IteratorResult<T, TReturn>;
+    throw(e: RuntimeValue): IteratorResult<T, TReturn>;
     [Symbol.iterator](): Generator<T, TReturn, TNext>;
   }
 
-  interface AsyncGenerator<T = JsValue, TReturn = undefined, TNext = undefined>
+  interface AsyncGenerator<T = RuntimeValue, TReturn = undefined, TNext = undefined>
     extends AsyncIterator<T, TReturn, TNext> {
     next(...[value]: [] | [TNext]): Promise<IteratorResult<T, TReturn>>;
     return(value: TReturn | PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>;
-    throw(e: JsValue): Promise<IteratorResult<T, TReturn>>;
+    throw(e: RuntimeValue): Promise<IteratorResult<T, TReturn>>;
     [Symbol.asyncIterator](): AsyncGenerator<T, TReturn, TNext>;
   }
 
@@ -260,7 +262,7 @@ declare global {
   }
 
   interface StringConstructor {
-    (value?: JsValue): string;
+    (value?: RuntimeValue): string;
     fromCharCode(...codes: int[]): string;
     fromCodePoint(...codePoints: int[]): string;
   }
@@ -276,17 +278,11 @@ declare global {
   }
 
   interface BooleanConstructor {
-    (value?: JsValue): boolean;
-  }
-
-  interface ImportMeta {
-    readonly url: string;
-    readonly filename: string;
-    readonly dirname: string;
+    (value?: boolean): boolean;
   }
 
   interface NumberConstructor {
-    (value?: JsValue): number;
+    (value?: number): number;
     readonly EPSILON: number;
     readonly MAX_SAFE_INTEGER: number;
     readonly MAX_VALUE: number;
@@ -307,7 +303,7 @@ declare global {
     length: int;
     [n: number]: T;
     at(index: int): T;
-    concat(...items: JsValue[]): T[];
+    concat(...items: T[]): T[];
     copyWithin(target: int, start?: int, end?: int): T[];
     entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
@@ -328,8 +324,6 @@ declare global {
     findLastIndex(callback: (value: T) => boolean): int;
     findLastIndex(callback: (value: T, index: int) => boolean): int;
     findLastIndex(callback: (value: T, index: int, array: T[]) => boolean): int;
-    flat(depth?: int): (JsValue | undefined)[];
-    flatMap<TResult>(callback: (value: T, index: int, array: T[]) => JsValue | undefined): TResult[];
     forEach(callback: (value: T) => void): void;
     forEach(callback: (value: T, index: int) => void): void;
     forEach(callback: (value: T, index: int, array: T[]) => void): void;
@@ -382,7 +376,7 @@ declare global {
     readonly length: int;
     readonly [n: number]: T;
     at(index: int): T;
-    concat(...items: JsValue[]): T[];
+    concat(...items: T[]): T[];
     entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
     every(callback: (value: T, index: int, array: readonly T[]) => boolean): boolean;
@@ -401,8 +395,6 @@ declare global {
     findLastIndex(callback: (value: T) => boolean): int;
     findLastIndex(callback: (value: T, index: int) => boolean): int;
     findLastIndex(callback: (value: T, index: int, array: readonly T[]) => boolean): int;
-    flat(depth?: int): (JsValue | undefined)[];
-    flatMap<TResult>(callback: (value: T, index: int, array: readonly T[]) => JsValue | undefined): TResult[];
     forEach(callback: (value: T) => void): void;
     forEach(callback: (value: T, index: int) => void): void;
     forEach(callback: (value: T, index: int, array: readonly T[]) => void): void;
@@ -444,24 +436,22 @@ declare global {
   }
 
   interface Console {
-    log(...data: (JsValue | undefined)[]): void;
-    error(...data: (JsValue | undefined)[]): void;
-    warn(...data: (JsValue | undefined)[]): void;
-    info(...data: (JsValue | undefined)[]): void;
-    debug(...data: (JsValue | undefined)[]): void;
+    log(...data: (RuntimeValue | undefined)[]): void;
+    error(...data: (RuntimeValue | undefined)[]): void;
+    warn(...data: (RuntimeValue | undefined)[]): void;
+    info(...data: (RuntimeValue | undefined)[]): void;
+    debug(...data: (RuntimeValue | undefined)[]): void;
   }
 
   interface ArrayConstructor {
-    readonly prototype: JsValue[];
-    new(arrayLength: int): JsValue[];
-    new(...items: JsValue[]): JsValue[];
-    new<T>(arrayLength: int): T[];
+    readonly prototype: RuntimeValue[];
+    new(...items: RuntimeValue[]): RuntimeValue[];
     new<T>(...items: T[]): T[];
-    isArray(value: JsValue | undefined): value is readonly (JsValue | undefined)[] | (JsValue | undefined)[];
     from(source: string): string[];
     from<TResult>(source: string, mapfn: (value: string, index: int) => TResult): TResult[];
     from<T>(source: Iterable<T>): T[];
     from<T, TResult>(source: Iterable<T>, mapfn: (value: T, index: int) => TResult): TResult[];
+    isArray(value: unknown): value is readonly unknown[];
     of<T>(...items: T[]): T[];
   }
 
@@ -567,7 +557,7 @@ declare global {
   interface DateConstructor {
     readonly prototype: Date;
     new(): Date;
-    new(value: string | number | long): Date;
+    new(value: number | long): Date;
     now(): long;
     parse(s: string): number;
   }
@@ -575,7 +565,6 @@ declare global {
   interface Uint8ArrayConstructor {
     readonly prototype: Uint8Array;
     new(length: int): Uint8Array;
-    new(values: byte[] | Uint8Array | Iterable<number>): Uint8Array;
   }
 
   interface ArrayBufferConstructor {
@@ -586,62 +575,54 @@ declare global {
   interface Int8ArrayConstructor {
     readonly prototype: Int8Array;
     new(length: int): Int8Array;
-    new(values: number[] | Int8Array | Iterable<number>): Int8Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint8ClampedArrayConstructor {
     readonly prototype: Uint8ClampedArray;
     new(length: int): Uint8ClampedArray;
-    new(values: number[] | Uint8ClampedArray | Iterable<number>): Uint8ClampedArray;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int16ArrayConstructor {
     readonly prototype: Int16Array;
     new(length: int): Int16Array;
-    new(values: number[] | Int16Array | Iterable<number>): Int16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint16ArrayConstructor {
     readonly prototype: Uint16Array;
     new(length: int): Uint16Array;
-    new(values: number[] | Uint16Array | Iterable<number>): Uint16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int32ArrayConstructor {
     readonly prototype: Int32Array;
     new(length: int): Int32Array;
-    new(values: number[] | Int32Array | Iterable<number>): Int32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint32ArrayConstructor {
     readonly prototype: Uint32Array;
     new(length: int): Uint32Array;
-    new(values: number[] | Uint32Array | Iterable<number>): Uint32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float32ArrayConstructor {
     readonly prototype: Float32Array;
     new(length: int): Float32Array;
-    new(values: number[] | Float32Array | Iterable<number>): Float32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float64ArrayConstructor {
     readonly prototype: Float64Array;
     new(length: int): Float64Array;
-    new(values: number[] | Float64Array | Iterable<number>): Float64Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface JSON {
-    parse<T = JsValue>(text: string): T;
-    stringify(value: JsValue, replacer?: JsValue, space?: string | number | int): string;
+    parse<T>(text: string): T;
+    stringify<T>(value: T, replacer?: undefined, space?: string | number | int): string;
   }
 
   interface Math {
@@ -717,7 +698,7 @@ declare global {
   }
 
   interface MapConstructor {
-    readonly prototype: Map<JsValue, JsValue>;
+    readonly prototype: Map<RuntimeValue, RuntimeValue>;
     new<K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V>;
   }
 
@@ -735,8 +716,8 @@ declare global {
   }
 
   interface SetConstructor {
-    readonly prototype: Set<JsValue>;
-    new<T = JsValue>(values?: readonly T[] | null): Set<T>;
+    readonly prototype: Set<RuntimeValue>;
+    new<T>(values?: readonly T[] | null): Set<T>;
   }
 
   interface WeakMap<K extends object, V> extends SourceWeakMap<K, V> {
@@ -747,7 +728,7 @@ declare global {
   }
 
   interface WeakMapConstructor {
-    readonly prototype: WeakMap<object, JsValue>;
+    readonly prototype: WeakMap<object, RuntimeValue>;
     new<K extends object, V>(entries?: readonly (readonly [K, V])[] | null): WeakMap<K, V>;
   }
 
@@ -764,9 +745,9 @@ declare global {
 
   interface ObjectConstructor {
     readonly prototype: object;
-    entries(obj: JsValue): [string, JsValue][];
-    keys(obj: JsValue): string[];
-    values(obj: JsValue): JsValue[];
+    entries<T>(obj: Record<string, T>): [string, T][];
+    keys<T>(obj: Record<string, T>): string[];
+    values<T>(obj: Record<string, T>): T[];
   }
 
   const Error: typeof SourceError;
@@ -817,7 +798,7 @@ declare global {
 
   const WeakSet: typeof SourceWeakSet;
 
-  const Object: typeof SourceObject;
+  const Object: ObjectConstructor & typeof SourceObject;
 
   const RangeError: typeof SourceRangeError;
 
@@ -830,17 +811,17 @@ declare global {
   const parseFloat: typeof SourceParseFloat;
 
   function setTimeout(
-    handler: (...args: JsValue[]) => void,
+    handler: (...args: RuntimeValue[]) => void,
     timeout?: int,
-    ...args: JsValue[]
+    ...args: RuntimeValue[]
   ): int;
 
   function clearTimeout(id: int): void;
 
   function setInterval(
-    handler: (...args: JsValue[]) => void,
+    handler: (...args: RuntimeValue[]) => void,
     timeout?: int,
-    ...args: JsValue[]
+    ...args: RuntimeValue[]
   ): int;
 
   function clearInterval(id: int): void;

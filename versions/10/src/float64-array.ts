@@ -7,13 +7,15 @@ import {
 import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapFloat64Array(values: double[]): Float64Array {
-  return new Float64Array(values);
+  const result = new Float64Array(0 as int);
+  result.replaceData(values);
+  return result;
 }
 
 export class Float64Array extends TypedArrayBase<double, Float64Array> {
-  public static readonly BYTES_PER_ELEMENT: int = 8 as int;
+  static BYTES_PER_ELEMENT: int = 8 as int;
 
-  public constructor(
+  constructor(
     lengthOrValues: TypedArrayConstructorInput<double>
   ) {
     super(

@@ -4,7 +4,9 @@ import {
   Thread,
 } from "@tsonic/dotnet/System.Threading.js";
 
-const sync = {};
+class SyncRoot {}
+
+const sync = new SyncRoot();
 
 let refCount = 0;
 let releaseSignal: ManualResetEventSlim | null = null;

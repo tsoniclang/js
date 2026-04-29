@@ -1,15 +1,17 @@
-import type { int, JsValue } from "@tsonic/core/types.js";
+import type { int } from "@tsonic/core/types.js";
+
+type IteratorError = string | number | boolean | object | null;
 
 export class IndexIterator<T> implements IterableIterator<T> {
-  private index: int = 0 as int;
+  index: int = 0 as int;
 
-  public constructor(
-    private readonly getLength: () => int,
-    private readonly getValue: (index: int) => T
+  constructor(
+    getLength: () => int,
+    getValue: (index: int) => T
   ) {
   }
 
-  public next(): IteratorResult<T, undefined> {
+  next(): IteratorResult<T, undefined> {
     if (this.index >= this.getLength()) {
       return {
         done: true,
@@ -25,7 +27,7 @@ export class IndexIterator<T> implements IterableIterator<T> {
     };
   }
 
-  public return(value?: undefined): IteratorResult<T, undefined> {
+  return(value?: undefined): IteratorResult<T, undefined> {
     this.index = this.getLength();
     return {
       done: true,
@@ -33,11 +35,11 @@ export class IndexIterator<T> implements IterableIterator<T> {
     };
   }
 
-  public throw(error?: JsValue): IteratorResult<T, undefined> {
+  throw(error?: IteratorError): IteratorResult<T, undefined> {
     throw error;
   }
 
-  public [Symbol.iterator](): IterableIterator<T> {
+  [Symbol.iterator](): IterableIterator<T> {
     return this;
   }
 }

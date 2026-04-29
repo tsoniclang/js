@@ -7,13 +7,15 @@ import {
 import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapUint8Array(values: byte[]): Uint8Array {
-  return new Uint8Array(values);
+  const result = new Uint8Array(0 as int);
+  result.replaceData(values);
+  return result;
 }
 
 export class Uint8Array extends TypedArrayBase<byte, Uint8Array> {
-  public static readonly BYTES_PER_ELEMENT: int = 1 as int;
+  static BYTES_PER_ELEMENT: int = 1 as int;
 
-  public constructor(
+  constructor(
     lengthOrValues: TypedArrayConstructorInput<byte>
   ) {
     super(
@@ -26,11 +28,11 @@ export class Uint8Array extends TypedArrayBase<byte, Uint8Array> {
     );
   }
 
-  public toByteArrayRaw(): byte[] {
+  toByteArrayRaw(): byte[] {
     return this.data;
   }
 
-  public static fromByteArrayRaw(values: byte[]): Uint8Array {
+  static fromByteArrayRaw(values: byte[]): Uint8Array {
     const result = new Uint8Array(0 as int);
     result.replaceData(values);
     return result;

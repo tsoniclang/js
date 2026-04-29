@@ -7,13 +7,15 @@ import {
 import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapUint16Array(values: ushort[]): Uint16Array {
-  return new Uint16Array(values);
+  const result = new Uint16Array(0 as int);
+  result.replaceData(values);
+  return result;
 }
 
 export class Uint16Array extends TypedArrayBase<ushort, Uint16Array> {
-  public static readonly BYTES_PER_ELEMENT: int = 2 as int;
+  static BYTES_PER_ELEMENT: int = 2 as int;
 
-  public constructor(
+  constructor(
     lengthOrValues: TypedArrayConstructorInput<ushort>
   ) {
     super(

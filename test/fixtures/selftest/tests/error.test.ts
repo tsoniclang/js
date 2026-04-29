@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class ErrorTests {
-  public error_preserves_name_message_and_string_form(): void {
+  error_preserves_name_message_and_string_form(): void {
     const error = new Error("boom");
 
     Assert.Equal("Error", error.name);
@@ -10,7 +10,7 @@ export class ErrorTests {
     Assert.Equal("Error: boom", error.toString());
   }
 
-  public empty_error_uses_default_string_form(): void {
+  empty_error_uses_default_string_form(): void {
     const error = new Error();
     Assert.Equal("Error", error.toString());
   }

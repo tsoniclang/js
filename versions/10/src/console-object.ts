@@ -1,26 +1,25 @@
-import type { JsValue } from "@tsonic/core/types.js";
 import { debug, error, info, log, warn } from "./console.js";
 
-type JsConsoleValue = JsValue | undefined;
+type ConsoleValue = string | number | boolean | object | null | undefined;
 
-abstract class ConsoleModule {
-  public static debug(...data: JsConsoleValue[]): void {
+class ConsoleModule {
+  static debug(...data: ConsoleValue[]): void {
     debug(...data);
   }
 
-  public static error(...data: JsConsoleValue[]): void {
+  static error(...data: ConsoleValue[]): void {
     error(...data);
   }
 
-  public static info(...data: JsConsoleValue[]): void {
+  static info(...data: ConsoleValue[]): void {
     info(...data);
   }
 
-  public static log(...data: JsConsoleValue[]): void {
+  static log(...data: ConsoleValue[]): void {
     log(...data);
   }
 
-  public static warn(...data: JsConsoleValue[]): void {
+  static warn(...data: ConsoleValue[]): void {
     warn(...data);
   }
 }

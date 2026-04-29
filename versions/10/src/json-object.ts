@@ -1,32 +1,15 @@
-import { overloads as O } from "@tsonic/core/lang.js";
-import type { int, JsValue } from "@tsonic/core/types.js";
-import { JsonSerializer } from "@tsonic/dotnet/System.Text.Json.js";
-import { JsonElement } from "@tsonic/dotnet/System.Text.Json.js";
-import { jsValueFromJsonElement } from "./js-value-from-json.ts";
+import type { int } from "@tsonic/core/types.js";
 
 export class JSON {
-  public static parse(text: string): JsValue;
-  public static parse<T>(text: string): T;
-  public static parse(text: unknown): unknown {
-    return this.parse_value(text as string);
+  static parse<T>(_text: string): T {
+    throw new Error("JSON.parse<T> must be lowered through compiler-generated serialization metadata.");
   }
 
-  public static parse_value(text: string): JsValue {
-    return jsValueFromJsonElement(JsonElement.Parse(text));
-  }
-
-  public static parse_typed<T>(text: string): T {
-    return JsonSerializer.Deserialize<T>(text)!;
-  }
-
-  public static stringify(
-    value: JsValue,
-    _replacer?: JsValue,
+  static stringify<T>(
+    _value: T,
+    _replacer?: undefined,
     _space?: string | number | int
   ): string {
-    return JsonSerializer.Serialize(value);
+    throw new Error("JSON.stringify<T> must be lowered through compiler-generated serialization metadata.");
   }
 }
-
-O<typeof JSON>().method((json) => json.parse_value).family((json) => json.parse);
-O<typeof JSON>().method((json) => json.parse_typed).family((json) => json.parse);
