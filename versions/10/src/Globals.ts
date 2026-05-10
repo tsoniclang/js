@@ -35,7 +35,7 @@ export const parseInt = (value: string, radix?: number): number => {
   }
 
   let index = 0;
-  let sign = 1;
+  let sign: number = 1;
   if (trimmed[index] === "+" || trimmed[index] === "-") {
     sign = trimmed[index] === "-" ? -1 : 1;
     index += 1;
@@ -61,7 +61,7 @@ export const parseInt = (value: string, radix?: number): number => {
     index += 2;
   }
 
-  let parsed = 0;
+  let parsed: number = 0;
   let sawDigit = false;
 
   while (index < trimmed.length) {
