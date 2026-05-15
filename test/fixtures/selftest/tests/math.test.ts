@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class MathTests {
-  public constants_and_core_operations_cover_math_surface(): void {
+  constants_and_core_operations_cover_math_surface(): void {
     Assert.True(Math.PI > 3);
     Assert.Equal(3, Math.abs(-3));
     Assert.Equal(5, Math.max(1, 5, 3));
@@ -13,7 +13,7 @@ export class MathTests {
     Assert.Equal(4, Math.sqrt(16));
   }
 
-  public trigonometric_and_random_functions_return_valid_values(): void {
+  trigonometric_and_random_functions_return_valid_values(): void {
     Assert.Equal(0, Math.sign(0));
     Assert.Equal(1, Math.sign(5));
     Assert.True(Math.random() >= 0);

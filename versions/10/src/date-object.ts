@@ -1,6 +1,16 @@
-import { Convert, DateTime, DateTimeOffset, Double, TimeSpan, TimeZoneInfo } from "@tsonic/dotnet/System.js";
-import { CultureInfo, DateTimeStyles } from "@tsonic/dotnet/System.Globalization.js";
-import type { int, long, JsValue } from "@tsonic/core/types.js";
+import {
+  Convert,
+  DateTime,
+  DateTimeOffset,
+  Double,
+  TimeSpan,
+  TimeZoneInfo,
+} from "@tsonic/dotnet/System.js";
+import {
+  CultureInfo,
+  DateTimeStyles,
+} from "@tsonic/dotnet/System.Globalization.js";
+import type { int, long } from "@tsonic/core/types.js";
 
 const epoch = new DateTimeOffset(
   1970 as int,
@@ -9,7 +19,7 @@ const epoch = new DateTimeOffset(
   0 as int,
   0 as int,
   0 as int,
-  TimeSpan.Zero
+  TimeSpan.Zero,
 );
 
 const invalidDate = (): DateTimeOffset => DateTimeOffset.MinValue;
@@ -18,16 +28,16 @@ const getLocalOffset = (): TimeSpan =>
   TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
 
 export class Date {
-  private value: DateTimeOffset;
+  value: DateTimeOffset;
 
-  public constructor(
-    valueOrYear?: JsValue,
+  constructor(
+    valueOrYear?: number | string,
     month?: number,
     day?: number,
     hours?: number,
     minutes?: number,
     seconds?: number,
-    milliseconds?: number
+    milliseconds?: number,
   ) {
     if (valueOrYear === undefined) {
       this.value = DateTimeOffset.Now;
@@ -35,20 +45,12 @@ export class Date {
     }
 
     if (typeof valueOrYear === "string") {
-      try {
-        this.value = DateTimeOffset.Parse(
-          valueOrYear,
-          CultureInfo.InvariantCulture,
-          DateTimeStyles.None
-        );
-      } catch {
+      const parsed = Date.parse(valueOrYear);
+      if (Double.IsNaN(parsed) || Double.IsInfinity(parsed)) {
         this.value = invalidDate();
+      } else {
+        this.value = epoch.AddMilliseconds(parsed);
       }
-      return;
-    }
-
-    if (typeof valueOrYear !== "number") {
-      this.value = invalidDate();
       return;
     }
 
@@ -75,23 +77,23 @@ export class Date {
         actualMinutes,
         actualSeconds,
         actualMilliseconds,
-        getLocalOffset()
+        getLocalOffset(),
       );
     } catch {
       this.value = invalidDate();
     }
   }
 
-  public static now(): long {
+  static now(): long {
     return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
   }
 
-  public static parse(dateString: string): number {
+  static parse(dateString: string): number {
     try {
       const parsed = DateTimeOffset.Parse(
         dateString,
         CultureInfo.InvariantCulture,
-        DateTimeStyles.None
+        DateTimeStyles.None,
       );
       return parsed.Subtract(epoch).TotalMilliseconds;
     } catch {
@@ -99,14 +101,14 @@ export class Date {
     }
   }
 
-  public static UTC(
+  static UTC(
     year: int,
     month: int,
     day: int = 1 as int,
     hours: int = 0 as int,
     minutes: int = 0 as int,
     seconds: int = 0 as int,
-    milliseconds: int = 0 as int
+    milliseconds: int = 0 as int,
   ): number {
     try {
       const value = new DateTimeOffset(
@@ -117,7 +119,7 @@ export class Date {
         minutes,
         seconds,
         milliseconds,
-        TimeSpan.Zero
+        TimeSpan.Zero,
       );
       return value.Subtract(epoch).TotalMilliseconds;
     } catch {
@@ -125,84 +127,84 @@ export class Date {
     }
   }
 
-  public getTime(): long {
+  getTime(): long {
     return Convert.ToInt64(this.value.Subtract(epoch).TotalMilliseconds);
   }
 
-  public getFullYear(): int {
+  getFullYear(): int {
     return this.value.LocalDateTime.Year;
   }
 
-  public getMonth(): int {
+  getMonth(): int {
     return (this.value.LocalDateTime.Month - 1) as int;
   }
 
-  public getDate(): int {
+  getDate(): int {
     return this.value.LocalDateTime.Day;
   }
 
-  public getDay(): int {
+  getDay(): int {
     return Convert.ToInt32(this.value.LocalDateTime.DayOfWeek);
   }
 
-  public getHours(): int {
+  getHours(): int {
     return this.value.LocalDateTime.Hour;
   }
 
-  public getMinutes(): int {
+  getMinutes(): int {
     return this.value.LocalDateTime.Minute;
   }
 
-  public getSeconds(): int {
+  getSeconds(): int {
     return this.value.LocalDateTime.Second;
   }
 
-  public getMilliseconds(): int {
+  getMilliseconds(): int {
     return this.value.LocalDateTime.Millisecond;
   }
 
-  public getTimezoneOffset(): int {
-    return Convert.ToInt32(-(this.value.Offset.TotalMinutes));
+  getTimezoneOffset(): int {
+    return Convert.ToInt32(-this.value.Offset.TotalMinutes);
   }
 
-  public getUTCFullYear(): int {
+  getUTCFullYear(): int {
     return this.value.UtcDateTime.Year;
   }
 
-  public getUTCMonth(): int {
+  getUTCMonth(): int {
     return (this.value.UtcDateTime.Month - 1) as int;
   }
 
-  public getUTCDate(): int {
+  getUTCDate(): int {
     return this.value.UtcDateTime.Day;
   }
 
-  public getUTCDay(): int {
+  getUTCDay(): int {
     return Convert.ToInt32(this.value.UtcDateTime.DayOfWeek);
   }
 
-  public getUTCHours(): int {
+  getUTCHours(): int {
     return this.value.UtcDateTime.Hour;
   }
 
-  public getUTCMinutes(): int {
+  getUTCMinutes(): int {
     return this.value.UtcDateTime.Minute;
   }
 
-  public getUTCSeconds(): int {
+  getUTCSeconds(): int {
     return this.value.UtcDateTime.Second;
   }
 
-  public getUTCMilliseconds(): int {
+  getUTCMilliseconds(): int {
     return this.value.UtcDateTime.Millisecond;
   }
 
-  public setTime(milliseconds: number): number {
+  setTime(milliseconds: number): number {
     this.value = epoch.AddMilliseconds(milliseconds);
     return this.getTime();
   }
 
-  public setMilliseconds(ms: int): number {
+  setMilliseconds(ms: int): number {
     const local = this.value.LocalDateTime;
     this.value = new DateTimeOffset(
       local.Year,
@@ -212,12 +214,12 @@ export class Date {
       local.Minute,
       local.Second,
       ms,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setSeconds(sec: int, ms?: int): number {
+  setSeconds(sec: int, ms?: int): number {
     const local = this.value.LocalDateTime;
     const nextMs = ms ?? local.Millisecond;
     this.value = new DateTimeOffset(
@@ -228,12 +230,12 @@ export class Date {
       local.Minute,
       sec,
       nextMs,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setMinutes(min: int, sec?: int, ms?: int): number {
+  setMinutes(min: int, sec?: int, ms?: int): number {
     const local = this.value.LocalDateTime;
     const nextSec = sec ?? local.Second;
     const nextMs = ms ?? local.Millisecond;
@@ -245,12 +247,12 @@ export class Date {
       min,
       nextSec,
       nextMs,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setHours(hour: int, min?: int, sec?: int, ms?: int): number {
+  setHours(hour: int, min?: int, sec?: int, ms?: int): number {
     const local = this.value.LocalDateTime;
     const nextMin = min ?? local.Minute;
     const nextSec = sec ?? local.Second;
@@ -263,12 +265,12 @@ export class Date {
       nextMin,
       nextSec,
       nextMs,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setDate(day: int): number {
+  setDate(day: int): number {
     const local = this.value.LocalDateTime;
     this.value = new DateTimeOffset(
       local.Year,
@@ -278,12 +280,12 @@ export class Date {
       local.Minute,
       local.Second,
       local.Millisecond,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setMonth(month: int, day?: int): number {
+  setMonth(month: int, day?: int): number {
     const local = this.value.LocalDateTime;
     const nextDay = day ?? local.Day;
     this.value = new DateTimeOffset(
@@ -294,14 +296,14 @@ export class Date {
       local.Minute,
       local.Second,
       local.Millisecond,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setFullYear(year: int, month?: int, day?: int): number {
+  setFullYear(year: int, month?: int, day?: int): number {
     const local = this.value.LocalDateTime;
-    const nextMonth = month === undefined ? local.Month : (month + 1) as int;
+    const nextMonth = month === undefined ? local.Month : ((month + 1) as int);
     const nextDay = day ?? local.Day;
     this.value = new DateTimeOffset(
       year,
@@ -311,12 +313,12 @@ export class Date {
       local.Minute,
       local.Second,
       local.Millisecond,
-      this.value.Offset
+      this.value.Offset,
     );
     return this.getTime();
   }
 
-  public setUTCMilliseconds(ms: int): number {
+  setUTCMilliseconds(ms: int): number {
     const utc = this.value.UtcDateTime;
     this.value = new DateTimeOffset(
       utc.Year,
@@ -326,12 +328,12 @@ export class Date {
       utc.Minute,
       utc.Second,
       ms,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public setUTCSeconds(sec: int, ms?: int): number {
+  setUTCSeconds(sec: int, ms?: int): number {
     const utc = this.value.UtcDateTime;
     const nextMs = ms ?? utc.Millisecond;
     this.value = new DateTimeOffset(
@@ -342,12 +344,12 @@ export class Date {
       utc.Minute,
       sec,
       nextMs,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public setUTCMinutes(min: int, sec?: int, ms?: int): number {
+  setUTCMinutes(min: int, sec?: int, ms?: int): number {
     const utc = this.value.UtcDateTime;
     const nextSec = sec ?? utc.Second;
     const nextMs = ms ?? utc.Millisecond;
@@ -359,12 +361,12 @@ export class Date {
       min,
       nextSec,
       nextMs,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public setUTCHours(hour: int, min?: int, sec?: int, ms?: int): number {
+  setUTCHours(hour: int, min?: int, sec?: int, ms?: int): number {
     const utc = this.value.UtcDateTime;
     const nextMin = min ?? utc.Minute;
     const nextSec = sec ?? utc.Second;
@@ -377,12 +379,12 @@ export class Date {
       nextMin,
       nextSec,
       nextMs,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public setUTCDate(day: int): number {
+  setUTCDate(day: int): number {
     const utc = this.value.UtcDateTime;
     this.value = new DateTimeOffset(
       utc.Year,
@@ -392,12 +394,12 @@ export class Date {
       utc.Minute,
       utc.Second,
       utc.Millisecond,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public setUTCMonth(month: int, day?: int): number {
+  setUTCMonth(month: int, day?: int): number {
     const utc = this.value.UtcDateTime;
     const nextDay = day ?? utc.Day;
     this.value = new DateTimeOffset(
@@ -408,14 +410,14 @@ export class Date {
       utc.Minute,
       utc.Second,
       utc.Millisecond,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public setUTCFullYear(year: int, month?: int, day?: int): number {
+  setUTCFullYear(year: int, month?: int, day?: int): number {
     const utc = this.value.UtcDateTime;
-    const nextMonth = month === undefined ? utc.Month : (month + 1) as int;
+    const nextMonth = month === undefined ? utc.Month : ((month + 1) as int);
     const nextDay = day ?? utc.Day;
     this.value = new DateTimeOffset(
       year,
@@ -425,63 +427,63 @@ export class Date {
       utc.Minute,
       utc.Second,
       utc.Millisecond,
-      TimeSpan.Zero
+      TimeSpan.Zero,
     );
     return this.getTime();
   }
 
-  public toString(): string {
+  toString(): string {
     return this.value.LocalDateTime.ToString(
       "ddd MMM dd yyyy HH:mm:ss 'GMT'zzz",
-      CultureInfo.InvariantCulture
+      CultureInfo.InvariantCulture,
     );
   }
 
-  public toDateString(): string {
+  toDateString(): string {
     return this.value.LocalDateTime.ToString(
       "ddd MMM dd yyyy",
-      CultureInfo.InvariantCulture
+      CultureInfo.InvariantCulture,
     );
   }
 
-  public toTimeString(): string {
+  toTimeString(): string {
     return this.value.LocalDateTime.ToString(
       "HH:mm:ss 'GMT'zzz",
-      CultureInfo.InvariantCulture
+      CultureInfo.InvariantCulture,
     );
   }
 
-  public toISOString(): string {
+  toISOString(): string {
     return this.value.UtcDateTime.ToString(
       "yyyy-MM-ddTHH:mm:ss.fffZ",
-      CultureInfo.InvariantCulture
+      CultureInfo.InvariantCulture,
     );
   }
 
-  public toUTCString(): string {
+  toUTCString(): string {
     return this.value.UtcDateTime.ToString(
       "ddd, dd MMM yyyy HH:mm:ss 'GMT'",
-      CultureInfo.InvariantCulture
+      CultureInfo.InvariantCulture,
     );
   }
 
-  public toJSON(): string {
+  toJSON(): string {
     return this.toISOString();
   }
 
-  public toLocaleDateString(): string {
+  toLocaleDateString(): string {
     return this.value.LocalDateTime.ToShortDateString();
   }
 
-  public toLocaleTimeString(): string {
+  toLocaleTimeString(): string {
     return this.value.LocalDateTime.ToShortTimeString();
   }
 
-  public toLocaleString(): string {
+  toLocaleString(): string {
     return this.value.LocalDateTime.ToString();
   }
 
-  public valueOf(): long {
+  valueOf(): long {
     return this.getTime();
   }
 }

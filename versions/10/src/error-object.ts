@@ -1,16 +1,16 @@
 import { Exception } from "@tsonic/dotnet/System.js";
 
 export class Error extends Exception {
-  public name: string = "Error";
-  public message: string;
-  public stack?: string;
+  name: string = "Error";
+  message: string;
+  stack?: string;
 
-  public constructor(message?: string) {
+  constructor(message?: string) {
     super(message ?? "");
     this.message = message ?? "";
   }
 
-  public toString(): string {
+  toString(): string {
     if (this.message === "") {
       return this.name;
     }

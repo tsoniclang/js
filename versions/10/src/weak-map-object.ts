@@ -2,17 +2,22 @@ import type { int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { sameValueZero } from "./same-value-zero.js";
 
-type WeakMapEntry<K extends object, V> = {
-  readonly key: K;
+class WeakMapEntry<K extends object, V> {
+  key: K;
   value: V;
-};
+
+  constructor(key: K, value: V) {
+    this.key = key;
+    this.value = value;
+  }
+}
 
 export class WeakMap<K extends object, V> {
-  private readonly entriesStore: List<WeakMapEntry<K, V>> = new List<
+  entriesStore: List<WeakMapEntry<K, V>> = new List<
     WeakMapEntry<K, V>
   >();
 
-  public constructor(entries?: readonly (readonly [K, V])[] | null) {
+  constructor(entries?: readonly (readonly [K, V])[] | null) {
     if (!entries) {
       return;
     }
@@ -22,7 +27,7 @@ export class WeakMap<K extends object, V> {
     }
   }
 
-  private findIndex(key: K): int {
+  findIndex(key: K): int {
     for (let index = 0 as int; index < this.entriesStore.Count; index = (index + 1) as int) {
       if (sameValueZero(this.entriesStore[index]!.key, key)) {
         return index;
@@ -32,7 +37,7 @@ export class WeakMap<K extends object, V> {
     return -1 as int;
   }
 
-  public delete(key: K): boolean {
+  delete(key: K): boolean {
     const index = this.findIndex(key);
     if (index < 0) {
       return false;
@@ -42,23 +47,23 @@ export class WeakMap<K extends object, V> {
     return true;
   }
 
-  public get(key: K): V | undefined {
+  get(key: K): V | undefined {
     const index = this.findIndex(key);
     return index < 0 ? undefined : this.entriesStore[index]!.value;
   }
 
-  public has(key: K): boolean {
+  has(key: K): boolean {
     return this.findIndex(key) >= 0;
   }
 
-  public set(key: K, value: V): this {
+  set(key: K, value: V): this {
     const index = this.findIndex(key);
     if (index >= 0) {
       this.entriesStore[index]!.value = value;
       return this;
     }
 
-    this.entriesStore.Add({ key, value });
+    this.entriesStore.Add(new WeakMapEntry(key, value));
     return this;
   }
 }

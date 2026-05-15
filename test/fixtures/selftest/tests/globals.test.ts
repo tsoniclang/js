@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class GlobalsTests {
-  public numeric_and_string_conversions_match_js_surface(): void {
+  numeric_and_string_conversions_match_js_surface(): void {
     Assert.Equal(42, parseInt("42"));
     Assert.Equal(16, parseInt("0x10"));
     Assert.Equal(42.5, parseFloat("42.5"));
@@ -12,7 +12,7 @@ export class GlobalsTests {
     Assert.False(Boolean(0));
   }
 
-  public predicates_and_uri_helpers_cover_global_functions(): void {
+  predicates_and_uri_helpers_cover_global_functions(): void {
     Assert.True(isFinite(42.5));
     Assert.True(isNaN(parseFloat("bad")));
     Assert.Equal("a%20b%2Bc", encodeURIComponent("a b+c"));

@@ -31,17 +31,17 @@ const zeroBytes = (length: int): number[] => {
 };
 
 export class ArrayBuffer {
-  private readonly bytes: number[];
+  bytes: number[];
 
-  public constructor(byteLength: int) {
+  constructor(byteLength: int) {
     this.bytes = zeroBytes(byteLength < (0 as int) ? (0 as int) : byteLength);
   }
 
-  public get byteLength(): int {
+  get byteLength(): int {
     return this.bytes.length as int;
   }
 
-  public slice(begin?: int, end?: int): ArrayBuffer {
+  slice(begin?: int, end?: int): ArrayBuffer {
     const start = clampIndex(begin, this.byteLength, 0 as int);
     const finish = clampIndex(end, this.byteLength, this.byteLength);
     const length = finish > start ? toInt(finish - start) : (0 as int);

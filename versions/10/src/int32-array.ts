@@ -7,13 +7,15 @@ import {
 import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapInt32Array(values: int[]): Int32Array {
-  return new Int32Array(values);
+  const result = new Int32Array(0 as int);
+  result.replaceData(values);
+  return result;
 }
 
 export class Int32Array extends TypedArrayBase<int, Int32Array> {
-  public static readonly BYTES_PER_ELEMENT: int = 4 as int;
+  static BYTES_PER_ELEMENT: int = 4 as int;
 
-  public constructor(
+  constructor(
     lengthOrValues: TypedArrayConstructorInput<int>
   ) {
     super(

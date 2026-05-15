@@ -1,10 +1,14 @@
 import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
+class WeakMapKey {
+  name: string = "key";
+}
+
 export class WeakMapTests {
-  public weak_map_supports_set_get_has_and_delete(): void {
-    const map = new WeakMap<object, string>();
-    const key = { name: "key" };
+  weak_map_supports_set_get_has_and_delete(): void {
+    const map = new WeakMap<WeakMapKey, string>();
+    const key = new WeakMapKey();
 
     map.set(key, "value");
 

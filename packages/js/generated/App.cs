@@ -1,5 +1,5 @@
 // Generated from: App.ts
-// Generated at: 2026-04-08T15:26:47.046Z
+// Generated at: 2026-05-09T09:44:44.617Z
 // WARNING: Do not modify this file manually
 
 namespace MyApp

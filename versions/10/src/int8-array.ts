@@ -7,13 +7,15 @@ import {
 import type { TypedArrayConstructorInput } from "./typed-array-core.js";
 
 function wrapInt8Array(values: sbyte[]): Int8Array {
-  return new Int8Array(values);
+  const result = new Int8Array(0 as int);
+  result.replaceData(values);
+  return result;
 }
 
 export class Int8Array extends TypedArrayBase<sbyte, Int8Array> {
-  public static readonly BYTES_PER_ELEMENT: int = 1 as int;
+  static BYTES_PER_ELEMENT: int = 1 as int;
 
-  public constructor(
+  constructor(
     lengthOrValues: TypedArrayConstructorInput<sbyte>
   ) {
     super(

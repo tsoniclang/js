@@ -42,13 +42,16 @@ export function main(): void {
   const foundIndex = values.findIndex((value) => value === 3);
   const foundLast = values.findLast((value) => value % 2 === 0);
   const foundLastIndex = values.findLastIndex((value) => value % 2 === 0);
-  let forEachTotal = 0;
+  let forEachTotal: number = 0;
   values.forEach((value) => {
     forEachTotal += value;
   });
   const mapped = values.map((value, index) => value + index);
-  const reduced = values.reduce((sum, value) => sum + value, 0);
-  const reducedRight = values.reduceRight((sum, value) => sum + value, 0);
+  const reduced = values.reduce<number>((sum, value) => sum + value, 0);
+  const reducedRight = values.reduceRight<number>(
+    (sum, value) => sum + value,
+    0
+  );
   const hasLarge = values.some((value) => value > 3);
   const jsonText = JSON.stringify({ answer: 42, ok: true });
   const parsedJson = JSON.parse<{ answer: number; ok: boolean }>(jsonText);

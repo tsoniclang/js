@@ -1,35 +1,35 @@
-import type { JsValue } from "@tsonic/core/types.js";
 import { Console as DotnetConsole } from "@tsonic/dotnet/System.js";
+import { String as coerceString } from "./Globals.js";
 
-type JsConsoleValue = JsValue | undefined;
+type ConsoleValue = string | number | boolean | object | null | undefined;
 
-export function formatArgs(values: readonly JsConsoleValue[]): string {
+export function formatArgs(values: readonly ConsoleValue[]): string {
   let result = "";
   for (let i = 0; i < values.length; i += 1) {
     if (i > 0) {
       result += " ";
     }
-    result += String(values[i]);
+    result += coerceString(values[i]);
   }
   return result;
 }
 
-export function log(...data: JsConsoleValue[]): void {
+export function log(...data: ConsoleValue[]): void {
   DotnetConsole.WriteLine(formatArgs(data));
 }
 
-export function error(...data: JsConsoleValue[]): void {
+export function error(...data: ConsoleValue[]): void {
   DotnetConsole.Error.WriteLine(formatArgs(data));
 }
 
-export function warn(...data: JsConsoleValue[]): void {
+export function warn(...data: ConsoleValue[]): void {
   DotnetConsole.WriteLine(`WARN: ${formatArgs(data)}`);
 }
 
-export function info(...data: JsConsoleValue[]): void {
+export function info(...data: ConsoleValue[]): void {
   log(...data);
 }
 
-export function debug(...data: JsConsoleValue[]): void {
+export function debug(...data: ConsoleValue[]): void {
   log(...data);
 }

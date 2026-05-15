@@ -1,5 +1,5 @@
 import { asinterface } from "@tsonic/core/lang.js";
-import type { char, int, JsValue } from "@tsonic/core/types.js";
+import type { char, int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import {
   Char,
@@ -377,7 +377,7 @@ export const fromCodePoint = (...codePoints: int[]): string => {
 
 export const raw = (
   template: List<string>,
-  ...substitutions: JsValue[]
+  ...substitutions: (string | number | boolean | object | null)[]
 ): string => {
   const builder = new StringBuilder();
 

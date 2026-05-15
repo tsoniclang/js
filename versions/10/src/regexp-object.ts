@@ -45,12 +45,12 @@ const toMatchArray = (
 };
 
 export class RegExp {
-  public readonly source: string;
-  public readonly flags: string;
+  source: string;
+  flags: string;
 
-  private readonly regex: Regex;
+  regex: Regex;
 
-  public constructor(pattern: string | RegExp, flags: string = "") {
+  constructor(pattern: string | RegExp, flags: string = "") {
     if (pattern instanceof RegExp) {
       this.source = pattern.source;
       this.flags = flags === "" ? pattern.flags : flags;
@@ -62,7 +62,7 @@ export class RegExp {
     this.regex = new Regex(this.source, toRegexOptions(this.flags));
   }
 
-  public exec(input: string): string[] | null {
+  exec(input: string): string[] | null {
     const match = this.regex.Match(input);
     if (!match.Success) {
       return null;
@@ -71,11 +71,11 @@ export class RegExp {
     return toMatchArray(match);
   }
 
-  public test(input: string): boolean {
+  test(input: string): boolean {
     return this.regex.IsMatch(input);
   }
 
-  public toString(): string {
+  toString(): string {
     return `/${this.source}/${this.flags}`;
   }
 }

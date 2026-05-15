@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class DateTests {
-  public parse_now_and_utc_cover_static_surface(): void {
+  parse_now_and_utc_cover_static_surface(): void {
     const epoch = Date.parse("2024-01-01T00:00:00Z");
 
     Assert.True(epoch > 0);
@@ -10,7 +10,7 @@ export class DateTests {
     Assert.True(Date.now() > 0);
   }
 
-  public getters_and_setters_cover_instance_surface(): void {
+  getters_and_setters_cover_instance_surface(): void {
     const date = new Date(Date.UTC(2024, 0, 1, 10, 20, 30, 40));
 
     Assert.Equal(2024, date.getUTCFullYear());

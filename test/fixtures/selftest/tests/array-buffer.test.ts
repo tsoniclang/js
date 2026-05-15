@@ -2,12 +2,12 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class ArrayBufferTests {
-  public constructor_and_byte_length_work(): void {
+  constructor_and_byte_length_work(): void {
     const buffer = new ArrayBuffer(8);
     Assert.Equal(8, buffer.byteLength);
   }
 
-  public slice_respects_range_and_negative_offsets(): void {
+  slice_respects_range_and_negative_offsets(): void {
     const buffer = new ArrayBuffer(10);
 
     Assert.Equal(4, buffer.slice(2, 6).byteLength);

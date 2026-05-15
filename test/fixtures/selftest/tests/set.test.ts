@@ -2,7 +2,7 @@ import { attributes as A } from "@tsonic/core/lang.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class SetTests {
-  public add_has_delete_clear_and_size_cover_set_core(): void {
+  add_has_delete_clear_and_size_cover_set_core(): void {
     const values = new Set<number>();
     values.add(1).add(2).add(2);
 
@@ -15,10 +15,10 @@ export class SetTests {
     Assert.Equal(0, values.size);
   }
 
-  public entries_values_keys_and_foreach_cover_iteration_surface(): void {
+  entries_values_keys_and_foreach_cover_iteration_surface(): void {
     const values = new Set<number>([1, 2, 3]);
     const seen: string[] = [];
-    let total = 0;
+    let total: number = 0;
 
     for (const [key, value] of values.entries()) {
       seen.push(`${key}:${value}`);

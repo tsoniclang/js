@@ -1,41 +1,21 @@
-import {
-  Convert,
-  Double,
-  TypeCode,
-  Uri,
-} from "@tsonic/dotnet/System.js";
+import { Convert, Double, Uri } from "@tsonic/dotnet/System.js";
 import {
   CultureInfo,
   NumberStyles,
 } from "@tsonic/dotnet/System.Globalization.js";
-import type { JsValue } from "@tsonic/core/types.js";
 
 const nan = (): number => Double.NaN;
 const MAX_SAFE_INTEGER: number = 9_007_199_254_740_991;
 const MIN_SAFE_INTEGER: number = MAX_SAFE_INTEGER * -1;
-
-const toNumericValue = (value: JsValue): number => {
-  return Convert.ToDouble(value, CultureInfo.InvariantCulture);
-};
-
-const isNumericValue = (value: JsValue): boolean => {
-  switch (Convert.GetTypeCode(value)) {
-    case TypeCode.SByte:
-    case TypeCode.Byte:
-    case TypeCode.Int16:
-    case TypeCode.UInt16:
-    case TypeCode.Int32:
-    case TypeCode.UInt32:
-    case TypeCode.Int64:
-    case TypeCode.UInt64:
-    case TypeCode.Single:
-    case TypeCode.Double:
-    case TypeCode.Decimal:
-      return true;
-    default:
-      return false;
-  }
-};
+type TsonicJsNumberInput = string | number | boolean | null | undefined;
+type TsonicJsStringInput = string | number | boolean | object | null;
+type TsonicJsBooleanInput =
+  | string
+  | number
+  | boolean
+  | object
+  | null
+  | undefined;
 
 const digitValue = (ch: string): number => {
   if (ch >= "0" && ch <= "9") {
@@ -57,7 +37,7 @@ export const parseInt = (value: string, radix?: number): number => {
   }
 
   let index = 0;
-  let sign = 1;
+  let sign: number = 1;
   if (trimmed[index] === "+" || trimmed[index] === "-") {
     sign = trimmed[index] === "-" ? -1 : 1;
     index += 1;
@@ -83,7 +63,7 @@ export const parseInt = (value: string, radix?: number): number => {
     index += 2;
   }
 
-  let parsed = 0;
+  let parsed: number = 0;
   let sawDigit = false;
 
   while (index < trimmed.length) {
@@ -106,7 +86,11 @@ export const parseFloat = (value: string): number => {
   }
 
   try {
-    return Double.Parse(trimmed, NumberStyles.Float, CultureInfo.InvariantCulture);
+    return Double.Parse(
+      trimmed,
+      NumberStyles.Float,
+      CultureInfo.InvariantCulture,
+    );
   } catch {
     return nan();
   }
@@ -120,58 +104,40 @@ export const isInteger = (value: number): boolean =>
 export const isNaN = (value: number): boolean => Double.IsNaN(value);
 
 export const isSafeInteger = (value: number): boolean =>
-  isInteger(value) &&
-  value <= MAX_SAFE_INTEGER &&
-  value >= MIN_SAFE_INTEGER;
+  isInteger(value) && value <= MAX_SAFE_INTEGER && value >= MIN_SAFE_INTEGER;
 
-export const Number = (value?: JsValue): number => {
+export const Number = (value?: TsonicJsNumberInput): number => {
   if (value === undefined || value === null) {
     return 0;
   }
 
-  if (isNumericValue(value)) {
-    return toNumericValue(value);
+  if (typeof value === "number") {
+    return value;
   }
 
   if (typeof value === "boolean") {
     return value ? 1 : 0;
   }
 
-  if (typeof value === "string") {
-    const trimmed = value.trim();
-    if (trimmed.length === 0) {
-      return 0;
-    }
-
-    if (trimmed === "Infinity") {
-      return Double.PositiveInfinity;
-    }
-
-    if (trimmed === "-Infinity") {
-      return Double.NegativeInfinity;
-    }
-
-    try {
-      return Double.Parse(trimmed, NumberStyles.Float, CultureInfo.InvariantCulture);
-    } catch {
-      return nan();
-    }
+  const trimmed = value.trim();
+  if (trimmed.length === 0) {
+    return 0;
   }
 
   try {
-    return toNumericValue(value);
+    return Double.Parse(
+      trimmed,
+      NumberStyles.Float,
+      CultureInfo.InvariantCulture,
+    );
   } catch {
     return nan();
   }
 };
 
-export const String = (value?: JsValue): string => {
-  if (value === undefined) {
-    return "undefined";
-  }
-
-  if (value === null) {
-    return "null";
+export const String = (value?: TsonicJsStringInput): string => {
+  if (value === undefined || value === null) {
+    return "";
   }
 
   if (typeof value === "string") {
@@ -182,24 +148,14 @@ export const String = (value?: JsValue): string => {
     return value ? "true" : "false";
   }
 
-  if (isNumericValue(value)) {
-    const numericValue = toNumericValue(value);
-    if (Double.IsNaN(numericValue)) {
-      return "NaN";
-    }
-    if (Double.IsPositiveInfinity(numericValue)) {
-      return "Infinity";
-    }
-    if (Double.IsNegativeInfinity(numericValue)) {
-      return "-Infinity";
-    }
-    return (numericValue as Double).ToString(CultureInfo.InvariantCulture) ?? "";
+  if (typeof value === "number") {
+    return Convert.ToString(value, CultureInfo.InvariantCulture) ?? "";
   }
 
   return Convert.ToString(value) ?? "";
 };
 
-export const Boolean = (value?: JsValue): boolean => {
+export const Boolean = (value?: TsonicJsBooleanInput): boolean => {
   if (value === undefined || value === null) {
     return false;
   }
@@ -208,13 +164,13 @@ export const Boolean = (value?: JsValue): boolean => {
     return value;
   }
 
-  if (typeof value === "string") {
-    return value.length > 0;
+  if (typeof value === "number") {
+    return value !== 0 && !Double.IsNaN(value);
   }
 
-  if (isNumericValue(value)) {
-    const numericValue = toNumericValue(value);
-    return !Double.IsNaN(numericValue) && numericValue !== 0;
+  if (typeof value === "string") {
+    const text = value as string;
+    return text.length > 0;
   }
 
   return true;
