@@ -64,6 +64,22 @@ import { Math } from "@tsonic/js/index.js";
 - `Timers`
 - globals like `parseInt`, `parseFloat`, `encodeURI`
 
+## Typed JSON and broad values
+
+`JSON.parse<T>()` and `JSON.stringify<T>()` are compiler-lowered APIs. Use a
+closed compile-time type for JSON payloads so Tsonic can root generated
+serialization metadata for NativeAOT:
+
+```ts
+type Payload = { ok: boolean; count: number };
+
+const payload = JSON.parse<Payload>('{"ok":true,"count":2}');
+console.log(JSON.stringify(payload));
+```
+
+Use `unknown` for deliberately broad JS values and narrow before member access.
+Do not use `JsValue` as an application-level JSON or object escape hatch.
+
 ## Relationship to `@tsonic/nodejs`
 
 - `@tsonic/js` = JS runtime surface

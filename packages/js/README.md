@@ -9,3 +9,4 @@ The package provides:
 - explicit ESM subpaths such as `@tsonic/js/index.js`
 - source-package metadata in `tsonic.package.json`
 - runtime declarations and source files consumed by the Tsonic compiler
+- typed JSON APIs that rely on closed compile-time payload types
