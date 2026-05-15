@@ -1,6 +1,7 @@
 import type { double, int } from "@tsonic/core/types.js";
 import { overloads as O } from "@tsonic/core/lang.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
+import { String as coerceString } from "./Globals.js";
 import { sameValueZero } from "./same-value-zero.js";
 
 type ArrayRuntimeValue = string | number | boolean | object | null | undefined;
@@ -15,7 +16,7 @@ const mapString = (source: string): string[] => {
 
 const mapStringMapped = <TResult>(
   source: string,
-  mapfn: (value: string, index: int) => TResult
+  mapfn: (value: string, index: int) => TResult,
 ): TResult[] => {
   const mapped = new List<TResult>();
   for (let i = 0 as int; i < source.length; i = (i + 1) as int) {
@@ -34,7 +35,7 @@ const mapIterable = <T>(source: Iterable<T>): T[] => {
 
 const mapIterableMapped = <T, TResult>(
   source: Iterable<T>,
-  mapfn: (value: T, index: int) => TResult
+  mapfn: (value: T, index: int) => TResult,
 ): TResult[] => {
   const mapped = new List<TResult>();
   let index = 0 as int;
@@ -97,16 +98,16 @@ export class Array<T = unknown> {
   static from(source: string): string[];
   static from<TResult>(
     source: string,
-    mapfn: (value: string, index: int) => TResult
+    mapfn: (value: string, index: int) => TResult,
   ): TResult[];
   static from<T>(source: Iterable<T>): T[];
   static from<T, TResult>(
     source: Iterable<T>,
-    mapfn: (value: T, index: int) => TResult
+    mapfn: (value: T, index: int) => TResult,
   ): TResult[];
   static from<T, TResult>(
     source: Iterable<T>,
-    mapfn?: (value: T, index: int) => TResult
+    mapfn?: (value: T, index: int) => TResult,
   ): T[] | TResult[] {
     return mapfn
       ? this.from_iterableMapped(source, mapfn)
@@ -119,7 +120,7 @@ export class Array<T = unknown> {
 
   static from_stringMapped<TResult>(
     source: string,
-    mapfn: (value: string, index: int) => TResult
+    mapfn: (value: string, index: int) => TResult,
   ): TResult[] {
     return mapStringMapped(source, mapfn);
   }
@@ -130,7 +131,7 @@ export class Array<T = unknown> {
 
   static from_iterableMapped<T, TResult>(
     source: Iterable<T>,
-    mapfn: (value: T, index: int) => TResult
+    mapfn: (value: T, index: int) => TResult,
   ): TResult[] {
     return mapIterableMapped(source, mapfn);
   }
@@ -182,7 +183,9 @@ export class Array<T = unknown> {
   }
 
   entries(): IterableIterator<[int, T], undefined, undefined> {
-    return (function* (self: Array<T>): Generator<[int, T], undefined, undefined> {
+    return (function* (
+      self: Array<T>,
+    ): Generator<[int, T], undefined, undefined> {
       for (let i = 0 as int; i < self.length; i = (i + 1) as int) {
         yield [i, self.valuesStore[i]!];
       }
@@ -199,9 +202,7 @@ export class Array<T = unknown> {
     return this.every_full((value, _index, _array) => callback(value));
   }
 
-  every_full(
-    callback: (value: T, index: int, array: T[]) => boolean
-  ): boolean {
+  every_full(callback: (value: T, index: int, array: T[]) => boolean): boolean {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       if (!callback(this.valuesStore[i]!, i, this.toArray())) {
         return false;
@@ -223,7 +224,7 @@ export class Array<T = unknown> {
   filter(callback: (value: T) => boolean): Array<T>;
   filter(callback: (value: T, index: int) => boolean): Array<T>;
   filter(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): Array<T>;
   filter(callback: any): any {
     return this.filter_full(callback);
@@ -238,7 +239,7 @@ export class Array<T = unknown> {
   }
 
   filter_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): Array<T> {
     const filtered = new List<T>();
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
@@ -253,7 +254,7 @@ export class Array<T = unknown> {
   find(callback: (value: T) => boolean): T | undefined;
   find(callback: (value: T, index: int) => boolean): T | undefined;
   find(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): T | undefined;
   find(callback: any): any {
     return this.find_full(callback);
@@ -268,7 +269,7 @@ export class Array<T = unknown> {
   }
 
   find_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): T | undefined {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       const value = this.valuesStore[i]!;
@@ -282,7 +283,7 @@ export class Array<T = unknown> {
   findIndex(callback: (value: T) => boolean): int;
   findIndex(callback: (value: T, index: int) => boolean): int;
   findIndex(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): int;
   findIndex(callback: any): any {
     return this.findIndex_full(callback);
@@ -293,11 +294,13 @@ export class Array<T = unknown> {
   }
 
   findIndex_valueIndex(callback: (value: T, index: int) => boolean): int {
-    return this.findIndex_full((value, index, _array) => callback(value, index));
+    return this.findIndex_full((value, index, _array) =>
+      callback(value, index),
+    );
   }
 
   findIndex_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): int {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       if (callback(this.valuesStore[i]!, i, this.toArray())) {
@@ -310,7 +313,7 @@ export class Array<T = unknown> {
   findLast(callback: (value: T) => boolean): T | undefined;
   findLast(callback: (value: T, index: int) => boolean): T | undefined;
   findLast(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): T | undefined;
   findLast(callback: any): any {
     return this.findLast_full(callback);
@@ -320,14 +323,20 @@ export class Array<T = unknown> {
     return this.findLast_full((value, _index, _array) => callback(value));
   }
 
-  findLast_valueIndex(callback: (value: T, index: int) => boolean): T | undefined {
+  findLast_valueIndex(
+    callback: (value: T, index: int) => boolean,
+  ): T | undefined {
     return this.findLast_full((value, index, _array) => callback(value, index));
   }
 
   findLast_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): T | undefined {
-    for (let i = (this.valuesStore.Count - 1) as int; i >= 0; i = (i - 1) as int) {
+    for (
+      let i = (this.valuesStore.Count - 1) as int;
+      i >= 0;
+      i = (i - 1) as int
+    ) {
       const value = this.valuesStore[i]!;
       if (callback(value, i, this.toArray())) {
         return value;
@@ -339,7 +348,7 @@ export class Array<T = unknown> {
   findLastIndex(callback: (value: T) => boolean): int;
   findLastIndex(callback: (value: T, index: int) => boolean): int;
   findLastIndex(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): int;
   findLastIndex(callback: any): any {
     return this.findLastIndex_full(callback);
@@ -349,18 +358,20 @@ export class Array<T = unknown> {
     return this.findLastIndex_full((value, _index, _array) => callback(value));
   }
 
-  findLastIndex_valueIndex(
-    callback: (value: T, index: int) => boolean
-  ): int {
+  findLastIndex_valueIndex(callback: (value: T, index: int) => boolean): int {
     return this.findLastIndex_full((value, index, _array) =>
-      callback(value, index)
+      callback(value, index),
     );
   }
 
   findLastIndex_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): int {
-    for (let i = (this.valuesStore.Count - 1) as int; i >= 0; i = (i - 1) as int) {
+    for (
+      let i = (this.valuesStore.Count - 1) as int;
+      i >= 0;
+      i = (i - 1) as int
+    ) {
       if (callback(this.valuesStore[i]!, i, this.toArray())) {
         return i;
       }
@@ -409,7 +420,7 @@ export class Array<T = unknown> {
       if (i > 0) {
         text += separator;
       }
-      text += String(this.valuesStore[i] as ArrayRuntimeValue);
+      text += coerceString(this.valuesStore[i] as ArrayRuntimeValue);
     }
     return text;
   }
@@ -425,7 +436,7 @@ export class Array<T = unknown> {
   lastIndexOf(searchElement: T, fromIndex?: int): int {
     const start =
       fromIndex === undefined
-        ? (this.valuesStore.Count - 1) as int
+        ? ((this.valuesStore.Count - 1) as int)
         : normalizeElementIndex(fromIndex, this.valuesStore.Count);
     for (let i = start; i >= 0; i = (i - 1) as int) {
       if (sameValueZero(this.valuesStore[i], searchElement)) {
@@ -437,7 +448,9 @@ export class Array<T = unknown> {
 
   map<TResult>(callback: (value: T) => TResult): Array<TResult>;
   map<TResult>(callback: (value: T, index: int) => TResult): Array<TResult>;
-  map<TResult>(callback: (value: T, index: int, array: T[]) => TResult): Array<TResult>;
+  map<TResult>(
+    callback: (value: T, index: int, array: T[]) => TResult,
+  ): Array<TResult>;
   map(callback: any): any {
     return this.map_full(callback);
   }
@@ -447,13 +460,13 @@ export class Array<T = unknown> {
   }
 
   map_valueIndex<TResult>(
-    callback: (value: T, index: int) => TResult
+    callback: (value: T, index: int) => TResult,
   ): Array<TResult> {
     return this.map_full((value, index, _array) => callback(value, index));
   }
 
   map_full<TResult>(
-    callback: (value: T, index: int, array: T[]) => TResult
+    callback: (value: T, index: int, array: T[]) => TResult,
   ): Array<TResult> {
     const mapped = new List<TResult>();
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
@@ -480,78 +493,61 @@ export class Array<T = unknown> {
   }
 
   reduce(callback: (previousValue: T, currentValue: T) => T): T;
+  reduce(callback: (previousValue: T, currentValue: T, index: int) => T): T;
   reduce(
-    callback: (previousValue: T, currentValue: T, index: int) => T
-  ): T;
-  reduce(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
   ): T;
   reduce(
     callback: (previousValue: T, currentValue: T) => T,
-    initialValue: T
+    initialValue: T,
   ): T;
   reduce(
     callback: (previousValue: T, currentValue: T, index: int) => T,
-    initialValue: T
+    initialValue: T,
   ): T;
   reduce(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T,
-    initialValue: T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    initialValue: T,
   ): T;
   reduce<TResult>(
     callback: (previousValue: TResult, currentValue: T) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult;
   reduce<TResult>(
     callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult;
   reduce<TResult>(
     callback: (
       previousValue: TResult,
       currentValue: T,
       index: int,
-      array: T[]
+      array: T[],
     ) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult;
   reduce(callback: any, initialValue?: any): any {
     throw new Error("stub");
   }
 
-  reduce_pair_noInitial(
-    callback: (previousValue: T, currentValue: T) => T
-  ): T {
-    return this.reduce_full_noInitial((previousValue, currentValue, _index, _array) =>
-      callback(previousValue, currentValue)
+  reduce_pair_noInitial(callback: (previousValue: T, currentValue: T) => T): T {
+    return this.reduce_full_noInitial(
+      (previousValue, currentValue, _index, _array) =>
+        callback(previousValue, currentValue),
     );
   }
 
   reduce_pairIndex_noInitial(
-    callback: (previousValue: T, currentValue: T, index: int) => T
+    callback: (previousValue: T, currentValue: T, index: int) => T,
   ): T {
-    return this.reduce_full_noInitial((previousValue, currentValue, index, _array) =>
-      callback(previousValue, currentValue, index)
+    return this.reduce_full_noInitial(
+      (previousValue, currentValue, index, _array) =>
+        callback(previousValue, currentValue, index),
     );
   }
 
   reduce_full_noInitial(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
   ): T {
     if (this.valuesStore.Count === 0) {
       throw new Error("Reduce of empty array with no initial value.");
@@ -567,7 +563,7 @@ export class Array<T = unknown> {
         accumulator,
         this.valuesStore[index]!,
         index,
-        this.toArray()
+        this.toArray(),
       );
     }
 
@@ -576,28 +572,29 @@ export class Array<T = unknown> {
 
   reduce_pair_sameInitial(
     callback: (previousValue: T, currentValue: T) => T,
-    initialValue: T
+    initialValue: T,
   ): T {
-    return this.reduce_full_sameInitial((previousValue, currentValue, _index, _array) =>
-      callback(previousValue, currentValue), initialValue);
+    return this.reduce_full_sameInitial(
+      (previousValue, currentValue, _index, _array) =>
+        callback(previousValue, currentValue),
+      initialValue,
+    );
   }
 
   reduce_pairIndex_sameInitial(
     callback: (previousValue: T, currentValue: T, index: int) => T,
-    initialValue: T
+    initialValue: T,
   ): T {
-    return this.reduce_full_sameInitial((previousValue, currentValue, index, _array) =>
-      callback(previousValue, currentValue, index), initialValue);
+    return this.reduce_full_sameInitial(
+      (previousValue, currentValue, index, _array) =>
+        callback(previousValue, currentValue, index),
+      initialValue,
+    );
   }
 
   reduce_full_sameInitial(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T,
-    initialValue: T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    initialValue: T,
   ): T {
     let accumulator = initialValue;
     for (
@@ -609,7 +606,7 @@ export class Array<T = unknown> {
         accumulator,
         this.valuesStore[index]!,
         index,
-        this.toArray()
+        this.toArray(),
       );
     }
 
@@ -618,18 +615,24 @@ export class Array<T = unknown> {
 
   reduce_pair_withInitial<TResult>(
     callback: (previousValue: TResult, currentValue: T) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult {
-    return this.reduce_full_withInitial((previousValue, currentValue, _index, _array) =>
-      callback(previousValue, currentValue), initialValue);
+    return this.reduce_full_withInitial(
+      (previousValue, currentValue, _index, _array) =>
+        callback(previousValue, currentValue),
+      initialValue,
+    );
   }
 
   reduce_pairIndex_withInitial<TResult>(
     callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult {
-    return this.reduce_full_withInitial((previousValue, currentValue, index, _array) =>
-      callback(previousValue, currentValue, index), initialValue);
+    return this.reduce_full_withInitial(
+      (previousValue, currentValue, index, _array) =>
+        callback(previousValue, currentValue, index),
+      initialValue,
+    );
   }
 
   reduce_full_withInitial<TResult>(
@@ -637,9 +640,9 @@ export class Array<T = unknown> {
       previousValue: TResult,
       currentValue: T,
       index: int,
-      array: T[]
+      array: T[],
     ) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult {
     let accumulator = initialValue;
     for (
@@ -651,7 +654,7 @@ export class Array<T = unknown> {
         accumulator,
         this.valuesStore[index]!,
         index,
-        this.toArray()
+        this.toArray(),
       );
     }
 
@@ -660,77 +663,64 @@ export class Array<T = unknown> {
 
   reduceRight(callback: (previousValue: T, currentValue: T) => T): T;
   reduceRight(
-    callback: (previousValue: T, currentValue: T, index: int) => T
+    callback: (previousValue: T, currentValue: T, index: int) => T,
   ): T;
   reduceRight(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
   ): T;
   reduceRight(
     callback: (previousValue: T, currentValue: T) => T,
-    initialValue: T
+    initialValue: T,
   ): T;
   reduceRight(
     callback: (previousValue: T, currentValue: T, index: int) => T,
-    initialValue: T
+    initialValue: T,
   ): T;
   reduceRight(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T,
-    initialValue: T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    initialValue: T,
   ): T;
   reduceRight<TResult>(
     callback: (previousValue: TResult, currentValue: T) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult;
   reduceRight<TResult>(
     callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult;
   reduceRight<TResult>(
     callback: (
       previousValue: TResult,
       currentValue: T,
       index: int,
-      array: T[]
+      array: T[],
     ) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult;
   reduceRight(callback: any, initialValue?: any): any {
     throw new Error("stub");
   }
 
   reduceRight_pair_noInitial(
-    callback: (previousValue: T, currentValue: T) => T
+    callback: (previousValue: T, currentValue: T) => T,
   ): T {
-    return this.reduceRight_full_noInitial((previousValue, currentValue, _index, _array) =>
-      callback(previousValue, currentValue)
+    return this.reduceRight_full_noInitial(
+      (previousValue, currentValue, _index, _array) =>
+        callback(previousValue, currentValue),
     );
   }
 
   reduceRight_pairIndex_noInitial(
-    callback: (previousValue: T, currentValue: T, index: int) => T
+    callback: (previousValue: T, currentValue: T, index: int) => T,
   ): T {
-    return this.reduceRight_full_noInitial((previousValue, currentValue, index, _array) =>
-      callback(previousValue, currentValue, index)
+    return this.reduceRight_full_noInitial(
+      (previousValue, currentValue, index, _array) =>
+        callback(previousValue, currentValue, index),
     );
   }
 
   reduceRight_full_noInitial(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
   ): T {
     if (this.valuesStore.Count === 0) {
       throw new Error("Reduce of empty array with no initial value.");
@@ -746,7 +736,7 @@ export class Array<T = unknown> {
         accumulator,
         this.valuesStore[index]!,
         index,
-        this.toArray()
+        this.toArray(),
       );
     }
 
@@ -755,28 +745,29 @@ export class Array<T = unknown> {
 
   reduceRight_pair_sameInitial(
     callback: (previousValue: T, currentValue: T) => T,
-    initialValue: T
+    initialValue: T,
   ): T {
-    return this.reduceRight_full_sameInitial((previousValue, currentValue, _index, _array) =>
-      callback(previousValue, currentValue), initialValue);
+    return this.reduceRight_full_sameInitial(
+      (previousValue, currentValue, _index, _array) =>
+        callback(previousValue, currentValue),
+      initialValue,
+    );
   }
 
   reduceRight_pairIndex_sameInitial(
     callback: (previousValue: T, currentValue: T, index: int) => T,
-    initialValue: T
+    initialValue: T,
   ): T {
-    return this.reduceRight_full_sameInitial((previousValue, currentValue, index, _array) =>
-      callback(previousValue, currentValue, index), initialValue);
+    return this.reduceRight_full_sameInitial(
+      (previousValue, currentValue, index, _array) =>
+        callback(previousValue, currentValue, index),
+      initialValue,
+    );
   }
 
   reduceRight_full_sameInitial(
-    callback: (
-      previousValue: T,
-      currentValue: T,
-      index: int,
-      array: T[]
-    ) => T,
-    initialValue: T
+    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    initialValue: T,
   ): T {
     let accumulator = initialValue;
     for (
@@ -788,7 +779,7 @@ export class Array<T = unknown> {
         accumulator,
         this.valuesStore[index]!,
         index,
-        this.toArray()
+        this.toArray(),
       );
     }
 
@@ -797,18 +788,24 @@ export class Array<T = unknown> {
 
   reduceRight_pair_withInitial<TResult>(
     callback: (previousValue: TResult, currentValue: T) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult {
-    return this.reduceRight_full_withInitial((previousValue, currentValue, _index, _array) =>
-      callback(previousValue, currentValue), initialValue);
+    return this.reduceRight_full_withInitial(
+      (previousValue, currentValue, _index, _array) =>
+        callback(previousValue, currentValue),
+      initialValue,
+    );
   }
 
   reduceRight_pairIndex_withInitial<TResult>(
     callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult {
-    return this.reduceRight_full_withInitial((previousValue, currentValue, index, _array) =>
-      callback(previousValue, currentValue, index), initialValue);
+    return this.reduceRight_full_withInitial(
+      (previousValue, currentValue, index, _array) =>
+        callback(previousValue, currentValue, index),
+      initialValue,
+    );
   }
 
   reduceRight_full_withInitial<TResult>(
@@ -816,9 +813,9 @@ export class Array<T = unknown> {
       previousValue: TResult,
       currentValue: T,
       index: int,
-      array: T[]
+      array: T[],
     ) => TResult,
-    initialValue: TResult
+    initialValue: TResult,
   ): TResult {
     let accumulator = initialValue;
     for (
@@ -830,7 +827,7 @@ export class Array<T = unknown> {
         accumulator,
         this.valuesStore[index]!,
         index,
-        this.toArray()
+        this.toArray(),
       );
     }
 
@@ -866,7 +863,9 @@ export class Array<T = unknown> {
   }
 
   some(callback: (value: T) => boolean): boolean;
-  some(callback: (value: T, index: int, array: readonly T[]) => boolean): boolean;
+  some(
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
+  ): boolean;
   some(callback: any): any {
     return this.some_full(callback);
   }
@@ -876,7 +875,7 @@ export class Array<T = unknown> {
   }
 
   some_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean
+    callback: (value: T, index: int, array: readonly T[]) => boolean,
   ): boolean {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       if (callback(this.valuesStore[i]!, i, this.toArray())) {
@@ -889,14 +888,20 @@ export class Array<T = unknown> {
   sort(compareFunc?: (left: T, right: T) => double): this {
     const values = this.toArray();
     for (let left = 0 as int; left < values.length; left = (left + 1) as int) {
-      for (let right = (left + 1) as int; right < values.length; right = (right + 1) as int) {
+      for (
+        let right = (left + 1) as int;
+        right < values.length;
+        right = (right + 1) as int
+      ) {
         const leftValue = values[left]!;
         const rightValue = values[right]!;
         const comparison =
           compareFunc?.(leftValue, rightValue) ??
-          (String(leftValue as ArrayRuntimeValue) < String(rightValue as ArrayRuntimeValue)
+          (coerceString(leftValue as ArrayRuntimeValue) <
+          coerceString(rightValue as ArrayRuntimeValue)
             ? (-1 as double)
-            : String(leftValue as ArrayRuntimeValue) > String(rightValue as ArrayRuntimeValue)
+            : coerceString(leftValue as ArrayRuntimeValue) >
+                coerceString(rightValue as ArrayRuntimeValue)
               ? (1 as double)
               : (0 as double));
         if (comparison > 0) {
@@ -912,12 +917,20 @@ export class Array<T = unknown> {
     return this;
   }
 
-  splice(start: int, deleteCount: int = (this.valuesStore.Count - start) as int, ...items: T[]): Array<T> {
+  splice(
+    start: int,
+    deleteCount: int = (this.valuesStore.Count - start) as int,
+    ...items: T[]
+  ): Array<T> {
     const length = this.valuesStore.Count;
     const from = normalizeRelativeIndex(start, length);
     const removeCount = deleteCount < 0 ? (0 as int) : deleteCount;
     const removed = new List<T>();
-    for (let i = 0 as int; i < removeCount && from < this.valuesStore.Count; i = (i + 1) as int) {
+    for (
+      let i = 0 as int;
+      i < removeCount && from < this.valuesStore.Count;
+      i = (i + 1) as int
+    ) {
       removed.Add(this.valuesStore[from]!);
       this.valuesStore.RemoveAt(from);
     }
@@ -978,53 +991,147 @@ export class Array<T = unknown> {
   }
 }
 
-O<Array>().method(x => x.map_value).family(x => x.map);
-O<Array>().method(x => x.map_valueIndex).family(x => x.map);
-O<Array>().method(x => x.map_full).family(x => x.map);
-O<Array>().method(x => x.every_value).family(x => x.every);
-O<Array>().method(x => x.every_full).family(x => x.every);
-O<Array>().method(x => x.filter_value).family(x => x.filter);
-O<Array>().method(x => x.filter_valueIndex).family(x => x.filter);
-O<Array>().method(x => x.filter_full).family(x => x.filter);
-O<Array>().method(x => x.find_value).family(x => x.find);
-O<Array>().method(x => x.find_valueIndex).family(x => x.find);
-O<Array>().method(x => x.find_full).family(x => x.find);
-O<Array>().method(x => x.findIndex_value).family(x => x.findIndex);
-O<Array>().method(x => x.findIndex_valueIndex).family(x => x.findIndex);
-O<Array>().method(x => x.findIndex_full).family(x => x.findIndex);
-O<Array>().method(x => x.findLast_value).family(x => x.findLast);
-O<Array>().method(x => x.findLast_valueIndex).family(x => x.findLast);
-O<Array>().method(x => x.findLast_full).family(x => x.findLast);
-O<Array>().method(x => x.findLastIndex_value).family(x => x.findLastIndex);
-O<Array>().method(x => x.findLastIndex_valueIndex).family(x => x.findLastIndex);
-O<Array>().method(x => x.findLastIndex_full).family(x => x.findLastIndex);
-O<Array>().method(x => x.forEach_value).family(x => x.forEach);
-O<Array>().method(x => x.forEach_valueIndex).family(x => x.forEach);
-O<Array>().method(x => x.forEach_full).family(x => x.forEach);
-O<Array>().method(x => x.some_value).family(x => x.some);
-O<Array>().method(x => x.some_full).family(x => x.some);
+O<Array>()
+  .method((x) => x.map_value)
+  .family((x) => x.map);
+O<Array>()
+  .method((x) => x.map_valueIndex)
+  .family((x) => x.map);
+O<Array>()
+  .method((x) => x.map_full)
+  .family((x) => x.map);
+O<Array>()
+  .method((x) => x.every_value)
+  .family((x) => x.every);
+O<Array>()
+  .method((x) => x.every_full)
+  .family((x) => x.every);
+O<Array>()
+  .method((x) => x.filter_value)
+  .family((x) => x.filter);
+O<Array>()
+  .method((x) => x.filter_valueIndex)
+  .family((x) => x.filter);
+O<Array>()
+  .method((x) => x.filter_full)
+  .family((x) => x.filter);
+O<Array>()
+  .method((x) => x.find_value)
+  .family((x) => x.find);
+O<Array>()
+  .method((x) => x.find_valueIndex)
+  .family((x) => x.find);
+O<Array>()
+  .method((x) => x.find_full)
+  .family((x) => x.find);
+O<Array>()
+  .method((x) => x.findIndex_value)
+  .family((x) => x.findIndex);
+O<Array>()
+  .method((x) => x.findIndex_valueIndex)
+  .family((x) => x.findIndex);
+O<Array>()
+  .method((x) => x.findIndex_full)
+  .family((x) => x.findIndex);
+O<Array>()
+  .method((x) => x.findLast_value)
+  .family((x) => x.findLast);
+O<Array>()
+  .method((x) => x.findLast_valueIndex)
+  .family((x) => x.findLast);
+O<Array>()
+  .method((x) => x.findLast_full)
+  .family((x) => x.findLast);
+O<Array>()
+  .method((x) => x.findLastIndex_value)
+  .family((x) => x.findLastIndex);
+O<Array>()
+  .method((x) => x.findLastIndex_valueIndex)
+  .family((x) => x.findLastIndex);
+O<Array>()
+  .method((x) => x.findLastIndex_full)
+  .family((x) => x.findLastIndex);
+O<Array>()
+  .method((x) => x.forEach_value)
+  .family((x) => x.forEach);
+O<Array>()
+  .method((x) => x.forEach_valueIndex)
+  .family((x) => x.forEach);
+O<Array>()
+  .method((x) => x.forEach_full)
+  .family((x) => x.forEach);
+O<Array>()
+  .method((x) => x.some_value)
+  .family((x) => x.some);
+O<Array>()
+  .method((x) => x.some_full)
+  .family((x) => x.some);
 
-O<typeof Array>().method(x => x.from_string).family(x => x.from);
-O<typeof Array>().method(x => x.from_stringMapped).family(x => x.from);
-O<typeof Array>().method(x => x.from_iterable).family(x => x.from);
-O<typeof Array>().method(x => x.from_iterableMapped).family(x => x.from);
+O<typeof Array>()
+  .method((x) => x.from_string)
+  .family((x) => x.from);
+O<typeof Array>()
+  .method((x) => x.from_stringMapped)
+  .family((x) => x.from);
+O<typeof Array>()
+  .method((x) => x.from_iterable)
+  .family((x) => x.from);
+O<typeof Array>()
+  .method((x) => x.from_iterableMapped)
+  .family((x) => x.from);
 
-O<Array>().method(x => x.reduce_pair_noInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_pairIndex_noInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_full_noInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_pair_sameInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_pairIndex_sameInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_full_sameInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_pair_withInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_pairIndex_withInitial).family(x => x.reduce);
-O<Array>().method(x => x.reduce_full_withInitial).family(x => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_pair_noInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_pairIndex_noInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_full_noInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_pair_sameInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_pairIndex_sameInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_full_sameInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_pair_withInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_pairIndex_withInitial)
+  .family((x) => x.reduce);
+O<Array>()
+  .method((x) => x.reduce_full_withInitial)
+  .family((x) => x.reduce);
 
-O<Array>().method(x => x.reduceRight_pair_noInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_pairIndex_noInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_full_noInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_pair_sameInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_pairIndex_sameInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_full_sameInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_pair_withInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_pairIndex_withInitial).family(x => x.reduceRight);
-O<Array>().method(x => x.reduceRight_full_withInitial).family(x => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_pair_noInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_pairIndex_noInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_full_noInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_pair_sameInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_pairIndex_sameInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_full_sameInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_pair_withInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_pairIndex_withInitial)
+  .family((x) => x.reduceRight);
+O<Array>()
+  .method((x) => x.reduceRight_full_withInitial)
+  .family((x) => x.reduceRight);

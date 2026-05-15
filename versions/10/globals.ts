@@ -1,4 +1,4 @@
-import type { byte, double, int, long } from "@tsonic/core/types.js";
+import type { byte, double, int, JsValue, long } from "@tsonic/core/types.js";
 import { Array as SourceArray } from "./src/array-object.js";
 import { ArrayBuffer as SourceArrayBuffer } from "./src/array-buffer-object.js";
 import {
@@ -48,26 +48,23 @@ declare global {
 
   interface ErrorConstructor {
     readonly prototype: Error;
-    new(message?: string): Error;
+    new (message?: string): Error;
   }
 
   interface RangeErrorConstructor extends ErrorConstructor {
     readonly prototype: RangeError;
-    new(message?: string): RangeError;
+    new (message?: string): RangeError;
   }
 
-  interface RangeError extends Error, SourceRangeError {
-  }
+  interface RangeError extends Error, SourceRangeError {}
 
   interface Function {
     prototype: object;
   }
 
-  interface CallableFunction extends Function {
-  }
+  interface CallableFunction extends Function {}
 
-  interface NewableFunction extends Function {
-  }
+  interface NewableFunction extends Function {}
 
   interface IArguments {
     readonly length: int;
@@ -94,15 +91,27 @@ declare global {
   interface Promise<T> {
     then(): Promise<T>;
     then<TResult1>(
-      onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null
+      onfulfilled:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
     ): Promise<TResult1>;
     then<TResult1, TResult2>(
-      onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
-      onrejected: ((reason: RuntimeValue) => TResult2 | PromiseLike<TResult2>) | undefined | null
+      onfulfilled:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
+      onrejected:
+        | ((reason: RuntimeValue) => TResult2 | PromiseLike<TResult2>)
+        | undefined
+        | null,
     ): Promise<TResult1 | TResult2>;
     catch(): Promise<T>;
     catch<TResult>(
-      onrejected: ((reason: RuntimeValue) => TResult | PromiseLike<TResult>) | undefined | null
+      onrejected:
+        | ((reason: RuntimeValue) => TResult | PromiseLike<TResult>)
+        | undefined
+        | null,
     ): Promise<T | TResult>;
     finally(onfinally?: (() => void) | undefined | null): Promise<T>;
   }
@@ -110,16 +119,30 @@ declare global {
   interface PromiseLike<T> {
     then(): PromiseLike<T>;
     then<TResult1>(
-      onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null
+      onfulfilled:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
     ): PromiseLike<TResult1>;
     then<TResult1, TResult2>(
-      onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
-      onrejected: ((reason: RuntimeValue) => TResult2 | PromiseLike<TResult2>) | undefined | null
+      onfulfilled:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
+      onrejected:
+        | ((reason: RuntimeValue) => TResult2 | PromiseLike<TResult2>)
+        | undefined
+        | null,
     ): PromiseLike<TResult1 | TResult2>;
   }
 
   interface PromiseConstructor {
-    new <T>(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: RuntimeValue) => void) => void): Promise<T>;
+    new <T>(
+      executor: (
+        resolve: (value: T | PromiseLike<T>) => void,
+        reject: (reason?: RuntimeValue) => void,
+      ) => void,
+    ): Promise<T>;
     resolve(): Promise<void>;
     resolve<T>(value: T | PromiseLike<T>): Promise<T>;
     reject<T>(reason?: RuntimeValue): Promise<T>;
@@ -165,7 +188,9 @@ declare global {
 
   interface AsyncIterator<T, TReturn = undefined, TNext = undefined> {
     next(...[value]: [] | [TNext]): Promise<IteratorResult<T, TReturn>>;
-    return?(value?: TReturn | PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>;
+    return?(
+      value?: TReturn | PromiseLike<TReturn>,
+    ): Promise<IteratorResult<T, TReturn>>;
     throw?(e?: RuntimeValue): Promise<IteratorResult<T, TReturn>>;
   }
 
@@ -186,10 +211,15 @@ declare global {
     [Symbol.iterator](): Generator<T, TReturn, TNext>;
   }
 
-  interface AsyncGenerator<T = RuntimeValue, TReturn = undefined, TNext = undefined>
-    extends AsyncIterator<T, TReturn, TNext> {
+  interface AsyncGenerator<
+    T = RuntimeValue,
+    TReturn = undefined,
+    TNext = undefined,
+  > extends AsyncIterator<T, TReturn, TNext> {
     next(...[value]: [] | [TNext]): Promise<IteratorResult<T, TReturn>>;
-    return(value: TReturn | PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>;
+    return(
+      value: TReturn | PromiseLike<TReturn>,
+    ): Promise<IteratorResult<T, TReturn>>;
     throw(e: RuntimeValue): Promise<IteratorResult<T, TReturn>>;
     [Symbol.asyncIterator](): AsyncGenerator<T, TReturn, TNext>;
   }
@@ -208,9 +238,13 @@ declare global {
   type Omit<T, K extends PropertyKey> = Pick<T, Exclude<keyof T, K>>;
   type NonNullable<T> = T extends null | undefined ? never : T;
   type Parameters<T> = T extends (...args: infer P) => infer _R ? P : never;
-  type ConstructorParameters<T> = T extends new (...args: infer P) => infer _R ? P : never;
+  type ConstructorParameters<T> = T extends new (...args: infer P) => infer _R
+    ? P
+    : never;
   type ReturnType<T> = T extends (...args: infer _P) => infer R ? R : never;
-  type InstanceType<T> = T extends new (...args: infer _P) => infer R ? R : never;
+  type InstanceType<T> = T extends new (...args: infer _P) => infer R
+    ? R
+    : never;
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T;
 
   interface ArrayLike<T> {
@@ -314,13 +348,17 @@ declare global {
     filter(callback: (value: T, index: int, array: T[]) => boolean): T[];
     find(callback: (value: T) => boolean): T | undefined;
     find(callback: (value: T, index: int) => boolean): T | undefined;
-    find(callback: (value: T, index: int, array: T[]) => boolean): T | undefined;
+    find(
+      callback: (value: T, index: int, array: T[]) => boolean,
+    ): T | undefined;
     findIndex(callback: (value: T) => boolean): int;
     findIndex(callback: (value: T, index: int) => boolean): int;
     findIndex(callback: (value: T, index: int, array: T[]) => boolean): int;
     findLast(callback: (value: T) => boolean): T | undefined;
     findLast(callback: (value: T, index: int) => boolean): T | undefined;
-    findLast(callback: (value: T, index: int, array: T[]) => boolean): T | undefined;
+    findLast(
+      callback: (value: T, index: int, array: T[]) => boolean,
+    ): T | undefined;
     findLastIndex(callback: (value: T) => boolean): int;
     findLastIndex(callback: (value: T, index: int) => boolean): int;
     findLastIndex(callback: (value: T, index: int, array: T[]) => boolean): int;
@@ -334,26 +372,54 @@ declare global {
     lastIndexOf(searchElement: T, fromIndex?: int): int;
     map<TResult>(callback: (value: T) => TResult): TResult[];
     map<TResult>(callback: (value: T, index: int) => TResult): TResult[];
-    map<TResult>(callback: (value: T, index: int, array: T[]) => TResult): TResult[];
+    map<TResult>(
+      callback: (value: T, index: int, array: T[]) => TResult,
+    ): TResult[];
     pop(): T;
     push(...items: T[]): int;
     reduce(callback: (previousValue: T, currentValue: T) => T): T;
-    reduce<TResult>(callback: (previousValue: TResult, currentValue: T) => TResult, initialValue: TResult): TResult;
-    reduce<TResult>(callback: (previousValue: TResult, currentValue: T, index: int) => TResult, initialValue: TResult): TResult;
-    reduce<TResult>(callback: (
+    reduce<TResult>(
+      callback: (previousValue: TResult, currentValue: T) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduce<TResult>(
+      callback: (
         previousValue: TResult,
         currentValue: T,
         index: int,
-        array: T[]
-      ) => TResult, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: (previousValue: TResult, currentValue: T) => TResult, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: (previousValue: TResult, currentValue: T, index: int) => TResult, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: (
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduce<TResult>(
+      callback: (
         previousValue: TResult,
         currentValue: T,
         index: int,
-        array: T[]
-      ) => TResult, initialValue: TResult): TResult;
+        array: T[],
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduceRight<TResult>(
+      callback: (previousValue: TResult, currentValue: T) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduceRight<TResult>(
+      callback: (
+        previousValue: TResult,
+        currentValue: T,
+        index: int,
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduceRight<TResult>(
+      callback: (
+        previousValue: TResult,
+        currentValue: T,
+        index: int,
+        array: T[],
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
     reverse(): T[];
     shift(): T;
     slice(start?: int, end?: int): T[];
@@ -379,25 +445,39 @@ declare global {
     concat(...items: T[]): T[];
     entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
-    every(callback: (value: T, index: int, array: readonly T[]) => boolean): boolean;
+    every(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): boolean;
     filter(callback: (value: T) => boolean): T[];
     filter(callback: (value: T, index: int) => boolean): T[];
-    filter(callback: (value: T, index: int, array: readonly T[]) => boolean): T[];
+    filter(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): T[];
     find(callback: (value: T) => boolean): T | undefined;
     find(callback: (value: T, index: int) => boolean): T | undefined;
-    find(callback: (value: T, index: int, array: readonly T[]) => boolean): T | undefined;
+    find(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): T | undefined;
     findIndex(callback: (value: T) => boolean): int;
     findIndex(callback: (value: T, index: int) => boolean): int;
-    findIndex(callback: (value: T, index: int, array: readonly T[]) => boolean): int;
+    findIndex(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): int;
     findLast(callback: (value: T) => boolean): T | undefined;
     findLast(callback: (value: T, index: int) => boolean): T | undefined;
-    findLast(callback: (value: T, index: int, array: readonly T[]) => boolean): T | undefined;
+    findLast(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): T | undefined;
     findLastIndex(callback: (value: T) => boolean): int;
     findLastIndex(callback: (value: T, index: int) => boolean): int;
-    findLastIndex(callback: (value: T, index: int, array: readonly T[]) => boolean): int;
+    findLastIndex(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): int;
     forEach(callback: (value: T) => void): void;
     forEach(callback: (value: T, index: int) => void): void;
-    forEach(callback: (value: T, index: int, array: readonly T[]) => void): void;
+    forEach(
+      callback: (value: T, index: int, array: readonly T[]) => void,
+    ): void;
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
@@ -405,27 +485,57 @@ declare global {
     lastIndexOf(searchElement: T, fromIndex?: int): int;
     map<TResult>(callback: (value: T) => TResult): TResult[];
     map<TResult>(callback: (value: T, index: int) => TResult): TResult[];
-    map<TResult>(callback: (value: T, index: int, array: readonly T[]) => TResult): TResult[];
+    map<TResult>(
+      callback: (value: T, index: int, array: readonly T[]) => TResult,
+    ): TResult[];
     reduce(callback: (previousValue: T, currentValue: T) => T): T;
-    reduce<TResult>(callback: (previousValue: TResult, currentValue: T) => TResult, initialValue: TResult): TResult;
-    reduce<TResult>(callback: (previousValue: TResult, currentValue: T, index: int) => TResult, initialValue: TResult): TResult;
-    reduce<TResult>(callback: (
+    reduce<TResult>(
+      callback: (previousValue: TResult, currentValue: T) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduce<TResult>(
+      callback: (
         previousValue: TResult,
         currentValue: T,
         index: int,
-        array: readonly T[]
-      ) => TResult, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: (previousValue: TResult, currentValue: T) => TResult, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: (previousValue: TResult, currentValue: T, index: int) => TResult, initialValue: TResult): TResult;
-    reduceRight<TResult>(callback: (
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduce<TResult>(
+      callback: (
         previousValue: TResult,
         currentValue: T,
         index: int,
-        array: readonly T[]
-      ) => TResult, initialValue: TResult): TResult;
+        array: readonly T[],
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduceRight<TResult>(
+      callback: (previousValue: TResult, currentValue: T) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduceRight<TResult>(
+      callback: (
+        previousValue: TResult,
+        currentValue: T,
+        index: int,
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
+    reduceRight<TResult>(
+      callback: (
+        previousValue: TResult,
+        currentValue: T,
+        index: int,
+        array: readonly T[],
+      ) => TResult,
+      initialValue: TResult,
+    ): TResult;
     slice(start?: int, end?: int): T[];
     some(callback: (value: T) => boolean): boolean;
-    some(callback: (value: T, index: int, array: readonly T[]) => boolean): boolean;
+    some(
+      callback: (value: T, index: int, array: readonly T[]) => boolean,
+    ): boolean;
     toLocaleString(): string;
     toReversed(): T[];
     toSorted(compareFunc?: (left: T, right: T) => double): T[];
@@ -445,12 +555,20 @@ declare global {
 
   interface ArrayConstructor {
     readonly prototype: RuntimeValue[];
-    new(...items: RuntimeValue[]): RuntimeValue[];
-    new<T>(...items: T[]): T[];
+    new (arrayLength: int): RuntimeValue[];
+    new <T>(arrayLength: int): T[];
+    new (...items: RuntimeValue[]): RuntimeValue[];
+    new <T>(...items: T[]): T[];
     from(source: string): string[];
-    from<TResult>(source: string, mapfn: (value: string, index: int) => TResult): TResult[];
+    from<TResult>(
+      source: string,
+      mapfn: (value: string, index: int) => TResult,
+    ): TResult[];
     from<T>(source: Iterable<T>): T[];
-    from<T, TResult>(source: Iterable<T>, mapfn: (value: T, index: int) => TResult): TResult[];
+    from<T, TResult>(
+      source: Iterable<T>,
+      mapfn: (value: T, index: int) => TResult,
+    ): TResult[];
     isArray(value: unknown): value is readonly unknown[];
     of<T>(...items: T[]): T[];
   }
@@ -506,7 +624,9 @@ declare global {
     slice(begin?: int, end?: int): ArrayBuffer;
   }
 
-  interface TypedArrayLike<T, TSelf> extends ArrayLike<T>, Iterable<T, undefined, undefined> {
+  interface TypedArrayLike<T, TSelf>
+    extends ArrayLike<T>,
+      Iterable<T, undefined, undefined> {
     readonly byteLength: int;
     readonly length: int;
     at(index: int): T | undefined;
@@ -527,102 +647,99 @@ declare global {
     [Symbol.iterator](): IterableIterator<T, undefined, undefined>;
   }
 
-  interface Int8Array extends TypedArrayLike<number, Int8Array> {
-  }
+  interface Int8Array extends TypedArrayLike<number, Int8Array> {}
 
-  interface Uint8Array extends TypedArrayLike<byte, Uint8Array> {
-  }
+  interface Uint8Array extends TypedArrayLike<byte, Uint8Array> {}
 
-  interface Uint8ClampedArray extends TypedArrayLike<number, Uint8ClampedArray> {
-  }
+  interface Uint8ClampedArray
+    extends TypedArrayLike<number, Uint8ClampedArray> {}
 
-  interface Int16Array extends TypedArrayLike<number, Int16Array> {
-  }
+  interface Int16Array extends TypedArrayLike<number, Int16Array> {}
 
-  interface Uint16Array extends TypedArrayLike<number, Uint16Array> {
-  }
+  interface Uint16Array extends TypedArrayLike<number, Uint16Array> {}
 
-  interface Int32Array extends TypedArrayLike<number, Int32Array> {
-  }
+  interface Int32Array extends TypedArrayLike<number, Int32Array> {}
 
-  interface Uint32Array extends TypedArrayLike<number, Uint32Array> {
-  }
+  interface Uint32Array extends TypedArrayLike<number, Uint32Array> {}
 
-  interface Float32Array extends TypedArrayLike<number, Float32Array> {
-  }
+  interface Float32Array extends TypedArrayLike<number, Float32Array> {}
 
-  interface Float64Array extends TypedArrayLike<number, Float64Array> {
-  }
+  interface Float64Array extends TypedArrayLike<number, Float64Array> {}
 
   interface DateConstructor {
     readonly prototype: Date;
-    new(): Date;
-    new(value: number | long): Date;
+    new (): Date;
+    new (value: number | long): Date;
     now(): long;
     parse(s: string): number;
   }
 
   interface Uint8ArrayConstructor {
     readonly prototype: Uint8Array;
-    new(length: int): Uint8Array;
+    new (length: int): Uint8Array;
   }
 
   interface ArrayBufferConstructor {
     readonly prototype: ArrayBuffer;
-    new(byteLength: int): ArrayBuffer;
+    new (byteLength: int): ArrayBuffer;
   }
 
   interface Int8ArrayConstructor {
     readonly prototype: Int8Array;
-    new(length: int): Int8Array;
+    new (length: int): Int8Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint8ClampedArrayConstructor {
     readonly prototype: Uint8ClampedArray;
-    new(length: int): Uint8ClampedArray;
+    new (length: int): Uint8ClampedArray;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int16ArrayConstructor {
     readonly prototype: Int16Array;
-    new(length: int): Int16Array;
+    new (length: int): Int16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint16ArrayConstructor {
     readonly prototype: Uint16Array;
-    new(length: int): Uint16Array;
+    new (length: int): Uint16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int32ArrayConstructor {
     readonly prototype: Int32Array;
-    new(length: int): Int32Array;
+    new (length: int): Int32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint32ArrayConstructor {
     readonly prototype: Uint32Array;
-    new(length: int): Uint32Array;
+    new (length: int): Uint32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float32ArrayConstructor {
     readonly prototype: Float32Array;
-    new(length: int): Float32Array;
+    new (length: int): Float32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float64ArrayConstructor {
     readonly prototype: Float64Array;
-    new(length: int): Float64Array;
+    new (length: int): Float64Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface JSON {
+    parse(text: string): JsValue;
     parse<T>(text: string): T;
-    stringify<T>(value: T, replacer?: undefined, space?: string | number | int): string;
+    stringify<T>(
+      value: T,
+      replacer?: undefined,
+      space?: string | number | int,
+    ): string;
   }
 
   interface Math {
@@ -679,7 +796,7 @@ declare global {
 
   interface RegExpConstructor {
     readonly prototype: RegExp;
-    new(pattern: string | RegExp, flags?: string): RegExp;
+    new (pattern: string | RegExp, flags?: string): RegExp;
     (pattern: string | RegExp, flags?: string): RegExp;
   }
 
@@ -699,7 +816,7 @@ declare global {
 
   interface MapConstructor {
     readonly prototype: Map<RuntimeValue, RuntimeValue>;
-    new<K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V>;
+    new <K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V>;
   }
 
   interface Set<T> extends SourceSet<T> {
@@ -717,7 +834,7 @@ declare global {
 
   interface SetConstructor {
     readonly prototype: Set<RuntimeValue>;
-    new<T>(values?: readonly T[] | null): Set<T>;
+    new <T>(values?: readonly T[] | null): Set<T>;
   }
 
   interface WeakMap<K extends object, V> extends SourceWeakMap<K, V> {
@@ -729,7 +846,9 @@ declare global {
 
   interface WeakMapConstructor {
     readonly prototype: WeakMap<object, RuntimeValue>;
-    new<K extends object, V>(entries?: readonly (readonly [K, V])[] | null): WeakMap<K, V>;
+    new <K extends object, V>(
+      entries?: readonly (readonly [K, V])[] | null,
+    ): WeakMap<K, V>;
   }
 
   interface WeakSet<T extends object> extends SourceWeakSet<T> {
@@ -740,12 +859,14 @@ declare global {
 
   interface WeakSetConstructor {
     readonly prototype: WeakSet<object>;
-    new<T extends object = object>(values?: readonly T[] | null): WeakSet<T>;
+    new <T extends object = object>(values?: readonly T[] | null): WeakSet<T>;
   }
 
   interface ObjectConstructor {
     readonly prototype: object;
+    entries(obj: Record<string, RuntimeValue>): [string, RuntimeValue][];
     entries<T>(obj: Record<string, T>): [string, T][];
+    entries(obj: object): [string, RuntimeValue][];
     keys<T>(obj: Record<string, T>): string[];
     values<T>(obj: Record<string, T>): T[];
   }
@@ -784,7 +905,7 @@ declare global {
 
   const Float64Array: typeof SourceFloat64Array;
 
-  const JSON: typeof SourceJSON;
+  const JSON: JSON & typeof SourceJSON;
 
   const Math: typeof SourceMath;
 
@@ -837,7 +958,6 @@ declare global {
   const isFinite: typeof SourceIsFinite;
 
   const isNaN: typeof SourceIsNaN;
-
 }
 
 export {};

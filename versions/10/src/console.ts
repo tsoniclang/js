@@ -1,4 +1,5 @@
 import { Console as DotnetConsole } from "@tsonic/dotnet/System.js";
+import { String as coerceString } from "./Globals.js";
 
 type ConsoleValue = string | number | boolean | object | null | undefined;
 
@@ -8,7 +9,7 @@ export function formatArgs(values: readonly ConsoleValue[]): string {
     if (i > 0) {
       result += " ";
     }
-    result += String(values[i]);
+    result += coerceString(values[i]);
   }
   return result;
 }

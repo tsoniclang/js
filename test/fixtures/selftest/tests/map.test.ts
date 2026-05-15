@@ -17,7 +17,7 @@ export class MapTests {
   iteration_and_foreach_cover_remaining_map_surface(): void {
     const map = new Map<string, number>([["a", 1], ["b", 2]]);
     const entries: string[] = [];
-    let total = 0;
+    let total: number = 0;
 
     for (const [key, value] of map.entries()) {
       entries.push(`${key}:${value}`);

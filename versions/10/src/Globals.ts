@@ -1,8 +1,4 @@
-import {
-  Convert,
-  Double,
-  Uri,
-} from "@tsonic/dotnet/System.js";
+import { Convert, Double, Uri } from "@tsonic/dotnet/System.js";
 import {
   CultureInfo,
   NumberStyles,
@@ -11,9 +7,15 @@ import {
 const nan = (): number => Double.NaN;
 const MAX_SAFE_INTEGER: number = 9_007_199_254_740_991;
 const MIN_SAFE_INTEGER: number = MAX_SAFE_INTEGER * -1;
-type NumberValue = string | number | boolean | null | undefined;
-type StringValue = string | number | boolean | object | null;
-type BooleanValue = string | number | boolean | object | null | undefined;
+type TsonicJsNumberInput = string | number | boolean | null | undefined;
+type TsonicJsStringInput = string | number | boolean | object | null;
+type TsonicJsBooleanInput =
+  | string
+  | number
+  | boolean
+  | object
+  | null
+  | undefined;
 
 const digitValue = (ch: string): number => {
   if (ch >= "0" && ch <= "9") {
@@ -84,7 +86,11 @@ export const parseFloat = (value: string): number => {
   }
 
   try {
-    return Double.Parse(trimmed, NumberStyles.Float, CultureInfo.InvariantCulture);
+    return Double.Parse(
+      trimmed,
+      NumberStyles.Float,
+      CultureInfo.InvariantCulture,
+    );
   } catch {
     return nan();
   }
@@ -98,11 +104,9 @@ export const isInteger = (value: number): boolean =>
 export const isNaN = (value: number): boolean => Double.IsNaN(value);
 
 export const isSafeInteger = (value: number): boolean =>
-  isInteger(value) &&
-  value <= MAX_SAFE_INTEGER &&
-  value >= MIN_SAFE_INTEGER;
+  isInteger(value) && value <= MAX_SAFE_INTEGER && value >= MIN_SAFE_INTEGER;
 
-export const Number = (value?: NumberValue): number => {
+export const Number = (value?: TsonicJsNumberInput): number => {
   if (value === undefined || value === null) {
     return 0;
   }
@@ -121,13 +125,17 @@ export const Number = (value?: NumberValue): number => {
   }
 
   try {
-    return Double.Parse(trimmed, NumberStyles.Float, CultureInfo.InvariantCulture);
+    return Double.Parse(
+      trimmed,
+      NumberStyles.Float,
+      CultureInfo.InvariantCulture,
+    );
   } catch {
     return nan();
   }
 };
 
-export const String = (value?: StringValue): string => {
+export const String = (value?: TsonicJsStringInput): string => {
   if (value === undefined || value === null) {
     return "";
   }
@@ -147,7 +155,7 @@ export const String = (value?: StringValue): string => {
   return Convert.ToString(value) ?? "";
 };
 
-export const Boolean = (value?: BooleanValue): boolean => {
+export const Boolean = (value?: TsonicJsBooleanInput): boolean => {
   if (value === undefined || value === null) {
     return false;
   }
@@ -161,7 +169,8 @@ export const Boolean = (value?: BooleanValue): boolean => {
   }
 
   if (typeof value === "string") {
-    return value.length > 0;
+    const text = value as string;
+    return text.length > 0;
   }
 
   return true;

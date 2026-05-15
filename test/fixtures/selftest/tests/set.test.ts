@@ -18,7 +18,7 @@ export class SetTests {
   entries_values_keys_and_foreach_cover_iteration_surface(): void {
     const values = new Set<number>([1, 2, 3]);
     const seen: string[] = [];
-    let total = 0;
+    let total: number = 0;
 
     for (const [key, value] of values.entries()) {
       seen.push(`${key}:${value}`);
