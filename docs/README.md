@@ -50,6 +50,20 @@ import { Date } from "@tsonic/js/index.js";
 import { Math } from "@tsonic/js/index.js";
 ```
 
+## JSON contract
+
+`JSON.parse<T>()` and `JSON.stringify<T>()` are typed, compiler-lowered APIs.
+Payloads should use closed compile-time types:
+
+```ts
+type Settings = { theme: string; compact: boolean };
+
+const settings = JSON.parse<Settings>('{"theme":"dark","compact":true}');
+```
+
+Broad JS values use `unknown` and explicit narrowing. `JsValue` is reserved for
+first-party runtime declarations, not application-level JSON modeling.
+
 ## Pages
 
 - [Getting Started](getting-started.md)
