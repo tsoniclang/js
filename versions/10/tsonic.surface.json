@@ -3,5 +3,115 @@
   "id": "@tsonic/js",
   "requiredTypeRoots": [
     "."
-  ]
+  ],
+  "memberSemantics": {
+    "js.Array": {
+      "length": {
+        "storageAccess": "arrayLength"
+      },
+      "concat": {
+        "returnsArray": true
+      },
+      "copyWithin": {
+        "mutatesReceiver": true,
+        "returnsReceiver": true
+      },
+      "filter": {
+        "returnsArray": true
+      },
+      "fill": {
+        "mutatesReceiver": true,
+        "returnsReceiver": true
+      },
+      "flat": {
+        "returnsArray": true
+      },
+      "flatMap": {
+        "returnsArray": true
+      },
+      "map": {
+        "returnsArray": true
+      },
+      "pop": {
+        "mutatesReceiver": true
+      },
+      "push": {
+        "mutatesReceiver": true
+      },
+      "reverse": {
+        "mutatesReceiver": true,
+        "returnsReceiver": true
+      },
+      "shift": {
+        "mutatesReceiver": true
+      },
+      "slice": {
+        "returnsArray": true
+      },
+      "sort": {
+        "mutatesReceiver": true,
+        "returnsReceiver": true
+      },
+      "splice": {
+        "mutatesReceiver": true,
+        "returnsArray": true
+      },
+      "toReversed": {
+        "returnsArray": true
+      },
+      "toSorted": {
+        "returnsArray": true
+      },
+      "toSpliced": {
+        "returnsArray": true
+      },
+      "unshift": {
+        "mutatesReceiver": true
+      },
+      "with": {
+        "returnsArray": true
+      }
+    },
+    "js.ReadonlyArray": {
+      "length": {
+        "storageAccess": "arrayLength"
+      },
+      "concat": {
+        "returnsArray": true
+      },
+      "filter": {
+        "returnsArray": true
+      },
+      "flat": {
+        "returnsArray": true
+      },
+      "flatMap": {
+        "returnsArray": true
+      },
+      "map": {
+        "returnsArray": true
+      },
+      "slice": {
+        "returnsArray": true
+      },
+      "toReversed": {
+        "returnsArray": true
+      },
+      "toSorted": {
+        "returnsArray": true
+      },
+      "toSpliced": {
+        "returnsArray": true
+      },
+      "with": {
+        "returnsArray": true
+      }
+    },
+    "js.String": {
+      "length": {
+        "emittedMemberName": "Length",
+        "emissionKind": "instanceMember"
+      }
+    }
+  }
 }
