@@ -32,7 +32,28 @@ export class TimersTests {
 
     Assert.True(count >= 2);
   }
+
+  async concurrent_timeouts_all_complete(): Promise<void> {
+    const tasks: Promise<void>[] = [];
+    let completed = 0;
+
+    for (let index = 0; index < 32; index += 1) {
+      tasks.push(
+        new Promise<void>((resolve) => {
+          setTimeout(() => {
+            completed += 1;
+            resolve();
+          }, 0 as int);
+        })
+      );
+    }
+
+    await Promise.all(tasks);
+
+    Assert.Equal(32, completed);
+  }
 }
 
 A<TimersTests>().method((t) => t.timeout_runs_handler).add(FactAttribute);
 A<TimersTests>().method((t) => t.interval_repeats_until_cleared).add(FactAttribute);
+A<TimersTests>().method((t) => t.concurrent_timeouts_all_complete).add(FactAttribute);

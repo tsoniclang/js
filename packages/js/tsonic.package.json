@@ -4,6 +4,9 @@
   "surfaces": [
     "@tsonic/js"
   ],
+  "supportedTargets": [
+    "csharp"
+  ],
   "source": {
     "exports": {
       ".": "./src/App.ts",

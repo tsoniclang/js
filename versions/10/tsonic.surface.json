@@ -1,6 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "@tsonic/js",
+  "supportedTargets": [
+    "csharp"
+  ],
   "requiredTypeRoots": [
     "."
   ],
