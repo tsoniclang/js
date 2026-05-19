@@ -8,5 +8,6 @@ The package provides:
 - ambient JavaScript globals for `surface: "@tsonic/js"`
 - explicit ESM subpaths such as `@tsonic/js/index.js`
 - source-package metadata in `tsonic.package.json`
+- default C# target support declared with `supportedTargets`
 - runtime declarations and source files consumed by the Tsonic compiler
 - typed JSON APIs that rely on closed compile-time payload types

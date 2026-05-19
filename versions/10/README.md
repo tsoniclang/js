@@ -6,6 +6,13 @@ This package is part of Tsonic: https://tsonic.org.
 
 `@tsonic/js` provides JS runtime APIs (`JSON`, `console`, `Map`, `Set`, `Date`, timers, etc.) for Tsonic projects.
 
+## Target support
+
+`@tsonic/js` supports the default C# target. The package declares this in
+`tsonic.package.json` and `tsonic.surface.json` with
+`"supportedTargets": ["csharp"]`. User code imports stay target-neutral:
+applications use `@tsonic/js` and do not add a target suffix.
+
 ## Prerequisites
 
 - Install the .NET 10 SDK: https://dotnet.microsoft.com/download

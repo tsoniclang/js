@@ -1,5 +1,5 @@
 {
-  "name": "@tsonic/js-repo",
+  "name": "tsonic-js-workspace",
   "private": true,
   "description": "Repo for @tsonic/js (versioned by .NET major in versions/<major>/)",
   "type": "module",
