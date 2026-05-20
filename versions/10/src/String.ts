@@ -15,9 +15,13 @@ import {
 } from "@tsonic/dotnet/System.Globalization.js";
 import { NormalizationForm, StringBuilder } from "@tsonic/dotnet/System.Text.js";
 import { Group, Regex } from "@tsonic/dotnet/System.Text.RegularExpressions.js";
+import { RegExp as JsRegExp } from "./regexp-object.js";
 
 const asDotnetString = (value: string): DotnetString =>
   asinterface<DotnetString>(value);
+
+const toRegex = (pattern: string | JsRegExp): Regex =>
+  pattern instanceof JsRegExp ? pattern.regex : new Regex(pattern);
 
 const toChars = (value: string): char[] => asDotnetString(value).ToCharArray();
 
@@ -147,9 +151,9 @@ export const localeCompare = (value: string, compareString: string): int =>
 
 export const match = (
   value: string,
-  pattern: string
+  pattern: string | JsRegExp
 ): string[] | undefined => {
-  const regex = new Regex(pattern);
+  const regex = toRegex(pattern);
   const matched = regex.Match(value);
   if (!matched.Success) {
     return undefined;
@@ -162,8 +166,11 @@ export const match = (
   return result.ToArray();
 };
 
-export const matchAll = (value: string, pattern: string): string[][] => {
-  const regex = new Regex(pattern);
+export const matchAll = (
+  value: string,
+  pattern: string | JsRegExp
+): string[][] => {
+  const regex = toRegex(pattern);
   const matches = regex.Matches(value);
   const results = new List<string[]>();
   for (let i = 0; i < matches.Count; i += 1) {
@@ -215,8 +222,8 @@ export const replaceAll = (
   replaceValue: string
 ): string => asDotnetString(value).Replace(searchValue, replaceValue);
 
-export const search = (value: string, pattern: string): int => {
-  const regex = new Regex(pattern);
+export const search = (value: string, pattern: string | JsRegExp): int => {
+  const regex = toRegex(pattern);
   const matched = regex.Match(value);
   return matched.Success ? matched.Index : (-1 as int);
 };
