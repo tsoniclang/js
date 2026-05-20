@@ -266,15 +266,15 @@ declare global {
     isWellFormed(): boolean;
     lastIndexOf(searchString: string, position?: int): int;
     localeCompare(compareString: string): int;
-    match(pattern: string): string[] | undefined;
-    matchAll(pattern: string): string[][];
+    match(pattern: string | RegExp): string[] | undefined;
+    matchAll(pattern: string | RegExp): string[][];
     normalize(form?: string): string;
     padEnd(targetLength: int, padString?: string): string;
     padStart(targetLength: int, padString?: string): string;
     repeat(count: int): string;
     replace(searchValue: string, replaceValue: string): string;
     replaceAll(searchValue: string, replaceValue: string): string;
-    search(pattern: string): int;
+    search(pattern: string | RegExp): int;
     slice(start?: int, end?: int): string;
     split(separator: string, limit?: int): string[];
     startsWith(searchString: string): boolean;
