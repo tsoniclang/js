@@ -1,5 +1,6 @@
 import type { int } from "@tsonic/core/types.js";
 import { attributes as A } from "@tsonic/core/lang.js";
+import { Thread } from "@tsonic/dotnet/System.Threading.js";
 import { Assert, FactAttribute } from "xunit-types/Xunit.js";
 
 export class TimersTests {
@@ -52,8 +53,36 @@ export class TimersTests {
 
     Assert.Equal(32, completed);
   }
+
+  async timeout_callbacks_are_serialized(): Promise<void> {
+    const tasks: Promise<void>[] = [];
+    let activeCallbacks = 0;
+    let observedConcurrentCallback = false;
+
+    for (let index = 0; index < 32; index += 1) {
+      tasks.push(
+        new Promise<void>((resolve) => {
+          setTimeout(() => {
+            activeCallbacks += 1;
+            if (activeCallbacks !== 1) {
+              observedConcurrentCallback = true;
+            }
+
+            Thread.Sleep(1 as int);
+            activeCallbacks -= 1;
+            resolve();
+          }, 0 as int);
+        })
+      );
+    }
+
+    await Promise.all(tasks);
+
+    Assert.False(observedConcurrentCallback);
+  }
 }
 
 A<TimersTests>().method((t) => t.timeout_runs_handler).add(FactAttribute);
 A<TimersTests>().method((t) => t.interval_repeats_until_cleared).add(FactAttribute);
 A<TimersTests>().method((t) => t.concurrent_timeouts_all_complete).add(FactAttribute);
+A<TimersTests>().method((t) => t.timeout_callbacks_are_serialized).add(FactAttribute);
