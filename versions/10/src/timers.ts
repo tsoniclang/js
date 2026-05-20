@@ -1,18 +1,27 @@
 import type { int } from "@tsonic/core/types.js";
+import { BlockingCollection } from "@tsonic/dotnet/System.Collections.Concurrent.js";
 import {
   CancellationTokenSource,
+  ManualResetEventSlim,
   Monitor,
+  Thread,
 } from "@tsonic/dotnet/System.Threading.js";
 import { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 import { Map } from "./map-object.js";
 
 class TimerRegistrySyncRoot {}
+class TimerDispatcherSyncRoot {}
 
 const timeoutHandles = new Map<int, CancellationTokenSource>();
 const intervalHandles = new Map<int, CancellationTokenSource>();
 const timerRegistrySync = new TimerRegistrySyncRoot();
+const timerDispatcherSync = new TimerDispatcherSyncRoot();
 let nextTimerId = 1 as int;
 type TimerValue = string | number | boolean | object | null;
+type TimerCallback = () => void;
+
+const timerCallbacks = new BlockingCollection<TimerCallback>();
+let dispatcherStarted = false;
 
 const normalizeDelay = (value?: int): int => {
   if (value === undefined || value <= 0) {
@@ -86,6 +95,50 @@ const completeTimer = (
   }
 };
 
+const ensureDispatcherStarted = (): void => {
+  Monitor.Enter(timerDispatcherSync);
+  try {
+    if (dispatcherStarted) {
+      return;
+    }
+
+    const thread = new Thread(() => {
+      while (true) {
+        const callback = timerCallbacks.Take();
+        try {
+          callback();
+        } catch {
+          continue;
+        }
+      }
+    });
+    thread.IsBackground = true;
+    thread.Name = "Tsonic.JsTimers";
+    dispatcherStarted = true;
+    thread.Start();
+  } finally {
+    Monitor.Exit(timerDispatcherSync);
+  }
+};
+
+const dispatchTimerCallback = (callback: TimerCallback): void => {
+  ensureDispatcherStarted();
+  timerCallbacks.Add(callback);
+};
+
+const dispatchTimerCallbackAndWait = (callback: TimerCallback): void => {
+  const completed = new ManualResetEventSlim(false);
+  dispatchTimerCallback(() => {
+    try {
+      callback();
+    } finally {
+      completed.Set();
+    }
+  });
+  completed.Wait();
+  completed.Dispose();
+};
+
 export const setTimeout = (
   handler: (...args: TimerValue[]) => void,
   timeout?: int,
@@ -95,15 +148,26 @@ export const setTimeout = (
   const id = registerTimer(timeoutHandles, cancellation);
 
   void Task.Run(async () => {
+    let dispatched = false;
     try {
       await Task.Delay(normalizeDelay(timeout), cancellation.Token);
       if (!cancellation.IsCancellationRequested) {
-        handler(...args);
+        dispatched = true;
+        dispatchTimerCallback(() => {
+          try {
+            handler(...args);
+          } finally {
+            completeTimer(timeoutHandles, id, cancellation);
+          }
+        });
+        return;
       }
     } catch {
       return;
     } finally {
-      completeTimer(timeoutHandles, id, cancellation);
+      if (!dispatched) {
+        completeTimer(timeoutHandles, id, cancellation);
+      }
     }
   });
 
@@ -130,7 +194,13 @@ export const setInterval = (
         if (cancellation.IsCancellationRequested) {
           break;
         }
-        handler(...args);
+        dispatchTimerCallbackAndWait(() => {
+          try {
+            handler(...args);
+          } catch {
+            void disposeTimer(intervalHandles, id);
+          }
+        });
       }
     } catch {
       return;
