@@ -4,6 +4,7 @@ import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import {
   Char,
   Convert,
+  Double,
   Math as DotnetMath,
   String as DotnetString,
   StringComparison,
@@ -15,6 +16,7 @@ import {
 } from "@tsonic/dotnet/System.Globalization.js";
 import { NormalizationForm, StringBuilder } from "@tsonic/dotnet/System.Text.js";
 import { Group, Regex } from "@tsonic/dotnet/System.Text.RegularExpressions.js";
+import { toInt } from "./int32.js";
 import { RegExp as JsRegExp } from "./regexp-object.js";
 
 const asDotnetString = (value: string): DotnetString =>
@@ -30,14 +32,65 @@ const getLength = (value: string): int => {
   return chars.length;
 };
 
-const clamp = (value: int, minimum: int, maximum: int): int => {
-  if (value < minimum) {
+const toJsInteger = (value: number): number =>
+  Double.IsNaN(value) ? 0.0 : DotnetMath.Truncate(value);
+
+const clampJsInteger = (
+  value: number,
+  minimum: int,
+  maximum: int
+): int => {
+  const integer = toJsInteger(value);
+  if (Double.IsNegativeInfinity(integer) || integer < minimum) {
     return minimum;
   }
-  if (value > maximum) {
+  if (Double.IsPositiveInfinity(integer) || integer > maximum) {
     return maximum;
   }
-  return value;
+  return toInt(integer);
+};
+
+const normalizeRelativeIndex = (
+  value: number | undefined,
+  lengthValue: int,
+  fallback: int
+): int => {
+  if (value === undefined) {
+    return fallback;
+  }
+  const integer = toJsInteger(value);
+  if (Double.IsNegativeInfinity(integer)) {
+    return 0 as int;
+  }
+  if (Double.IsPositiveInfinity(integer)) {
+    return lengthValue;
+  }
+  if (integer < 0) {
+    const fromEnd = lengthValue + integer;
+    return fromEnd < 0 ? (0 as int) : toInt(fromEnd);
+  }
+  return integer > lengthValue ? lengthValue : toInt(integer);
+};
+
+const normalizeStringElementIndex = (
+  value: number,
+  lengthValue: int,
+  allowNegativeRelative: boolean
+): int => {
+  const integer = toJsInteger(value);
+  if (
+    Double.IsNegativeInfinity(integer) ||
+    Double.IsPositiveInfinity(integer)
+  ) {
+    return -1 as int;
+  }
+  const actual = allowNegativeRelative && integer < 0
+    ? lengthValue + integer
+    : integer;
+  if (actual < 0 || actual >= lengthValue) {
+    return -1 as int;
+  }
+  return toInt(actual);
 };
 
 const normalizeForm = (form?: string): NormalizationForm => {
@@ -63,29 +116,34 @@ const toSinglePadChar = (value: string): char => {
 
 export const length = (value: string): int => getLength(value);
 
-export const at = (value: string, index: int): string => {
-  const actualIndex = index < 0 ? getLength(value) + index : index;
-  if (actualIndex < 0 || actualIndex >= getLength(value)) {
+export const at = (value: string, index: number): string => {
+  const lengthValue = getLength(value);
+  const actualIndex = normalizeStringElementIndex(index, lengthValue, true);
+  if (actualIndex < 0) {
     return "";
   }
   return asDotnetString(value).Substring(actualIndex, 1 as int);
 };
 
-export const charAt = (value: string, index: int): string => {
-  if (index < 0 || index >= getLength(value)) {
+export const charAt = (value: string, index: number): string => {
+  const actualIndex = normalizeStringElementIndex(index, getLength(value), false);
+  if (actualIndex < 0) {
     return "";
   }
-  return asDotnetString(value).Substring(index, 1 as int);
+  return asDotnetString(value).Substring(actualIndex, 1 as int);
 };
 
-export const charCodeAt = (value: string, index: int): int =>
-  Char.ConvertToUtf32(value, index);
+export const charCodeAt = (value: string, index: number): int => {
+  const actualIndex = normalizeStringElementIndex(index, getLength(value), false);
+  return actualIndex < 0 ? (-1 as int) : Char.ConvertToUtf32(value, actualIndex);
+};
 
-export const codePointAt = (value: string, index: int): int => {
-  if (index < 0 || index >= getLength(value)) {
+export const codePointAt = (value: string, index: number): int => {
+  const actualIndex = normalizeStringElementIndex(index, getLength(value), false);
+  if (actualIndex < 0) {
     return -1 as int;
   }
-  return Char.ConvertToUtf32(value, index);
+  return Char.ConvertToUtf32(value, actualIndex);
 };
 
 export const concat = (value: string, ...strings: string[]): string => {
@@ -105,8 +163,12 @@ export const includes = (value: string, searchString: string): boolean =>
 export const indexOf = (
   value: string,
   searchString: string,
-  position: int = 0 as int
-): int => asDotnetString(value).IndexOf(searchString, position);
+  position: number = 0
+): int =>
+  asDotnetString(value).IndexOf(
+    searchString,
+    clampJsInteger(position, 0 as int, getLength(value))
+  );
 
 export const isWellFormed = (value: string): boolean => {
   const chars = toChars(value);
@@ -131,15 +193,15 @@ export const isWellFormed = (value: string): boolean => {
 export const lastIndexOf = (
   value: string,
   searchString: string,
-  position?: int
+  position?: number
 ): int => {
-  if (position === undefined) {
+  if (position === undefined || Double.IsNaN(position)) {
     return asDotnetString(value).LastIndexOf(searchString);
   }
-  return asDotnetString(value).LastIndexOf(
-    searchString,
-    clamp(position, 0 as int, getLength(value))
-  );
+  const actualPosition = clampJsInteger(position, 0 as int, getLength(value));
+  return actualPosition >= getLength(value)
+    ? asDotnetString(value).LastIndexOf(searchString)
+    : asDotnetString(value).LastIndexOf(searchString, actualPosition);
 };
 
 export const localeCompare = (value: string, compareString: string): int =>
@@ -190,21 +252,28 @@ export const normalize = (value: string, form?: string): string =>
 
 export const padEnd = (
   value: string,
-  targetLength: int,
+  targetLength: number,
   padString: string = " "
 ): string =>
-  asDotnetString(value).PadRight(targetLength, toSinglePadChar(padString));
+  asDotnetString(value).PadRight(
+    clampJsInteger(targetLength, 0 as int, 2147483647 as int),
+    toSinglePadChar(padString)
+  );
 
 export const padStart = (
   value: string,
-  targetLength: int,
+  targetLength: number,
   padString: string = " "
 ): string =>
-  asDotnetString(value).PadLeft(targetLength, toSinglePadChar(padString));
+  asDotnetString(value).PadLeft(
+    clampJsInteger(targetLength, 0 as int, 2147483647 as int),
+    toSinglePadChar(padString)
+  );
 
-export const repeat = (value: string, count: int): string => {
+export const repeat = (value: string, count: number): string => {
+  const repeatCount = clampJsInteger(count, 0 as int, 2147483647 as int);
   let result = "";
-  for (let i = 0 as int; i < count; i += 1) {
+  for (let i = 0 as int; i < repeatCount; i += 1) {
     result += value;
   }
   return result;
@@ -212,9 +281,26 @@ export const repeat = (value: string, count: int): string => {
 
 export const replace = (
   value: string,
-  searchValue: string,
+  searchValue: string | JsRegExp,
   replaceValue: string
-): string => asDotnetString(value).Replace(searchValue, replaceValue);
+): string => {
+  if (searchValue instanceof JsRegExp) {
+    return searchValue.flags.indexOf("g") >= 0
+      ? searchValue.regex.Replace(value, replaceValue)
+      : searchValue.regex.Replace(value, replaceValue, 1 as int);
+  }
+
+  const index = asDotnetString(value).IndexOf(
+    searchValue,
+    StringComparison.Ordinal
+  );
+  if (index < 0) {
+    return value;
+  }
+  return asDotnetString(value)
+    .Remove(index, getLength(searchValue))
+    .Insert(index, replaceValue);
+};
 
 export const replaceAll = (
   value: string,
@@ -230,20 +316,12 @@ export const search = (value: string, pattern: string | JsRegExp): int => {
 
 export const slice = (
   value: string,
-  start: int = 0 as int,
-  end?: int
+  start: number = 0,
+  end?: number
 ): string => {
   const lengthValue = getLength(value);
-  const actualStart: int =
-    start < 0
-      ? clamp(lengthValue + start, 0 as int, lengthValue)
-      : clamp(start, 0 as int, lengthValue);
-  const actualEnd: int =
-    end === undefined
-      ? lengthValue
-      : end < 0
-        ? clamp(lengthValue + end, 0 as int, lengthValue)
-        : clamp(end, 0 as int, lengthValue);
+  const actualStart = normalizeRelativeIndex(start, lengthValue, 0 as int);
+  const actualEnd = normalizeRelativeIndex(end, lengthValue, lengthValue);
   const sliceLength: int =
     actualEnd > actualStart ? actualEnd - actualStart : (0 as int);
 
@@ -253,16 +331,16 @@ export const slice = (
 export const split = (
   value: string,
   separator: string,
-  limit?: int
+  limit?: number
 ): string[] => {
   if (separator === "") {
     const chars = new List<string>();
-    const maxLength: int =
+    const actualLimit =
       limit === undefined
         ? getLength(value)
-        : limit < getLength(value)
-          ? limit
-          : getLength(value);
+        : clampJsInteger(limit, 0 as int, getLength(value));
+    const maxLength: int =
+      actualLimit < getLength(value) ? actualLimit : getLength(value);
     for (let i = 0 as int; i < maxLength; i += 1) {
       chars.Add(charAt(value, i));
     }
@@ -273,7 +351,7 @@ export const split = (
     ? asDotnetString(value).Split(separator, StringSplitOptions.None)
     : asDotnetString(value).Split(
         separator,
-        limit,
+        clampJsInteger(limit, 0 as int, 2147483647 as int),
         StringSplitOptions.None
       );
 };
@@ -283,32 +361,36 @@ export const startsWith = (value: string, searchString: string): boolean =>
 
 export const substr = (
   value: string,
-  start: int,
-  substringLength?: int
+  start: number,
+  substringLength?: number
 ): string => {
   const lengthValue = getLength(value);
+  const normalizedStart = toJsInteger(start);
   const actualStart =
-    start < 0
-      ? DotnetMath.Max(0 as int, lengthValue + start)
-      : DotnetMath.Min(start, lengthValue);
+    normalizedStart < 0
+      ? clampJsInteger(lengthValue + normalizedStart, 0 as int, lengthValue)
+      : clampJsInteger(normalizedStart, 0 as int, lengthValue);
   const actualLength =
     substringLength === undefined
       ? lengthValue - actualStart
-      : DotnetMath.Max(0 as int, DotnetMath.Min(substringLength, lengthValue - actualStart));
+      : clampJsInteger(substringLength, 0 as int, lengthValue - actualStart);
 
   return asDotnetString(value).Substring(actualStart, actualLength);
 };
 
 export const substring = (
   value: string,
-  start: int,
-  end?: int
+  start: number,
+  end?: number
 ): string => {
   const lengthValue = getLength(value);
-  const actualStart = clamp(start, 0 as int, lengthValue);
-  const actualEnd = clamp(end ?? lengthValue, 0 as int, lengthValue);
-  const lower = DotnetMath.Min(actualStart, actualEnd);
-  const upper = DotnetMath.Max(actualStart, actualEnd);
+  const actualStart = clampJsInteger(start, 0 as int, lengthValue);
+  const actualEnd =
+    end === undefined
+      ? lengthValue
+      : clampJsInteger(end, 0 as int, lengthValue);
+  const lower = actualStart < actualEnd ? actualStart : actualEnd;
+  const upper = actualStart > actualEnd ? actualStart : actualEnd;
   return asDotnetString(value).Substring(lower, upper - lower);
 };
 
