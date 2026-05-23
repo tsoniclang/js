@@ -110,6 +110,14 @@
         "returnsArray": true
       }
     },
+    "js.Map": {
+      "get": {
+        "borrowedMutationWriteBack": {
+          "methodName": "set",
+          "keyArgumentIndex": 0
+        }
+      }
+    },
     "js.String": {
       "length": {
         "emittedMemberName": "Length",

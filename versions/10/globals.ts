@@ -816,7 +816,7 @@ declare global {
 
   interface MapConstructor {
     readonly prototype: Map<RuntimeValue, RuntimeValue>;
-    new <K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V>;
+    new <K, V>(entries?: Iterable<readonly [K, V]> | null): Map<K, V>;
   }
 
   interface Set<T> extends SourceSet<T> {
@@ -834,7 +834,7 @@ declare global {
 
   interface SetConstructor {
     readonly prototype: Set<RuntimeValue>;
-    new <T>(values?: readonly T[] | null): Set<T>;
+    new <T>(values?: Iterable<T> | null): Set<T>;
   }
 
   interface WeakMap<K extends object, V> extends SourceWeakMap<K, V> {

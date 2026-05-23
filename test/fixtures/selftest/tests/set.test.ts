@@ -36,7 +36,17 @@ export class SetTests {
     Assert.True(seen.includes("forEach:3"));
     Assert.Equal(6, total);
   }
+
+  constructor_accepts_existing_set_iterables(): void {
+    const original = new Set<number>([1, 2, 3]);
+    const clone = new Set<number>(original);
+
+    Assert.Equal(3, clone.size);
+    Assert.True(clone.has(1));
+    Assert.True(clone.has(3));
+  }
 }
 
 A<SetTests>().method((t) => t.add_has_delete_clear_and_size_cover_set_core).add(FactAttribute);
 A<SetTests>().method((t) => t.entries_values_keys_and_foreach_cover_iteration_surface).add(FactAttribute);
+A<SetTests>().method((t) => t.constructor_accepts_existing_set_iterables).add(FactAttribute);
