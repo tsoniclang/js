@@ -17,7 +17,7 @@ export class Map<K, V> {
     MapEntry<K, V>
   >();
 
-  constructor(entries?: readonly (readonly [K, V])[] | null) {
+  constructor(entries?: Iterable<readonly [K, V]> | null) {
     if (!entries) {
       return;
     }

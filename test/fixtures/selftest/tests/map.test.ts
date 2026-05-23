@@ -33,7 +33,17 @@ export class MapTests {
     Assert.True(entries.includes("forEach:a"));
     Assert.Equal(3, total);
   }
+
+  constructor_accepts_existing_map_iterables(): void {
+    const original = new Map<string, number>([["a", 1], ["b", 2]]);
+    const clone = new Map<string, number>(original);
+
+    Assert.Equal(2, clone.size);
+    Assert.Equal(1, clone.get("a") as number);
+    Assert.Equal(2, clone.get("b") as number);
+  }
 }
 
 A<MapTests>().method((t) => t.set_get_has_delete_and_size_cover_map_core).add(FactAttribute);
 A<MapTests>().method((t) => t.iteration_and_foreach_cover_remaining_map_surface).add(FactAttribute);
+A<MapTests>().method((t) => t.constructor_accepts_existing_map_iterables).add(FactAttribute);

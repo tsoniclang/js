@@ -5,7 +5,7 @@ import { sameValueZero } from "./same-value-zero.js";
 export class Set<T> {
   valuesStore: List<T> = new List<T>();
 
-  constructor(values?: readonly T[] | null) {
+  constructor(values?: Iterable<T> | null) {
     if (!values) {
       return;
     }
