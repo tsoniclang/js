@@ -43,6 +43,7 @@ export class ArrayTests {
 
     Assert.Equal(10, total);
     Assert.Equal("1,3,5,7", values.map((value, index) => value + index).join(","));
+    Assert.Equal("1,10,2,20,3,30,4,40", values.flatMap((value) => [value, value * 10]).join(","));
     Assert.Equal(10, values.reduce((sum, value) => sum + value, 0));
     Assert.Equal(10, values.reduceRight((sum, value) => sum + value, 0));
   }

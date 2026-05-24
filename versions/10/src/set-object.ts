@@ -2,7 +2,17 @@ import type { int } from "@tsonic/core/types.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { sameValueZero } from "./same-value-zero.js";
 
-export class Set<T> {
+export interface ReadonlySet<T> {
+  readonly size: int;
+  entries(): Generator<[T, T], undefined, undefined>;
+  forEach(callback: (value: T, key: T, set: ReadonlySet<T>) => void): void;
+  has(value: T): boolean;
+  keys(): Generator<T, undefined, undefined>;
+  values(): Generator<T, undefined, undefined>;
+  [Symbol.iterator](): Generator<T, undefined, undefined>;
+}
+
+export class Set<T> implements ReadonlySet<T> {
   valuesStore: List<T> = new List<T>();
 
   constructor(values?: Iterable<T> | null) {
@@ -55,7 +65,7 @@ export class Set<T> {
     }
   }
 
-  forEach(callback: (value: T, key: T, set: Set<T>) => void): void {
+  forEach(callback: (value: T, key: T, set: ReadonlySet<T>) => void): void {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       const value = this.valuesStore[i]!;
       callback(value, value, this);

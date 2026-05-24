@@ -34,6 +34,7 @@
     "./RegExp.js": "./src/regexp-object.ts",
     "./Set.js": "./src/set-object.ts",
     "./String.js": "./src/String.ts",
+    "./TextEncoder.js": "./src/text-encoder.ts",
     "./timers.js": "./src/timers.ts",
     "./Uint16Array.js": "./src/uint16-array.ts",
     "./Uint32Array.js": "./src/uint32-array.ts",

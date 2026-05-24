@@ -51,6 +51,13 @@ export class StringTests {
     Assert.Equal("a-b,b", replace("a,b,b", ",", "-"));
     Assert.Equal("a-b,b", replace("a,b,b", /,/, "-"));
     Assert.Equal("a-b-b", replace("a,b,b", new RegExp(",", "g"), "-"));
+    Assert.Equal("a", replace("\\a", /\\(.)/g, (_match, p1: string) => p1));
+    Assert.Equal(3, "a  b   c".split(/\s+/).length);
+    Assert.Equal("b", "a  b   c".split(/\s+/)[1]);
+    Assert.Equal(2, "a  b   c".split(/\s+/, 2).length);
+    Assert.Equal("Hi", String.fromCharCode(72, 105));
+    Assert.Equal("A", String.fromCharCode(65601));
+    Assert.Equal("😀", String.fromCodePoint(128512));
     Assert.Equal("a-b-c", replaceAll("a,b,c", ",", "-"));
     Assert.Equal("é", normalize("é", "NFC"));
 
