@@ -1,5 +1,6 @@
 import { asinterface } from "@tsonic/core/lang.js";
 import type { char, int } from "@tsonic/core/types.js";
+import type { IReadOnlyList } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import {
   Char,
@@ -15,9 +16,15 @@ import {
   CultureInfo,
 } from "@tsonic/dotnet/System.Globalization.js";
 import { NormalizationForm, StringBuilder } from "@tsonic/dotnet/System.Text.js";
-import { Group, Regex } from "@tsonic/dotnet/System.Text.RegularExpressions.js";
+import {
+  Group,
+  Match,
+  Regex,
+} from "@tsonic/dotnet/System.Text.RegularExpressions.js";
 import { toInt } from "./int32.js";
+import { RangeError } from "./range-error.js";
 import { RegExp as JsRegExp } from "./regexp-object.js";
+import { overloads as O } from "@tsonic/core/lang.js";
 
 const asDotnetString = (value: string): DotnetString =>
   asinterface<DotnetString>(value);
@@ -27,6 +34,11 @@ const toRegex = (pattern: string | JsRegExp): Regex =>
 
 const toChars = (value: string): char[] => asDotnetString(value).ToCharArray();
 
+type StringReplaceCallback = (
+  match: string,
+  ...captures: string[]
+) => string;
+
 const getLength = (value: string): int => {
   const chars = toChars(value);
   return chars.length;
@@ -34,6 +46,37 @@ const getLength = (value: string): int => {
 
 const toJsInteger = (value: number): number =>
   Double.IsNaN(value) ? 0.0 : DotnetMath.Truncate(value);
+
+const toUint16CodeUnit = (value: number): int => {
+  const integer = toJsInteger(value);
+  if (integer === 0 || Double.IsInfinity(integer)) {
+    return 0 as int;
+  }
+  const modulo = integer % 65536;
+  const normalized = modulo < 0 ? modulo + 65536 : modulo;
+  return toInt(normalized);
+};
+
+const fromUtf16CodeUnit = (codeUnit: int): string => {
+  let hex = Convert.ToString(codeUnit, 16);
+  while (hex.length < 4) {
+    hex = "0" + hex;
+  }
+  return Regex.Unescape("\\u" + hex);
+};
+
+const toValidCodePoint = (value: number): int => {
+  const integer = toJsInteger(value);
+  if (
+    integer !== value ||
+    !Double.IsFinite(integer) ||
+    integer < 0 ||
+    integer > 1114111
+  ) {
+    throw new RangeError("Invalid code point");
+  }
+  return toInt(integer);
+};
 
 const clampJsInteger = (
   value: number,
@@ -279,11 +322,29 @@ export const repeat = (value: string, count: number): string => {
   return result;
 };
 
-export const replace = (
+export function replace(
   value: string,
   searchValue: string | JsRegExp,
   replaceValue: string
-): string => {
+): string;
+export function replace(
+  value: string,
+  searchValue: string | JsRegExp,
+  replaceValue: StringReplaceCallback
+): string;
+export function replace(
+  _value: string,
+  _searchValue: string | JsRegExp,
+  _replaceValue: any
+): any {
+  throw new Error("Unreachable overload stub");
+}
+
+export function replace_string(
+  value: string,
+  searchValue: string | JsRegExp,
+  replaceValue: string
+): string {
   if (searchValue instanceof JsRegExp) {
     return searchValue.flags.indexOf("g") >= 0
       ? searchValue.regex.Replace(value, replaceValue)
@@ -297,10 +358,52 @@ export const replace = (
   if (index < 0) {
     return value;
   }
-  return asDotnetString(value)
-    .Remove(index, getLength(searchValue))
-    .Insert(index, replaceValue);
+  return asDotnetString(
+    asDotnetString(value).Remove(index, getLength(searchValue))
+  ).Insert(index, replaceValue);
+}
+
+const evaluateReplacement = (
+  replaceValue: StringReplaceCallback,
+  match: Match
+): string => {
+  const captures = new List<string>();
+  const groups = asinterface<IReadOnlyList<Group>>(match.Groups);
+  for (let index = 1 as int; index < match.Groups.Count; index += 1) {
+    captures.Add(groups[index]!.Value);
+  }
+  return replaceValue(match.Value, ...captures.ToArray());
 };
+
+export function replace_callback(
+  value: string,
+  searchValue: string | JsRegExp,
+  replaceValue: StringReplaceCallback
+): string {
+  if (searchValue instanceof JsRegExp) {
+    return searchValue.flags.indexOf("g") >= 0
+      ? searchValue.regex.Replace(
+          value,
+          (match) => evaluateReplacement(replaceValue, match)
+        )
+      : searchValue.regex.Replace(
+          value,
+          (match) => evaluateReplacement(replaceValue, match),
+          1 as int
+        );
+  }
+
+  const index = asDotnetString(value).IndexOf(
+    searchValue,
+    StringComparison.Ordinal
+  );
+  if (index < 0) {
+    return value;
+  }
+  return asDotnetString(
+    asDotnetString(value).Remove(index, getLength(searchValue))
+  ).Insert(index, replaceValue(searchValue));
+}
 
 export const replaceAll = (
   value: string,
@@ -330,9 +433,18 @@ export const slice = (
 
 export const split = (
   value: string,
-  separator: string,
+  separator: string | JsRegExp,
   limit?: number
 ): string[] => {
+  if (separator instanceof JsRegExp) {
+    return limit === undefined
+      ? separator.regex.Split(value)
+      : separator.regex.Split(
+          value,
+          clampJsInteger(limit, 0 as int, 2147483647 as int)
+        );
+  }
+
   if (separator === "") {
     const chars = new List<string>();
     const actualLimit =
@@ -448,21 +560,34 @@ export const toWellFormed = (value: string): string => {
 
 export const valueOf = (value: string): string => value;
 
-export const fromCharCode = (...codes: int[]): string => {
+export const fromCharCode = (...codes: number[]): string => {
   let result = "";
   for (let i = 0; i < codes.length; i += 1) {
-    result += Convert.ToChar(codes[i]!).toString();
+    result += fromUtf16CodeUnit(toUint16CodeUnit(codes[i]!));
   }
   return result;
 };
 
-export const fromCodePoint = (...codePoints: int[]): string => {
+export const fromCodePoint = (...codePoints: number[]): string => {
   let result = "";
   for (let i = 0; i < codePoints.length; i += 1) {
-    result += Char.ConvertFromUtf32(codePoints[i]!);
+    result += Char.ConvertFromUtf32(toValidCodePoint(codePoints[i]!));
   }
   return result;
 };
+
+export class StringConstructor {
+  static fromCharCode(...codes: number[]): string {
+    return fromCharCode(...codes);
+  }
+
+  static fromCodePoint(...codePoints: number[]): string {
+    return fromCodePoint(...codePoints);
+  }
+}
+
+O(replace_string).family(replace);
+O(replace_callback).family(replace);
 
 export const raw = (
   template: List<string>,

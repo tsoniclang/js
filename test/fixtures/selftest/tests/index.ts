@@ -10,6 +10,7 @@ import "./json.test.ts";
 import "./map.test.ts";
 import "./math.test.ts";
 import "./number.test.ts";
+import "./object.test.ts";
 import "./range-error.test.ts";
 import "./regexp.test.ts";
 import "./set.test.ts";

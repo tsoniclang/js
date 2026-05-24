@@ -188,20 +188,20 @@ namespace js
         }
     }
 
-    public sealed class NumberValue
+    public sealed class TsonicJsNumberInput
     {
         private readonly object? _value;
         private readonly int _index;
 
-        private NumberValue(object? value, int index)
+        private TsonicJsNumberInput(object? value, int index)
         {
             _value = value;
             _index = index;
         }
 
-        public static NumberValue From1(bool value) => new NumberValue(value, 0);
-        public static NumberValue From2(double value) => new NumberValue(value, 1);
-        public static NumberValue From3(string value) => new NumberValue(value, 2);
+        public static TsonicJsNumberInput From1(bool value) => new TsonicJsNumberInput(value, 0);
+        public static TsonicJsNumberInput From2(double value) => new TsonicJsNumberInput(value, 1);
+        public static TsonicJsNumberInput From3(string value) => new TsonicJsNumberInput(value, 2);
 
         public bool Is1() => _index == 0;
         public bool Is2() => _index == 1;
@@ -291,7 +291,7 @@ namespace js
 
         public override bool Equals(object? obj)
         {
-            return obj is NumberValue other &&
+            return obj is TsonicJsNumberInput other &&
                 _index == other._index &&
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(_value, other._value);
         }
@@ -571,6 +571,98 @@ namespace Tsonic.Internal
         public override bool Equals(object? obj)
         {
             return obj is Union2_442714BA<T1, T2> other &&
+                _index == other._index &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(_value, other._value);
+        }
+
+        public override int GetHashCode()
+        {
+            return global::System.HashCode.Combine(_value, _index);
+        }
+    }
+
+    public sealed class Union2_7B848391<T1, T2>
+    {
+        private readonly object? _value;
+        private readonly int _index;
+
+        private Union2_7B848391(object? value, int index)
+        {
+            _value = value;
+            _index = index;
+        }
+
+        public static Union2_7B848391<T1, T2> From1(T1 value) => new Union2_7B848391<T1, T2>(value, 0);
+        public static Union2_7B848391<T1, T2> From2(T2 value) => new Union2_7B848391<T1, T2>(value, 1);
+
+        public bool Is1() => _index == 0;
+        public bool Is2() => _index == 1;
+
+        public T1 As1()
+        {
+            if (_index != 0)
+                throw new global::System.InvalidOperationException($"Union does not contain type {typeof(T1).Name}");
+            return (T1)_value!;
+        }
+
+        public T2 As2()
+        {
+            if (_index != 1)
+                throw new global::System.InvalidOperationException($"Union does not contain type {typeof(T2).Name}");
+            return (T2)_value!;
+        }
+
+        public bool TryAs1(out T1 value)
+        {
+            if (_index == 0)
+            {
+                value = (T1)_value!;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+
+        public bool TryAs2(out T2 value)
+        {
+            if (_index == 1)
+            {
+                value = (T2)_value!;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+
+        public TResult Match<TResult>(global::System.Func<T1, TResult> onT1, global::System.Func<T2, TResult> onT2)
+        {
+            return _index switch
+            {
+                0 => onT1((T1)_value!),
+                1 => onT2((T2)_value!),
+                _ => throw new global::System.InvalidOperationException("Invalid union index"),
+            };
+        }
+
+        public void Match(global::System.Action<T1> onT1, global::System.Action<T2> onT2)
+        {
+            switch (_index)
+            {
+                case 0: onT1((T1)_value!); break;
+                case 1: onT2((T2)_value!); break;
+                default:
+                    throw new global::System.InvalidOperationException("Invalid union index");
+            }
+        }
+
+        public override string? ToString()
+        {
+            return _value?.ToString();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Union2_7B848391<T1, T2> other &&
                 _index == other._index &&
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(_value, other._value);
         }
@@ -1031,98 +1123,6 @@ namespace Tsonic.Internal
         public override bool Equals(object? obj)
         {
             return obj is Union2_F6D6783A<T1, T2> other &&
-                _index == other._index &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(_value, other._value);
-        }
-
-        public override int GetHashCode()
-        {
-            return global::System.HashCode.Combine(_value, _index);
-        }
-    }
-
-    public sealed class Union2_F8B9E5DD<T1, T2>
-    {
-        private readonly object? _value;
-        private readonly int _index;
-
-        private Union2_F8B9E5DD(object? value, int index)
-        {
-            _value = value;
-            _index = index;
-        }
-
-        public static Union2_F8B9E5DD<T1, T2> From1(T1 value) => new Union2_F8B9E5DD<T1, T2>(value, 0);
-        public static Union2_F8B9E5DD<T1, T2> From2(T2 value) => new Union2_F8B9E5DD<T1, T2>(value, 1);
-
-        public bool Is1() => _index == 0;
-        public bool Is2() => _index == 1;
-
-        public T1 As1()
-        {
-            if (_index != 0)
-                throw new global::System.InvalidOperationException($"Union does not contain type {typeof(T1).Name}");
-            return (T1)_value!;
-        }
-
-        public T2 As2()
-        {
-            if (_index != 1)
-                throw new global::System.InvalidOperationException($"Union does not contain type {typeof(T2).Name}");
-            return (T2)_value!;
-        }
-
-        public bool TryAs1(out T1 value)
-        {
-            if (_index == 0)
-            {
-                value = (T1)_value!;
-                return true;
-            }
-            value = default;
-            return false;
-        }
-
-        public bool TryAs2(out T2 value)
-        {
-            if (_index == 1)
-            {
-                value = (T2)_value!;
-                return true;
-            }
-            value = default;
-            return false;
-        }
-
-        public TResult Match<TResult>(global::System.Func<T1, TResult> onT1, global::System.Func<T2, TResult> onT2)
-        {
-            return _index switch
-            {
-                0 => onT1((T1)_value!),
-                1 => onT2((T2)_value!),
-                _ => throw new global::System.InvalidOperationException("Invalid union index"),
-            };
-        }
-
-        public void Match(global::System.Action<T1> onT1, global::System.Action<T2> onT2)
-        {
-            switch (_index)
-            {
-                case 0: onT1((T1)_value!); break;
-                case 1: onT2((T2)_value!); break;
-                default:
-                    throw new global::System.InvalidOperationException("Invalid union index");
-            }
-        }
-
-        public override string? ToString()
-        {
-            return _value?.ToString();
-        }
-
-        public override bool Equals(object? obj)
-        {
-            return obj is Union2_F8B9E5DD<T1, T2> other &&
                 _index == other._index &&
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(_value, other._value);
         }

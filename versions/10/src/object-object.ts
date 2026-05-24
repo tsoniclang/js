@@ -2,6 +2,16 @@ import { overloads as O } from "@tsonic/core/lang.js";
 import type { JsValue } from "@tsonic/core/types.js";
 import type { Dictionary } from "@tsonic/dotnet/System.Collections.Generic.js";
 import { List } from "@tsonic/dotnet/System.Collections.Generic.js";
+import { Double } from "@tsonic/dotnet/System.js";
+
+type ObjectIsValue =
+  | string
+  | number
+  | bigint
+  | boolean
+  | object
+  | null
+  | undefined;
 
 export class Object {
   static entries(obj: Record<string, JsValue>): [string, JsValue][];
@@ -9,6 +19,19 @@ export class Object {
   static entries(obj: object): [string, JsValue][];
   static entries(_obj: object): [string, JsValue][] {
     throw new Error("Unreachable overload stub");
+  }
+
+  static is(value1: ObjectIsValue, value2: ObjectIsValue): boolean {
+    if (typeof value1 === "number" && typeof value2 === "number") {
+      if (Double.IsNaN(value1) && Double.IsNaN(value2)) {
+        return true;
+      }
+      if (value1 === 0 && value2 === 0) {
+        return Double.IsNegativeInfinity(1.0 / value1) ===
+          Double.IsNegativeInfinity(1.0 / value2);
+      }
+    }
+    return value1 === value2;
   }
 
   private static entries_from_record<T>(

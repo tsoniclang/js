@@ -16,7 +16,7 @@ const mapString = (source: string): string[] => {
 
 const mapStringMapped = <TResult>(
   source: string,
-  mapfn: (value: string, index: int) => TResult,
+  mapfn: (value: string, index: number) => TResult,
 ): TResult[] => {
   const mapped = new List<TResult>();
   for (let i = 0 as int; i < source.length; i = (i + 1) as int) {
@@ -35,7 +35,7 @@ const mapIterable = <T>(source: Iterable<T>): T[] => {
 
 const mapIterableMapped = <T, TResult>(
   source: Iterable<T>,
-  mapfn: (value: T, index: int) => TResult,
+  mapfn: (value: T, index: number) => TResult,
 ): TResult[] => {
   const mapped = new List<TResult>();
   let index = 0 as int;
@@ -98,16 +98,16 @@ export class Array<T = unknown> {
   static from(source: string): string[];
   static from<TResult>(
     source: string,
-    mapfn: (value: string, index: int) => TResult,
+    mapfn: (value: string, index: number) => TResult,
   ): TResult[];
   static from<T>(source: Iterable<T>): T[];
   static from<T, TResult>(
     source: Iterable<T>,
-    mapfn: (value: T, index: int) => TResult,
+    mapfn: (value: T, index: number) => TResult,
   ): TResult[];
   static from<T, TResult>(
     source: Iterable<T>,
-    mapfn?: (value: T, index: int) => TResult,
+    mapfn?: (value: T, index: number) => TResult,
   ): T[] | TResult[] {
     return mapfn
       ? this.from_iterableMapped(source, mapfn)
@@ -120,7 +120,7 @@ export class Array<T = unknown> {
 
   static from_stringMapped<TResult>(
     source: string,
-    mapfn: (value: string, index: int) => TResult,
+    mapfn: (value: string, index: number) => TResult,
   ): TResult[] {
     return mapStringMapped(source, mapfn);
   }
@@ -131,7 +131,7 @@ export class Array<T = unknown> {
 
   static from_iterableMapped<T, TResult>(
     source: Iterable<T>,
-    mapfn: (value: T, index: int) => TResult,
+    mapfn: (value: T, index: number) => TResult,
   ): TResult[] {
     return mapIterableMapped(source, mapfn);
   }
@@ -193,7 +193,7 @@ export class Array<T = unknown> {
   }
 
   every(callback: (value: T) => boolean): boolean;
-  every(callback: (value: T, index: int, array: T[]) => boolean): boolean;
+  every(callback: (value: T, index: number, array: T[]) => boolean): boolean;
   every(callback: any): any {
     return this.every_full(callback);
   }
@@ -202,7 +202,7 @@ export class Array<T = unknown> {
     return this.every_full((value, _index, _array) => callback(value));
   }
 
-  every_full(callback: (value: T, index: int, array: T[]) => boolean): boolean {
+  every_full(callback: (value: T, index: number, array: T[]) => boolean): boolean {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       if (!callback(this.valuesStore[i]!, i, this.toArray())) {
         return false;
@@ -222,9 +222,9 @@ export class Array<T = unknown> {
   }
 
   filter(callback: (value: T) => boolean): Array<T>;
-  filter(callback: (value: T, index: int) => boolean): Array<T>;
+  filter(callback: (value: T, index: number) => boolean): Array<T>;
   filter(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): Array<T>;
   filter(callback: any): any {
     return this.filter_full(callback);
@@ -234,12 +234,12 @@ export class Array<T = unknown> {
     return this.filter_full((value, _index, _array) => callback(value));
   }
 
-  filter_valueIndex(callback: (value: T, index: int) => boolean): Array<T> {
+  filter_valueIndex(callback: (value: T, index: number) => boolean): Array<T> {
     return this.filter_full((value, index, _array) => callback(value, index));
   }
 
   filter_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): Array<T> {
     const filtered = new List<T>();
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
@@ -252,9 +252,9 @@ export class Array<T = unknown> {
   }
 
   find(callback: (value: T) => boolean): T | undefined;
-  find(callback: (value: T, index: int) => boolean): T | undefined;
+  find(callback: (value: T, index: number) => boolean): T | undefined;
   find(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): T | undefined;
   find(callback: any): any {
     return this.find_full(callback);
@@ -264,12 +264,12 @@ export class Array<T = unknown> {
     return this.find_full((value, _index, _array) => callback(value));
   }
 
-  find_valueIndex(callback: (value: T, index: int) => boolean): T | undefined {
+  find_valueIndex(callback: (value: T, index: number) => boolean): T | undefined {
     return this.find_full((value, index, _array) => callback(value, index));
   }
 
   find_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): T | undefined {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       const value = this.valuesStore[i]!;
@@ -281,9 +281,9 @@ export class Array<T = unknown> {
   }
 
   findIndex(callback: (value: T) => boolean): int;
-  findIndex(callback: (value: T, index: int) => boolean): int;
+  findIndex(callback: (value: T, index: number) => boolean): int;
   findIndex(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): int;
   findIndex(callback: any): any {
     return this.findIndex_full(callback);
@@ -293,14 +293,14 @@ export class Array<T = unknown> {
     return this.findIndex_full((value, _index, _array) => callback(value));
   }
 
-  findIndex_valueIndex(callback: (value: T, index: int) => boolean): int {
+  findIndex_valueIndex(callback: (value: T, index: number) => boolean): int {
     return this.findIndex_full((value, index, _array) =>
       callback(value, index),
     );
   }
 
   findIndex_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): int {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       if (callback(this.valuesStore[i]!, i, this.toArray())) {
@@ -311,9 +311,9 @@ export class Array<T = unknown> {
   }
 
   findLast(callback: (value: T) => boolean): T | undefined;
-  findLast(callback: (value: T, index: int) => boolean): T | undefined;
+  findLast(callback: (value: T, index: number) => boolean): T | undefined;
   findLast(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): T | undefined;
   findLast(callback: any): any {
     return this.findLast_full(callback);
@@ -324,13 +324,13 @@ export class Array<T = unknown> {
   }
 
   findLast_valueIndex(
-    callback: (value: T, index: int) => boolean,
+    callback: (value: T, index: number) => boolean,
   ): T | undefined {
     return this.findLast_full((value, index, _array) => callback(value, index));
   }
 
   findLast_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): T | undefined {
     for (
       let i = (this.valuesStore.Count - 1) as int;
@@ -346,9 +346,9 @@ export class Array<T = unknown> {
   }
 
   findLastIndex(callback: (value: T) => boolean): int;
-  findLastIndex(callback: (value: T, index: int) => boolean): int;
+  findLastIndex(callback: (value: T, index: number) => boolean): int;
   findLastIndex(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): int;
   findLastIndex(callback: any): any {
     return this.findLastIndex_full(callback);
@@ -358,14 +358,14 @@ export class Array<T = unknown> {
     return this.findLastIndex_full((value, _index, _array) => callback(value));
   }
 
-  findLastIndex_valueIndex(callback: (value: T, index: int) => boolean): int {
+  findLastIndex_valueIndex(callback: (value: T, index: number) => boolean): int {
     return this.findLastIndex_full((value, index, _array) =>
       callback(value, index),
     );
   }
 
   findLastIndex_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): int {
     for (
       let i = (this.valuesStore.Count - 1) as int;
@@ -380,8 +380,8 @@ export class Array<T = unknown> {
   }
 
   forEach(callback: (value: T) => void): void;
-  forEach(callback: (value: T, index: int) => void): void;
-  forEach(callback: (value: T, index: int, array: T[]) => void): void;
+  forEach(callback: (value: T, index: number) => void): void;
+  forEach(callback: (value: T, index: number, array: T[]) => void): void;
   forEach(callback: any): any {
     return this.forEach_full(callback);
   }
@@ -390,11 +390,11 @@ export class Array<T = unknown> {
     this.forEach_full((value, _index, _array) => callback(value));
   }
 
-  forEach_valueIndex(callback: (value: T, index: int) => void): void {
+  forEach_valueIndex(callback: (value: T, index: number) => void): void {
     this.forEach_full((value, index, _array) => callback(value, index));
   }
 
-  forEach_full(callback: (value: T, index: int, array: T[]) => void): void {
+  forEach_full(callback: (value: T, index: number, array: T[]) => void): void {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       callback(this.valuesStore[i]!, i, this.toArray());
     }
@@ -447,9 +447,9 @@ export class Array<T = unknown> {
   }
 
   map<TResult>(callback: (value: T) => TResult): Array<TResult>;
-  map<TResult>(callback: (value: T, index: int) => TResult): Array<TResult>;
+  map<TResult>(callback: (value: T, index: number) => TResult): Array<TResult>;
   map<TResult>(
-    callback: (value: T, index: int, array: T[]) => TResult,
+    callback: (value: T, index: number, array: T[]) => TResult,
   ): Array<TResult>;
   map(callback: any): any {
     return this.map_full(callback);
@@ -460,19 +460,55 @@ export class Array<T = unknown> {
   }
 
   map_valueIndex<TResult>(
-    callback: (value: T, index: int) => TResult,
+    callback: (value: T, index: number) => TResult,
   ): Array<TResult> {
     return this.map_full((value, index, _array) => callback(value, index));
   }
 
   map_full<TResult>(
-    callback: (value: T, index: int, array: T[]) => TResult,
+    callback: (value: T, index: number, array: T[]) => TResult,
   ): Array<TResult> {
     const mapped = new List<TResult>();
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       mapped.Add(callback(this.valuesStore[i]!, i, this.toArray()));
     }
     return wrapArray<TResult>(mapped.ToArray());
+  }
+
+  flatMap<TResult>(callback: (value: T) => readonly TResult[]): Array<TResult>;
+  flatMap<TResult>(
+    callback: (value: T, index: number) => readonly TResult[],
+  ): Array<TResult>;
+  flatMap<TResult>(
+    callback: (value: T, index: number, array: T[]) => readonly TResult[],
+  ): Array<TResult>;
+  flatMap(callback: any): any {
+    return this.flatMap_full(callback);
+  }
+
+  flatMap_value<TResult>(
+    callback: (value: T) => readonly TResult[],
+  ): Array<TResult> {
+    return this.flatMap_full((value, _index, _array) => callback(value));
+  }
+
+  flatMap_valueIndex<TResult>(
+    callback: (value: T, index: number) => readonly TResult[],
+  ): Array<TResult> {
+    return this.flatMap_full((value, index, _array) => callback(value, index));
+  }
+
+  flatMap_full<TResult>(
+    callback: (value: T, index: number, array: T[]) => readonly TResult[],
+  ): Array<TResult> {
+    const flattened = new List<TResult>();
+    for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
+      const mappedValues = callback(this.valuesStore[i]!, i, this.toArray());
+      for (const mappedValue of mappedValues) {
+        flattened.Add(mappedValue);
+      }
+    }
+    return wrapArray<TResult>(flattened.ToArray());
   }
 
   pop(): T {
@@ -493,20 +529,20 @@ export class Array<T = unknown> {
   }
 
   reduce(callback: (previousValue: T, currentValue: T) => T): T;
-  reduce(callback: (previousValue: T, currentValue: T, index: int) => T): T;
+  reduce(callback: (previousValue: T, currentValue: T, index: number) => T): T;
   reduce(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
   ): T;
   reduce(
     callback: (previousValue: T, currentValue: T) => T,
     initialValue: T,
   ): T;
   reduce(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
     initialValue: T,
   ): T;
   reduce(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
     initialValue: T,
   ): T;
   reduce<TResult>(
@@ -514,14 +550,14 @@ export class Array<T = unknown> {
     initialValue: TResult,
   ): TResult;
   reduce<TResult>(
-    callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
+    callback: (previousValue: TResult, currentValue: T, index: number) => TResult,
     initialValue: TResult,
   ): TResult;
   reduce<TResult>(
     callback: (
       previousValue: TResult,
       currentValue: T,
-      index: int,
+      index: number,
       array: T[],
     ) => TResult,
     initialValue: TResult,
@@ -538,7 +574,7 @@ export class Array<T = unknown> {
   }
 
   reduce_pairIndex_noInitial(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
   ): T {
     return this.reduce_full_noInitial(
       (previousValue, currentValue, index, _array) =>
@@ -547,7 +583,7 @@ export class Array<T = unknown> {
   }
 
   reduce_full_noInitial(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
   ): T {
     if (this.valuesStore.Count === 0) {
       throw new Error("Reduce of empty array with no initial value.");
@@ -582,7 +618,7 @@ export class Array<T = unknown> {
   }
 
   reduce_pairIndex_sameInitial(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
     initialValue: T,
   ): T {
     return this.reduce_full_sameInitial(
@@ -593,7 +629,7 @@ export class Array<T = unknown> {
   }
 
   reduce_full_sameInitial(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
     initialValue: T,
   ): T {
     let accumulator = initialValue;
@@ -625,7 +661,7 @@ export class Array<T = unknown> {
   }
 
   reduce_pairIndex_withInitial<TResult>(
-    callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
+    callback: (previousValue: TResult, currentValue: T, index: number) => TResult,
     initialValue: TResult,
   ): TResult {
     return this.reduce_full_withInitial(
@@ -639,7 +675,7 @@ export class Array<T = unknown> {
     callback: (
       previousValue: TResult,
       currentValue: T,
-      index: int,
+      index: number,
       array: T[],
     ) => TResult,
     initialValue: TResult,
@@ -663,21 +699,21 @@ export class Array<T = unknown> {
 
   reduceRight(callback: (previousValue: T, currentValue: T) => T): T;
   reduceRight(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
   ): T;
   reduceRight(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
   ): T;
   reduceRight(
     callback: (previousValue: T, currentValue: T) => T,
     initialValue: T,
   ): T;
   reduceRight(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
     initialValue: T,
   ): T;
   reduceRight(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
     initialValue: T,
   ): T;
   reduceRight<TResult>(
@@ -685,14 +721,14 @@ export class Array<T = unknown> {
     initialValue: TResult,
   ): TResult;
   reduceRight<TResult>(
-    callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
+    callback: (previousValue: TResult, currentValue: T, index: number) => TResult,
     initialValue: TResult,
   ): TResult;
   reduceRight<TResult>(
     callback: (
       previousValue: TResult,
       currentValue: T,
-      index: int,
+      index: number,
       array: T[],
     ) => TResult,
     initialValue: TResult,
@@ -711,7 +747,7 @@ export class Array<T = unknown> {
   }
 
   reduceRight_pairIndex_noInitial(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
   ): T {
     return this.reduceRight_full_noInitial(
       (previousValue, currentValue, index, _array) =>
@@ -720,7 +756,7 @@ export class Array<T = unknown> {
   }
 
   reduceRight_full_noInitial(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
   ): T {
     if (this.valuesStore.Count === 0) {
       throw new Error("Reduce of empty array with no initial value.");
@@ -755,7 +791,7 @@ export class Array<T = unknown> {
   }
 
   reduceRight_pairIndex_sameInitial(
-    callback: (previousValue: T, currentValue: T, index: int) => T,
+    callback: (previousValue: T, currentValue: T, index: number) => T,
     initialValue: T,
   ): T {
     return this.reduceRight_full_sameInitial(
@@ -766,7 +802,7 @@ export class Array<T = unknown> {
   }
 
   reduceRight_full_sameInitial(
-    callback: (previousValue: T, currentValue: T, index: int, array: T[]) => T,
+    callback: (previousValue: T, currentValue: T, index: number, array: T[]) => T,
     initialValue: T,
   ): T {
     let accumulator = initialValue;
@@ -798,7 +834,7 @@ export class Array<T = unknown> {
   }
 
   reduceRight_pairIndex_withInitial<TResult>(
-    callback: (previousValue: TResult, currentValue: T, index: int) => TResult,
+    callback: (previousValue: TResult, currentValue: T, index: number) => TResult,
     initialValue: TResult,
   ): TResult {
     return this.reduceRight_full_withInitial(
@@ -812,7 +848,7 @@ export class Array<T = unknown> {
     callback: (
       previousValue: TResult,
       currentValue: T,
-      index: int,
+      index: number,
       array: T[],
     ) => TResult,
     initialValue: TResult,
@@ -864,7 +900,7 @@ export class Array<T = unknown> {
 
   some(callback: (value: T) => boolean): boolean;
   some(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): boolean;
   some(callback: any): any {
     return this.some_full(callback);
@@ -875,7 +911,7 @@ export class Array<T = unknown> {
   }
 
   some_full(
-    callback: (value: T, index: int, array: readonly T[]) => boolean,
+    callback: (value: T, index: number, array: readonly T[]) => boolean,
   ): boolean {
     for (let i = 0 as int; i < this.valuesStore.Count; i = (i + 1) as int) {
       if (callback(this.valuesStore[i]!, i, this.toArray())) {
@@ -1000,6 +1036,15 @@ O<Array>()
 O<Array>()
   .method((x) => x.map_full)
   .family((x) => x.map);
+O<Array>()
+  .method((x) => x.flatMap_value)
+  .family((x) => x.flatMap);
+O<Array>()
+  .method((x) => x.flatMap_valueIndex)
+  .family((x) => x.flatMap);
+O<Array>()
+  .method((x) => x.flatMap_full)
+  .family((x) => x.flatMap);
 O<Array>()
   .method((x) => x.every_value)
   .family((x) => x.every);

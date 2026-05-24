@@ -2,7 +2,10 @@ import type { byte, double, int, JsValue, long } from "@tsonic/core/types.js";
 import { Array as SourceArray } from "./src/array-object.js";
 import { ArrayBuffer as SourceArrayBuffer } from "./src/array-buffer-object.js";
 import {
+  BigInt as SourceBigInt,
   Boolean as SourceBoolean,
+  Infinity as SourceInfinity,
+  NaN as SourceNaN,
   Number as SourceNumberFunction,
   String as SourceString,
   decodeURI as SourceDecodeURI,
@@ -14,12 +17,18 @@ import {
   parseFloat as SourceParseFloat,
   parseInt as SourceParseInt,
 } from "./src/Globals.js";
+import {
+  StringConstructor as SourceStringStatics,
+} from "./src/String.js";
 import { console as SourceConsole } from "./src/console-object.js";
 import { Date as SourceDate } from "./src/date-object.js";
 import { Error as SourceError } from "./src/error-object.js";
 import { Float32Array as SourceFloat32Array } from "./src/float32-array.js";
 import { Float64Array as SourceFloat64Array } from "./src/float64-array.js";
-import { Map as SourceMap } from "./src/map-object.js";
+import {
+  Map as SourceMap,
+  type ReadonlyMap as SourceReadonlyMap,
+} from "./src/map-object.js";
 import { Math as SourceMath } from "./src/math-object.js";
 import { Number as SourceNumberStatics } from "./src/number-object.js";
 import { Object as SourceObject } from "./src/object-object.js";
@@ -29,7 +38,11 @@ import { Int8Array as SourceInt8Array } from "./src/int8-array.js";
 import { JSON as SourceJSON } from "./src/json-object.js";
 import { RangeError as SourceRangeError } from "./src/range-error.js";
 import { RegExp as SourceRegExp } from "./src/regexp-object.js";
-import { Set as SourceSet } from "./src/set-object.js";
+import {
+  Set as SourceSet,
+  type ReadonlySet as SourceReadonlySet,
+} from "./src/set-object.js";
+import { TextEncoder as SourceTextEncoder } from "./src/text-encoder.js";
 import { Uint16Array as SourceUint16Array } from "./src/uint16-array.js";
 import { Uint32Array as SourceUint32Array } from "./src/uint32-array.js";
 import { Uint8Array as SourceUint8Array } from "./src/uint8-array.js";
@@ -37,7 +50,8 @@ import { Uint8ClampedArray as SourceUint8ClampedArray } from "./src/uint8-clampe
 import { WeakMap as SourceWeakMap } from "./src/weak-map-object.js";
 import { WeakSet as SourceWeakSet } from "./src/weak-set-object.js";
 
-type RuntimeValue = string | number | boolean | object | null;
+type RuntimePrimitiveValue = string | number | bigint | boolean | null;
+type RuntimeValue = RuntimePrimitiveValue | object;
 
 declare global {
   interface Error extends SourceError {
@@ -273,10 +287,14 @@ declare global {
     padStart(targetLength: number, padString?: string): string;
     repeat(count: number): string;
     replace(searchValue: string | RegExp, replaceValue: string): string;
+    replace(
+      searchValue: string | RegExp,
+      replaceValue: (match: string, ...captures: string[]) => string,
+    ): string;
     replaceAll(searchValue: string, replaceValue: string): string;
     search(pattern: string | RegExp): int;
     slice(start?: number, end?: number): string;
-    split(separator: string, limit?: number): string[];
+    split(separator: string | RegExp, limit?: number): string[];
     startsWith(searchString: string): boolean;
     substr(start: number, length?: number): string;
     substring(start: number, end?: number): string;
@@ -297,8 +315,8 @@ declare global {
 
   interface StringConstructor {
     (value?: RuntimeValue): string;
-    fromCharCode(...codes: int[]): string;
-    fromCodePoint(...codePoints: int[]): string;
+    fromCharCode(...codes: number[]): string;
+    fromCodePoint(...codePoints: number[]): string;
   }
 
   interface Number {
@@ -312,11 +330,11 @@ declare global {
   }
 
   interface BooleanConstructor {
-    (value?: boolean): boolean;
+    (value?: RuntimeValue): boolean;
   }
 
   interface NumberConstructor {
-    (value?: number): number;
+    (value?: RuntimePrimitiveValue): number;
     readonly EPSILON: number;
     readonly MAX_SAFE_INTEGER: number;
     readonly MAX_VALUE: number;
@@ -333,6 +351,16 @@ declare global {
     parseInt(str: string, radix?: number): number;
   }
 
+  interface BigInt {
+    toString(radix?: int): string;
+    valueOf(): bigint;
+  }
+
+  interface BigIntConstructor {
+    (value: bigint | boolean | number | string): bigint;
+    readonly prototype: BigInt;
+  }
+
   interface Array<T> {
     length: int;
     [n: number]: T;
@@ -341,39 +369,46 @@ declare global {
     copyWithin(target: int, start?: int, end?: int): T[];
     entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
-    every(callback: (value: T, index: int, array: T[]) => boolean): boolean;
+    every(callback: (value: T, index: number, array: T[]) => boolean): boolean;
     fill(value: T, start?: int, end?: int): T[];
     filter(callback: (value: T) => boolean): T[];
-    filter(callback: (value: T, index: int) => boolean): T[];
-    filter(callback: (value: T, index: int, array: T[]) => boolean): T[];
+    filter(callback: (value: T, index: number) => boolean): T[];
+    filter(callback: (value: T, index: number, array: T[]) => boolean): T[];
     find(callback: (value: T) => boolean): T | undefined;
-    find(callback: (value: T, index: int) => boolean): T | undefined;
+    find(callback: (value: T, index: number) => boolean): T | undefined;
     find(
-      callback: (value: T, index: int, array: T[]) => boolean,
+      callback: (value: T, index: number, array: T[]) => boolean,
     ): T | undefined;
     findIndex(callback: (value: T) => boolean): int;
-    findIndex(callback: (value: T, index: int) => boolean): int;
-    findIndex(callback: (value: T, index: int, array: T[]) => boolean): int;
+    findIndex(callback: (value: T, index: number) => boolean): int;
+    findIndex(callback: (value: T, index: number, array: T[]) => boolean): int;
     findLast(callback: (value: T) => boolean): T | undefined;
-    findLast(callback: (value: T, index: int) => boolean): T | undefined;
+    findLast(callback: (value: T, index: number) => boolean): T | undefined;
     findLast(
-      callback: (value: T, index: int, array: T[]) => boolean,
+      callback: (value: T, index: number, array: T[]) => boolean,
     ): T | undefined;
     findLastIndex(callback: (value: T) => boolean): int;
-    findLastIndex(callback: (value: T, index: int) => boolean): int;
-    findLastIndex(callback: (value: T, index: int, array: T[]) => boolean): int;
+    findLastIndex(callback: (value: T, index: number) => boolean): int;
+    findLastIndex(callback: (value: T, index: number, array: T[]) => boolean): int;
     forEach(callback: (value: T) => void): void;
-    forEach(callback: (value: T, index: int) => void): void;
-    forEach(callback: (value: T, index: int, array: T[]) => void): void;
+    forEach(callback: (value: T, index: number) => void): void;
+    forEach(callback: (value: T, index: number, array: T[]) => void): void;
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
     keys(): IterableIterator<int, undefined, undefined>;
     lastIndexOf(searchElement: T, fromIndex?: int): int;
+    flatMap<TResult>(callback: (value: T) => readonly TResult[]): TResult[];
+    flatMap<TResult>(
+      callback: (value: T, index: number) => readonly TResult[],
+    ): TResult[];
+    flatMap<TResult>(
+      callback: (value: T, index: number, array: T[]) => readonly TResult[],
+    ): TResult[];
     map<TResult>(callback: (value: T) => TResult): TResult[];
-    map<TResult>(callback: (value: T, index: int) => TResult): TResult[];
+    map<TResult>(callback: (value: T, index: number) => TResult): TResult[];
     map<TResult>(
-      callback: (value: T, index: int, array: T[]) => TResult,
+      callback: (value: T, index: number, array: T[]) => TResult,
     ): TResult[];
     pop(): T;
     push(...items: T[]): int;
@@ -386,7 +421,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
       ) => TResult,
       initialValue: TResult,
     ): TResult;
@@ -394,7 +429,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
         array: T[],
       ) => TResult,
       initialValue: TResult,
@@ -407,7 +442,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
       ) => TResult,
       initialValue: TResult,
     ): TResult;
@@ -415,7 +450,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
         array: T[],
       ) => TResult,
       initialValue: TResult,
@@ -424,7 +459,7 @@ declare global {
     shift(): T;
     slice(start?: int, end?: int): T[];
     some(callback: (value: T) => boolean): boolean;
-    some(callback: (value: T, index: int, array: T[]) => boolean): boolean;
+    some(callback: (value: T, index: number, array: T[]) => boolean): boolean;
     sort(compareFunc?: (left: T, right: T) => double): T[];
     splice(start: int, deleteCount?: int, ...items: T[]): T[];
     toLocaleString(): string;
@@ -446,47 +481,58 @@ declare global {
     entries(): IterableIterator<[int, T], undefined, undefined>;
     every(callback: (value: T) => boolean): boolean;
     every(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): boolean;
     filter(callback: (value: T) => boolean): T[];
-    filter(callback: (value: T, index: int) => boolean): T[];
+    filter(callback: (value: T, index: number) => boolean): T[];
     filter(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): T[];
     find(callback: (value: T) => boolean): T | undefined;
-    find(callback: (value: T, index: int) => boolean): T | undefined;
+    find(callback: (value: T, index: number) => boolean): T | undefined;
     find(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): T | undefined;
     findIndex(callback: (value: T) => boolean): int;
-    findIndex(callback: (value: T, index: int) => boolean): int;
+    findIndex(callback: (value: T, index: number) => boolean): int;
     findIndex(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): int;
     findLast(callback: (value: T) => boolean): T | undefined;
-    findLast(callback: (value: T, index: int) => boolean): T | undefined;
+    findLast(callback: (value: T, index: number) => boolean): T | undefined;
     findLast(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): T | undefined;
     findLastIndex(callback: (value: T) => boolean): int;
-    findLastIndex(callback: (value: T, index: int) => boolean): int;
+    findLastIndex(callback: (value: T, index: number) => boolean): int;
     findLastIndex(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): int;
     forEach(callback: (value: T) => void): void;
-    forEach(callback: (value: T, index: int) => void): void;
+    forEach(callback: (value: T, index: number) => void): void;
     forEach(
-      callback: (value: T, index: int, array: readonly T[]) => void,
+      callback: (value: T, index: number, array: readonly T[]) => void,
     ): void;
     includes(searchElement: T): boolean;
     indexOf(searchElement: T, fromIndex?: int): int;
     join(separator?: string): string;
     keys(): IterableIterator<int, undefined, undefined>;
     lastIndexOf(searchElement: T, fromIndex?: int): int;
+    flatMap<TResult>(callback: (value: T) => readonly TResult[]): TResult[];
+    flatMap<TResult>(
+      callback: (value: T, index: number) => readonly TResult[],
+    ): TResult[];
+    flatMap<TResult>(
+      callback: (
+        value: T,
+        index: number,
+        array: readonly T[],
+      ) => readonly TResult[],
+    ): TResult[];
     map<TResult>(callback: (value: T) => TResult): TResult[];
-    map<TResult>(callback: (value: T, index: int) => TResult): TResult[];
+    map<TResult>(callback: (value: T, index: number) => TResult): TResult[];
     map<TResult>(
-      callback: (value: T, index: int, array: readonly T[]) => TResult,
+      callback: (value: T, index: number, array: readonly T[]) => TResult,
     ): TResult[];
     reduce(callback: (previousValue: T, currentValue: T) => T): T;
     reduce<TResult>(
@@ -497,7 +543,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
       ) => TResult,
       initialValue: TResult,
     ): TResult;
@@ -505,7 +551,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
         array: readonly T[],
       ) => TResult,
       initialValue: TResult,
@@ -518,7 +564,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
       ) => TResult,
       initialValue: TResult,
     ): TResult;
@@ -526,7 +572,7 @@ declare global {
       callback: (
         previousValue: TResult,
         currentValue: T,
-        index: int,
+        index: number,
         array: readonly T[],
       ) => TResult,
       initialValue: TResult,
@@ -534,7 +580,7 @@ declare global {
     slice(start?: int, end?: int): T[];
     some(callback: (value: T) => boolean): boolean;
     some(
-      callback: (value: T, index: int, array: readonly T[]) => boolean,
+      callback: (value: T, index: number, array: readonly T[]) => boolean,
     ): boolean;
     toLocaleString(): string;
     toReversed(): T[];
@@ -562,12 +608,12 @@ declare global {
     from(source: string): string[];
     from<TResult>(
       source: string,
-      mapfn: (value: string, index: int) => TResult,
+      mapfn: (value: string, index: number) => TResult,
     ): TResult[];
     from<T>(source: Iterable<T>): T[];
     from<T, TResult>(
       source: Iterable<T>,
-      mapfn: (value: T, index: int) => TResult,
+      mapfn: (value: T, index: number) => TResult,
     ): TResult[];
     isArray(value: unknown): value is readonly unknown[];
     of<T>(...items: T[]): T[];
@@ -800,12 +846,25 @@ declare global {
     (pattern: string | RegExp, flags?: string): RegExp;
   }
 
-  interface Map<K, V> extends SourceMap<K, V> {
+  interface ReadonlyMap<K, V> extends SourceReadonlyMap<K, V> {
+    readonly size: int;
+    entries(): IterableIterator<[K, V], undefined, undefined>;
+    forEach(
+      callback: (value: V, key: K, map: ReadonlyMap<K, V>) => void,
+    ): void;
+    get(key: K): V | undefined;
+    has(key: K): boolean;
+    keys(): IterableIterator<K, undefined, undefined>;
+    values(): IterableIterator<V, undefined, undefined>;
+    [Symbol.iterator](): IterableIterator<[K, V], undefined, undefined>;
+  }
+
+  interface Map<K, V> extends ReadonlyMap<K, V>, SourceMap<K, V> {
     readonly size: int;
     clear(): void;
     delete(key: K): boolean;
     entries(): IterableIterator<[K, V], undefined, undefined>;
-    forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void;
+    forEach(callback: (value: V, key: K, map: ReadonlyMap<K, V>) => void): void;
     get(key: K): V | undefined;
     has(key: K): boolean;
     keys(): IterableIterator<K, undefined, undefined>;
@@ -819,13 +878,23 @@ declare global {
     new <K, V>(entries?: Iterable<readonly [K, V]> | null): Map<K, V>;
   }
 
-  interface Set<T> extends SourceSet<T> {
+  interface ReadonlySet<T> extends SourceReadonlySet<T> {
+    readonly size: int;
+    entries(): IterableIterator<[T, T], undefined, undefined>;
+    forEach(callback: (value: T, key: T, set: ReadonlySet<T>) => void): void;
+    has(value: T): boolean;
+    keys(): IterableIterator<T, undefined, undefined>;
+    values(): IterableIterator<T, undefined, undefined>;
+    [Symbol.iterator](): IterableIterator<T, undefined, undefined>;
+  }
+
+  interface Set<T> extends ReadonlySet<T>, SourceSet<T> {
     readonly size: int;
     add(value: T): this;
     clear(): void;
     delete(value: T): boolean;
     entries(): IterableIterator<[T, T], undefined, undefined>;
-    forEach(callback: (value: T, key: T, set: Set<T>) => void): void;
+    forEach(callback: (value: T, key: T, set: ReadonlySet<T>) => void): void;
     has(value: T): boolean;
     keys(): IterableIterator<T, undefined, undefined>;
     values(): IterableIterator<T, undefined, undefined>;
@@ -862,20 +931,37 @@ declare global {
     new <T extends object = object>(values?: readonly T[] | null): WeakSet<T>;
   }
 
+  interface TextEncoder {
+    readonly encoding: string;
+    encode(input?: string): Uint8Array;
+  }
+
+  interface TextEncoderConstructor {
+    readonly prototype: TextEncoder;
+    new(): TextEncoder;
+  }
+
   interface ObjectConstructor {
     readonly prototype: object;
     entries(obj: Record<string, RuntimeValue>): [string, RuntimeValue][];
     entries<T>(obj: Record<string, T>): [string, T][];
     entries(obj: object): [string, RuntimeValue][];
+    is(value1: RuntimeValue | undefined, value2: RuntimeValue | undefined): boolean;
     keys<T>(obj: Record<string, T>): string[];
     values<T>(obj: Record<string, T>): T[];
   }
 
   const Error: typeof SourceError;
 
-  const String: typeof SourceString;
+  const String: typeof SourceString & typeof SourceStringStatics;
 
   const Number: typeof SourceNumberFunction & typeof SourceNumberStatics;
+
+  const BigInt: typeof SourceBigInt;
+
+  const NaN: typeof SourceNaN;
+
+  const Infinity: typeof SourceInfinity;
 
   const Boolean: typeof SourceBoolean;
 
@@ -918,6 +1004,8 @@ declare global {
   const WeakMap: typeof SourceWeakMap;
 
   const WeakSet: typeof SourceWeakSet;
+
+  const TextEncoder: typeof SourceTextEncoder;
 
   const Object: ObjectConstructor & typeof SourceObject;
 

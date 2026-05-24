@@ -12,7 +12,22 @@ class MapEntry<K, V> {
   }
 }
 
-export class Map<K, V> {
+export interface ReadonlyMap<K, V> {
+  readonly size: int;
+  entries(): Generator<[K, V], undefined, undefined>;
+  forEach(callback: (value: V, key: K, map: ReadonlyMap<K, V>) => void): void;
+  get(key: K): V | undefined;
+  has(key: K): boolean;
+  keys(): Generator<K, undefined, undefined>;
+  values(): Generator<V, undefined, undefined>;
+  [Symbol.iterator](): Generator<[K, V], undefined, undefined>;
+}
+
+function castReadonlyMapValue<T>(value: unknown): T {
+  return value as T;
+}
+
+export class Map<K, V> implements ReadonlyMap<K, V> {
   entriesStore: List<MapEntry<K, V>> = new List<
     MapEntry<K, V>
   >();
@@ -60,7 +75,7 @@ export class Map<K, V> {
     }
   }
 
-  forEach(callback: (value: V, key: K, map: Map<K, V>) => void): void {
+  forEach(callback: (value: V, key: K, map: ReadonlyMap<K, V>) => void): void {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       const entry = this.entriesStore[i]!;
       callback(entry.value, entry.key, this);
@@ -96,6 +111,53 @@ export class Map<K, V> {
   *values(): Generator<V, undefined, undefined> {
     for (let i = 0 as int; i < this.entriesStore.Count; i = (i + 1) as int) {
       yield this.entriesStore[i]!.value;
+    }
+  }
+
+  [Symbol.iterator](): Generator<[K, V], undefined, undefined> {
+    return this.entries();
+  }
+}
+
+export class ReadonlyMapView<K, VSource, V> implements ReadonlyMap<K, V> {
+  private readonly source: ReadonlyMap<K, VSource>;
+
+  constructor(source: ReadonlyMap<K, VSource>) {
+    this.source = source;
+  }
+
+  get size(): int {
+    return this.source.size;
+  }
+
+  *entries(): Generator<[K, V], undefined, undefined> {
+    for (const [key, value] of this.source.entries()) {
+      yield [key, castReadonlyMapValue<V>(value)];
+    }
+  }
+
+  forEach(callback: (value: V, key: K, map: ReadonlyMap<K, V>) => void): void {
+    this.source.forEach((value, key) => {
+      callback(castReadonlyMapValue<V>(value), key, this);
+    });
+  }
+
+  get(key: K): V | undefined {
+    const value = this.source.get(key);
+    return value === undefined ? undefined : castReadonlyMapValue<V>(value);
+  }
+
+  has(key: K): boolean {
+    return this.source.has(key);
+  }
+
+  keys(): Generator<K, undefined, undefined> {
+    return this.source.keys();
+  }
+
+  *values(): Generator<V, undefined, undefined> {
+    for (const value of this.source.values()) {
+      yield castReadonlyMapValue<V>(value);
     }
   }
 
