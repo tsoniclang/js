@@ -997,13 +997,13 @@ declare global {
 
   const RegExp: typeof SourceRegExp;
 
-  const Map: typeof SourceMap;
+  const Map: MapConstructor;
 
-  const Set: typeof SourceSet;
+  const Set: SetConstructor;
 
-  const WeakMap: typeof SourceWeakMap;
+  const WeakMap: WeakMapConstructor;
 
-  const WeakSet: typeof SourceWeakSet;
+  const WeakSet: WeakSetConstructor;
 
   const TextEncoder: typeof SourceTextEncoder;
 
