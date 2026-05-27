@@ -1,6 +1,7 @@
 export { ArrayBuffer } from "./array-buffer-object.js";
 export { console } from "./console-object.js";
 export { Date } from "./date-object.js";
+export { DataView } from "./data-view.js";
 export { Error } from "./error-object.js";
 export { Math } from "./math-object.js";
 export { Map, ReadonlyMapView } from "./map-object.js";

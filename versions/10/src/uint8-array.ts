@@ -5,6 +5,7 @@ import {
   TypedArrayBase,
 } from "./typed-array-core.js";
 import type { TypedArrayConstructorInput } from "./typed-array-core.js";
+import { ArrayBuffer } from "./array-buffer-object.js";
 
 function wrapUint8Array(values: byte[]): Uint8Array {
   const result = new Uint8Array(0 as int);
@@ -30,6 +31,10 @@ export class Uint8Array extends TypedArrayBase<byte, Uint8Array> {
 
   toByteArrayRaw(): byte[] {
     return this.data;
+  }
+
+  get buffer(): ArrayBuffer {
+    return ArrayBuffer.fromBytesRaw(this.data);
   }
 
   static fromByteArrayRaw(values: byte[]): Uint8Array {
