@@ -18,6 +18,7 @@
     "./Boolean.js": "./src/Boolean.ts",
     "./console.js": "./src/console-object.ts",
     "./Date.js": "./src/date-object.ts",
+    "./DataView.js": "./src/data-view.ts",
     "./Error.js": "./src/error-object.ts",
     "./Float32Array.js": "./src/float32-array.ts",
     "./Float64Array.js": "./src/float64-array.ts",

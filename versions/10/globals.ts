@@ -22,6 +22,7 @@ import {
 } from "./src/String.js";
 import { console as SourceConsole } from "./src/console-object.js";
 import { Date as SourceDate } from "./src/date-object.js";
+import { DataView as SourceDataView } from "./src/data-view.js";
 import { Error as SourceError } from "./src/error-object.js";
 import { Float32Array as SourceFloat32Array } from "./src/float32-array.js";
 import { Float64Array as SourceFloat64Array } from "./src/float64-array.js";
@@ -670,6 +671,24 @@ declare global {
     slice(begin?: int, end?: int): ArrayBuffer;
   }
 
+  interface DataView extends SourceDataView {
+    readonly buffer: ArrayBuffer;
+    readonly byteOffset: int;
+    readonly byteLength: int;
+    getInt8(byteOffset: int): number;
+    getUint8(byteOffset: int): number;
+    getInt16(byteOffset: int, littleEndian?: boolean): number;
+    getUint16(byteOffset: int, littleEndian?: boolean): number;
+    getInt32(byteOffset: int, littleEndian?: boolean): number;
+    getUint32(byteOffset: int, littleEndian?: boolean): number;
+    setInt8(byteOffset: int, value: number): void;
+    setUint8(byteOffset: int, value: number): void;
+    setInt16(byteOffset: int, value: number, littleEndian?: boolean): void;
+    setUint16(byteOffset: int, value: number, littleEndian?: boolean): void;
+    setInt32(byteOffset: int, value: number, littleEndian?: boolean): void;
+    setUint32(byteOffset: int, value: number, littleEndian?: boolean): void;
+  }
+
   interface TypedArrayLike<T, TSelf>
     extends ArrayLike<T>,
       Iterable<T, undefined, undefined> {
@@ -695,7 +714,9 @@ declare global {
 
   interface Int8Array extends TypedArrayLike<number, Int8Array> {}
 
-  interface Uint8Array extends TypedArrayLike<byte, Uint8Array> {}
+  interface Uint8Array extends TypedArrayLike<byte, Uint8Array> {
+    readonly buffer: ArrayBuffer;
+  }
 
   interface Uint8ClampedArray
     extends TypedArrayLike<number, Uint8ClampedArray> {}
@@ -728,6 +749,11 @@ declare global {
   interface ArrayBufferConstructor {
     readonly prototype: ArrayBuffer;
     new (byteLength: int): ArrayBuffer;
+  }
+
+  interface DataViewConstructor {
+    readonly prototype: DataView;
+    new (buffer: ArrayBuffer, byteOffset?: int, byteLength?: int): DataView;
   }
 
   interface Int8ArrayConstructor {
@@ -972,6 +998,8 @@ declare global {
   const Array: ArrayConstructor & typeof SourceArray;
 
   const ArrayBuffer: typeof SourceArrayBuffer;
+
+  const DataView: typeof SourceDataView;
 
   const Int8Array: typeof SourceInt8Array;
 
