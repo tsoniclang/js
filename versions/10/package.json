@@ -1,6 +1,6 @@
 {
   "name": "@tsonic/js",
-  "version": "10.0.53",
+  "version": "10.0.54",
   "description": "Native Tsonic implementation of JavaScript runtime globals",
   "types": "./index.d.ts",
   "exports": {
@@ -70,7 +70,7 @@
     "url": "https://github.com/tsoniclang/js.git"
   },
   "dependencies": {
-    "@tsonic/dotnet": "10.0.45",
-    "@tsonic/core": "10.0.45"
+    "@tsonic/dotnet": "10.0.46",
+    "@tsonic/core": "10.0.46"
   }
 }
