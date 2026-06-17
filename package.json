@@ -1,12 +1,175 @@
 {
-  "name": "tsonic-js-workspace",
-  "private": true,
-  "description": "Repo for @tsonic/js portable source surface",
+  "name": "@tsonic/js",
+  "version": "10.0.54",
+  "description": "Portable JavaScript source surface for Tsonic",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./index.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./array-buffer-object.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./ArrayBuffer.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Boolean.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./console.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Date.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./DataView.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Error.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Float32Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Float64Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Globals.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Int16Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Int32Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Int8Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./JSON.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Map.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Math.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Number.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Object.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./RangeError.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./RegExp.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Set.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./String.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./TextEncoder.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./timers.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint16Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint32Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint8Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint8ClampedArray.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./WeakMap.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./WeakSet.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./*.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    }
+  },
+  "files": [
+    "index.d.ts",
+    "globals.ts",
+    "runtime/**/*.js",
+    "tsonic.package.json",
+    "tsonic.surface.json",
+    "README.md",
+    "LICENSE"
+  ],
   "type": "module",
   "scripts": {
-    "generate:10": "echo '@tsonic/js is source-authored; no generation step'",
-    "selftest": "node --check versions/10/runtime/index.js",
-    "publish:10": "npm run selftest && npm publish ./versions/10 --access public"
+    "generate": "echo '@tsonic/js is source-authored; no generation step'",
+    "selftest": "node --check runtime/index.js",
+    "publish:npm": "npm run selftest && npm publish --access public"
   },
-  "devDependencies": {}
+  "keywords": [
+    "javascript",
+    "typescript",
+    "tsonic",
+    "source-package",
+    "surface"
+  ],
+  "author": "Tsonic Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsoniclang/js.git"
+  },
+  "dependencies": {
+    "@tsonic/core": "10.0.46"
+  }
 }

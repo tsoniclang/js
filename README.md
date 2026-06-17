@@ -85,19 +85,9 @@ Do not use `JsValue` as an application-level JSON or object escape hatch.
 - `@tsonic/js` = JS runtime surface
 - `@tsonic/nodejs` = Node-style modules (`node:fs`, `node:path`, `node:crypto`, ...)
 
-## Versioning
-
-- `10` → `versions/10/` → npm: `@tsonic/js@10.x`
-
-Publish:
-
-```bash
-npm publish versions/10 --access public
-```
-
 ## Development
 
-Run the package validation check:
+Run validation from the repository root:
 
 ```bash
 npm run selftest
