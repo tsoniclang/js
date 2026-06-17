@@ -74,6 +74,7 @@ declare global {
   interface RangeError extends Error, SourceRangeError {}
 
   interface Function {
+    readonly length: int;
     prototype: object;
   }
 
@@ -743,7 +744,7 @@ declare global {
 
   interface Uint8ArrayConstructor {
     readonly prototype: Uint8Array;
-    new (length: int): Uint8Array;
+    new (lengthOrValues: int | readonly byte[] | Iterable<number>): Uint8Array;
   }
 
   interface ArrayBufferConstructor {
@@ -758,49 +759,51 @@ declare global {
 
   interface Int8ArrayConstructor {
     readonly prototype: Int8Array;
-    new (length: int): Int8Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Int8Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint8ClampedArrayConstructor {
     readonly prototype: Uint8ClampedArray;
-    new (length: int): Uint8ClampedArray;
+    new (
+      lengthOrValues: int | readonly number[] | Iterable<number>
+    ): Uint8ClampedArray;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int16ArrayConstructor {
     readonly prototype: Int16Array;
-    new (length: int): Int16Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Int16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint16ArrayConstructor {
     readonly prototype: Uint16Array;
-    new (length: int): Uint16Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Uint16Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Int32ArrayConstructor {
     readonly prototype: Int32Array;
-    new (length: int): Int32Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Int32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Uint32ArrayConstructor {
     readonly prototype: Uint32Array;
-    new (length: int): Uint32Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Uint32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float32ArrayConstructor {
     readonly prototype: Float32Array;
-    new (length: int): Float32Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Float32Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
   interface Float64ArrayConstructor {
     readonly prototype: Float64Array;
-    new (length: int): Float64Array;
+    new (lengthOrValues: int | readonly number[] | Iterable<number>): Float64Array;
     readonly BYTES_PER_ELEMENT: number;
   }
 
@@ -977,7 +980,7 @@ declare global {
     values<T>(obj: Record<string, T>): T[];
   }
 
-  const Error: typeof SourceError;
+  const Error: ErrorConstructor;
 
   const String: typeof SourceString & typeof SourceStringStatics;
 
@@ -993,37 +996,37 @@ declare global {
 
   const console: typeof SourceConsole;
 
-  const Date: typeof SourceDate;
+  const Date: DateConstructor;
 
   const Array: ArrayConstructor & typeof SourceArray;
 
-  const ArrayBuffer: typeof SourceArrayBuffer;
+  const ArrayBuffer: ArrayBufferConstructor;
 
-  const DataView: typeof SourceDataView;
+  const DataView: DataViewConstructor;
 
-  const Int8Array: typeof SourceInt8Array;
+  const Int8Array: Int8ArrayConstructor;
 
-  const Uint8Array: typeof SourceUint8Array;
+  const Uint8Array: Uint8ArrayConstructor;
 
-  const Uint8ClampedArray: typeof SourceUint8ClampedArray;
+  const Uint8ClampedArray: Uint8ClampedArrayConstructor;
 
-  const Int16Array: typeof SourceInt16Array;
+  const Int16Array: Int16ArrayConstructor;
 
-  const Uint16Array: typeof SourceUint16Array;
+  const Uint16Array: Uint16ArrayConstructor;
 
-  const Int32Array: typeof SourceInt32Array;
+  const Int32Array: Int32ArrayConstructor;
 
-  const Uint32Array: typeof SourceUint32Array;
+  const Uint32Array: Uint32ArrayConstructor;
 
-  const Float32Array: typeof SourceFloat32Array;
+  const Float32Array: Float32ArrayConstructor;
 
-  const Float64Array: typeof SourceFloat64Array;
+  const Float64Array: Float64ArrayConstructor;
 
   const JSON: JSON & typeof SourceJSON;
 
   const Math: typeof SourceMath;
 
-  const RegExp: typeof SourceRegExp;
+  const RegExp: RegExpConstructor;
 
   const Map: MapConstructor;
 
@@ -1033,7 +1036,7 @@ declare global {
 
   const WeakSet: WeakSetConstructor;
 
-  const TextEncoder: typeof SourceTextEncoder;
+  const TextEncoder: TextEncoderConstructor;
 
   const Object: ObjectConstructor & typeof SourceObject;
 
