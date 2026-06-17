@@ -1,53 +1,150 @@
 {
   "name": "@tsonic/js",
   "version": "10.0.54",
-  "description": "Native Tsonic implementation of JavaScript runtime globals",
+  "description": "Portable JavaScript source surface for Tsonic",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "types": "./index.d.ts",
-      "default": "./src/index.ts"
+      "default": "./runtime/index.js"
     },
     "./index.js": {
       "types": "./index.d.ts",
-      "default": "./src/index.ts"
+      "default": "./runtime/index.js"
     },
-    "./Array.js": "./src/array-object.ts",
-    "./array-buffer-object.js": "./src/array-buffer-object.ts",
-    "./ArrayBuffer.js": "./src/array-buffer-object.ts",
-    "./Boolean.js": "./src/Boolean.ts",
-    "./console.js": "./src/console-object.ts",
-    "./Date.js": "./src/date-object.ts",
-    "./DataView.js": "./src/data-view.ts",
-    "./Error.js": "./src/error-object.ts",
-    "./Float32Array.js": "./src/float32-array.ts",
-    "./Float64Array.js": "./src/float64-array.ts",
-    "./Globals.js": "./src/Globals.ts",
-    "./Int16Array.js": "./src/int16-array.ts",
-    "./Int32Array.js": "./src/int32-array.ts",
-    "./Int8Array.js": "./src/int8-array.ts",
-    "./JSON.js": "./src/json-object.ts",
-    "./Map.js": "./src/map-object.ts",
-    "./Math.js": "./src/math-object.ts",
-    "./Number.js": "./src/number-object.ts",
-    "./Object.js": "./src/object-object.ts",
-    "./RangeError.js": "./src/range-error.ts",
-    "./RegExp.js": "./src/regexp-object.ts",
-    "./Set.js": "./src/set-object.ts",
-    "./String.js": "./src/String.ts",
-    "./TextEncoder.js": "./src/text-encoder.ts",
-    "./timers.js": "./src/timers.ts",
-    "./Uint16Array.js": "./src/uint16-array.ts",
-    "./Uint32Array.js": "./src/uint32-array.ts",
-    "./Uint8Array.js": "./src/uint8-array.ts",
-    "./Uint8ClampedArray.js": "./src/uint8-clamped-array.ts",
-    "./WeakMap.js": "./src/weak-map-object.ts",
-    "./WeakSet.js": "./src/weak-set-object.ts"
+    "./Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./array-buffer-object.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./ArrayBuffer.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Boolean.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./console.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Date.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./DataView.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Error.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Float32Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Float64Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Globals.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Int16Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Int32Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Int8Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./JSON.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Map.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Math.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Number.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Object.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./RangeError.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./RegExp.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Set.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./String.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./TextEncoder.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./timers.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint16Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint32Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint8Array.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./Uint8ClampedArray.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./WeakMap.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./WeakSet.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    },
+    "./*.js": {
+      "types": "./index.d.ts",
+      "default": "./runtime/index.js"
+    }
   },
   "files": [
-    "**/*.ts",
-    "src/**/*.ts",
-    "families.json",
+    "index.d.ts",
+    "globals.ts",
+    "runtime/**/*.js",
     "tsonic.package.json",
     "tsonic.surface.json",
     "README.md",
@@ -58,10 +155,8 @@
     "javascript",
     "typescript",
     "tsonic",
-    "dotnet",
     "source-package",
-    "native",
-    "net10"
+    "surface"
   ],
   "author": "Tsonic Team",
   "license": "MIT",
@@ -70,7 +165,6 @@
     "url": "https://github.com/tsoniclang/js.git"
   },
   "dependencies": {
-    "@tsonic/dotnet": "10.0.46",
     "@tsonic/core": "10.0.46"
   }
 }

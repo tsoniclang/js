@@ -1,22 +1,15 @@
 # @tsonic/js
 
-JavaScript runtime bindings for **Tsonic**.
+Portable JavaScript source surface for **Tsonic**.
 
 This package is part of Tsonic: https://tsonic.org.
 
-`@tsonic/js` provides JS runtime APIs (`JSON`, `console`, `Map`, `Set`, `Date`, timers, etc.) for Tsonic projects.
+`@tsonic/js` declares JavaScript APIs (`JSON`, `console`, `Map`, `Set`, `Date`, timers, etc.) for Tsonic projects. Target-specific implementations are supplied by target packages.
 
 ## Target support
 
-`@tsonic/js` supports the default C# target. The package declares this in
-`tsonic.package.json` and `tsonic.surface.json` with
-`"supportedTargets": ["csharp"]`. User code imports stay target-neutral:
-applications use `@tsonic/js` and do not add a target suffix.
-
-## Prerequisites
-
-- Install the .NET 10 SDK: https://dotnet.microsoft.com/download
-- Verify: `dotnet --version`
+`@tsonic/js` is target-neutral. User code imports `@tsonic/js`; the active
+Tsonic target chooses the implementation package for that surface.
 
 ## Quick Start (surface-first, no `@tsonic/js` imports required)
 
@@ -104,15 +97,14 @@ npm publish versions/10 --access public
 
 ## Development
 
-Run the package validation suite with progress output:
+Run the package validation check:
 
 ```bash
 npm run selftest
 ```
 
-The selftest builds the package fixture and runs the JS API matrix for arrays,
-typed arrays, JSON, maps, sets, weak collections, numbers, strings, dates,
-timers, errors, console, globals, and regular expressions.
+The selftest verifies that the portable runtime forwarding entrypoint is valid
+ESM. Target implementation packages own target-specific behavior tests.
 
 ## License
 

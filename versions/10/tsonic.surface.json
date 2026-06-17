@@ -1,128 +1,43 @@
 {
-  "schemaVersion": 1,
+  "schema": "tsonic.surface",
   "id": "@tsonic/js",
-  "supportedTargets": [
-    "csharp"
-  ],
   "requiredTypeRoots": [
     "."
   ],
-  "memberSemantics": {
-    "js.Array": {
-      "length": {
-        "storageAccess": "arrayLength"
-      },
-      "concat": {
-        "returnsArray": true
-      },
-      "copyWithin": {
-        "mutatesReceiver": true,
-        "returnsReceiver": true
-      },
-      "filter": {
-        "returnsArray": true
-      },
-      "fill": {
-        "mutatesReceiver": true,
-        "returnsReceiver": true
-      },
-      "flat": {
-        "returnsArray": true
-      },
-      "flatMap": {
-        "returnsArray": true
-      },
-      "map": {
-        "returnsArray": true
-      },
-      "pop": {
-        "mutatesReceiver": true
-      },
-      "push": {
-        "mutatesReceiver": true
-      },
-      "reverse": {
-        "mutatesReceiver": true,
-        "returnsReceiver": true
-      },
-      "shift": {
-        "mutatesReceiver": true
-      },
-      "slice": {
-        "returnsArray": true
-      },
-      "sort": {
-        "mutatesReceiver": true,
-        "returnsReceiver": true
-      },
-      "splice": {
-        "mutatesReceiver": true,
-        "returnsArray": true
-      },
-      "toReversed": {
-        "returnsArray": true
-      },
-      "toSorted": {
-        "returnsArray": true
-      },
-      "toSpliced": {
-        "returnsArray": true
-      },
-      "unshift": {
-        "mutatesReceiver": true
-      },
-      "with": {
-        "returnsArray": true
+  "operations": [
+    {
+      "id": "js.string.length",
+      "kind": "property",
+      "receiver": "core.string",
+      "member": "length",
+      "result": "core.int32",
+      "semantics": {
+        "meaning": "utf16-code-unit-count"
       }
     },
-    "js.ReadonlyArray": {
-      "length": {
-        "storageAccess": "arrayLength"
-      },
-      "concat": {
-        "returnsArray": true
-      },
-      "filter": {
-        "returnsArray": true
-      },
-      "flat": {
-        "returnsArray": true
-      },
-      "flatMap": {
-        "returnsArray": true
-      },
-      "map": {
-        "returnsArray": true
-      },
-      "slice": {
-        "returnsArray": true
-      },
-      "toReversed": {
-        "returnsArray": true
-      },
-      "toSorted": {
-        "returnsArray": true
-      },
-      "toSpliced": {
-        "returnsArray": true
-      },
-      "with": {
-        "returnsArray": true
+    {
+      "id": "js.array.length",
+      "kind": "property",
+      "receiver": "js.Array",
+      "member": "length",
+      "result": "core.int32",
+      "semantics": {
+        "meaning": "element-count"
       }
     },
-    "js.Map": {
-      "get": {
-        "borrowedMutationWriteBack": {
-          "methodName": "set",
-          "keyArgumentIndex": 0
-        }
-      }
+    {
+      "id": "js.array.join",
+      "kind": "method",
+      "receiver": "js.Array",
+      "member": "join",
+      "result": "core.string"
     },
-    "js.String": {
-      "length": {
-        "emittedMemberName": "Length",
-        "emissionKind": "instanceMember"
-      }
+    {
+      "id": "js.console.log",
+      "kind": "function",
+      "module": "@tsonic/js/console.js",
+      "export": "log",
+      "result": "core.void"
     }
-  }
+  ]
 }

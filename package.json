@@ -1,17 +1,12 @@
 {
   "name": "tsonic-js-workspace",
   "private": true,
-  "description": "Repo for @tsonic/js (versioned by .NET major in versions/<major>/)",
+  "description": "Repo for @tsonic/js portable source surface",
   "type": "module",
   "scripts": {
-    "generate:10": "echo '@tsonic/js is source-of-truth TypeScript; no generation step'",
-    "selftest": "bash scripts/selftest.sh",
-    "publish:10": "bash scripts/selftest.sh && npm publish ./versions/10 --access public",
-    "build": "tsonic build",
-    "dev": "tsonic run"
+    "generate:10": "echo '@tsonic/js is source-authored; no generation step'",
+    "selftest": "node --check versions/10/runtime/index.js",
+    "publish:10": "npm run selftest && npm publish ./versions/10 --access public"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "devDependencies": {}
 }
